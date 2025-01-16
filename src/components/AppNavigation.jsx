@@ -8,8 +8,8 @@ const AppNavigation = () => {
  
   return (
     <nav className="flex justify-between item-centre bg-white text-black p-4 fixed top-0 left-0 w-full bg-blue-600 shadow-lg z-10">
-      <div className="flex justify-between item- centre max-w-7xl mx-auto px-4 py-3">
-        <ul className="flex items-center space-x-8">
+      <div className="flex justify-between item-centre max-w-7xl py-3 w-full">
+        <ul className="flex items-center space-x-8 ml-80">
           {/* Services Dropdown */}
           <li
             className="relative"
@@ -57,7 +57,6 @@ const AppNavigation = () => {
               </ul>
             )}
           </li>
- 
           {/* Other Navigation Links */}
           <li className="text-base">
             <Link
@@ -109,6 +108,14 @@ const AppNavigation = () => {
           </li>
           <li className="text-base">
             <Link
+              href="/contacts"
+              className="hover:text-yellow-500 transition duration-300 "
+            >
+              Contacts
+            </Link>
+          </li>
+          <li className="text-base">
+            <Link
               href="/faq"
               className="hover:text-yellow-500 transition duration-300 "
             >
@@ -117,7 +124,9 @@ const AppNavigation = () => {
           </li>
  
           {/* Book Consultation Button */}
-          <div className="flex ml-[100px]">
+          
+        </ul>
+        <div className="absolute right-10">
             <Link
               href="/book-consultation"
               className="text-white bg-[orangered] py-2 px-6 rounded-lg text-lg shadow-md transition duration-200"
@@ -125,7 +134,6 @@ const AppNavigation = () => {
               Book Consultation
             </Link>
           </div>
-        </ul>
       </div>
     </nav>
   );

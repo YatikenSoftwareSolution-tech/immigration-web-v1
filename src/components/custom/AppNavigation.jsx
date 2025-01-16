@@ -128,7 +128,7 @@ const AppNavigation = () => {
         </ul>
         <div className="absolute right-10">
             <Link
-              href="/book-consultation"
+              href="/consultation"
               className="text-white bg-[orangered] py-2 px-6 rounded-lg text-lg shadow-md transition duration-200"
             >
               Book Consultation

@@ -12,8 +12,9 @@ export default {
         primary: "#FFFFFF", // Custom primary color
         secondary: "#D80621", // Custom secondary color
         sAccent: "#EF2A45", // Custom accent color
-        dark: "#212529", // Dark color for text or backgrounds
-        textColor: "#363637", // Light color for background or text
+        secBlue: "#090c9b", // Dark color for text or backgrounds
+        dark: "#363637",
+        gray: "#939393", // Light color for background or text
       },
     },
   },

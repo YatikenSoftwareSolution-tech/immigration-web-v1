@@ -1,5 +1,5 @@
-import AppNavigation from "@/components/AppNavigation";
-import AppFooter from "@/components/AppFooter";
+import AppNavigation from "@/components/custom/AppNavigation";
+import AppFooter from "@/components/custom/AppFooter";
 import './globals.css';
 
 export const metadata = {
@@ -13,9 +13,9 @@ export default function RootLayout({ children }) {
       <head>
         {/* You can include meta tags, fonts, or other head elements here */}
       </head>
-      <body className="font-sans bg-gray-50 flex flex-col min-h-screen">
+      <body className="font-sans flex flex-col min-h-screen">
         {/* Navbar */}
-        <header className="bg-blue-600 text-white p-4">
+        <header className=" p-4">
           <AppNavigation/>
         </header>
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <main className="flex-grow p-4">{children}</main>
 
         {/* Footer */}
-        <footer className="bg-gray-800 text-white p-4 text-center">
+        <footer className="text-white p-4 text-center">
           <AppFooter/>
         </footer>
       </body>

@@ -1,5 +1,5 @@
-import AppFooter from "@/components/AppFooter";
-import AppNavigation from "@/components/AppNavigation";
+import AppFooter from "@/components/custom/AppFooter";
+import AppNavigation from "@/components/custom/AppNavigation";
 
 export const metadata = {
     title: "Contact Us",

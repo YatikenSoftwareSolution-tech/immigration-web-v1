@@ -6,6 +6,7 @@
 # build output
 /dist
 /build
+/.next
 
 # production environment variables
 /.env

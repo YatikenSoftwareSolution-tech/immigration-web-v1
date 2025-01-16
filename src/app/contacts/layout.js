@@ -18,7 +18,9 @@ export const metadata = {
         </header>
           {/* Main Content */}
           <main className="flex-grow p-4">{children}</main>
-          
+          <footer className="bg-gray-800 text-white p-4 text-center">
+          <AppFooter/>
+            </footer>
         </body>
       </html>
     );

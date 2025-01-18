@@ -129,7 +129,7 @@ const AppNavigation = () => {
         <div className="absolute right-10">
             <Link
               href="/consultation"
-              className="text-white bg-[orangered] py-2 px-6 rounded-lg text-lg shadow-md transition duration-200"
+              className="text-white bg-[#D80621] py-2 px-6 rounded-lg text-lg shadow-md transition duration-200"
             >
               Book Consultation
             </Link>

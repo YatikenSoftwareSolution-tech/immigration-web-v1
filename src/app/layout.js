@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         </header>
 
         {/* Main Content */}
-        <main className="flex-grow p-4">{children}</main>
+        <main className="flex-grow bg-white">{children}</main>
 
         {/* Footer */}
         <footer className="text-white p-4 text-center">

@@ -1,6 +1,8 @@
 import AppNavigation from "@/components/custom/AppNavigation";
 import AppFooter from "@/components/custom/AppFooter";
 import './globals.css';
+import { AppProvider } from "@/contexts/AppContext";
+import Sidenav from "@/components/custom/Sidenav";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,21 +13,26 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* You can include meta tags, fonts, or other head elements here */}
+        {/* Include meta tags, fonts, or other head elements here */}
       </head>
       <body className="font-sans flex flex-col min-h-screen">
-        {/* Navbar */}
-        <header className=" p-4">
-          <AppNavigation/>
-        </header>
+        <AppProvider>
+          {/* Navbar */}
+          <header className="p-4">
+            <AppNavigation />
+            <Sidenav/>
+          </header>
 
-        {/* Main Content */}
-        <main className="flex-grow bg-white">{children}</main>
+          {/* Main Content */}
+          <main className="flex-grow bg-white">
+            {children}
+          </main>
 
-        {/* Footer */}
-        <footer className="text-white p-4 text-center">
-          <AppFooter/>
-        </footer>
+          {/* Footer */}
+          <footer className="bg-dark text-white p-4 text-center">
+            <AppFooter />
+          </footer>
+        </AppProvider>
       </body>
     </html>
   );

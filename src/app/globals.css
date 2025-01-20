@@ -19,3 +19,6 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+.studentVisaBackground{
+  background-image: url('../assets/LandingPageBanner3.jpg');
+}

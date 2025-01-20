@@ -16,6 +16,10 @@ export default {
         dark: "#363637",
         gray: "#939393", // Light color for background or text
       },
+      backgroundImage: {
+        'landingPageBanner3': "url('/src/assets/LandingPageBanner3.jpg')",
+        
+      }
     },
   },
   plugins: [],

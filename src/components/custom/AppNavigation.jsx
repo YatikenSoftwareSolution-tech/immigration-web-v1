@@ -1,22 +1,46 @@
 "use client";
- 
+
 import Link from "next/link";
+import { MenuIcon } from 'lucide-react';
+import { useAppContext } from '../../contexts/AppContext';
+import ImmigrationCompanyLogo from "../../assets/ImmigrationCompanyLogo.png"
+import Image from "next/image";
 import { useState } from "react";
+
  
 const AppNavigation = () => {
+  const { toggleSidenav} = useAppContext();
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  
+  
  
+
   return (
-    <nav className="flex justify-between item-centre bg-white text-black p-4 fixed top-0 left-0 w-full bg-blue-600 shadow-lg z-10">
-      <div className="flex justify-between item-centre max-w-7xl py-3 w-full">
-        <ul className="flex items-center space-x-8 ml-80">
+    <nav className="flex justify-between items-center bg-white text-black p-4 fixed top-0 left-0 w-full shadow-lg z-10">
+      <Link href="/">
+      <div className="">
+        <Image
+        src={ImmigrationCompanyLogo}
+        alt="Immigration Company"
+        // objectFit="cover"
+        height="50"
+
+        />
+        
+      </div>
+         </Link>
+
+{/* Navigation list for bigger screens */}
+        <div className="hidden md:flex">
+
+        <ul className="flex items-center gap-6">
           {/* Services Dropdown */}
           <li
             className="relative"
             onMouseEnter={() => setIsServicesOpen(true)}
             onMouseLeave={() => setIsServicesOpen(false)}
           >
-            <span className=" relative text-base hover:text-yellow-500 transition duration-300  ">
+            <span className=" relative text-base hover:text-secondary transition duration-300  ">
               Services
             </span>
             <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[orangered] transition-all duration-300 group-hover:w-full"></span>
@@ -60,8 +84,8 @@ const AppNavigation = () => {
           {/* Other Navigation Links */}
           <li className="text-base">
             <Link
-              href="/about-us"
-              className="hover:text-yellow-500 transition duration-300 "
+              href="/about"
+              className="hover:text-secondary transition duration-300 "
             >
               About Us
             </Link>
@@ -69,7 +93,7 @@ const AppNavigation = () => {
           <li className="text-base">
             <Link
               href="/student-visa"
-              className="hover:text-yellow-500 transition duration-300 "
+              className="hover:text-secondary transition duration-300 "
             >
               Student Visa
             </Link>
@@ -77,7 +101,7 @@ const AppNavigation = () => {
           <li className="text-base">
             <Link
               href="/travel-tourism"
-              className="hover:text-yellow-500 transition duration-300 "
+              className="hover:text-secondary transition duration-300 "
             >
               Travel/Tourism
             </Link>
@@ -85,7 +109,7 @@ const AppNavigation = () => {
           <li className="text-base">
             <Link
               href="/visa"
-              className="hover:text-yellow-500 transition duration-300 "
+              className="hover:text-secondary transition duration-300 "
             >
               Visa
             </Link>
@@ -93,7 +117,7 @@ const AppNavigation = () => {
           <li className="text-base">
             <Link
               href="/blogs"
-              className="hover:text-yellow-500 transition duration-300 "
+              className="hover:text-secondary transition duration-300 "
             >
               Blogs
             </Link>
@@ -101,7 +125,7 @@ const AppNavigation = () => {
           <li className="text-base">
             <Link
               href="/countries"
-              className="hover:text-yellow-500 transition duration-300 "
+              className="hover:text-secondary transition duration-300 "
             >
               Countries
             </Link>
@@ -109,7 +133,7 @@ const AppNavigation = () => {
           <li className="text-base">
             <Link
               href="/contacts"
-              className="hover:text-yellow-500 transition duration-300 "
+              className="hover:text-secondary transition duration-300 "
             >
               Contacts
             </Link>
@@ -117,7 +141,7 @@ const AppNavigation = () => {
           <li className="text-base">
             <Link
               href="/faq"
-              className="hover:text-yellow-500 transition duration-300 "
+              className="hover:text-secondary transition duration-300 "
             >
               FAQ
             </Link>
@@ -126,15 +150,22 @@ const AppNavigation = () => {
           {/* Book Consultation Button */}
           
         </ul>
-        <div className="absolute right-10">
-            <Link
-              href="/consultation"
-              className="text-white bg-[#D80621] py-2 px-6 rounded-lg text-lg shadow-md transition duration-200"
-            >
-              Book Consultation
-            </Link>
+        
           </div>
-      </div>
+          <div className="hidden md:flex">
+              <Link
+                href="/consultation"
+                className="text-white bg-[#D80621] py-2 px-6 rounded-lg text-lg shadow-md transition duration-200"
+              >
+                Book Consultation
+              </Link>
+          </div>
+                  {/* Menu Icon for Mobile screens */}
+        <div className="block md:hidden align-right ">
+            <MenuIcon className="text-black w-8 h-8" onClick={toggleSidenav} />
+          </div>
+      
+
     </nav>
   );
 };

@@ -12,9 +12,9 @@ import {
 const AppFooter = () => {
   return (
     <footer>
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="h-[60vh] py-40 container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Column 1: Contact Us */}
-        <div className="text-left">
+        <div className="text-left ">
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
           <ul className="space-y-3 text-sm">
             <li className="flex items-center">

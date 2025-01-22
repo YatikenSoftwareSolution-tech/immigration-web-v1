@@ -160,26 +160,30 @@ const page = () => {
   id="partnersSection"
   className="py-20 bg-secondary mx-auto w-full relative text-center"
 >
-  <div className="container mx-auto px-6 lg:px-12">
+  <div className="flex flex-col">
     {/* <!-- Immigration Partners --> */}
-    <div className="mb-16">
-      <h2 className="text-2xl font-bold text-white mb-8">
-        Our Trusted Immigration Partners
-      </h2>
-      <div className="flex flex-wrap justify-center items-center gap-12">
-        {[Partner1, Partner2, Partner3, Partner4, Partner5, Partner6, Partner7].map(
-          (partner, index) => (
-            <div key={index} className="w-40 h-40 flex justify-center items-center">
-              <Image
-                src={partner}
-                alt={`Partner ${index + 1}`}
-                className="hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-          )
-        )}
-      </div>
-    </div>
+    <div className="bg-gradient-to-r from-gray-700 to-gray-900 py-10">
+  <h2 className="text-3xl font-extrabold text-white mb-8 text-center">
+    Our Trusted Immigration Partners
+  </h2>
+  <div className="flex flex-wrap justify-center items-center gap-8">
+    {[Partner1, Partner2, Partner3, Partner4, Partner5, Partner6, Partner7].map(
+      (partner, index) => (
+        <div
+          key={index}
+          className="w-40 h-40 flex justify-center items-center bg-white rounded-lg shadow-md transform hover:scale-110 transition-transform duration-300"
+        >
+          <Image
+            src={partner}
+            alt={`Partner ${index + 1}`}
+            className="hover:opacity-80 transition-opacity duration-300"
+          />
+        </div>
+      )
+    )}
+  </div>
+</div>
+
 
     {/* <!-- University Partners --> */}
     <div className="mb-16">

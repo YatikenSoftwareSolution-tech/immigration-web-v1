@@ -22,3 +22,16 @@ body {
 .studentVisaBackground{
   background-image: url('../assets/LandingPageBanner3.jpg');
 }
+.studentVisaBackgroundBanner {
+  background-image: url('../assets/StudentVisaBackground.jpg');
+  background-size: cover; /* Ensures the image covers the entire element */
+  background-position: center; /* Centers the image within the element */
+  background-repeat: no-repeat;
+}
+.faqBackgroundBanner{
+  background-image: url('../assets/FaqBanner.svg');
+  background-size: cover; /* Ensures the image covers the entire element */
+  background-position: center; /* Centers the image within the element */
+  background-repeat: no-repeat;
+}
+

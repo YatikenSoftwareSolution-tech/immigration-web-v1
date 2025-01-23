@@ -815,6 +815,10 @@ img, video {
   height: 40vh;
 }
 
+.h-\[60px\] {
+  height: 60px;
+}
+
 .h-\[90vh\] {
   height: 90vh;
 }
@@ -845,10 +849,6 @@ img, video {
 
 .h-svh {
   height: 100svh;
-}
-
-.h-\[60px\] {
-  height: 60px;
 }
 
 .max-h-96 {
@@ -983,6 +983,10 @@ img, video {
   width: 25%;
 }
 
+.w-\[60px\] {
+  width: 60px;
+}
+
 .w-\[80\%\] {
   width: 80%;
 }
@@ -1005,10 +1009,6 @@ img, video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[60px\] {
-  width: 60px;
 }
 
 .min-w-0 {
@@ -1569,11 +1569,6 @@ img, video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1));
-}
-
 .bg-opacity-50 {
   --tw-bg-opacity: .5;
 }
@@ -1763,6 +1758,10 @@ img, video {
   padding-bottom: 1rem;
 }
 
+.pl-0 {
+  padding-left: 0;
+}
+
 .pl-10 {
   padding-left: 2.5rem;
 }
@@ -1825,10 +1824,6 @@ img, video {
 
 .pt-4 {
   padding-top: 1rem;
-}
-
-.pl-0 {
-  padding-left: 0;
 }
 
 .text-left {
@@ -1909,6 +1904,10 @@ img, video {
   line-height: 1rem;
 }
 
+.font-\[600\] {
+  font-weight: 600;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1926,14 +1925,6 @@ img, video {
 }
 
 .font-semibold {
-  font-weight: 600;
-}
-
-.font-\[900\] {
-  font-weight: 900;
-}
-
-.font-\[600\] {
   font-weight: 600;
 }
 
@@ -1988,6 +1979,11 @@ img, video {
   color: rgb(4 6 16 / var(--tw-text-opacity, 1));
 }
 
+.text-\[\#5C6C7B\] {
+  --tw-text-opacity: 1;
+  color: rgb(92 108 123 / var(--tw-text-opacity, 1));
+}
+
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
@@ -2040,16 +2036,6 @@ img, video {
 .text-yellow-500 {
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity, 1));
-}
-
-.text-yellow-400 {
-  --tw-text-opacity: 1;
-  color: rgb(250 204 21 / var(--tw-text-opacity, 1));
-}
-
-.text-\[\#5C6C7B\] {
-  --tw-text-opacity: 1;
-  color: rgb(92 108 123 / var(--tw-text-opacity, 1));
 }
 
 .underline-offset-4 {
@@ -3004,12 +2990,12 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .md\:flex-row {

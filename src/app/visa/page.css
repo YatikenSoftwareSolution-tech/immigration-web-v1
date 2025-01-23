@@ -1,0 +1,343 @@
+.background-container {
+    position: relative;
+    margin-top: 50px;
+    width: fill;
+    height: 459px; /* You can adjust the height as per your requirement */
+    background-image: url('../../assets/VisaBanner.svg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Add this to your page.css file */
+body {
+  background-color: #f7f8fc;
+}
+
+  .content {
+    position: absolute;
+    color: white; /* Text color */
+    text-align: left;
+    padding: 20px;
+ 
+  }
+  
+  .background-container h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 38.4px;
+    margin-left: 737px;
+  }
+  
+  .background-container p {
+    margin: 10px 0 0;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 48px;
+    color: #0393E5;
+    margin-left: 737px;
+
+  }
+
+
+  .custom-card {
+    margin: 20px 0 50px 0;
+    width: 380px;
+    height: 276px;
+    padding: 50px 53px;
+    background: #F1F4FF;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  
+  #Services .flex {
+    gap: 0; 
+  }
+  
+
+  .custom-card > * {
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  
+  
+.our-value {
+  border-top: 1px solid #dee2e5; 
+  border-bottom: 1px solid #dee2e5; 
+  padding: 10px 0; 
+}
+.clients-logo {
+  margin: 20px 0 50px 0;
+  width: 380px;
+  height: 276px;
+  padding: 50px 53px;
+
+  border: none;
+  box-shadow: none;
+  border-radius: 0; 
+}
+#logos {
+  margin-left: 170px;
+  margin-right: 170px;
+  justify-content: center;
+}
+
+#about-us .text-content {
+  margin-left: 150px; 
+  size:16px;
+
+font-size: 16px;
+font-weight: 400;
+line-height: 25.6px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #5C6C7B;
+
+
+}
+
+#about-us .image-container {
+  padding-left: 20px;
+}
+
+#our-service {
+  
+  width:100%;
+  height: 1300px;
+  background-color: #F1F4FF;
+  padding-top: 10px;
+
+}
+
+/* Styling for "OUR SERVICE" text */
+.service-text p {
+  color: #D80621;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* Styling for the h1 tags inside .service-text */
+.service-heading h1 {
+  padding-top: 10px;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 48px; 
+  font-weight: 600; 
+  line-height: 67.2px; 
+  text-align: center; 
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #040610;
+}
+
+/* Styling for paragraphs inside .service-content */
+.service-content p {
+padding-top:10px;
+  color: #5C6C7B;
+  font-family: 'Inter', sans-serif; 
+  font-size: 16px;
+  line-height: 25.6px;
+  font-weight: 400;
+  
+}
+
+.services {
+
+  text-align: center;
+  margin-top: 50px;
+ 
+}
+#why-us {
+  width: 1440px;
+  height: 637px;
+  padding-top: 100px;
+  margin-left: 125px;
+  margin-right: 125px;
+  margin-bottom: 100px;
+
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between; /* Distribute content across the section */
+  width: 100%;
+  max-width: 1200px;         /* You can adjust this as needed */
+}
+
+.left {
+  flex: 1;                   /* Take up equal space */
+  padding-right: 40px;  
+  padding-top:50px;
+  padding-bottom:50px;     /* Add space between the image and the content */
+}
+
+.left img {
+  width: 100%;               /* Make the image take the full width of its container */
+  height: auto; 
+              /* Maintain aspect ratio */
+}
+
+.right {
+  flex: 1;                   /* Take up equal space */
+  padding-left: 20px;        /* Add space between the content and the image */
+  display: flex;
+  flex-direction: column;    /* Stack the content vertically */
+  justify-content: right;   /* Center the content vertically */
+}
+
+.right h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.right p {
+  font-size: 16px;
+  color: #5C6C7B;
+}
+.why-us-heading p {
+  color: #D80621;
+  text-align: left;
+  margin-top: 50px;
+  font-weight: 700;
+  font-size: 15px;
+}
+.large-heading h1 {
+  text-align:left;
+font-size: 48px;
+color: #363637;
+line-height: 67.2px;
+}
+.whyuscontent p {
+  margin-top: 100px;
+  font-size: 16px;
+ font-weight: 400;
+
+}
+
+.whyusstats {
+  margin-top: 50px;
+}
+.whyusstats h6 {
+font-size:20px;
+  text-align: left;
+  font-weight: 600;
+  gap: 30px;  
+  margin-bottom:20px;
+  margin-top:20px;
+}
+/* Container for progress bar */
+.progress-bar-container {
+  width: 560px;
+  height: 14px;
+  background-color: #040610; 
+  
+  margin-top: 5px;
+}
+
+/* Actual progress bar */
+.progress-bar {
+  height: 100%;
+  background-color: #4161E5; 
+ 
+  transition: width 0.5s ease; 
+}
+
+#ourgallery {
+  width: 1440px;
+  height: 637px;
+  padding-top: 80px;
+  margin-left: 125px;
+  margin-right: 125px;
+  margin-bottom: 100px;
+
+}
+
+.gallery-text {
+  color: #D80621;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 15px;
+}
+.gallery-heading {
+  text-align:left;
+  font-size: 48px;
+  color: #000000;
+  line-height: 67.2px;
+
+}
+.gallery-button button {
+ margin-right: 180px;
+}
+.gallerycards {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+margin-left: 125px;
+  margin-top: 50px; /* Adds some space below the gallery text */
+
+}
+.testimonial-page {
+  margin-top: 150px;
+  margin-left: 125px;
+}
+.testimonial-heading {
+  font-size: 48px;
+  margin-bottom: 60px;
+  font-weight: bold;
+
+}
+.background-container-last {
+  position: relative;
+  margin-top: 50px;
+  width: fill;
+  height: 594px; /* You can adjust the height as per your requirement */
+  background-image: url('../../assets/VisaLast.svg'); /* Path to your image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+
+}
+.visa-last-text {
+  color: #D80621;
+  text-align: center;
+margin-top:186px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 15px;
+}
+.visa-heading {
+
+  padding-top: 10px;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 48px; 
+  font-weight: 600; 
+  line-height: 67.2px; 
+  text-align: center; 
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #f7f8fc;
+}
+.visa-last-content p {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 18px;
+font-weight: 400;
+line-height: 25.6px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #EDF0F3;
+
+}

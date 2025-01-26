@@ -10,7 +10,8 @@ export default {
     extend: {
       colors: {
         primary: "#FFFFFF", // Custom primary color
-        secondary: "#D80621", // Custom secondary color
+        secondary: "#E12310", // Custom secondary color
+        tertiary: "#0198E9", // logo shade of blue
         sAccent: "#EF2A45", // Custom accent color
         secBlue: "#090c9b", // Dark color for text or backgrounds
         dark: "#363637",

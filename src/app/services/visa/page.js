@@ -1,66 +1,169 @@
-import React from 'react';
-import { Check } from "lucide-react";
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { Check } from "lucide-react";
+import ConsultationForm from "@/components/custom/ConsultationForm";
+import ProgramCard from "@/components/custom/ProgramCard";
+import VisaTypeCard from "@/components/custom/VisaTypeCard";
+import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
+import VT1 from "../../../assets/VT1.svg";
+import VT2 from "../../../assets/VT2.svg";
+import VT3 from "../../../assets/VT3.svg";
+import VT4 from "../../../assets/VT4.svg";
+import VT5 from "../../../assets/VT5.svg";
+import FaqImage1 from "../../../assets/FaqImage1.jpg";
+// import ChatBot from "@/components/custom/ChatBot";
 
-const page = () => {
+const ImmigrationServicesPage = () => {
+  const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
+
+  const immigrantPathways = [
+    "Express Entry",
+    "Provincial Nominees",
+    "Quebec-Selected Skilled Worker",
+    "Atlantic Immigration Program",
+    "Start-up Visa",
+  ];
+
+  const prRequirements = [
+    "Age: Upper limit 45 years, fewer points above 35.",
+    "Education: Canadian degree or Educational Credential Assessment (ECA).",
+    "Work Experience: Canadian work experience required for some programs.",
+    "Police Verification: Clean criminal record mandatory.",
+    "Language Ability: Proficiency in English or French (IELTS, etc.).",
+  ];
+
+  const successStats = [
+    {  background: "orange",
+          icon: VT1,title: "20+", description: "Visa Categories" },
+    { background: "green",
+          icon: VT2, title: "10+", description: "Years of Experience" },
+    { background: "blue",
+          icon: VT3,title: "1000+", description: "Happy Clients" },
+    { background: "red",
+          icon: VT4,title: "100%", description: "Success Rate" },
+  ];
+
+  const testimonials = [
+    {
+      name: "Jaskaran Gill",
+      feedback:
+        "I thank the team very much for their work. Special thanks to Sabby and Raj for their professional handling of my file. Highly recommended!",
+    },
+    {
+      name: "G Singh",
+      feedback:
+        "Thanks to the expertise of Sarbjit and Raj, my brother Kuljeet Singh got his work permit as a truck driver in just 3 months. Amazing service!",
+    },
+  ];
+
   return (
-    <div>
-      <section
-        id="immigration"
-        className="pt-24 px-10 mx-auto relative w-full h-[90vh] lg:h-[95vh] flex flex-col justify-between items-center"
-      >
-        <div className="flex flex-col w-full">
-            <h1 className="text-center md:text-5xl font-bold">
-                Eligibility <span className='text-secondary'>Assessment</span> &
+    <div className="bg-gray-50 min-h-screen">
+      {/* Banner Section */}
+      <section className="bg-blue-100 py-16 px-10">
+        <div className="max-w-7xl mx-auto flex flex-col gap-[10%] md:flex-row items-center">
+          <div className="md:w-1/2">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+              How to Get Canada Permanent Residency
             </h1>
-            <h2 className="text-center md:text-5xl font-bold">
-            <span className='text-secondary'>Visa</span> Types
-            </h2>
-          <div className=" ml-[10%] mt-[5%] ">
-            
-
-            <ul className="mt-6 space-y-2 text-left">
-              <li className="flex items-center text-lg">
-                <span className="flex items-center justify-center bg-gray-400 rounded-full p-2 mr-2">
-                  <Check className="text-secondary" />
-                </span>
-                Expert Legal Support
-              </li>
-              <li className="flex items-center text-lg">
-                <span className="flex items-center justify-center bg-gray-400 rounded-full p-2 mr-2">
-                  <Check className="text-secondary" />
-                </span>{" "}
-                Meeting Your Unique Needs
-              </li>
-              <li className="flex items-center text-lg">
-                <span className="flex items-center justify-center bg-gray-400 rounded-full p-2 mr-2">
-                  <Check className="text-secondary" />
-                </span>{" "}
-                Tailored Immigration Solutions
-              </li>
-            </ul>
-
-            <div className="flex items-center mt-20 gap-4 sm:gap-6 md:gap-8">
-              <Button className="w-[150px] md:w-[180px] text-white bg-secondary p-4 md:p-7 rounded-lg text-md md:text-lg shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90">
-                Book Consultation
-              </Button>
-              <Button className="w-[150px] text-white md:w-[180px] bg-dark p-4 md:p-7 rounded-lg text-md md:text-lg shadow-md transition-transform duration-200 hover:scale-105 hover:bg-dark/90">
-                Learn More
-              </Button>
-            </div>
+            <p className="text-lg text-gray-700 mb-4">
+              Discover the steps to make Canada your new home with our expert
+              guidance on PR requirements, eligibility, and pathways.
+            </p>
+            <Button className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
+              Book a Consultation
+            </Button>
           </div>
-          {/* <Image
-            src={LandingPageBanner1}
-            alt="Banner"
-            width={600}
-            height={600}
-            className="landing-banner"
-          /> */}
+          <div className="md:w-1/2 mt-8 md:mt-0">
+            <Image
+              src={FaqImage1}
+              alt="Canada Immigration"
+              width={600}
+              height={400}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
         </div>
       </section>
-    </div>
-  )
-}
 
-export default page;
+      {/* Pathways Section */}
+      <section className="py-16 px-10">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">
+            Pathways to Canada PR
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {immigrantPathways.map((pathway, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-lg rounded-lg p-6 text-center"
+              >
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                  {pathway}
+                </h3>
+                <p className="text-gray-600">
+                  Explore the benefits and eligibility criteria for {pathway}.
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PR Requirements Section */}
+      <section className="bg-gray-100 py-16 px-10">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">
+            Permanent Residency Requirements
+          </h2>
+          <ul className="list-disc list-inside text-lg text-gray-700 space-y-4">
+            {prRequirements.map((requirement, index) => (
+              <li key={index}>{requirement}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Success Stats Section */}
+      <section className="py-16 px-10">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-gray-800 mb-10">
+            Our Success at a Glance
+          </h2>
+          <div className="flex flex-wrap">
+            {successStats.map((stat, index) => (
+              <SuccessStoryCard key={index} stats={stat}/>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="bg-gray-100 py-16 px-10">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">
+            Testimonials
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-lg shadow-lg p-6"
+              >
+                <p className="text-gray-700 mb-4">{testimonial.feedback}</p>
+                <h4 className="text-lg font-semibold text-gray-800">
+                  - {testimonial.name}
+                </h4>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* <ChatBot/> */}
+    </div>
+  );
+};
+
+export default ImmigrationServicesPage;

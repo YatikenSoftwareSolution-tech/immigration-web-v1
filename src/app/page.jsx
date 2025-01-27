@@ -17,6 +17,7 @@ import VT2 from "../assets/VT2.svg";
 import VT3 from "../assets/VT3.svg";
 import VT4 from "../assets/VT4.svg";
 import VT5 from "../assets/VT5.svg";
+import SubscribeNowBanner from "../assets/SubscribeNowBanner.png";
 
 import SubscribeIcon from "../assets/SubscribeIcon.png";
 import { Sidebar } from "@/components/ui/sidebar";
@@ -30,6 +31,9 @@ import StatsCard from "@/components/ui/statsCard";
 import ProgramCard from "@/components/custom/ProgramCard";
 import VisaTypeCard from "@/components/custom/VisaTypeCard";
 import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
+import SubscribeToNewsletter from "@/components/custom/SubscribeToNewsletter";
+import { Input } from "@/components/ui/input";
+import ChatBot from "@/components/custom/ChatBot";
 
 const ImmigrationPage = () => {
   const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
@@ -93,22 +97,22 @@ const ImmigrationPage = () => {
     {
       background: "green",
       icon: VT2,
-      title: "10+",
-      description: "Years of Experience",
+      title: "30K+",
+      description: "Visa Process",
     },
     {
       background: "blue",
       icon: VT3,
-      title: "1000+",
-      description: "Happy Clients",
+      title: "40K+",
+      description: "Successful Project",
     },
     {
       background: "red",
       icon: VT4,
-      title: "100%",
-      description: "Success Rate",
+      title: "180K",
+      description: "Pro Consultants",
     },
-  ]
+  ];
   return (
     <div>
       <section
@@ -118,7 +122,7 @@ const ImmigrationPage = () => {
         <div className="flex w-full item-center">
           <div className=" ml-[10%] mt-[5%] ">
             <h1 className="  text-4xl md:text-5xl font-bold">
-              Immigration visa Consulting
+              Immigration Visa Consulting
             </h1>
             <p className="mt-3 ml-2 font-semibold text-tertiary">
               Best Immigration Consultants in Edmonton
@@ -147,7 +151,11 @@ const ImmigrationPage = () => {
 
             <div className="flex items-center mt-28 gap-4 sm:gap-6 md:gap-8">
               <Button className="w-[150px] md:w-[180px] text-white bg-tertiary p-4 md:p-7 rounded-lg text-md md:text-lg shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90">
-                Book Consultation
+                <Link
+                  href="/consultation"
+                >
+                  Book Consultation
+                </Link>
               </Button>
               <Button className="w-[150px] text-white md:w-[180px] bg-dark p-4 md:p-7 rounded-lg text-md md:text-lg shadow-md transition-transform duration-200 hover:scale-105 hover:bg-dark/90">
                 <Link href="/about">Learn More</Link>
@@ -168,7 +176,7 @@ const ImmigrationPage = () => {
       >
         <div className="flex flex-col w-full px-[5%] py-[4%] ">
           <h1 className=" text-dark mb-[5%] text-4xl md:text-5xl font-bold text-center">
-            Our P-3 program for your visa success
+            Our P-3 program for your <br/> <span className="text-secondary mt-1"> Visa Success</span>
           </h1>
           <div className="flex gap-10 justify-center item-center ">
             {p3Program.map((item, index) => (
@@ -184,7 +192,7 @@ const ImmigrationPage = () => {
         <div className="flex w-full item-center gap-[3%]">
           <div className=" ml-[10%] mt-[5%] ">
             <h1 className="  text-4xl md:text-5xl font-bold">
-              How it helps- The P-3
+              How it helps- <span className="text-secondary">The P3</span>
             </h1>
             <p className="mt-3 ml-2 font-semibold text-tertiary">
               Best Immigration Consultants in Edmonton
@@ -221,7 +229,11 @@ const ImmigrationPage = () => {
 
             <div className="flex items-center mt-20 gap-4 sm:gap-6 md:gap-8">
               <Button className="w-[150px] md:w-[180px] text-white bg-tertiary p-4 md:p-7 rounded-lg text-md md:text-lg shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90">
-                Book Consultation
+              <Link
+                  href="/consultation"
+                >
+                  Book Consultation
+                </Link>
               </Button>
               <Button className="w-[150px] text-white md:w-[180px] bg-dark p-4 md:p-7 rounded-lg text-md md:text-lg shadow-md transition-transform duration-200 hover:scale-105 hover:bg-dark/90">
                 <Link href="/about">Learn More</Link>
@@ -252,36 +264,32 @@ const ImmigrationPage = () => {
           </div>
         </div>
       </section>
-      <section id="p3program" className="w-full">
-        <div className="flex flex-col w-full px-[5%] py-[4%]">
+      <section id="p3program" className="w-full h-[85vh] lg:h-[90vh]">
+        <div className="flex flex-col justify-between w-full px-[5%] py-[4%]">
           <h1 className="text-dark text-3xl mb-5 md:text-5xl font-bold text-center">
             Discovering Our Biggest Successes:
           </h1>
-          <p className="text-tertiary font-bold mb-[5%] text-center">
+          <p className="text-tertiary font-bold mb-[10%] text-center">
             The Stories Behind Our Great Achievements
           </p>
           <div className="flex flex-wrap justify-center items-center w-[80%] mx-auto">
             {/* Card 1 */}
-            {
-              successStats.map((item, index) => (
-                <SuccessStoryCard key={index} stats={item}/>
-              ))
-            }
-
-           
+            {successStats.map((item, index) => (
+              <SuccessStoryCard key={index} stats={item} />
+            ))}
           </div>
         </div>
       </section>
 
       <section
         id="studentVisaPartners"
-        className="py-20 bg-secondary mx-auto relative w-full"
+        className="py-20 h-[94vh] bg-secondary mx-auto relative w-full"
       >
         <div className="flex flex-col items-center justify-around text-center">
           <div className="text-lg font-semibold text-white mb-8">
-            We love to work with our preferred partners
+            We love to work with our trusted partners
           </div>
-          <div className="flex flex-wrap items-center lg:gap-14 md:gap-14">
+          <div className="flex flex-wrap justify-center items-center gap-8">
             {[
               Partner1,
               Partner2,
@@ -291,16 +299,20 @@ const ImmigrationPage = () => {
               Partner6,
               Partner7,
             ].map((partner, index) => (
-              <div key={index}>
+              <div
+                key={index}
+                className="w-40 h-40 flex justify-center items-center bg-white rounded-lg shadow-md transform hover:scale-110 transition-transform duration-300"
+              >
                 <Image
                   src={partner}
-                  alt={`Partner${index + 1}`}
-                  className="hover:scale-110 transition-transform duration-200"
+                  alt={`Partner ${index + 1}`}
+                  className="hover:opacity-80 transition-opacity duration-300"
                 />
               </div>
             ))}
           </div>
         </div>
+        <SubscribeToNewsletter />
       </section>
       <StripOutButton
         click={() => setIsConsultationFormOpen((prev) => !prev)}
@@ -310,8 +322,9 @@ const ImmigrationPage = () => {
       </Link>
       <ConsultationForm
         isOpen={isConsultationFormOpen}
-        setIsOpen={setIsConsultationFormOpen}
+        onClose={() => setIsConsultationFormOpen(false)}
       />
+      {/* <ChatBot/> */}
     </div>
   );
 };

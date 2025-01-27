@@ -76,7 +76,7 @@ const AppNavigation = () => {
                   </li>
                   <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                     <NavigationMenuLink
-                      href="/services/coaching"
+                      href="/services/nominee"
                       className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
                       >
                       Alberta provincial nominee program
@@ -84,7 +84,7 @@ const AppNavigation = () => {
                   </li>
                   <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                     <NavigationMenuLink
-                      href="/services/coaching"
+                      href="/services/sponsorship"
                       className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
                       >
                       Spousal Sponsorship
@@ -92,7 +92,7 @@ const AppNavigation = () => {
                   </li>
                   <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                     <NavigationMenuLink
-                      href="/services/coaching"
+                      href="/services/parents"
                       className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
                       >
                       Parents & grand parents PR application & super visa

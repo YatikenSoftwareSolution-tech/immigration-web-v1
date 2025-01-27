@@ -19,76 +19,76 @@ import People3 from "../../assets/People3.png";
 import People4 from "../../assets/People4.png";
 import People5 from "../../assets/People5.png";
 import People6 from "../../assets/People6.png";
+// import ChatBot from "@/components/custom/ChatBot";
 
 const peoples = [
-    {
-      image: People1,
-      name: "John Doe",
-      designation: "CEO",
-      social1: "https://facebook.com/johndoe",
-      social2: "https://instagram.com/johndoe",
-      social3: "https://linkedin.com/in/johndoe"
-    },
-    {
-      image: People2,
-      name: "Jane Smith",
-      designation: "CTO",
-      social1: "https://facebook.com/janesmith",
-      social2: "https://instagram.com/janesmith",
-      social3: "https://linkedin.com/in/janesmith"
-    },
-    {
-      image: People3,
-      name: "Mike Johnson",
-      designation: "Lead Developer",
-      social1: "https://facebook.com/mikejohnson",
-      social2: "https://instagram.com/mikejohnson",
-      social3: "https://linkedin.com/in/mikejohnson"
-    },
-    {
-      image: People4,
-      name: "Emily Davis",
-      designation: "Marketing Manager",
-      social1: "https://facebook.com/emilydavis",
-      social2: "https://instagram.com/emilydavis",
-      social3: "https://linkedin.com/in/emilydavis"
-    },
-    {
-      image: People5,
-      name: "Chris Lee",
-      designation: "Product Designer",
-      social1: "https://facebook.com/chrislee",
-      social2: "https://instagram.com/chrislee",
-      social3: "https://linkedin.com/in/chrislee"
-    },
-    {
-      image: People6,
-      name: "Sarah Wilson",
-      designation: "UX Researcher",
-      social1: "https://facebook.com/sarahwilson",
-      social2: "https://instagram.com/sarahwilson",
-      social3: "https://linkedin.com/in/sarahwilson"
-    }
-  ];
-  
+  {
+    image: People1,
+    name: "John Doe",
+    designation: "CEO",
+    social1: "https://facebook.com/johndoe",
+    social2: "https://instagram.com/johndoe",
+    social3: "https://linkedin.com/in/johndoe",
+  },
+  {
+    image: People2,
+    name: "Jane Smith",
+    designation: "CTO",
+    social1: "https://facebook.com/janesmith",
+    social2: "https://instagram.com/janesmith",
+    social3: "https://linkedin.com/in/janesmith",
+  },
+  {
+    image: People3,
+    name: "Mike Johnson",
+    designation: "Lead Developer",
+    social1: "https://facebook.com/mikejohnson",
+    social2: "https://instagram.com/mikejohnson",
+    social3: "https://linkedin.com/in/mikejohnson",
+  },
+  {
+    image: People4,
+    name: "Emily Davis",
+    designation: "Marketing Manager",
+    social1: "https://facebook.com/emilydavis",
+    social2: "https://instagram.com/emilydavis",
+    social3: "https://linkedin.com/in/emilydavis",
+  },
+  {
+    image: People5,
+    name: "Chris Lee",
+    designation: "Product Designer",
+    social1: "https://facebook.com/chrislee",
+    social2: "https://instagram.com/chrislee",
+    social3: "https://linkedin.com/in/chrislee",
+  },
+  {
+    image: People6,
+    name: "Sarah Wilson",
+    designation: "UX Researcher",
+    social1: "https://facebook.com/sarahwilson",
+    social2: "https://instagram.com/sarahwilson",
+    social3: "https://linkedin.com/in/sarahwilson",
+  },
+];
 
 const successStats = [
-    {
-        value:"30k+",
-        verb: "We Have Worked ",
-        object: "With Clients"
-    },
-    {
-        value:"100%",
-        verb: "Successful Visa",
-        object: "Process Rate"
-    },
-    {
-        value:"1 Day",
-        verb: "Application Approval",
-        object: "Processing Time"
-    },
-]
+  {
+    value: "30k+",
+    verb: "We Have Worked ",
+    object: "With Clients",
+  },
+  {
+    value: "100%",
+    verb: "Successful Visa",
+    object: "Process Rate",
+  },
+  {
+    value: "1 Day",
+    verb: "Application Approval",
+    object: "Processing Time",
+  },
+];
 
 const page = () => {
   return (
@@ -122,11 +122,9 @@ const page = () => {
             />
           </div>
           <div className="flex gap-10 justify-center item-center">
-            {
-                successStats.map((item, idx) => (
-                    <StatsCard key={idx} stat={item}/>
-                ))
-            }
+            {successStats.map((item, idx) => (
+              <StatsCard key={idx} stat={item} />
+            ))}
           </div>
         </div>
       </section>
@@ -137,10 +135,9 @@ const page = () => {
         <div className="flex flex-col w-full">
           <div className="flex flex-wrap justify-center items-center space-y-6 md:space-y-0 md:space-x-8 gap-6 mb-8">
             <h1 className="w-full md:w-1/2 text-4xl md:text-5xl font-bold leading-snug text-center">
-              Our Trusted 
-              
-                <span className="text-secondary"> Support </span>
-                Team
+              Our Trusted
+              <span className="text-secondary"> Support </span>
+              Team
             </h1>
             <h2 className="w-full md:w-1/2 text-gray font-medium text-lg md:text-xl leading-relaxed">
               At the heart of our commitment is to providing exceptional
@@ -157,78 +154,38 @@ const page = () => {
         </div>
       </section>
       <section
-  id="partnersSection"
-  className="py-20 bg-secondary mx-auto w-full relative text-center"
->
-  <div className="flex flex-col">
-    {/* <!-- Immigration Partners --> */}
-    <div className="bg-gradient-to-r from-gray-700 to-gray-900 py-10">
-  <h2 className="text-3xl font-extrabold text-white mb-8 text-center">
-    Our Trusted Immigration Partners
-  </h2>
-  <div className="flex flex-wrap justify-center items-center gap-8">
-    {[Partner1, Partner2, Partner3, Partner4, Partner5, Partner6, Partner7].map(
-      (partner, index) => (
-        <div
-          key={index}
-          className="w-40 h-40 flex justify-center items-center bg-white rounded-lg shadow-md transform hover:scale-110 transition-transform duration-300"
-        >
-          <Image
-            src={partner}
-            alt={`Partner ${index + 1}`}
-            className="hover:opacity-80 transition-opacity duration-300"
-          />
+        id="studentVisaPartners"
+        className="py-20 h-[94vh] bg-secondary mx-auto relative w-full"
+      >
+        <div className="flex flex-col items-center justify-around text-center">
+          <div className="text-lg font-semibold text-white mb-8">
+            We love to work with our trusted partners
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            {[
+              Partner1,
+              Partner2,
+              Partner3,
+              Partner4,
+              Partner5,
+              Partner6,
+              Partner7,
+            ].map((partner, index) => (
+              <div
+                key={index}
+                className="w-40 h-40 flex justify-center items-center bg-white rounded-lg shadow-md transform hover:scale-110 transition-transform duration-300"
+              >
+                <Image
+                  src={partner}
+                  alt={`Partner ${index + 1}`}
+                  className="hover:opacity-80 transition-opacity duration-300"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      )
-    )}
-  </div>
-</div>
-
-
-    {/* <!-- University Partners --> */}
-    <div className="mb-16">
-      <h2 className="text-2xl font-bold text-white mb-8">
-        Our Esteemed University Partners
-      </h2>
-      <div className="flex flex-wrap justify-center items-center gap-12">
-        {[Partner1, Partner2, Partner3, Partner4, Partner5, Partner6, Partner7].map(
-          (partner, index) => (
-            <div key={index} className="w-40 h-40 flex justify-center items-center">
-              <Image
-                src={partner}
-                alt={`University Partner ${index + 1}`}
-                className="hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-          )
-        )}
-      </div>
-    </div>
-
-    {/* <!-- Travel Partners --> */}
-    <div>
-      <h2 className="text-2xl font-bold text-white mb-8">
-        Our Reliable Travel Partners
-      </h2>
-      <div className="flex flex-wrap justify-center items-center gap-12">
-        {[Partner1, Partner2, Partner3, Partner4, Partner5, Partner6, Partner7].map(
-          (partner, index) => (
-            <div key={index} className="w-40 h-40 flex justify-center items-center">
-              <Image
-                src={partner}
-                alt={`Travel Partner ${index + 1}`}
-                className="hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-          )
-        )}
-      </div>
-    </div>
-  </div>
-</section>
-
-            <SubscribeToNewsletter  />
-
+        <SubscribeToNewsletter />
+      </section>
     </div>
   );
 };

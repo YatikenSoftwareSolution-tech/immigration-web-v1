@@ -12,7 +12,7 @@ import {
 const AppFooter = () => {
   return (
     <footer>
-      <div className="h-[60vh] py-40 container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="h-[70vh] py-[15%] container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Column 1: Contact Us */}
         <div className="text-left ">
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>

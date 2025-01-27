@@ -72,7 +72,7 @@ const page = () => {
       <section id="about-landing">
         <div className="background-container">
           <div className="blog-heading">
-            <h1 className="absolute top-[20%] text-6xl font-semibold left-[17%] text-white ">BLOG</h1>
+            <h1 className="absolute top-[20%] text-6xl font-semibold left-[17%] text-white ">BLOGS</h1>
           </div>
         </div>
       </section>

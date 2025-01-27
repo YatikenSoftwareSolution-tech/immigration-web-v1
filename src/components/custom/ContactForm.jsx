@@ -87,9 +87,8 @@ const ContactForm = () => {
       <div className="flex-1">
         <iframe
           className="w-full h-full rounded-md shadow-lg"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345091544!2d-122.41941508468128!3d37.77492927975986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c69b7b497%3A0xc6a8a88ef1e7f9f!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1672520627280!5m2!1sen!2sus"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96771.84736251846!2d-113.5628202075604!3d53.54612450287061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a022458c17e1bd%3A0x84d2cbfc4c576c35!2sEdmonton%2C%20AB%2C%20Canada!5e0!3m2!1sen!2sus!4v1672520627280!5m2!1sen!2sus" 
           allowFullScreen=""
-          loading="lazy"
           title="Google Map"
         ></iframe>
       </div>

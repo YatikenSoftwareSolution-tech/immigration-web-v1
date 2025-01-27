@@ -30,19 +30,21 @@ const ContactPage = () => {
               <div className="flex items-center space-x-4">
                 <Phone className="text-secondary w-6 h-6 cursor-pointer" />
                 <p className="text-gray-500 font-bold text-sm">
+                <a href="tel:+1234567890" className="hover:text-secondary">
                   +1 234 567 890
+                  </a>
                 </p>
               </div>
               <div className="flex items-center space-x-4">
                 <Mail className="text-secondary w-6 h-6 cursor-pointer" />
                 <p className="text-gray-500 font-bold text-sm">
-                  info@educationwebsite.com
+                  info@immigrationcompany.ca
                 </p>
               </div>
               <div className="flex items-center space-x-4">
                 <MapPin className="text-secondary w-6 h-6 cursor-pointer" />
                 <p className="text-gray-500 font-bold text-sm">
-                  123 Learning Lane, Knowledge City
+                  123 xyz, Edmonton Canada.
                 </p>
               </div>
             </div>

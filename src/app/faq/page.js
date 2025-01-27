@@ -32,7 +32,7 @@ const Page = () => {
       >
         <div className="faqBackgroundBanner bg-gradient-to-r from-blue-600 to-indigo-800 mt-8 h-[40vh] w-full absolute top-0 left-0 z-10">
           <h1 className="absolute left-[25%] top-[20%] text-8xl font-bold text-white">
-            FAQ's
+            FAQ
           </h1>
         </div>
         <div className="w-full p-20 flex justify-between mt-[46vh] gap-10">

@@ -6,5 +6,6 @@
   "/countries/page": "app/countries/page.js",
   "/contacts/page": "app/contacts/page.js",
   "/faq/page": "app/faq/page.js",
-  "/services/visa/page": "app/services/visa/page.js"
+  "/services/visa/page": "app/services/visa/page.js",
+  "/consultation/page": "app/consultation/page.js"
 }

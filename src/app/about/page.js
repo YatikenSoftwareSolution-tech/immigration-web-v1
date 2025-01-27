@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import Image from "next/image";
@@ -19,7 +20,8 @@ import People3 from "../../assets/People3.png";
 import People4 from "../../assets/People4.png";
 import People5 from "../../assets/People5.png";
 import People6 from "../../assets/People6.png";
-// import ChatBot from "@/components/custom/ChatBot";
+import ChatBot from "@/components/custom/ChatBot";
+import PartnersList from "@/components/custom/PartnersList";
 
 const peoples = [
   {
@@ -153,39 +155,8 @@ const page = () => {
           </div>
         </div>
       </section>
-      <section
-        id="studentVisaPartners"
-        className="py-20 h-[94vh] bg-secondary mx-auto relative w-full"
-      >
-        <div className="flex flex-col items-center justify-around text-center">
-          <div className="text-lg font-semibold text-white mb-8">
-            We love to work with our trusted partners
-          </div>
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            {[
-              Partner1,
-              Partner2,
-              Partner3,
-              Partner4,
-              Partner5,
-              Partner6,
-              Partner7,
-            ].map((partner, index) => (
-              <div
-                key={index}
-                className="w-40 h-40 flex justify-center items-center bg-white rounded-lg shadow-md transform hover:scale-110 transition-transform duration-300"
-              >
-                <Image
-                  src={partner}
-                  alt={`Partner ${index + 1}`}
-                  className="hover:opacity-80 transition-opacity duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-        <SubscribeToNewsletter />
-      </section>
+      <PartnersList />
+      <ChatBot/>
     </div>
   );
 };

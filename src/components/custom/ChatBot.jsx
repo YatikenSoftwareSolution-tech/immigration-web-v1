@@ -13,17 +13,17 @@ const ChatBot = () => {
   return (
     <div>
       {/* Fixed Chat Button */}
-      <Button
+      {!isFormVisible && <Button
         onClick={toggleFormVisibility}
-        className="fixed bottom-14 left-6 bg-tertiary text-white px-8 py-4 rounded-full shadow-lg z-50 hover:bg-tertiary/90 transition-all"
+        className="fixed bottom-14 left-6 bg-tertiary text-white px-8 py-4 rounded-full shadow-lg z-50 hover:bg-secondary/90 transition-all"
       >
         Ask AI
-      </Button>
+      </Button>}
 
       {/* Chat Form Modal */}
       {isFormVisible && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-60 flex justify-start items-end mb-16 z-40">
-          <div className="bg-white w-80 sm:w-96 rounded-lg h-full shadow-lg px-6 py-6 flex flex-col justify-between ml-6  h-[70%]">
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-60 flex justify-start items-end mb-[3%] z-40">
+          <div className="bg-white w-80 sm:w-96 rounded-lg shadow-lg px-6 py-6 flex flex-col justify-between ml-6  h-[70%]">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-semibold text-[#333]">Chat with Bot</h2>
               <button

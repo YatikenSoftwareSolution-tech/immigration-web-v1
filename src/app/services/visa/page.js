@@ -72,7 +72,7 @@ const ImmigrationServicesPage = () => {
               Discover the steps to make Canada your new home with our expert
               guidance on PR requirements, eligibility, and pathways.
             </p>
-            <Button className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
+            <Button className="bg-tertiary text-white py-6 px-6 rounded-lg shadow-lg hover:bg-blue-700">
               Book a Consultation
             </Button>
           </div>
@@ -161,6 +161,7 @@ const ImmigrationServicesPage = () => {
           </div>
         </div>
       </section>
+      
       {/* <ChatBot/> */}
     </div>
   );

@@ -1,0 +1,11 @@
+.background-container {
+  background-image: url("../../assets/BlogBanner.svg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-top: 50px;
+  height: 50vh;
+}
+
+
+

@@ -1,6 +1,6 @@
 const ProgramCard = ({ program, index }) => {
   return (
-    <div className="flex flex-col item-center box-border cursor-pointer w-[25%] px-[3%] py-[4%] shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300 ease-in-out bg-white hover:border-b-4 hover:border-tertiary">
+    <div className="flex flex-col item-center box-border cursor-pointer w-[25%] px-[3%] py-[3%] shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300 ease-in-out bg-white hover:border-b-4 hover:border-tertiary">
       <div
         className="mb-5 p-2 flex justify-center -center text-xl font-bold rounded-full w-10 h-10 text-white"
         style={{ backgroundColor: program.background }}

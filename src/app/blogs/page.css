@@ -1,0 +1,32 @@
+.background-container {
+    position: relative;
+    margin-top: 50px;
+    width: fill;
+    height: 507px; 
+    background-image: url('../../assets/BlogBanner.svg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    opacity: 50%;
+    padding-bottom: 100px;
+  }
+  
+  .blog-heading h1 {
+    font-size: 96px;
+    color: #ffffff;
+    text-align: left; 
+  margin-left: 150px;
+    margin-top: 70px; 
+  }
+
+  .blog-cards {
+    margin-left: 100px;
+ border-radius: none !important;
+ margin-top:50px;
+ margin-bottom: 100px;
+  }
+  .no-border-radius {
+    border-radius: 0 !important; /* Completely removes the border radius */
+  }

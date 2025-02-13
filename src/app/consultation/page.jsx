@@ -3,8 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { gapi } from "gapi-script";
 
-const CLIENT_ID =
-  "744600285710-o88sor3fkikrqmsevadduasuu84q5pa0.apps.googleusercontent.com";
+const CLIENT_ID = "744600285710-o88sor3fkikrqmsevadduasuu84q5pa0.apps.googleusercontent.com";
 const API_KEY = "AIzaSyBAH07eHPiM6I97P3WCKhh3DpkkjK5ws-o";
 const SCOPES = "https://www.googleapis.com/auth/calendar";
 
@@ -72,7 +71,7 @@ const Page = () => {
     let endHour = 18;
     let currentTime = new Date();
 
-    for (let day = 0; day < 7; day++) {
+    for (let day = 0; day < 1; day++) {
       let date = new Date();
       date.setDate(currentTime.getDate() + day);
       for (let hour = startHour; hour < endHour; hour++) {
@@ -137,20 +136,20 @@ const Page = () => {
   return (
     <div className="mt-14 min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-50 to-pink-50">
       <div className="w-full max-w-4xl bg-white shadow-xl rounded-xl p-8">
-        <h1 className="text-xl font-semibold text-center mb-6">
-          Book a Mentorship Session
+        <h1 className="text-xl text-tertiary font-semibold mb-6">
+          Book a Mentorship Session with our expert conselors
         </h1>
         <button
           onClick={signIn}
-          className="mb-4 px-6 py-2 bg-blue-500 text-white rounded-lg shadow"
+          className="mb-4 text-sm bg-secondary text-white px-6 py-2 bg-blue-500 text-white rounded-lg shadow"
         >
           Sign in with Google
         </button>
 
         {/* Slot Duration Selection */}
-        <div className="flex justify-center mb-4">
+        <div className="flex gap-2 mb-4">
           <button
-            className={`px-4 py-2 mr-2 rounded-lg ${
+            className={`px-8 py-4 text-semibold mr-2 rounded-lg ${
               slotDuration === 10 ? "bg-blue-500 text-white" : "bg-gray-200"
             }`}
             onClick={() => {
@@ -158,10 +157,10 @@ const Page = () => {
               fetchAvailableSlots();
             }}
           >
-            10 Min
+            10 Min Free Meeting
           </button>
           <button
-            className={`px-4 py-2 rounded-lg ${
+            className={`px-4 py-2 rounded-lg  ${
               slotDuration === 30 ? "bg-blue-500 text-white" : "bg-gray-200"
             }`}
             onClick={() => {
@@ -169,7 +168,7 @@ const Page = () => {
               fetchAvailableSlots();
             }}
           >
-            30 Min
+            30 Min Paid Meeting
           </button>
         </div>
 

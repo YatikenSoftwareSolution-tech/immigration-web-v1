@@ -29,14 +29,16 @@ import { Input } from "@/components/ui/input";
 import ChatBot from "@/components/custom/ChatBot";
 import PartnersList from "@/components/custom/PartnersList";
 import { use } from "react";
-import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation";
 
 const ImmigrationPage = () => {
-  const router=useRouter()
+  const router = useRouter();
   const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
-  const calculateCrs =()=>{
-router.push("https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score.html#calculator")
-  }
+  const calculateCrs = () => {
+    router.push(
+      "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score.html#calculator"
+    );
+  };
   const p3Program = [
     {
       background: "orange",
@@ -117,44 +119,40 @@ router.push("https://www.canada.ca/en/immigration-refugees-citizenship/services/
     <div>
       <section
         id="immigration"
-        className="pt-24 px-10 mx-auto relative w-full md:h-[85vh] lg:h-[90vh] flex flex-col items-center"
-        
+        className="pt-24 pb-8 px-16 relative w-full md:h-[85vh] lg:h-[90vh] flex flex-col justify-between"
       >
-        {/* < className ="flex w-full gap-10 items-center"> */}
-        <section className="w-full h-[95vh] px-10 mx-auto flex flex-col">
-
-            <h1 className="  text-4xl md:text-5xl font-bold">
-              Immigration Visa Consulting
-            </h1>
-            <p className="mt-3 ml-2 font-semibold text-tertiary">
-              Best Immigration Consultants in Edmonton
-            </p>
-        <ul className="mt-10 ml-4 text-left">
-              <li className="flex items-center font-semibold text-dark">
-                <span className="flex items-center justify-center bg-gray-400 rounded-full p-2 ">
-                  <Check className="text-tertiary" />
-                </span>
-                Expert Legal Support
-              </li>
-              <li className="flex items-center font-semibold text-dark">
-                <span className="flex items-center justify-center bg-gray-400 rounded-full p-2 ">
-                  <Check className="text-tertiary" />
-                </span>{" "}
-                Meeting Your Unique Needs
-              </li>
-              <li className="flex items-center font-semibold text-dark">
-                <span className="flex items-center justify-center bg-gray-400 rounded-full p-2">
-                  <Check className="text-tertiary font-bold text-xl" />
-                </span>{" "}
-                Tailored Immigration Solutions
-              </li>
-            </ul>
-          
-            
-          <header className="text-start mb-16 mt-8">
-          <h1 className="text-4xl font-bold mb-4">Your Immigration Journey Starts Here</h1>
-          <p className="text-lg text-gray-600">Follow these simple steps to begin your immigration process</p>
-        </header>
+        <div>
+          <h1 className="  text-2xl md:text-5xl font-bold">
+            Immigration Visa Consulting
+          </h1>
+          <p className="mt-2 ml-2 font-semibold text-secondary ">
+            Best Immigration Consultants in Edmonton
+          </p>
+          <ul className="flex justify-between mt-10 ml-4 text-left">
+            <li className="flex items-center font-semibold text-dark shadow-lg rounded-lg px-6 py-2">
+              <span className="flex items-center justify-center bg-gray-400 rounded-full p-2 ">
+                <Check className="text-tertiary" />
+              </span>
+              Expert Legal Support
+            </li>
+            <li className="flex items-center font-semibold text-dark shadow-lg rounded-lg px-6 py-2">
+              <span className="flex items-center justify-center bg-gray-400 rounded-full p-2 ">
+                <Check className="text-tertiary" />
+              </span>{" "}
+              Meeting Your Unique Needs
+            </li>
+            <li className="flex items-center font-semibold text-dark shadow-lg rounded-lg px-6 py-2">
+              <span className="flex items-center justify-center bg-gray-400 rounded-full p-2">
+                <Check className="text-tertiary font-bold text-xl" />
+              </span>{" "}
+              Tailored Immigration Solutions
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-xl mb-10 ml-3 text-tertiary font-semibold">
+            Follow 3 simple steps to get started with your immigration journey
+          </h2>
           <div className="relative">
             {/* Horizontal line */}
             <div className="absolute top-1/2 left-0 w-full h-0.5 bg-black "></div>
@@ -162,60 +160,74 @@ router.push("https://www.canada.ca/en/immigration-refugees-citizenship/services/
             <div className="relative flex justify-between items-start">
               {/* Step 1 */}
               <div className="relative flex flex-col items-center w-1/3 px-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold mb-8 z-10">1</div>
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold  z-10">
+                  1
+                </div>
                 <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full">
                   <div className="flex flex-col items-center">
                     {/* <Calculator className="h-8 w-8 text-indigo-600 mb-4" /> */}
-                    <h3 className="text-xl font-semibold text-black mb-2 text-center">Calculate CRS Score</h3>
-                    <p className="text-gray text-center mb-4">Determine your Comprehensive Ranking System score to understand your eligibility</p>
-                    <Button className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
-                    onClick={calculateCrs}>
-                    
-                Calculate Now 
-              </Button>
+                    <h3 className="text-xl font-semibold text-black mb-2 text-center">
+                      Calculate CRS Score
+                    </h3>
+                    <p className="text-gray text-center mb-4">
+                      Determine your Comprehensive Ranking System score to
+                      understand your eligibility
+                    </p>
+                    <Button
+                      className="px-4 py-4 rounded-full text-white bg-secondary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
+                      onClick={calculateCrs}
+                    >
+                      Calculate Now
+                    </Button>
                   </div>
                 </div>
               </div>
 
               {/* Step 2 */}
               <div className="relative flex flex-col items-center w-1/3 px-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold mb-8 z-10">2</div>
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold z-10">
+                  2
+                </div>
                 <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full">
                   <div className="flex flex-col items-center">
-                   
-                    <h3 className="text-xl font-semibold text-black mb-2 text-center">Fill Consultation Form</h3>
-                    <p className="text-gray text-center mb-4">Complete our detailed consultation form to help us understand your needs</p>
-                    <Button className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
-                    onClick={()=> setIsConsultationFormOpen(true)}>
-                Start Form
-              </Button>
+                    <h3 className="text-xl font-semibold text-black mb-2 text-center">
+                      Fill Consultation Form
+                    </h3>
+                    <p className="text-gray text-center mb-4">
+                      Complete our detailed consultation form to help us
+                      understand your needs
+                    </p>
+                    <Button
+                      className="px-4 py-4 rounded-full text-white bg-secondary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
+                      onClick={() => setIsConsultationFormOpen(true)}
+                    >
+                      Start Form
+                    </Button>
                   </div>
                 </div>
               </div>
 
               {/* Step 3 */}
               <div className="relative flex flex-col items-center w-1/3 px-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold mb-8 z-10">3</div>
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold z-10">
+                  3
+                </div>
                 <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full">
                   <div className="flex flex-col items-center">
-                  
-                    <h3 className="text-xl font-semibold text-black mb-2 text-center">Book Consultation</h3>
-                    <p className="text-gray text-center mb-4">Schedule a personalized consultation with our immigration experts</p>
-                    <Button className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90">
-                Book Now 
-              </Button>
+                    <h3 className="text-xl font-semibold text-black mb-2 text-center">
+                      Book Consultation
+                    </h3>
+                    <p className="text-gray text-center mb-4">
+                      Schedule a personalized consultation with our immigration
+                      experts
+                    </p>
+                    <Button className="px-4 py-4 rounded-full text-white bg-secondary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90">
+                      Book Now
+                    </Button>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          
-    
-    </section>
-
-          <div className="max-w-4xl mx-auto">
-          <div className="relative">
-           
           </div>
         </div>
       </section>
@@ -328,7 +340,6 @@ router.push("https://www.canada.ca/en/immigration-refugees-citizenship/services/
       </section>
       <PartnersList />
       <Link href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score.html">
-        {/* <ExpressEntryPointsButton /> */}
       </Link>
       <ConsultationForm
         isOpen={isConsultationFormOpen}

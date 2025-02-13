@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import { gapi } from "gapi-script";
 
-const CLIENT_ID = "citizenev-prod@beta-testers-gcp.iam.gserviceaccount.com";
+const CLIENT_ID = "744600285710-o88sor3fkikrqmsevadduasuu84q5pa0.apps.googleusercontent.com";
 const API_KEY = "AIzaSyBAH07eHPiM6I97P3WCKhh3DpkkjK5ws-o";
 const SCOPES = "https://www.googleapis.com/auth/calendar.events";
 

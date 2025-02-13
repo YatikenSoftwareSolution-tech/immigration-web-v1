@@ -1,0 +1,122 @@
+[
+  {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "phone": "1234567890",
+    "status": "Active"
+  },
+  {
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "phone": "2345678901",
+    "status": "Active"
+  },
+  {
+    "name": "Mike Johnson",
+    "email": "mike.j@example.com",
+    "phone": "3456789012",
+    "status": "Inactive"
+  },
+  {
+    "name": "Sarah Wilson",
+    "email": "sarah.w@example.com",
+    "phone": "4567890123",
+    "status": "Active"
+  },
+  {
+    "name": "Tom Brown",
+    "email": "tom.b@example.com",
+    "phone": "5678901234",
+    "status": "Active"
+  },
+  {
+    "name": "Emily Johnson",
+    "email": "emily.j@example.com",
+    "phone": "6789012345",
+    "status": "Active"
+  },
+  {
+    "name": "David Wang",
+    "email": "david.wang@example.com",
+    "phone": "7890123456",
+    "status": "On Leave"
+  },
+  {
+    "name": "Maria Garcia",
+    "email": "maria.g@example.com",
+    "phone": "8901234567",
+    "status": "Active"
+  },
+  {
+    "name": "James Wilson",
+    "email": "james.w@example.com",
+    "phone": "9012345678",
+    "status": "Probation"
+  },
+  {
+    "name": "Linda Johnson",
+    "email": "linda.j@example.com",
+    "phone": "0123456789",
+    "status": "Active"
+  },
+  {
+    "name": "Robert Smith",
+    "email": "robert.s@example.com",
+    "phone": "1122334455",
+    "status": "Inactive"
+  },
+  {
+    "name": "Patricia Brown",
+    "email": "pat.brown@example.com",
+    "phone": "2233445566",
+    "status": "Active"
+  },
+  {
+    "name": "John Smith",
+    "email": "john.smith@example.com",
+    "phone": "3344556677",
+    "status": "Suspended"
+  },
+  {
+    "name": "Elizabeth Lee",
+    "email": "elizabeth@example.com",
+    "phone": "4455667788",
+    "status": "Active"
+  },
+  {
+    "name": "Michael Brown",
+    "email": "michael.b@example.com",
+    "phone": "5566778899",
+    "status": "Active"
+  },
+  {
+    "name": "Jennifer Wilson",
+    "email": "jen.w@example.com",
+    "phone": "6677889900",
+    "status": "On Leave"
+  },
+  {
+    "name": "William Johnson",
+    "email": "will.j@example.com",
+    "phone": "7788990011",
+    "status": "Active"
+  },
+  {
+    "name": "Lisa Anderson",
+    "email": "lisa.a@example.com",
+    "phone": "8899001122",
+    "status": "Probation"
+  },
+  {
+    "name": "Richard Davis",
+    "email": "richard.d@example.com",
+    "phone": "9900112233",
+    "status": "Active"
+  },
+  {
+    "name": "Susan Martinez",
+    "email": "susan.m@example.com",
+    "phone": "0011223344",
+    "status": "Active"
+  }
+]

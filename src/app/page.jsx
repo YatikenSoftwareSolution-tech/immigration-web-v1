@@ -137,11 +137,12 @@ const ImmigrationPage = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/90 to-blue-600/90" />
         </div>
-
+        hai
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6">
-              Immigration Visa <span className="text-secondary ">Consulting</span>
+              Immigration Visa{" "}
+              <span className="text-secondary ">Consulting</span>
             </h1>
             <p className="text-xl text-blue-100 mb-8">
               Your Trusted Immigration Consultants in Edmonton
@@ -156,86 +157,85 @@ const ImmigrationPage = () => {
             </div>
           </div>
           <div className="relative">
-          {/* Horizontal line */}
-          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-blue-100 "></div>
-          <div className="relative flex justify-between items-start">
-            {/* step1 */}
-            <div className="relative flex flex-col items-center w-1/3 px-4">
-            <div className="flex items-center justify-center w-20 h-12 rounded-md bg-blue-100 text-red-500 font-bold mb-8 z-10">
-                Step 1
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full">
-                <div className="flex flex-col items-center">
-                  <h3 className="text-xl font-semibold text-black mb-2 text-center">
-                    Calculate CRS Score
-                  </h3>
-                  <p className="text-gray text-center mb-4">
-                    Determine your Comprehensive Ranking System score to
-                    understand your eligibility
-                  </p>
-                  <Button
-                    className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
-                    onClick={calculateCrs}
-                  >
-                    Calculate Now
-                  </Button>
+            {/* Horizontal line */}
+            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-blue-100 "></div>
+            <div className="relative flex justify-between items-start">
+              {/* step1 */}
+              <div className="relative flex flex-col items-center w-1/3 px-4">
+                <div className="flex items-center justify-center w-20 h-12 rounded-md bg-blue-100 text-red-500 font-bold mb-8 z-10">
+                  Step 1
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full">
+                  <div className="flex flex-col items-center">
+                    <h3 className="text-xl font-semibold text-black mb-2 text-center">
+                      Calculate CRS Score
+                    </h3>
+                    <p className="text-gray text-center mb-4">
+                      Determine your Comprehensive Ranking System score to
+                      understand your eligibility
+                    </p>
+                    <Button
+                      className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
+                      onClick={calculateCrs}
+                    >
+                      Calculate Now
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
-            {/* step2 */}
-            <div className="relative flex flex-col items-center w-1/3 px-4">
-              <div className="flex items-center justify-center w-20 h-12 rounded-md bg-blue-100 text-red-500 font-bold mb-8 z-10">
-                Step 2
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full">
-                <div className="flex flex-col items-center">
-                  <h3 className="text-xl font-semibold text-black mb-2 text-center">
-                    Fill Consultation Form
-                  </h3>
-                  <p className="text-gray text-center mb-4">
-                    Complete our detailed consultation form to help us
-                    understand your needs
-                  </p>
-                  <Button
-                    className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
-                    onClick={() => setIsConsultationFormOpen(true)}
-                  >
-                    Start Form
-                  </Button>
+              {/* step2 */}
+              <div className="relative flex flex-col items-center w-1/3 px-4">
+                <div className="flex items-center justify-center w-20 h-12 rounded-md bg-blue-100 text-red-500 font-bold mb-8 z-10">
+                  Step 2
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full">
+                  <div className="flex flex-col items-center">
+                    <h3 className="text-xl font-semibold text-black mb-2 text-center">
+                      Fill Consultation Form
+                    </h3>
+                    <p className="text-gray text-center mb-4">
+                      Complete our detailed consultation form to help us
+                      understand your needs
+                    </p>
+                    <Button
+                      className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
+                      onClick={() => setIsConsultationFormOpen(true)}
+                    >
+                      Start Form
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
-            {/* step3 */}
-            <div className="relative flex flex-col items-center w-1/3 px-4">
-            <div className="flex items-center justify-center w-20 h-12 rounded-md bg-blue-100 text-red-500 font-bold mb-8 z-10">
-                Step 3
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full">
-                <div className="flex flex-col items-center">
-                  <h3 className="text-xl font-semibold text-black mb-2 text-center">
-                    Book Consultation
-                  </h3>
-                  <p className="text-gray text-center mb-4">
-                    Schedule a personalized consultation with our immigration
-                    experts
-                  </p>
-                  <Button className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90">
-                    Book Now
-                  </Button>
+              {/* step3 */}
+              <div className="relative flex flex-col items-center w-1/3 px-4">
+                <div className="flex items-center justify-center w-20 h-12 rounded-md bg-blue-100 text-red-500 font-bold mb-8 z-10">
+                  Step 3
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full">
+                  <div className="flex flex-col items-center">
+                    <h3 className="text-xl font-semibold text-black mb-2 text-center">
+                      Book Consultation
+                    </h3>
+                    <p className="text-gray text-center mb-4">
+                      Schedule a personalized consultation with our immigration
+                      experts
+                    </p>
+                    <Button className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90">
+                      Book Now
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-</div>
-</div>
-
-       
+        </div>
       </div>
       {/*journey section*/}
       <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 ">
         <div className="text-center mb-16 ">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Your Immigration Journey- <span className="text-secondary text-4xl">Starts Here</span>
+            Your Immigration Journey-{" "}
+            <span className="text-secondary text-4xl">Starts Here</span>
           </h2>
           <p className="text-lg text-gray-600">
             Follow these simple steps to begin your immigration process

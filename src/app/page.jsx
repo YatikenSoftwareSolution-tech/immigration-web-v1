@@ -160,17 +160,15 @@ const ImmigrationPage = () => {
           </ul>
         </div>
         <div>
-          <h2 className="text-xl mb-10 ml-3 text-tertiary font-semibold">
-            Follow 3 simple steps to get started with your immigration journey
-          </h2>
+          
           <div className="relative">
             {/* Horizontal line */}
             <div className="absolute top-1/2 left-0 w-full h-0.5 bg-blue-100 "></div>
             <div className="relative flex justify-between items-start">
               {/* step1 */}
               <div className="relative flex flex-col items-center w-1/3 px-4">
-                <div className="flex items-center justify-center w-20 h-12 rounded-md bg-blue-100 text-red-500 font-bold mb-8 z-10">
-                  Step 1
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold z-10">
+                  1
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full">
                   <div className="flex flex-col items-center">
@@ -182,7 +180,7 @@ const ImmigrationPage = () => {
                       understand your eligibility
                     </p>
                     <Button
-                      className="px-4 py-4 rounded-full text-white bg-secondary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
+                      className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
                       onClick={calculateCrs}
                     >
                       Calculate Now
@@ -205,7 +203,7 @@ const ImmigrationPage = () => {
                       understand your needs
                     </p>
                     <Button
-                      className="px-4 py-4 rounded-full text-white bg-secondary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
+                      className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
                       onClick={() => setIsConsultationFormOpen(true)}
                     >
                       Start Form
@@ -227,7 +225,7 @@ const ImmigrationPage = () => {
                       Schedule a personalized consultation with our immigration
                       experts
                     </p>
-                    <Button className="px-4 py-4 rounded-full text-white bg-secondary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90">
+                    <Button onClick={() => alert("Please fill the form first")} className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90">
                       Book Now
                     </Button>
                   </div>
@@ -235,6 +233,7 @@ const ImmigrationPage = () => {
               </div>
             </div>
           </div>
+          <h2 className="text-center text-secondary font-bold  mt-4">You are just 3 steps away from your immigration journey</h2>
         </div>
       </section>
       <section
@@ -243,13 +242,10 @@ const ImmigrationPage = () => {
       >
         <div className="flex flex-col w-full px-[5%] py-[4%] ">
           <h1 className=" text-dark mb-[5%] text-4xl md:text-5xl font-bold text-center">
-            Our P-3 program for your <br />{" "}
-            <span className="text-secondary mt-1"> Visa Success</span>
+            Our <span className="text-secondary mt-1"> Special </span> programs <br />{" "}
           </h1>
           <div className="flex gap-10 justify-center item-center ">
-            {p3Program.map((item, index) => (
-              <ProgramCard key={index} index={index} program={item} />
-            ))}
+              <ProgramCard   />
           </div>
         </div>
       </section>

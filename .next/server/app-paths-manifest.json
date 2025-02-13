@@ -1,11 +1,4 @@
 {
   "/page": "app/page.js",
-  "/blogs/page": "app/blogs/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/about/page": "app/about/page.js",
-  "/countries/page": "app/countries/page.js",
-  "/contacts/page": "app/contacts/page.js",
-  "/faq/page": "app/faq/page.js",
-  "/services/visa/page": "app/services/visa/page.js",
-  "/consultation/page": "app/consultation/page.js"
+  "/about/page": "app/about/page.js"
 }

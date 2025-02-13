@@ -28,6 +28,16 @@ import SubscribeToNewsletter from "@/components/custom/SubscribeToNewsletter";
 import { Input } from "@/components/ui/input";
 import ChatBot from "@/components/custom/ChatBot";
 import PartnersList from "@/components/custom/PartnersList";
+import {
+  Globe2,
+  Users,
+  FileCheck,
+  Calendar,
+  ArrowRight,
+  Shield,
+  Target,
+  Briefcase,
+} from "lucide-react";
 import { use } from "react";
 import { useRouter } from "next/navigation";
 
@@ -155,17 +165,15 @@ const ImmigrationPage = () => {
           </h2>
           <div className="relative">
             {/* Horizontal line */}
-            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-black "></div>
-            {/* Timeline items */}
+            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-blue-100 "></div>
             <div className="relative flex justify-between items-start">
-              {/* Step 1 */}
+              {/* step1 */}
               <div className="relative flex flex-col items-center w-1/3 px-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold  z-10">
-                  1
+                <div className="flex items-center justify-center w-20 h-12 rounded-md bg-blue-100 text-red-500 font-bold mb-8 z-10">
+                  Step 1
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full">
                   <div className="flex flex-col items-center">
-                    {/* <Calculator className="h-8 w-8 text-indigo-600 mb-4" /> */}
                     <h3 className="text-xl font-semibold text-black mb-2 text-center">
                       Calculate CRS Score
                     </h3>
@@ -182,9 +190,8 @@ const ImmigrationPage = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Step 2 */}
-              <div className="relative flex flex-col items-center w-1/3 px-4">
+              {/* step2 */}
+              <div className="relative flex flex-col items-center w-1/3 px-4">  
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold z-10">
                   2
                 </div>
@@ -206,8 +213,7 @@ const ImmigrationPage = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Step 3 */}
+              {/* step3 */}
               <div className="relative flex flex-col items-center w-1/3 px-4">
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold z-10">
                   3
@@ -249,7 +255,7 @@ const ImmigrationPage = () => {
       </section>
       <section
         id="immigration"
-        className="py-14 px-10 mx-auto relative w-full md:h-[85vh] lg:h-[90vh] flex flex-col items-center"
+        className="py-14 px-10 mx-auto relative w-full md:h-[85vh] lg:h-[90vh] flex flex-col items-center  bg-gradient-to-r from-blue-50/90 to-red-50/90"
       >
         <div className="flex w-full item-center gap-[3%]">
           <div className=" ml-[10%] mt-[5%] ">

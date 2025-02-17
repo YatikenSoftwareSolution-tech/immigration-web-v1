@@ -6,8 +6,7 @@ import { gapi } from "gapi-script";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 
-const CLIENT_ID =
-  "744600285710-o88sor3fkikrqmsevadduasuu84q5pa0.apps.googleusercontent.com";
+const CLIENT_ID = "744600285710-o88sor3fkikrqmsevadduasuu84q5pa0.apps.googleusercontent.com";
 const API_KEY = "AIzaSyBAH07eHPiM6I97P3WCKhh3DpkkjK5ws-o";
 const SCOPES = "https://www.googleapis.com/auth/calendar";
 
@@ -140,16 +139,24 @@ const Page = () => {
   };
 
   return (
+
     <div className="mt-14 min-h-screen flex flex-col items-center justify-center bg-gray-100">
       <div className="w-[50%] max-w-4xl bg-white shadow-xl rounded-xl p-8 text-center">
         <h1 className="text-2xl font-bold text-center mb-6">Book a Session</h1>
 
+
+    <div className="mt-14 min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-50 to-pink-50">
+      <div className="w-full max-w-4xl bg-white shadow-xl rounded-xl p-8">
+        <h1 className="text-xl text-tertiary font-semibold mb-6">
+          Book a Mentorship Session with our expert conselors
+        </h1>
         <button
           onClick={signIn}
-          className="mb-4 px-6 py-2 bg-blue-500 text-white text-center rounded-lg shadow hover:bg-blue-600"
+          className="mb-4 text-sm bg-secondary text-white px-6 py-2 bg-blue-500 text-white rounded-lg shadow"
         >
           <span className="text-xl font-bold">G</span> Sign in with Google
         </button>
+
         <div className="flex justify-center mb-4">
           <Tabs
             className="bg-gray p-2 rounded-lg"
@@ -179,6 +186,36 @@ const Page = () => {
 
         {/* Calendar Grid Display */}
         <div className="grid grid-cols-6 gap-4 p-4 bg-gray-50 rounded-lg">
+
+
+        {/* Slot Duration Selection */}
+        <div className="flex gap-2 mb-4">
+          <button
+            className={`px-8 py-4 text-semibold mr-2 rounded-lg ${
+              slotDuration === 10 ? "bg-blue-500 text-white" : "bg-gray-200"
+            }`}
+            onClick={() => {
+              setSlotDuration(10);
+              fetchAvailableSlots();
+            }}
+          >
+            10 Min Free Meeting
+          </button>
+          <button
+            className={`px-4 py-2 rounded-lg  ${
+              slotDuration === 30 ? "bg-blue-500 text-white" : "bg-gray-200"
+            }`}
+            onClick={() => {
+              setSlotDuration(30);
+              fetchAvailableSlots();
+            }}
+          >
+            30 Min Paid Meeting
+          </button>
+        </div>
+
+        {/* Calendar Grid Display */}
+        {slotDuration === 10 &&<div className="grid grid-cols-4 gap-4 p-4 bg-gray-50 rounded-lg">
           {slots.map((slot, index) => (
             <div
               key={index}
@@ -198,8 +235,8 @@ const Page = () => {
               </span>
             </div>
           ))}
-        </div>
-        {selectedSlot && (
+        </div>}
+        {slotDuration === 10 && selectedSlot && (
           <button
             onClick={createEvent}
             className="mt-4 px-6 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
@@ -207,7 +244,13 @@ const Page = () => {
             Confirm Booking
           </button>
         )}
+        {slotDuration === 30 && <div>
+          
+          </div>}
       </div>
+    </div>
+    </div>
+    </div>
     </div>
   );
 };

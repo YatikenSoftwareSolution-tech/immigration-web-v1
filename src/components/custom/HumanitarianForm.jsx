@@ -5,7 +5,7 @@ import * as z from "zod";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useRouter } from "next/navigation";
- 
+
 const detailsSchema = z.object({
   name: z.string().min(3).max(50).optional(),
   email: z.string().email().optional(),
@@ -69,7 +69,7 @@ const detailsSchema = z.object({
   medicalSafetyConcerns: z.enum(["yes", "no"]).optional(),
   medicalSafetyConcernsReason: z.string().optional(),
 });
- 
+
 const MultiStepForm = ({setResult, setStatus}) => {
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -77,9 +77,13 @@ const MultiStepForm = ({setResult, setStatus}) => {
     resolver: zodResolver(detailsSchema),
     defaultValues: {},
   });
+
  
   const router = useRouter();
  
+
+
+
   const onSubmit = async () => {
     setLoading(true);
     const body = watch();
@@ -126,6 +130,7 @@ const MultiStepForm = ({setResult, setStatus}) => {
         const response = await fetch("https://2htjqsz5-8080.inc1.devtunnels.ms/analyze", {method: 'POST',headers: {
             'Content-Type': 'application/json'
  
+
           }, userDetails: [newBody]});
         const data = await response.json();
         console.log(data.response);
@@ -140,7 +145,8 @@ const MultiStepForm = ({setResult, setStatus}) => {
         setLoading(false);
     }
   };
- 
+
+
   return (
     <Card className=" border-none">
       <CardHeader>
@@ -229,7 +235,8 @@ const MultiStepForm = ({setResult, setStatus}) => {
               </div>
             </div>
           )}
- 
+
+
           {step === 2 && (
             <div className="flex flex-wrap gap-6">
               <Input
@@ -289,7 +296,9 @@ const MultiStepForm = ({setResult, setStatus}) => {
               </div>
             </div>
           )}
+
  
+
           {step === 3 && (
             <div className="flex flex-wrap gap-6">
               <Input
@@ -404,6 +413,8 @@ const MultiStepForm = ({setResult, setStatus}) => {
                 </select>
               </div>
  
+
+
               <div>
                 <label>If yes, provide details (date, application type, status, etc.):</label>
                 <Input
@@ -416,6 +427,8 @@ const MultiStepForm = ({setResult, setStatus}) => {
               <div className="flex flex-col">
                 <label className="m-0 text-sm ">
                 Do you have a removal order against you?
+
+         
                 </label>
                 <select
                   {...register("removalOrder")}
@@ -427,7 +440,7 @@ const MultiStepForm = ({setResult, setStatus}) => {
               </div>
               <div className="flex flex-col">
                 <label className="m-0 text-sm ">
-                Have you ever been refused a visa, work/study permit, or permanent residency in Canada?
+                Have you ever been refused a visa, work/study permit, or permanent residency in Canada? 
                 </label>
                 <select
                   {...register("refusedVisa")}
@@ -447,7 +460,9 @@ const MultiStepForm = ({setResult, setStatus}) => {
               </div>
               <div className="flex flex-col">
                 <label className="m-0 text-sm ">
-                Do you have family members who are Canadian citizens or permanent residents?
+
+                Do you have family members who are Canadian citizens or permanent residents? 
+
                 </label>
                 <select
                   {...register("familyMemberCitizen")}
@@ -508,7 +523,7 @@ const MultiStepForm = ({setResult, setStatus}) => {
                   type="textarea"
                 />
               </div>
- 
+
               <div>
                 <label> Provide details on your establishment in Canada (e.g., job, education, community ties, volunteer work):
                 </label>
@@ -519,9 +534,12 @@ const MultiStepForm = ({setResult, setStatus}) => {
                 />
               </div>
              
+            
+
+              
               <div className="flex flex-col">
                 <label className="m-0 text-sm ">
-                Do you have any children in Canada?
+                Do you have any children in Canada? 
                 </label>
                 <select
                   {...register("childrenInCanada")}
@@ -583,17 +601,23 @@ const MultiStepForm = ({setResult, setStatus}) => {
   );
 };
 const HumanitarianForm = ({ isOpen, onClose }) => {
+
  
     const [result, setResult] = useState(null);
     const [status, setStatus] = useState(false);
     const router  = useRouter();
  
+
+
+
+
     useEffect(()=>{
         if(status){
             router.push("/consultation");
         }
     }, [status])
- 
+
+
   return (
     <>
       {isOpen && (
@@ -607,7 +631,7 @@ const HumanitarianForm = ({ isOpen, onClose }) => {
                 <Card>
                     <CardHeader>
                         <CardTitle>Sorry! We can not move forward with your profile for Humanitarien consideration</CardTitle>
-                       
+
                     </CardHeader>
                 </Card>
                 </div>}
@@ -617,5 +641,8 @@ const HumanitarianForm = ({ isOpen, onClose }) => {
     </>
   );
 };
+
  
 export default HumanitarianForm;
+
+

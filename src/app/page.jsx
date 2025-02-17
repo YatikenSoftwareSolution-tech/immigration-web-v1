@@ -1,5 +1,5 @@
 "use client";
- 
+
 import StripOutButton from "@/components/custom/ConsultationFormButton";
 import Image from "next/image";
 import LandingPageBanner1 from "../assets/LandingPageBanner1.jpg";
@@ -11,7 +11,7 @@ import VT3 from "../assets/VT3.svg";
 import VT4 from "../assets/VT4.svg";
 import VT5 from "../assets/VT5.svg";
 import SubscribeNowBanner from "../assets/SubscribeNowBanner.png";
- 
+
 import SubscribeIcon from "../assets/SubscribeIcon.png";
 import { Sidebar } from "@/components/ui/sidebar";
 import { useAppContext } from "../contexts/AppContext";
@@ -40,7 +40,7 @@ import {
 } from "lucide-react";
 import { use } from "react";
 import { useRouter } from "next/navigation";
- 
+
 const ImmigrationPage = () => {
   const router = useRouter();
   const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
@@ -127,188 +127,134 @@ const ImmigrationPage = () => {
   ];
   return (
     <div>
-      <section
-        id="immigration"
-        className="pt-24 pb-8 px-16 relative w-full md:h-[85vh] lg:h-[90vh] flex flex-col justify-between"
-      >
-        <div>
-          <h1 className="  text-2xl md:text-5xl font-bold">
-            Immigration Visa Consulting
-          </h1>
-          <p className="mt-2 ml-2 font-semibold text-secondary ">
-            Best Immigration Consultants in Edmonton
-          </p>
-          <ul className="flex justify-between mt-10 ml-4 text-left">
-            <li className="flex items-center font-semibold text-dark shadow-lg rounded-lg px-6 py-2">
-              <span className="flex items-center justify-center bg-gray-400 rounded-full p-2 ">
-                <Check className="text-tertiary" />
-              </span>
-              Expert Legal Support
-            </li>
-            <li className="flex items-center font-semibold text-dark shadow-lg rounded-lg px-6 py-2">
-              <span className="flex items-center justify-center bg-gray-400 rounded-full p-2 ">
-                <Check className="text-tertiary" />
-              </span>{" "}
-              Meeting Your Unique Needs
-            </li>
-            <li className="flex items-center font-semibold text-dark shadow-lg rounded-lg px-6 py-2">
-              <span className="flex items-center justify-center bg-gray-400 rounded-full p-2">
-                <Check className="text-tertiary font-bold text-xl" />
-              </span>{" "}
-              Tailored Immigration Solutions
-            </li>
-          </ul>
+      <div className="min-h-screen bg-white text-black mt-10">
+        {/* Hero Section */}
+        <div
+          className="h-[65vh] bg-cover bg-center relative opacity-75"
+          style={{
+            backgroundImage:
+              ' url("https://images.unsplash.com/photo-1526495124232-a04e1849168c?auto=format&fit=crop&q=80")',
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70">
+            <div className="container mx-auto px-4 h-[65%] flex flex-col justify-center">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
+                Immigration <span className="text-red-600">Visa</span>{" "}
+                Consulting
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 max-w-2xl text-gray-300 text-white">
+                Your trusted partner for expert immigration services in
+                Edmonton. We make your dreams of global mobility a reality.
+              </p>
+              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-md inline-flex items-center gap-2 w-fit transition-all">
+                Get Started
+                <ArrowRight size={20} />
+              </button>
+            </div>
+          </div>
         </div>
-        <div>
-         
-          <div className="relative">
-            {/* Horizontal line */}
-            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-blue-100 "></div>
-            <div className="relative flex justify-between items-start">
-              {/* step1 */}
-              <div className="relative flex flex-col items-center w-1/3 px-4">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold z-10">
-                  1
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full">
-                  <div className="flex flex-col items-center">
-                    <h3 className="text-xl font-semibold text-black mb-2 text-center">
-                      Calculate CRS Score
-                    </h3>
-                    <p className="text-gray text-center mb-4">
-                      Determine your Comprehensive Ranking System score to
-                      understand your eligibility
-                    </p>
-                    <Button
-                      className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
-                      onClick={calculateCrs}
-                    >
-                      Calculate Now
-                    </Button>
-                  </div>
+      </div>
+      <div>
+        <div className="relative -mt-60">
+          {/* Horizontal line */}
+          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-blue-100 "></div>
+
+          <div className="relative flex justify-between items-start">
+            {/* step1 */}
+
+            <div className="relative flex flex-col items-center w-1/3 px-4">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold z-10 mb-4">
+                1
+              </div>
+              <div className="bg-white p-6 rounded-lg border border-red-600/20 hover:border-red-600 transition-all">
+                <div className="flex flex-col items-center ">
+                  <h3 className="text-xl font-semibold text-black mb-2 text-center">
+                    Calculate CRS Score
+                  </h3>
+                  <p className="text-gray text-center mb-4">
+                    Determine your Comprehensive Ranking System score to
+                    understand your eligibility
+                  </p>
+                  <Button
+                    className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
+                    onClick={calculateCrs}
+                  >
+                    Calculate Now
+                  </Button>
                 </div>
               </div>
-              {/* step2 */}
-              <div className="relative flex flex-col items-center w-1/3 px-4">  
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold z-10">
-                  2
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full">
-                  <div className="flex flex-col items-center">
-                    <h3 className="text-xl font-semibold text-black mb-2 text-center">
-                      Fill Consultation Form
-                    </h3>
-                    <p className="text-gray text-center mb-4">
-                      Complete our detailed consultation form to help us
-                      understand your needs
-                    </p>
-                    <Button
-                      className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
-                      onClick={() => setIsConsultationFormOpen(true)}
-                    >
-                      Start Form
-                    </Button>
-                  </div>
+            </div>
+            {/* step2 */}
+            <div className="relative flex flex-col items-center w-1/3 px-4">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold z-10 mb-4">
+                2
+              </div>
+              <div className="bg-white p-6 rounded-lg border border-red-600/20 hover:border-red-600 transition-all">
+                <div className="flex flex-col items-center">
+                  <h3 className="text-xl font-semibold text-black mb-2 text-center">
+                    Fill Consultation Form
+                  </h3>
+                  <p className="text-gray text-center mb-4">
+                    Complete our detailed consultation form to help us
+                    understand your needs
+                  </p>
+                  <Button
+                    className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
+                    onClick={() => setIsConsultationFormOpen(true)}
+                  >
+                    Start Form
+                  </Button>
                 </div>
               </div>
-              {/* step3 */}
-              <div className="relative flex flex-col items-center w-1/3 px-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold z-10">
-                  3
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full">
-                  <div className="flex flex-col items-center">
-                    <h3 className="text-xl font-semibold text-black mb-2 text-center">
-                      Book Consultation
-                    </h3>
-                    <p className="text-gray text-center mb-4">
-                      Schedule a personalized consultation with our immigration
-                      experts
-                    </p>
-                    <Button onClick={() => alert("Please fill the form first")} className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90">
-                      Book Now
-                    </Button>
-                  </div>
+            </div>
+            {/* step3 */}
+            <div className="relative flex flex-col items-center w-1/3 px-4">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold z-10 mb-4">
+                3
+              </div>
+              <div className="bg-white p-6 rounded-lg border border-red-600/20 hover:border-red-600 transition-all">
+                <div className="flex flex-col items-center">
+                  <h3 className="text-xl font-semibold text-black mb-2 text-center">
+                    Book Consultation
+                  </h3>
+                  <p className="text-gray text-center mb-4">
+                    Schedule a personalized consultation with our immigration
+                    experts
+                  </p>
+                  <Button
+                    onClick={() => alert("Please fill the form first")}
+                    className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
+                  >
+                    Book Now
+                  </Button>
                 </div>
               </div>
             </div>
           </div>
-          <h2 className="text-center text-secondary font-bold  mt-4">You are just 3 steps away from your immigration journey</h2>
         </div>
-      </section>
+        <h1 className=" mt-8 text-dark mb-[5%] text-lg md:text-xl font-bold text-center">
+          You are just <span className="text-secondary">3 Steps</span> away from
+          your<span className="text-secondary"> Immigration</span> Journey
+        </h1>
+      </div>
+      {/* </section> */}
       <section
         id="p3program"
         className="bg-gradient-to-r from-red-50 to-blue-50 w-full md:h-[85vh] lg:h-[90vh] "
       >
-        <div className="flex flex-col w-full px-[5%] py-[4%] ">
+        <div className="flex flex-col w-full px-[4%] py-[1%] ">
           <h1 className=" text-dark mb-[5%] text-4xl md:text-5xl font-bold text-center">
-            Our <span className="text-secondary mt-1"> Special </span> programs <br />{" "}
+            Our <span className="text-secondary mt-1"> Special </span> programs{" "}
+            <br />{" "}
           </h1>
           <div className="flex gap-10 justify-center item-center ">
-              <ProgramCard   />
+            <ProgramCard />
+            <ProgramCard />
+            <ProgramCard />
           </div>
         </div>
       </section>
-      <section
-        id="immigration"
-        className="py-14 px-10 mx-auto relative w-full md:h-[85vh] lg:h-[90vh] flex flex-col items-center  bg-gradient-to-r from-blue-50/90 to-red-50/90"
-      >
-        <div className="flex w-full item-center gap-[3%]">
-          <div className=" ml-[10%] mt-[5%] ">
-            <h1 className="  text-4xl md:text-5xl font-bold">
-              How it helps- <span className="text-secondary">The P3</span>
-            </h1>
-            <p className="mt-3 ml-2 font-semibold text-tertiary">
-              Best Immigration Consultants in Edmonton
-            </p>
- 
-            <ul className="mt-10 ml-4 text-left">
-              <li className="flex items-center font-semibold text-dark">
-                <span className="flex items-center justify-center bg-gray-400 rounded-full p-2 ">
-                  <Check className="text-tertiary" />
-                </span>
-                International students that hold valid study permits on December
-                31st, 2022- 807,750.
-              </li>
-              <li className="flex items-center font-semibold text-dark">
-                <span className="flex items-center justify-center bg-gray-400 rounded-full p-2 ">
-                  <Check className="text-tertiary" />
-                </span>{" "}
-                The number of TFWs on December 31, 2021-777,000
-              </li>
-              <li className="flex items-center font-semibold text-dark">
-                <span className="flex items-center justify-center bg-gray-400 rounded-full p-2">
-                  <Check className="text-tertiary font-bold text-xl" />
-                </span>{" "}
-                Canada’s target for Economic Immigration Class for Year
-                2023-266,210
-              </li>
-              <li className="flex items-center font-semibold text-dark">
-                <span className="flex items-center justify-center bg-gray-400 rounded-full p-2">
-                  <Check className="text-tertiary font-bold text-xl" />
-                </span>{" "}
-                CRS score in the Express Entry pool as of February 15, 2023
-              </li>
-            </ul>
- 
-            <div className="flex items-center mt-20 gap-4 sm:gap-6 md:gap-8">
-              <Button className="w-[150px] md:w-[180px] text-white bg-tertiary p-4 md:p-7 rounded-lg text-md md:text-lg shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90">
-                <Link href="/consultation">Book Consultation</Link>
-              </Button>
-              <Button className="w-[150px] text-white md:w-[180px] bg-dark p-4 md:p-7 rounded-lg text-md md:text-lg shadow-md transition-transform duration-200 hover:scale-105 hover:bg-dark/90">
-                <Link href="/about">Learn More</Link>
-              </Button>
-            </div>
-          </div>
-          <Image
-            src={LandingPageBanner2}
-            alt="Banner"
-            width={500}
-            height={500}
-            className="rounded-lg shadow-lg"
-          />
-        </div>
-      </section>
+      
       <section
         id="p3program"
         className="bg-gradient-to-r from-red-50 to-blue-50 w-full"
@@ -341,8 +287,7 @@ const ImmigrationPage = () => {
         </div>
       </section>
       <PartnersList />
-      <Link href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score.html">
-      </Link>
+      <Link href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score.html"></Link>
       <ConsultationForm
         isOpen={isConsultationFormOpen}
         onClose={() => setIsConsultationFormOpen(false)}
@@ -351,5 +296,5 @@ const ImmigrationPage = () => {
     </div>
   );
 };
- 
+
 export default ImmigrationPage;

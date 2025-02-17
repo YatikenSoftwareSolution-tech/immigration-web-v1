@@ -124,7 +124,8 @@ const MultiStepForm = ({setResult, setStatus}) => {
     // router.push('/consultation');
     try{
         const response = await fetch("https://2htjqsz5-8080.inc1.devtunnels.ms/analyze", {method: 'POST',headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
+
           }, userDetails: [newBody]});
         const data = await response.json();
         console.log(data.response);
@@ -585,10 +586,14 @@ const HumanitarianForm = ({ isOpen, onClose }) => {
 
     const [result, setResult] = useState(null);
     const [status, setStatus] = useState(false);
+    const router  = useRouter();
 
     useEffect(()=>{
-        router.push("/consultation");
+        if(status){
+            router.push("/consultation");
+        }
     }, [status])
+
   return (
     <>
       {isOpen && (

@@ -384,7 +384,7 @@ const Page = () => {
         </div>
 
         {/* Calendar Grid Display */}
-        <div className="grid grid-cols-4 gap-4 p-4 bg-gray-50 rounded-lg">
+        {slotDuration === 10 &&<div className="grid grid-cols-4 gap-4 p-4 bg-gray-50 rounded-lg">
           {slots.map((slot, index) => (
             <div
               key={index}
@@ -399,8 +399,8 @@ const Page = () => {
               </span>
             </div>
           ))}
-        </div>
-        {selectedSlot && (
+        </div>}
+        {slotDuration === 10 && selectedSlot && (
           <button
             onClick={createEvent}
             className="mt-4 px-6 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
@@ -408,6 +408,9 @@ const Page = () => {
             Confirm Booking
           </button>
         )}
+        {slotDuration === 30 && <div>
+          
+          </div>}
       </div>
     </div>
   );

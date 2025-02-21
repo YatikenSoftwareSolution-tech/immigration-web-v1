@@ -15,7 +15,7 @@ import SubscribeNowBanner from "../assets/SubscribeNowBanner.png";
 import SubscribeIcon from "../assets/SubscribeIcon.png";
 import { Sidebar } from "@/components/ui/sidebar";
 import { useAppContext } from "../contexts/AppContext";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Check } from "lucide-react";
 import ExpressEntryPointsButton from "@/components/custom/ExpressEntryPointsButton";
 import Link from "next/link";
@@ -28,6 +28,11 @@ import SubscribeToNewsletter from "@/components/custom/SubscribeToNewsletter";
 import { Input } from "@/components/ui/input";
 import ChatBot from "@/components/custom/ChatBot";
 import PartnersList from "@/components/custom/PartnersList";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+
 import {
   Globe2,
   Users,
@@ -36,6 +41,8 @@ import {
   ArrowRight,
   Shield,
   Target,
+  Award,
+  BookCheck,
   Briefcase,
 } from "lucide-react";
 import { use } from "react";
@@ -49,24 +56,7 @@ const ImmigrationPage = () => {
       "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score.html#calculator"
     );
   };
-  const p3Program = [
-    {
-      background: "orange",
-      title: "P1- Placement",
-      description:
-        "Please fill out the form. We will assess your education, language, work experience and skills and try to assist your job placement with an employer Immigration Company In Canada.",
-    },
-    {
-      background: "green",
-      title: "P2- Provincial Nomination Program (PNP)",
-      description: "The employer will support your PNP.",
-    },
-    {
-      background: "blue",
-      title: "P3- Permanent Residence (PR)",
-      description: "We will help you apply for Permanent Residency.",
-    },
-  ];
+
   const visaTypes = [
     {
       icon: VT1,
@@ -125,9 +115,30 @@ const ImmigrationPage = () => {
       description: "Pro Consultants",
     },
   ];
+  function StatCard({ icon: Icon, number, label, accentColor }) {
+    return (
+      <div className="relative group">
+        <div
+          className={`absolute inset-0 ${accentColor} opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300`}
+        />
+        <div className="relative bg-white rounded-2xl p-8 flex flex-col items-start group-hover:translate-y-[-4px] transition-transform duration-300">
+          <div className={`rounded-full p-4 mb-6 bg-opacity-10 ${accentColor}`}>
+            <Icon
+              className={`w-8 h-8 ${accentColor.replace("bg-", "text-")}`}
+            />
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-5xl font-bold text-gray-900">{number}</h3>
+            <p className="text-gray-600 font-medium">{label}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
-      <div className="min-h-screen bg-white text-black mt-10">
+      <div className="min-h-screen bg-white text-black mt-12">
         {/* Hero Section */}
         <div
           className="h-[65vh] bg-cover bg-center relative opacity-75"
@@ -137,16 +148,16 @@ const ImmigrationPage = () => {
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70">
-            <div className="container mx-auto px-4 h-[65%] flex flex-col justify-center">
+            <div className="container mx-auto px-14 h-[65%] flex flex-col justify-center">
               <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
-                Immigration <span className="text-red-600">Visa</span>{" "}
+                Immigration <span className="text-secondary">Visa</span>{" "}
                 Consulting
               </h1>
-              <p className="text-xl md:text-2xl mb-8 max-w-2xl text-gray-300 text-white">
+              <p className="text-xl md:text-2xl mb-8 max-w-2xl  text-white">
                 Your trusted partner for expert immigration services in
                 Edmonton. We make your dreams of global mobility a reality.
               </p>
-              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-md inline-flex items-center gap-2 w-fit transition-all">
+              <button className="bg-secondary hover:bg-red-700 text-white px-8 py-3 rounded-md inline-flex items-center gap-2 w-fit transition-all">
                 Get Started
                 <ArrowRight size={20} />
               </button>
@@ -168,7 +179,7 @@ const ImmigrationPage = () => {
               </div>
               <div className="bg-white p-6 rounded-lg border border-red-600/20 hover:border-red-600 transition-all">
                 <div className="flex flex-col items-center ">
-                  <h3 className="text-xl font-semibold text-black mb-2 text-center">
+                  <h3 className="text-xl font-semibold text-dark mb-2 text-center">
                     Calculate CRS Score
                   </h3>
                   <p className="text-gray text-center mb-4">
@@ -191,7 +202,7 @@ const ImmigrationPage = () => {
               </div>
               <div className="bg-white p-6 rounded-lg border border-red-600/20 hover:border-red-600 transition-all">
                 <div className="flex flex-col items-center">
-                  <h3 className="text-xl font-semibold text-black mb-2 text-center">
+                  <h3 className="text-xl font-semibold text-dark mb-2 text-center">
                     Fill Consultation Form
                   </h3>
                   <p className="text-gray text-center mb-4">
@@ -214,7 +225,7 @@ const ImmigrationPage = () => {
               </div>
               <div className="bg-white p-6 rounded-lg border border-red-600/20 hover:border-red-600 transition-all">
                 <div className="flex flex-col items-center">
-                  <h3 className="text-xl font-semibold text-black mb-2 text-center">
+                  <h3 className="text-xl font-semibold text-dark mb-2 text-center">
                     Book Consultation
                   </h3>
                   <p className="text-gray text-center mb-4">
@@ -240,49 +251,110 @@ const ImmigrationPage = () => {
       {/* </section> */}
       <section
         id="p3program"
-        className="bg-gradient-to-r from-red-50 to-blue-50 w-full md:h-[85vh] lg:h-[90vh] "
+        className="bg-gradient-to-r from-blue-50 to-red-50  w-full md:h-[85vh] lg:h-[auto] "
       >
-        <div className="flex flex-col w-full px-[4%] py-[1%] ">
+        <div className="flex-wrap flex-col w-full px-[4%] py-[1%] ">
           <h1 className=" text-dark mb-[5%] text-4xl md:text-5xl font-bold text-center">
-            Our <span className="text-secondary mt-1"> Special </span> programs{" "}
+            Our <span className="text-secondary mt-2"> Special </span> programs{" "}
             <br />{" "}
           </h1>
-          <div className="flex gap-10 justify-center item-center ">
-            <ProgramCard />
-            <ProgramCard />
-            <ProgramCard />
+          <div className="max-w-7xl mx-auto py-6">
+            <Swiper
+              spaceBetween={20}
+              slidesPerView={3} // Show 3 cards at a time
+              breakpoints={{
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+              navigation={true}
+              modules={[Navigation]}
+              className="mySwiper"
+            >
+              {[1, 2, 3, 4, 5].map((_, index) => (
+                <SwiperSlide key={index} className="flex justify-center">
+                  <div className="w-[100rem]">
+                    {" "}
+                    {/* Set equal width */}
+                    <ProgramCard />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
+         
         </div>
       </section>
-      
       <section
         id="p3program"
         className="bg-gradient-to-r from-red-50 to-blue-50 w-full"
       >
         <div className="flex flex-col w-full px-[5%] py-[4%] ">
           <h1 className=" text-dark mb-[5%] text-4xl md:text-5xl font-bold text-center">
-            Visa Types and Eligibility
+            Visa Types and <span className="text-secondary">Eligibility</span>
           </h1>
-          <div className="flex flex-wrap gap-10 justify-center item-center ">
+          <div className="flex flex-wrap gap-10 justify-center item-center text-dark">
             {visaTypes.map((item, index) => (
               <VisaTypeCard key={index} visa={item} />
             ))}
           </div>
         </div>
       </section>
-      <section id="p3program" className="w-full h-[85vh] lg:h-[90vh]">
-        <div className="flex flex-col justify-between w-full px-[5%] py-[4%]">
-          <h1 className="text-dark text-3xl mb-5 md:text-5xl font-bold text-center">
-            Discovering Our Biggest Successes:
-          </h1>
-          <p className="text-tertiary font-bold mb-[10%] text-center">
-            The Stories Behind Our Great Achievements
-          </p>
-          <div className="flex flex-wrap justify-center items-center w-[80%] mx-auto">
-            {/* Card 1 */}
-            {successStats.map((item, index) => (
-              <SuccessStoryCard key={index} stats={item} />
-            ))}
+      <section id="p3program" className="w-full h-[85vh] lg:h-[auto]">
+        <div className="relative min-h-screen overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1569974498991-d3c12a504f95?q=80&w=2070')",
+            }}
+          />
+          <div className="relative min-h-screen bg-gradient-to-b from-gray-50/90 to-white/95 py-10 px-4">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-20 max-w-3xl mx-auto">
+                <h2 className="text-blue-600 font-semibold text-lg mb-4">
+                  DISCOVERING OUR BIGGEST SUCCESSES
+                </h2>
+                <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-dark  mb-6 leading-tight">
+                  The Stories Behind Our Great{" "}
+                  <span className="text-secondary mt-2"> Achievements</span>
+                </h1>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-dark">
+                <StatCard
+                  icon={Award}
+                  number="20+"
+                  label="Visa Categories"
+                  accentColor="bg-rose-500"
+                />
+                <StatCard
+                  icon={Users}
+                  number="30K+"
+                  label="Visa Process"
+                  accentColor="bg-blue-500"
+                />
+                <StatCard
+                  icon={BookCheck}
+                  number="40K+"
+                  label="Successful Projects"
+                  accentColor="bg-emerald-500"
+                />
+                <StatCard
+                  icon={Briefcase}
+                  number="180K"
+                  label="Pro Consultants"
+                  accentColor="bg-amber-500"
+                />
+              </div>
+              <div className="mt-20 text-center max-w-3xl mx-auto">
+                <p className="text-xl text-dark italic">
+                  "Every number represents a dream fulfilled, a family reunited,
+                  and a new chapter begun. Our success is measured not just in
+                  statistics, but in the countless lives we've helped
+                  transform."
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

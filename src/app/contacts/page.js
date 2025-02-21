@@ -119,25 +119,25 @@ function App() {
       {/* Contact Form & Info */}
       <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
         <div className="bg-white p-8 rounded-lg shadow-md">
-        <h3 className="text-3xl font-bold text-gray-600 mb-4">
+        <h3 className="text-3xl font-bold text-dark mb-4">
           Get in <span className="text-secondary">touch</span>, ask a <span className="text-secondary">question</span>
         </h3>
-        <p className="text-3xl font-bold mb-4">The pleasure is all ours!</p>
+        <p className="text-3xl text-dark font-bold mb-4">The pleasure is all ours!</p>
           <form className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+              <label className="block text-sm font-medium text-gray mb-4">Full Name</label>
               <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="John Doe" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <label className="block text-sm font-medium text-gray mb-4">Email</label>
               <input type="email" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="john@example.com" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+              <label className="block text-sm font-medium text-gray mb-4">Subject</label>
               <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="How can we help?" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+              <label className="block text-sm font-medium text-gray mb-4">Message</label>
               <textarea className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" rows={4} placeholder="Your message here..."></textarea>
             </div>
             <Button type="submit" className="bg-secondary hover:bg-red-500 text-white px-10 py-6 rounded-lg flex items-center gap-2">
@@ -148,36 +148,40 @@ function App() {
         
         {/* Contact Information */}
         <div className="bg-white p-8 rounded-lg shadow-md">
-        <h3 className="text-3xl font-bold text-gray-600 mb-4">
+        <h3 className="text-3xl font-bold text-dark mb-4">
           Contact <span className="text-secondary">Information</span>!
         </h3>
           <div className="space-y-4">
             <div className="flex items-start space-x-4">
-              <MapPin className="w-6 h-6 mt-1" />
+              <MapPin className="w-6 h-6 mt-1" 
+               style={{ color: "#363637" }}/>
               <div>
-                <h3 className="font-medium">Address</h3>
-                <p className="text-gray-600">123 Immigration Street<br />Suite 456<br />New York, NY 10001</p>
+                <h3 className="font-medium text-dark">Address</h3>
+                <p className="text-dark">123 Immigration Street<br />Suite 456<br />New York, NY 10001</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
-              <Phone className="w-6 h-6 mt-1" />
+              <Phone className="w-6 h-6 mt-1" 
+               style={{ color: "#363637" }}/>
               <div>
-                <h3 className="font-medium">Phone</h3>
-                <p className="text-gray-600">+1 (555) 123-4567</p>
+                <h3 className="font-medium text-dark">Phone</h3>
+                <p className="text-dark">+1 (555) 123-4567</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
-              <Mail className="w-6 h-6 mt-1" />
+              <Mail className="w-6 h-6 mt-1 "
+              style={{ color: "#363637" }} />
               <div>
-                <h3 className="font-medium">Email</h3>
-                <p className="text-gray-600">info@immigrationservices.com</p>
+                <h3 className="font-medium text-dark">Email</h3>
+                <p className="text-dark">info@immigrationservices.com</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
-              <Clock className="w-6 h-6 mt-1" />
+              <Clock className="w-6 h-6 mt-1" 
+               style={{ color: "#363637" }}/>
               <div>
-                <h3 className="font-medium">Business Hours</h3>
-                <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 10:00 AM - 2:00 PM<br />Sunday: Closed</p>
+                <h3 className="font-medium text-dark">Business Hours</h3>
+                <p className="text-dark">Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 10:00 AM - 2:00 PM<br />Sunday: Closed</p>
               </div>
             </div>
           </div>
@@ -187,18 +191,18 @@ function App() {
       {/* FAQs Section */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="bg-white p-8 rounded-lg shadow-md">
-        <h3 className="text-3xl font-bold text-gray-600 mb-4">
+        <h3 className="text-3xl font-bold text-dark mb-4">
           Frequently Asked  <span className="text-secondary">Question</span>!
         </h3>
         
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <div key={index} className="border-b border-gray-200 last:border-b-0">
-                <button className="w-full py-4 flex justify-between items-center text-left" onClick={() => toggleFAQ(index)}>
+                <button className="w-full py-4 flex justify-between items-center text-dark text-left" onClick={() => toggleFAQ(index)}>
                   <span className="font-medium text-lg">{faq.question}</span>
                   {openFAQ === index ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
                 </button>
-                {openFAQ === index && <div className="pb-4 text-gray-600">{faq.answer}</div>}
+                {openFAQ === index && <div className="pb-4 text-dark">{faq.answer}</div>}
               </div>
             ))}
           </div>

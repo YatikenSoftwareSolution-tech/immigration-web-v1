@@ -14,7 +14,8 @@ export default {
         tertiary: "#0198E9", // logo shade of blue
         sAccent: "#EF2A45", // Custom accent color
         secBlue: "#090c9b", // Dark color for text or backgrounds
-        dark: "#363637",
+        dark: "#474749",
+        
         gray: "#939393", // Light color for background or text
       },
       backgroundImage: {

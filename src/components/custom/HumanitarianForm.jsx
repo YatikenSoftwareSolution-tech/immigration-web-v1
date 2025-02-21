@@ -602,21 +602,15 @@ const MultiStepForm = ({setResult, setStatus}) => {
 };
 const HumanitarianForm = ({ isOpen, onClose }) => {
 
- 
-    const [result, setResult] = useState(null);
+  const [result, setResult] = useState(null);
     const [status, setStatus] = useState(false);
     const router  = useRouter();
  
-
-
-
-
     useEffect(()=>{
         if(status){
             router.push("/consultation");
         }
     }, [status])
-
 
   return (
     <>
@@ -642,7 +636,6 @@ const HumanitarianForm = ({ isOpen, onClose }) => {
   );
 };
 
- 
 export default HumanitarianForm;
 
 

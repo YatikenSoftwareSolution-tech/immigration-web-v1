@@ -1,4 +1,5 @@
 {
+
   "/services/pnpVisa/page": "app/services/pnpVisa/page.js",
   "/services/superVisa/page": "app/services/superVisa/page.js",
   "/services/visitorVisa/page": "app/services/visitorVisa/page.js",
@@ -17,4 +18,5 @@
   "/services/nominee/page": "app/services/nominee/page.js",
   "/contacts/page": "app/contacts/page.js",
   "/services/parents/page": "app/services/parents/page.js"
+
 }

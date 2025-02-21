@@ -78,7 +78,11 @@ const MultiStepForm = ({setResult, setStatus}) => {
     defaultValues: {},
   });
 
+ 
   const router = useRouter();
+ 
+
+
 
   const onSubmit = async () => {
     setLoading(true);
@@ -125,6 +129,7 @@ const MultiStepForm = ({setResult, setStatus}) => {
     try{
         const response = await fetch("https://2htjqsz5-8080.inc1.devtunnels.ms/analyze", {method: 'POST',headers: {
             'Content-Type': 'application/json'
+ 
 
           }, userDetails: [newBody]});
         const data = await response.json();
@@ -140,6 +145,7 @@ const MultiStepForm = ({setResult, setStatus}) => {
         setLoading(false);
     }
   };
+
 
   return (
     <Card className=" border-none">
@@ -230,6 +236,7 @@ const MultiStepForm = ({setResult, setStatus}) => {
             </div>
           )}
 
+
           {step === 2 && (
             <div className="flex flex-wrap gap-6">
               <Input
@@ -289,6 +296,8 @@ const MultiStepForm = ({setResult, setStatus}) => {
               </div>
             </div>
           )}
+
+ 
 
           {step === 3 && (
             <div className="flex flex-wrap gap-6">
@@ -403,6 +412,8 @@ const MultiStepForm = ({setResult, setStatus}) => {
                   <option value="no">No</option>
                 </select>
               </div>
+ 
+
 
               <div>
                 <label>If yes, provide details (date, application type, status, etc.):</label>
@@ -415,7 +426,9 @@ const MultiStepForm = ({setResult, setStatus}) => {
               </div>
               <div className="flex flex-col">
                 <label className="m-0 text-sm ">
-                Do you have a removal order against you? 
+                Do you have a removal order against you?
+
+         
                 </label>
                 <select
                   {...register("removalOrder")}
@@ -447,7 +460,9 @@ const MultiStepForm = ({setResult, setStatus}) => {
               </div>
               <div className="flex flex-col">
                 <label className="m-0 text-sm ">
+
                 Do you have family members who are Canadian citizens or permanent residents? 
+
                 </label>
                 <select
                   {...register("familyMemberCitizen")}
@@ -518,6 +533,9 @@ const MultiStepForm = ({setResult, setStatus}) => {
                   type="textarea"
                 />
               </div>
+             
+            
+
               
               <div className="flex flex-col">
                 <label className="m-0 text-sm ">
@@ -584,10 +602,10 @@ const MultiStepForm = ({setResult, setStatus}) => {
 };
 const HumanitarianForm = ({ isOpen, onClose }) => {
 
-    const [result, setResult] = useState(null);
+  const [result, setResult] = useState(null);
     const [status, setStatus] = useState(false);
     const router  = useRouter();
-
+ 
     useEffect(()=>{
         if(status){
             router.push("/consultation");
@@ -607,7 +625,7 @@ const HumanitarianForm = ({ isOpen, onClose }) => {
                 <Card>
                     <CardHeader>
                         <CardTitle>Sorry! We can not move forward with your profile for Humanitarien consideration</CardTitle>
-                        
+
                     </CardHeader>
                 </Card>
                 </div>}
@@ -619,3 +637,5 @@ const HumanitarianForm = ({ isOpen, onClose }) => {
 };
 
 export default HumanitarianForm;
+
+

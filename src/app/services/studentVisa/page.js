@@ -159,10 +159,10 @@ const JobPlacementServicesPage = () => {
       <section className="bg-blue-100 py-16 px-10">
         <div className="max-w-7xl mx-auto flex flex-col gap-[10%] md:flex-row items-center">
           <div className="md:w-1/2">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-dark mb-6">
               Find the Best Jobs in Canada for Indians
             </h1>
-            <p className="text-lg text-gray-700 mb-4">
+            <p className="text-lg text-dark mb-4">
               With our proven expertise, we help you land high-paying jobs in Canada and advance your career.
             </p>
             <Button className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
@@ -184,10 +184,10 @@ const JobPlacementServicesPage = () => {
       {/* Job Seeker Services Section */}
       <section className="py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">
             Services for Job Seekers
           </h2>
-          <ul className="list-disc list-inside text-lg text-gray-700 space-y-4">
+          <ul className="list-disc list-inside text-lg text-dark space-y-4">
             {jobSeekerServices.map((service, index) => (
               <li key={index}>{service}</li>
             ))}
@@ -198,10 +198,10 @@ const JobPlacementServicesPage = () => {
       {/* Employer Services Section */}
       <section className="bg-gray-100 py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">
             Services for Employers
           </h2>
-          <ul className="list-disc list-inside text-lg text-gray-700 space-y-4">
+          <ul className="list-disc list-inside text-lg text-dark space-y-4">
             {employerServices.map((service, index) => (
               <li key={index}>{service}</li>
             ))}
@@ -212,7 +212,7 @@ const JobPlacementServicesPage = () => {
       {/* Success Stats Section */}
       <section className="py-16 px-10">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-10">
+          <h2 className="text-4xl font-bold text-dark mb-10">
             Our Success at a Glance
           </h2>
           <div className="flex flex-wrap">
@@ -226,10 +226,10 @@ const JobPlacementServicesPage = () => {
       {/* Final Call to Action Section */}
       <section className="bg-blue-100 py-16 px-10">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">
+          <h2 className="text-4xl font-bold text-dark mb-6">
             Ready to Land Your Dream Job in Canada?
           </h2>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-dark mb-6">
             Get in touch with The Immigration Company today and let us help you achieve your career aspirations in Canada.
           </p>
           <Button className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">

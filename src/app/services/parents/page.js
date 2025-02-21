@@ -57,10 +57,10 @@ const ParentsAndGrandparentsPage = () => {
       <section className="bg-blue-100 py-16 px-10">
         <div className="max-w-7xl mx-auto flex flex-col gap-[10%] md:flex-row items-center">
           <div className="md:w-1/2">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-dark mb-6">
               Parents and Grandparents PR & Super Visa Application
             </h1>
-            <p className="text-lg text-gray-700 mb-4">
+            <p className="text-lg text-dark mb-4">
               Learn about the Canada Parents and Grandparents Program (PGP) and Super Visa options for parents and grandparents to join their loved ones in Canada.
             </p>
             <Button
@@ -85,8 +85,8 @@ const ParentsAndGrandparentsPage = () => {
       {/* PGP Eligibility Section */}
       <section className="py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Eligibility for Parents and Grandparents Program (PGP)</h2>
-          <ul className="list-disc list-inside text-lg text-gray-700 space-y-4">
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">Eligibility for Parents and Grandparents Program (PGP)</h2>
+          <ul className="list-disc list-inside text-lg text-dark space-y-4">
             {pgpEligibility.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
@@ -97,8 +97,8 @@ const ParentsAndGrandparentsPage = () => {
       {/* Super Visa Eligibility Section */}
       <section className="bg-gray-100 py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Super Visa Eligibility</h2>
-          <ul className="list-disc list-inside text-lg text-gray-700 space-y-4">
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">Super Visa Eligibility</h2>
+          <ul className="list-disc list-inside text-lg text-dark space-y-4">
             {superVisaEligibility.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
@@ -109,12 +109,12 @@ const ParentsAndGrandparentsPage = () => {
       {/* FAQ Section */}
       <section className="py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Frequently Asked Questions</h2>
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">Frequently Asked Questions</h2>
           <div className="space-y-6">
             {faqItems.map((faq, index) => (
               <div key={index} className="bg-white shadow-lg rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-gray-800">{faq.question}</h3>
-                <p className="text-gray-700 mt-2">{faq.answer}</p>
+                <h3 className="text-xl font-semibold text-dark">{faq.question}</h3>
+                <p className="text-dark mt-2">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -124,8 +124,8 @@ const ParentsAndGrandparentsPage = () => {
       {/* Processing Time Section */}
       <section className="bg-blue-100 py-16 px-10">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-10">Super Visa Processing Time</h2>
-          <p className="text-lg text-gray-700">
+          <h2 className="text-4xl font-bold text-dark mb-10">Super Visa Processing Time</h2>
+          <p className="text-lg text-dark">
             The processing time for Super Visa applications is approximately 53 days for parents and grandparents living in India.
           </p>
         </div>

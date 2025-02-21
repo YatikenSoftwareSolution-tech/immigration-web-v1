@@ -42,14 +42,14 @@ const AppNavigation = () => {
               </NavigationMenuTrigger>
               <NavigationMenuContent className="absolute bg-white shadow-lg  border-none outline-none">
                 <ul className="w-[300px] border-none outline-none">
-                  <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                  {/* <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                     <NavigationMenuLink
                       href="/services/visa"
                       className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
                     >
                       How to get Canada's permanent residency
                     </NavigationMenuLink>
-                  </li>
+                  </li> */}
                   <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                     <NavigationMenuLink
                       href="/services/visitorVisa"

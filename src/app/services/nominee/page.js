@@ -74,7 +74,7 @@ const AlbertaPNPPage = () => {
         <div className="max-w-7xl mx-auto flex flex-col gap-[10%] md:flex-row items-center">
           <div className="md:w-1/2">
             <motion.h1
-              className="text-4xl md:text-5xl font-bold text-gray-800 mb-6"
+              className="text-4xl md:text-5xl font-bold text-dark mb-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8 }}
@@ -82,7 +82,7 @@ const AlbertaPNPPage = () => {
               Alberta Provincial Nominee Program (PNP)
             </motion.h1>
             <motion.p
-              className="text-lg text-gray-700 mb-4"
+              className="text-lg text-dark mb-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2 }}
@@ -108,7 +108,7 @@ const AlbertaPNPPage = () => {
       {/* Program Streams Section */}
       <section className="py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">
             Program Streams Under Alberta PNP
           </h2>
           <motion.div
@@ -122,8 +122,8 @@ const AlbertaPNPPage = () => {
                 key={index}
                 className="bg-white shadow-xl rounded-lg p-6 text-center transform transition-transform hover:scale-105 hover:shadow-2xl duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">{stream.name}</h3>
-                <p className="text-gray-600">{stream.details}</p>
+                <h3 className="text-xl font-semibold text-dark mb-4">{stream.name}</h3>
+                <p className="text-dark">{stream.details}</p>
               </div>
             ))}
           </motion.div>
@@ -133,11 +133,11 @@ const AlbertaPNPPage = () => {
       {/* Eligibility Criteria Section */}
       <section className="bg-gray-100 py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">
             Eligibility Criteria for Alberta PNP
           </h2>
           <motion.ul
-            className="list-disc list-inside text-lg text-gray-700 space-y-4"
+            className="list-disc list-inside text-lg text-dark space-y-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
@@ -152,11 +152,11 @@ const AlbertaPNPPage = () => {
       {/* Program Advantages Section */}
       <section className="py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">
             Advantages of Living in Alberta
           </h2>
           <motion.ul
-            className="list-disc list-inside text-lg text-gray-700 space-y-4"
+            className="list-disc list-inside text-lg text-dark space-y-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
@@ -171,7 +171,7 @@ const AlbertaPNPPage = () => {
       {/* Testimonials Section */}
       <section className="bg-gray-100 py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">
             What Our Clients Say
           </h2>
           <motion.div
@@ -185,8 +185,8 @@ const AlbertaPNPPage = () => {
                 key={index}
                 className="bg-white rounded-lg shadow-lg p-6 transform transition-transform hover:scale-105 hover:shadow-2xl duration-300"
               >
-                <p className="text-gray-700 mb-4">{testimonial.feedback}</p>
-                <h4 className="text-lg font-semibold text-gray-800">- {testimonial.name}</h4>
+                <p className="text-dark mb-4">{testimonial.feedback}</p>
+                <h4 className="text-lg font-semibold text-dark">- {testimonial.name}</h4>
               </div>
             ))}
           </motion.div>
@@ -196,8 +196,8 @@ const AlbertaPNPPage = () => {
       {/* FAQs Section */}
       <section className="py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Frequently Asked Questions</h2>
-          <div className="space-y-6 text-lg text-gray-700">
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">Frequently Asked Questions</h2>
+          <div className="space-y-6 text-lg text-dark">
             <div className="accordion">
               <motion.div
                 className="accordion-item"

@@ -63,10 +63,10 @@ const ExpressEntryPage = () => {
       <section className="bg-green-100 py-16 px-10">
         <div className="max-w-7xl mx-auto flex flex-col gap-[10%]  md:flex-row items-center">
           <div className="md:w-1/2">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-dark mb-6">
               How to Get Canada Immigration Express Entry
             </h1>
-            <p className="text-lg text-gray-700 mb-4">
+            <p className="text-lg text-dark mb-4">
               Discover how you can easily immigrate to Canada through the Express Entry system with expert guidance on eligibility, requirements, and the process.
             </p>
             <Button className="bg-green-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-green-700">
@@ -88,14 +88,14 @@ const ExpressEntryPage = () => {
       {/* Express Entry Categories Section */}
       <section className="py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">
             Express Entry Categories
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {expressEntryCategories.map((category, index) => (
               <div key={index} className="bg-white shadow-lg rounded-lg p-6 text-center">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">{category}</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl font-semibold text-dark mb-4">{category}</h3>
+                <p className="text-dark">
                   Learn more about the eligibility criteria and benefits for {category}.
                 </p>
               </div>
@@ -107,8 +107,8 @@ const ExpressEntryPage = () => {
       {/* Express Entry Process Section */}
       <section className="bg-gray-100 py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Express Entry Process</h2>
-          <div className="space-y-6 text-lg text-gray-700">
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">Express Entry Process</h2>
+          <div className="space-y-6 text-lg text-dark">
             {expressEntryProcess.map((step, index) => (
               <div key={index} className="flex items-center space-x-4">
                 <div className="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center">
@@ -124,8 +124,8 @@ const ExpressEntryPage = () => {
       {/* Express Entry Requirements Section */}
       <section className="py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Express Entry Requirements</h2>
-          <ul className="list-disc list-inside text-lg text-gray-700 space-y-4">
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">Express Entry Requirements</h2>
+          <ul className="list-disc list-inside text-lg text-dark space-y-4">
             {expressEntryRequirements.map((requirement, index) => (
               <li key={index}>{requirement}</li>
             ))}
@@ -136,7 +136,7 @@ const ExpressEntryPage = () => {
       {/* Success Stats Section */}
       <section className="py-16 px-10">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-10">Our Success at a Glance</h2>
+          <h2 className="text-4xl font-bold text-dark mb-10">Our Success at a Glance</h2>
           <div className="flex flex-wrap justify-center">
             {expressEntryStats.map((stat, index) => (
               <SuccessStoryCard key={index} stats={stat} />
@@ -148,12 +148,12 @@ const ExpressEntryPage = () => {
       {/* Testimonials Section */}
       <section className="bg-gray-100 py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">What Our Clients Say</h2>
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">What Our Clients Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-6">
-                <p className="text-gray-700 mb-4">{testimonial.feedback}</p>
-                <h4 className="text-lg font-semibold text-gray-800">- {testimonial.name}</h4>
+                <p className="text-dark mb-4">{testimonial.feedback}</p>
+                <h4 className="text-lg font-semibold text-dark">- {testimonial.name}</h4>
               </div>
             ))}
           </div>

@@ -70,7 +70,7 @@ const SpousalSponsorshipPage = () => {
         <div className="max-w-7xl mx-auto flex flex-col gap-[10%] md:flex-row items-center">
           <div className="md:w-1/2">
             <motion.h1
-              className="text-4xl md:text-5xl font-bold text-gray-800 mb-6"
+              className="text-4xl md:text-5xl font-bold text-dark mb-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8 }}
@@ -78,7 +78,7 @@ const SpousalSponsorshipPage = () => {
               Spousal Sponsorship in Canada
             </motion.h1>
             <motion.p
-              className="text-lg text-gray-700 mb-4"
+              className="text-lg text-dark mb-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2 }}
@@ -104,9 +104,9 @@ const SpousalSponsorshipPage = () => {
       {/* Sponsorship Requirements Section */}
       <section className="py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Sponsorship Requirements</h2>
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">Sponsorship Requirements</h2>
           <motion.ul
-            className="list-disc list-inside text-lg text-gray-700 space-y-4"
+            className="list-disc list-inside text-lg text-darkspace-y-4 text-dark"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
@@ -121,9 +121,9 @@ const SpousalSponsorshipPage = () => {
       {/* Ineligible Situations Section */}
       <section className="bg-gray-100 py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Situations Where You Cannot Sponsor</h2>
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">Situations Where You Cannot Sponsor</h2>
           <motion.ul
-            className="list-disc list-inside text-lg text-gray-700 space-y-4"
+            className="list-disc list-inside text-lg text-dark space-y-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
@@ -138,9 +138,9 @@ const SpousalSponsorshipPage = () => {
       {/* Sponsorship Costs Section */}
       <section className="py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Sponsorship Costs</h2>
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">Sponsorship Costs</h2>
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-dark"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -150,8 +150,8 @@ const SpousalSponsorshipPage = () => {
                 key={index}
                 className="bg-white shadow-xl rounded-lg p-6 text-center transform transition-transform hover:scale-105 hover:shadow-2xl duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">{cost.item}</h3>
-                <p className="text-gray-600">{cost.amount}</p>
+                <h3 className="text-xl font-semibold text-darkmb-4">{cost.item}</h3>
+                <p className="text-dark">{cost.amount}</p>
               </div>
             ))}
           </motion.div>
@@ -161,9 +161,9 @@ const SpousalSponsorshipPage = () => {
       {/* Open Work Permit Section */}
       <section className="bg-gray-100 py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Open Work Permit for Spouses</h2>
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">Open Work Permit for Spouses</h2>
           <motion.ul
-            className="list-disc list-inside text-lg text-gray-700 space-y-4"
+            className="list-disc list-inside text-lg text-dark space-y-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
@@ -178,7 +178,7 @@ const SpousalSponsorshipPage = () => {
       {/* FAQ Section */}
       <section className="py-16 px-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Frequently Asked Questions</h2>
+          <h2 className="text-4xl font-bold text-center text-dark mb-10">Frequently Asked Questions</h2>
           <motion.div
             className="space-y-6"
             initial={{ opacity: 0 }}
@@ -187,8 +187,8 @@ const SpousalSponsorshipPage = () => {
           >
             {faq.map((q, index) => (
               <div key={index} className="accordion-item bg-white shadow-lg rounded-lg p-6 mb-4">
-                <h3 className="text-xl font-semibold text-gray-800">{q.question}</h3>
-                <p className="text-gray-600 mt-2">{q.answer}</p>
+                <h3 className="text-xl font-semibold text-dark">{q.question}</h3>
+                <p className="text-dark mt-2">{q.answer}</p>
               </div>
             ))}
           </motion.div>

@@ -91,7 +91,7 @@ const ExpressEntryPage = () => {
           <h2 className="text-4xl font-bold text-center text-dark mb-10">
             Express Entry Categories
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {expressEntryCategories.map((category, index) => (
               <div key={index} className="bg-white shadow-lg rounded-lg p-6 text-center">
                 <h3 className="text-xl font-semibold text-dark mb-4">{category}</h3>
@@ -106,20 +106,20 @@ const ExpressEntryPage = () => {
 
       {/* Express Entry Process Section */}
       <section className="bg-gray-100 py-16 px-10">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-dark mb-10">Express Entry Process</h2>
-          <div className="space-y-6 text-lg text-dark">
-            {expressEntryProcess.map((step, index) => (
-              <div key={index} className="flex items-center space-x-4">
-                <div className="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center">
-                  {index + 1}
-                </div>
-                <p>{step}</p>
-              </div>
-            ))}
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-4xl font-bold text-center text-dark mb-10">Express Entry Process</h2>
+    <div className="space-y-6 text-lg text-dark">
+      {expressEntryProcess.map((step, index) => (
+        <div key={index} className="flex items-start md:items-center space-x-4"> {/* Align items to start on smaller screens */}
+          <div className="flex items-center justify-center rounded-full bg-green-600 text-white w-10 h-10 shrink-0"> {/* Use flexbox for centering and shrink-0 */}
+            {index + 1}
           </div>
+          <p>{step}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Express Entry Requirements Section */}
       <section className="py-16 px-10">
@@ -133,17 +133,20 @@ const ExpressEntryPage = () => {
         </div>
       </section>
 
-      {/* Success Stats Section */}
-      <section className="py-16 px-10">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-dark mb-10">Our Success at a Glance</h2>
-          <div className="flex flex-wrap justify-center">
-            {expressEntryStats.map((stat, index) => (
-              <SuccessStoryCard key={index} stats={stat} />
-            ))}
-          </div>
-        </div>
-      </section>
+    {/* Success Stats Section */}
+<section className="py-16 px-6 sm:px-10">
+  <div className="max-w-7xl mx-auto text-center">
+    <h2 className="text-3xl sm:text-4xl font-bold text-dark mb-10">
+      Our Success at a Glance
+    </h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {expressEntryStats.map((stat, index) => (
+        <SuccessStoryCard key={index} stats={stat} />
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Testimonials Section */}
       <section className="bg-gray-100 py-16 px-10">

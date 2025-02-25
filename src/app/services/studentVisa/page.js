@@ -127,6 +127,7 @@ import VT2 from "../../../assets/VT2.svg";
 import VT3 from "../../../assets/VT3.svg";
 import VT4 from "../../../assets/VT4.svg";
 import JobPlacement from '../../../assets/JobPlacement.jpg';
+import styles from "../../../Home.module.css"
 // import ChatBot from "@/components/custom/ChatBot";
 
 const JobPlacementServicesPage = () => {
@@ -154,6 +155,8 @@ const JobPlacementServicesPage = () => {
   ];
 
   return (
+    <div className={styles.container}>
+      <div className={styles.pageContent}>
     <div className="bg-gray-50 min-h-screen">
       {/* Banner Section */}
       <section className="bg-blue-100 py-16 px-10">
@@ -215,10 +218,12 @@ const JobPlacementServicesPage = () => {
           <h2 className="text-4xl font-bold text-dark mb-10">
             Our Success at a Glance
           </h2>
-          <div className="flex flex-wrap">
+          <div className="container mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12"> {/* Added container for centering */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> {/* Use CSS Grid */}
             {successStats.map((stat, index) => (
               <SuccessStoryCard key={index} stats={stat} />
             ))}
+          </div>
           </div>
         </div>
       </section>
@@ -239,6 +244,8 @@ const JobPlacementServicesPage = () => {
       </section>
       {/* <ChatBot/> */}
     </div>
+    </div>
+        </div>
   );
 };
 

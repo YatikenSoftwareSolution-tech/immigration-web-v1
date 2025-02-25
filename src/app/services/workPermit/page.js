@@ -7,11 +7,14 @@ import Image from "next/image";
 import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
 import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
 import { Briefcase, Building2, Globe2, FileText, Fingerprint, Clock, FileCheck, Scale, Heart, Users, BadgeCheck, MapPin } from 'lucide-react';
+import styles from "../../../Home.module.css"
 // import ChatBot from "@/components/custom/ChatBot";
 const WorkPermitPage = () => {
   const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
 
   return (
+    <div className={styles.container}>
+      <div className={styles.pageContent}>
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Banner Section */}
       <section className="bg-blue-100 py-16 px-10">
@@ -212,6 +215,8 @@ const WorkPermitPage = () => {
 
         
       </main>
+    </div>
+    </div>
     </div>
   );
 };

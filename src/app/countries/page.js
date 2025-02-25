@@ -4,6 +4,7 @@ import Image from "next/image";
 import CountriesBanner2 from "../../assets/CountriesBanner2.jpg";
 import ChatBot from "@/components/custom/ChatBot";
 import PartnersList from "@/components/custom/PartnersList";
+import CountriesBanner1 from "../../assets/CountriesBanner1.jpg";
 import {
   Briefcase,
   Clock,
@@ -76,33 +77,47 @@ function JobCard({
 
 const page = () => {
   return (
-    <div>
-      <section
-        id="careers"
-        className="relative mx-auto w-full flex flex-col items-center"
-      >
-        <div className="countriesBackgroundBanner mt-10 h-[40vh] w-full absolute "></div>
+    <div className="relative">
+  <section id="careers" className="relative mx-auto w-full py-8 md:py-16">
+  <div className="relative w-full bg-cover bg-center mt-4 mb-4">
+  <Image
+    src={CountriesBanner1}
+    alt="Banner"
+    width={1260} // Original image width (or a close approximation)
+    height={600} // Original image height (or a close approximation)
+    layout="responsive"
+    objectFit="cover" // Fill the container, might crop parts of the image
+    className="rounded-lg"
+    priority
+/>
+</div>
 
-        <div className="w-full p-20 flex flex-col md:flex-row items-center justify-around mt-[40vh]">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-around"> {/* Added container and adjusted margin */}
           {/* Banner Image Section */}
 
-          <Image
-            src={CountriesBanner2}
-            alt="Banner"
-            layout="intrinsic"
-            width={500}
-          />
+          <div className="w-full md:w-1/2 mb-4 md:mb-0"> {/* Adjusted margin */}
+            <Image
+              src={CountriesBanner2}
+              alt="Banner"
+              width={500}
+              height={300}
+              layout="responsive"
+              objectFit="contain"
+              className="rounded-lg"
+              priority
+            />
+          </div>
 
           {/* Text Content Section */}
-          <div className="flex flex-col w-full md:w-1/2 gap-4 md:pl-10 mt-8 md:mt-0">
-            <p className="text-secondary text-md font-semibold">
+          <div className="w-full md:w-1/2 flex flex-col gap-3 md:gap-4 lg:gap-6 md:pl-10"> {/* Adjusted gap */}
+            <p className="text-secondary text-sm md:text-md  lg:text-3xl font-semibold">
               Let's work together
             </p>
-            <h2 className="text-4xl font-semibold leading-tight text-dark">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-dark"> {/* Adjusted text size */}
               We believe in small teams doing big things at
               <span className="text-secondary"> The Immigration Company</span>
             </h2>
-            <p className="text-dark text-base font-semibold mt-4">
+            <p className="text-dark text-sm md:text-base font-semibold mt-2 md:mt-4"> {/* Adjusted text size and margin */}
               Join our dynamic and diverse team at The Immigration Company,
               where innovation meets passion. We are committed to making a
               difference in the lives of immigrants and fostering a
@@ -110,17 +125,17 @@ const page = () => {
               and become a part of something bigger.
             </p>
 
-            <div className="mt-8">
-              <a
+            <div className="mt-4 md:mt-8"> {/* Adjusted margin */}
+              <button
                 href="#jobs"
-                className="bg-secondary text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-secondary-dark transition duration-300"
+                className="bg-secondary text-white px-4 py-2 md:px-6 md:py-3 rounded-lg text-sm md:text-base font-semibold hover:bg-secondary-dark transition duration-300 w-full md:w-auto" /* Adjusted text size and padding */
               >
                 View Open Positions
-              </a>
+              </button>
             </div>
           </div>
         </div>
-      </section>
+      </section>  
 
       {/* Culture Section */}
       <section className="bg-blue-50 py-16 px-4">

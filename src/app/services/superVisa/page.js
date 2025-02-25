@@ -7,11 +7,14 @@ import Image from "next/image";
 import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
 import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
 import { Clock, Heart, Users, Wallet, FileText, Plane, FileCheck, Scale, Globe2, UserPlus, Stethoscope, Mail } from 'lucide-react';
+import styles from "../../../Home.module.css"
 // import ChatBot from "@/components/custom/ChatBot";
 const SuperVisaPage = () => {
   const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
 
   return (
+    <div className={styles.container}>
+      <div className={styles.pageContent}>
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
       {/* Banner Section */}
       <section className="bg-green-100 py-16 px-10">
@@ -199,6 +202,8 @@ const SuperVisaPage = () => {
        
       </main>
     </div>
+    </div>
+        </div>
   );
 };
 

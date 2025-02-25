@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import GrandParents from "../../../assets/GrandParents.png";
 // import ChatBot from "@/components/custom/ChatBot";
-
+import styles from "../../../Home.module.css"
 const ParentsAndGrandparentsPage = () => {
   const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
 
@@ -52,6 +52,8 @@ const ParentsAndGrandparentsPage = () => {
   ];
 
   return (
+    <div className={styles.container}>
+      <div className={styles.pageContent}>
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
       <section className="bg-blue-100 py-16 px-10">
@@ -131,6 +133,8 @@ const ParentsAndGrandparentsPage = () => {
         </div>
       </section>
       {/* <ChatBot/> */}
+    </div>
+    </div>
     </div>
   );
 };

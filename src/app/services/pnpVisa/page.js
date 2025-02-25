@@ -8,6 +8,7 @@ import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
 import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
 import { MapPin, FileText, CheckCircle, Users, Building2, GraduationCap, Briefcase, Globe2, FileCheck, Scale, Heart, BadgeCheck } from 'lucide-react';
 // import ChatBot from "@/components/custom/ChatBot";
+import styles from "../../../Home.module.css"
 const ProvincialPage = () => {
   const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
 
@@ -28,6 +29,8 @@ const ProvincialPage = () => {
   ];
 
   return (
+    <div className={styles.container}>
+      <div className={styles.pageContent}>
     <div className="min-h-screen bg-gradient-to-b from-red-50 to-white">
       {/* Banner Section */}
       <section className="bg-red-100 py-16 px-10">
@@ -235,6 +238,8 @@ const ProvincialPage = () => {
         </section>
       </main>
     </div>
+    </div>
+        </div>
   );
 };
 

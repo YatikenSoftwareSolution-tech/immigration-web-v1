@@ -9,7 +9,7 @@ import VT3 from "../../../assets/VT3.svg";
 import VT4 from "../../../assets/VT4.svg";
 import LabourImage from "../../../assets/LabourImage.jpg";
 // import ChatBot from "@/components/custom/ChatBot";
-
+import styles from "./Coaching.module.css";
 const LMIAJobsPage = () => {
   const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
 
@@ -51,6 +51,8 @@ const LMIAJobsPage = () => {
   ];
 
   return (
+    <div className={styles.container}>
+      <div className={styles.pageContent}>
     <div className="bg-gray-50 min-h-screen">
       {/* Banner Section */}
       <section className="bg-blue-100 py-16 px-10">
@@ -98,16 +100,16 @@ const LMIAJobsPage = () => {
       </section>
 
       {/* LMIA Processing Times Section */}
-      <section className="bg-gray-100 py-16 px-10">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-dark mb-10">LMIA Processing Times</h2>
-          <ul className="list-disc list-inside text-lg text-dark space-y-4">
-            {lmiaProcessingTimes.map((time, index) => (
-              <li key={index}>{time}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
+        <section className="bg-gray-100 py-16 px-10">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-dark mb-10">LMIA Processing Times</h2>
+            <ul className="list-disc list-inside text-lg text-dark space-y-4">
+              {lmiaProcessingTimes.map((time, index) => (
+                <li key={index}>{time}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
       {/* LMIA Requirements Section */}
       <section className="py-16 px-10">
@@ -122,22 +124,23 @@ const LMIAJobsPage = () => {
       </section>
 
       {/* LMIA Process Steps Section */}
-      <section className="bg-gray-100 py-16 px-10">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-dark mb-10">LMIA Process Steps</h2>
-          <div className="space-y-6 text-lg text-dark">
-            {lmiaProcessSteps.map((step, index) => (
-              <div key={index} className="flex items-center space-x-4">
-                <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center">
-                  {index + 1}
-                </div>
-                <p>{step}</p>
-              </div>
-            ))}
+      <section className="bg-gray-100 py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-10">
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-dark mb-6 sm:mb-8 md:mb-10">
+      LMIA Process Steps
+    </h2>
+    <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-dark">
+      {lmiaProcessSteps.map((step, index) => (
+        <div key={index} className="flex items-start gap-3 sm:gap-4">
+          <div className="min-w-8 min-h-8 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center flex-shrink-0 mt-1 sm:mt-0.5">
+            <span className="text-sm sm:text-base">{index + 1}</span>
           </div>
+          <p className="pt-0.5">{step}</p>
         </div>
-      </section>
-
+      ))}
+    </div>
+  </div>
+</section>
       {/* Testimonials Section */}
       <section className="py-16 px-10">
         <div className="max-w-7xl mx-auto">
@@ -165,6 +168,9 @@ const LMIAJobsPage = () => {
       </section>
       {/* <ChatBot/> */}
     </div>
+    </div>
+    </div>
+
   );
 };
 

@@ -7,7 +7,7 @@ import Image from "next/image";
 import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
 import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
 import { Plane, FileCheck, Heart, Scale, Home, Wallet, FileText, Fingerprint, Clock, Globe2, Building2, Users } from 'lucide-react';
-import styles from "../../../Home.module.css"
+import styles from "../../Home.module.css"
 const VisitorVisaPage = () => {
   
 

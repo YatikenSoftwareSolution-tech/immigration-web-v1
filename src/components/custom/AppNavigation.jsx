@@ -5,7 +5,6 @@ import { MenuIcon } from "lucide-react";
 import { useAppContext } from "../../contexts/AppContext";
 import ImmigrationCompanyLogo from "../../assets/ImmigrationCompanyLogo.png";
 import Image from "next/image";
-import { useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -17,7 +16,6 @@ import {
 
 const AppNavigation = () => {
   const { toggleSidenav } = useAppContext();
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   return (
     <nav className="flex justify-between items-center bg-white text-black px-8 py-4 fixed top-0 left-0 w-full shadow-lg z-20">
@@ -27,6 +25,7 @@ const AppNavigation = () => {
             src={ImmigrationCompanyLogo}
             alt="Immigration Company"
             height={50}
+            width={180}
             className="cursor-pointer"
           />
         </div>
@@ -42,14 +41,6 @@ const AppNavigation = () => {
               </NavigationMenuTrigger>
               <NavigationMenuContent className="absolute bg-white shadow-lg  border-none outline-none">
                 <ul className="w-[300px] border-none outline-none">
-                  {/* <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                    <NavigationMenuLink
-                      href="/services/visa"
-                      className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
-                    >
-                      How to get Canada's permanent residency
-                    </NavigationMenuLink>
-                  </li> */}
                   <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                     <NavigationMenuLink
                       href="/services/visitorVisa"

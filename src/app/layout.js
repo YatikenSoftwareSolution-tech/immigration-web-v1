@@ -17,7 +17,6 @@ export default function RootLayout({ children }) {
       </head>
       <body className="font-sans flex flex-col min-h-screen">
         <AppProvider>
-          {/* Navbar */}
           <header className="p-4">
             <AppNavigation />
             <Sidenav/>

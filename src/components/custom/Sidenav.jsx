@@ -1,125 +1,136 @@
-'use client';
+"use client";
+
 import React, { useState } from 'react';
-import { CircleUserRound, LogOut, MenuIcon, X } from 'lucide-react';
+import { LogOut, X } from 'lucide-react';
 import Cookies from 'js-cookie';
-import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useAppContext } from '@/contexts/AppContext';
-import ImmigrationCompanyLogo from '../../assets/ImmigrationCompanyLogo.png'
-
+import ImmigrationCompanyLogo from '../../assets/ImmigrationCompanyLogo.png';
+import Link from 'next/link';
 
 const Sidenav = () => {
+  const { activeSection, setActiveSection, isSidenavOpen, toggleSidenav } = useAppContext();
+  const router = useRouter();
+  const [openSubmenu, setOpenSubmenu] = useState(null);
 
-    const { activeSection, setActiveSection, isSidenavOpen,  toggleSidenav} = useAppContext();
-    const router = useRouter();
-      const [openSubmenu, setOpenSubmenu] = useState(null);
-    
-      const handleLogout = () => {
-        Cookies.remove('token');
-        router.push('/auth/login');
-      };
-    
-      const handleSubmenuToggle = (name) => {
-        setOpenSubmenu(openSubmenu === name ? null : name);
-      };
+  const handleLogout = () => {
+    Cookies.remove('token');
+    router.push('/auth/login');
+  };
 
-    const navItems = [
-          { name: 'About Us', link: '/about-us' },
-          { 
-            name: 'Services', 
-            subItems: [
-              { name: 'Service 1', link: '/services/service-1' },
-              { name: 'Service 2', link: '/services/service-2' },
-              { name: 'Service 3', link: '/services/service-3' },
-              { name: 'Service 4', link: '/services/service-4' }
-            ]
-          },
-          { name: 'Student Visa', link: '/student-visa' },
-          { name: 'Travel/Tourism', link: '/travel-tourism' },
-          { name: 'Visa', link: '/visa' },
-          { name: 'Blogs', link: '/blogs' },
-          { name: 'Countries', link: '/countries' },
-          { name: 'Contacts', link: '/contacts' },
-          { name: 'FAQ', link: '/faq' }
-        ];
+  const handleSubmenuToggle = (name) => {
+    setOpenSubmenu(openSubmenu === name ? null : name);
+  };
 
+  const navItems = [
+    { name: 'About Us', link: '/about' },
+    { 
+      name: 'Services', 
+      subItems: [
+        { name: 'Visitor Visa', link: '/services/visitorVisa' },
+        { name: 'Super Visa', link: '/services/superVisa' },
+        { name: 'Work Permit', link: '/services/workPermit' },
+        { name: 'PNP', link: '/services/pnpVisa' },
+        { name: 'PR Card Renewal', link: '/services/prCard' },
+        { name: 'Job Placement', link: '/services/studentVisa' },
+        { name: 'Express Entry', link: '/services/tourism' },
+        { name: 'Labour Market Impact Assessment', link: '/services/coaching' },
+        { name: 'Alberta PNP', link: '/services/nominee' },
+        { name: 'Spousal Sponsorship', link: '/services/sponsorship' },
+        { name: 'Parents & Grandparents PR', link: '/services/parents' }
+      ]
+    },
+    { name: 'Careers', link: '/countries' },
+    { name: 'Contact Us', link: '/contacts' },
+    { name: 'Book Consultation', link: '/consultation' }
+  ];
 
   return (
     <>
-    {isSidenavOpen && <aside
-      className={`${
-        isSidenavOpen ? 'translate-x-0' : '-translate-x-full'
-      } fixed inset-y-0 left-0 z-50 w-64 bg-secondary text-white transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0`}
-    >
-        <div className="flex flex-col h-full">
+      {isSidenavOpen && (
+        <aside
+          className={`${
+            isSidenavOpen ? 'translate-x-0' : '-translate-x-full'
+          } fixed inset-y-0 left-0 z-50 w-72 bg-primary text-tertiary transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0`}
+        >
+          <div className="flex flex-col h-full">
             <div className="flex items-center justify-between px-4 py-4">
-            <span className="text-2xl font-semibold flex gap-2 items-center">
-                <Image alt='logo' src={ImmigrationCompanyLogo} height={60} width={60} className='rounded-full' />
-            </span>
-            <button onClick={toggleSidenav} className="lg:hidden">
+              <span className="text-2xl font-semibold flex gap-2 items-center">
+              <Link href="/">
+                <Image
+                  alt="logo"
+                  src={ImmigrationCompanyLogo}
+                  height={200}
+                  width={200}
+                  className="rounded-full"
+                />
+                </Link>
+              </span>
+              <button onClick={toggleSidenav} className="lg:hidden p-3">
                 <X className="h-6 w-6" />
-            </button>
+              </button>
             </div>
 
             <nav className="flex-grow mt-4 px-2">
-          {navItems.map((item) => (
-            <div key={item.name} className="mb-2">
-              {item.subItems ? (
-                <div>
-                  <Button
-                    variant="ghost"
-                    className={`flex w-full justify-between px-4 text-left hover:bg-green-700 hover:text-white rounded-xl text-white ${
-                      activeSection === item.name ? 'bg-green-700 rounded-xl ' : ''
-                    }`}
-                    onClick={() => handleSubmenuToggle(item.name)}
-                  >
-                    <span className="flex items-center">
-                      
+              {navItems.map((item, index) => (
+                <div key={index} className="mb-2 text-lg font-semibold text-left ">
+                  {item.subItems ? (
+                    <>
+                      <button
+                        onClick={() => handleSubmenuToggle(item.name)}
+                        className="w-full px-4 py-2 text-left hover:bg-secondary rounded-lg hover:text-white transition"
+                      >
+                        {item.name}
+                      </button>
+                      {openSubmenu === item.name && (
+                        <div className="pl-4 mt-1 space-y-1">
+                          {item.subItems.map((subItem, subIndex) => (
+                            <button
+                              key={subIndex}
+                              onClick={() => {
+                                setActiveSection(subItem.name);
+                                toggleSidenav();
+                                router.push(subItem.link);
+                              }}
+                              className="block w-full text-left px-4 py-2 hover:bg-green-700 hover:text-white transition"
+                            >
+                              {subItem.name}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <button
+                      onClick={() => {
+                        setActiveSection(item.name);
+                        toggleSidenav();
+                        router.push(item.link);
+                      }}
+                      className="w-full text-left px-4 py-2 hover:bg-green-700 hover:text-white transition"
+                    >
                       {item.name}
-                    </span>
-                    <span>{openSubmenu === item.name ? '-' : '+'}</span>
-                  </Button>
-                  {openSubmenu === item.name && (
-                    <div className="pl-8 mt-2 space-y-2">
-                      {item.subItems.map((subItem) => (
-                        <Button
-                          key={subItem.name}
-                          variant="ghost"
-                          className="w-full text-left hover:bg-green-700 hover:text-white text-white"
-                          onClick={() => {
-                            setActiveSection(subItem.name);
-                            toggleSidenav();
-                          }}
-                        >
-                          {subItem.name}
-                        </Button>
-                      ))}
-                    </div>
+                    </button>
                   )}
                 </div>
-              ) : (
-                <Button
-                  variant={activeSection === item.name ? 'secondary' : 'ghost'}
-                  className={`flex w-full justify-start px-4 text-left hover:bg-green-700 hover:text-white rounded-xl text-white ${
-                    activeSection === item.name ? 'bg-green-700 rounded-xl ' : ''
-                  }`}
-                  onClick={() => {
-                    setActiveSection(item.name);
-                    toggleSidenav();
-                  }}
-                >
-                  
-                  {item.name}
-                </Button>
-              )}
-            </div>
-          ))}
-        </nav>
-        </div>
-        </aside>}
-        </>
-  )
-}
+              ))}
+            </nav>
 
-export default Sidenav
+            {/* Optional: Logout button */}
+            <div className="px-4 py-4">
+              <button
+                onClick={handleLogout}
+                className="w-full text-left px-4 py-2 hover:bg-green-700 hover:text-white transition flex items-center"
+              >
+                <LogOut className="mr-2" /> Logout
+              </button>
+            </div>
+          </div>
+        </aside>
+      )}
+    </>
+  );
+};
+
+export default Sidenav;

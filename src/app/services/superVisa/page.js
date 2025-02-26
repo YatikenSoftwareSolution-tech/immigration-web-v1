@@ -7,7 +7,7 @@ import Image from "next/image";
 import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
 import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
 import { Clock, Heart, Users, Wallet, FileText, Plane, FileCheck, Scale, Globe2, UserPlus, Stethoscope, Mail } from 'lucide-react';
-import styles from "../../../Home.module.css"
+import styles from "../../Home.module.css"
 // import ChatBot from "@/components/custom/ChatBot";
 const SuperVisaPage = () => {
   const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);

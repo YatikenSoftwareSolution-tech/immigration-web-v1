@@ -52,21 +52,20 @@ const AboutUsPage = () => {
       <div className="relative w-full">
         <div>
           {/* Banner Image Container - Responsive height */}
-          <div className="relative min-h-[40vh] md:h-[60vh] w-full">
+          <div className="relative min-h-[60vh] md:h-[70vh] w-full">
             {/* Background Image - Fixed syntax typo in className */}
             <Image
               src={bannerImage}
               alt="Immigration Banner"
-              className="w-full h-full object-cover opacity-80"
-              style={{ minHeight: "40vh" }}
+              className="w-[100vw] h-[100%] object-fill opacity-80"
             />
             
             {/* Text Container - Responsive positioning and width */}
-            <div className="absolute inset-0 max-w-6xl mx-auto px-4 sm:px-6 flex items-center">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white w-full md:w-1/2 text-center md:text-right">
+            {/* <div className="absolute inset-0 max-w-6xl mx-auto px-4 sm:px-6 flex items-center">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-dark w-full md:w-1/2 text-center md:text-right">
                 About The Immigration Company
               </h1>
-            </div>
+            </div> */}
           </div>
 
           {/* Commitment Section with Image - Improved padding */}

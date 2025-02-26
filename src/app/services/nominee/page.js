@@ -12,7 +12,7 @@ import VT4 from "../../../assets/VT4.svg";
 import VT5 from "../../../assets/VT5.svg";
 import Nominee from '../../../assets/Nominee.jpg';
 // import ChatBot from "@/components/custom/ChatBot";
-
+import styles from "../../../Home.module.css"
 const AlbertaPNPPage = () => {
   const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
 
@@ -68,6 +68,8 @@ const AlbertaPNPPage = () => {
   ];
 
   return (
+    <div className={styles.container}>
+      <div className={styles.pageContent}>
     <div className="bg-gray-50 min-h-screen">
       {/* Banner Section */}
       <section className="bg-blue-100 py-16 px-10">
@@ -269,6 +271,8 @@ const AlbertaPNPPage = () => {
       </section>
       {/* <ChatBot/> */}
     </div>
+    </div>
+        </div>
   );
 };
 

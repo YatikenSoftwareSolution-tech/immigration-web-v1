@@ -6,6 +6,7 @@ import { motion } from "framer-motion"; // For animations
 import Image from "next/image";
 import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
 import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
+import styles from "../../../Home.module.css"
 // import ChatBot from "@/components/custom/ChatBot";
 const SpousalSponsorshipPage = () => {
   const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
@@ -64,6 +65,8 @@ const SpousalSponsorshipPage = () => {
   ];
 
   return (
+    <div className={styles.container}>
+      <div className={styles.pageContent}>
     <div className="bg-gray-50 min-h-screen">
       {/* Banner Section */}
       <section className="bg-blue-100 py-16 px-10">
@@ -196,6 +199,8 @@ const SpousalSponsorshipPage = () => {
       </section>
       {/* <ChatBot/> */}
     </div>
+    </div>
+        </div>
   );
 };
 

@@ -22,13 +22,13 @@ const SuccessStoryCard = ({ stats }) => {
   const borderColor = borderColors[stats.background] || "border-gray-300";
 
   return (
-    <div className="flex justify-between pr-[10%] py-10 items-center bg-white shadow-md p-6 w-[50%] text-left gap-4 hover:shadow-xl transition-shadow duration-300 ease-in-out">
-      <div className={clsx("h-14 border", borderColor)}></div>
-      <div className={clsx("flex items-center justify-center rounded-full w-16 h-16", backgroundColor)}>
+    <div className="flex flex-col items-start px-4 py-8 bg-white shadow-md text-left gap-4 hover:shadow-xl transition-shadow duration-300 ease-in-out"> {/* Removed width classes */}
+      <div className={clsx("h-14 w-1 border", borderColor)}></div>
+      <div className={clsx("flex items-center justify-center rounded-full w-16 h-16 shrink-0", backgroundColor)}>
         <Image src={stats.icon || VT1} alt="Visa Categories Icon" className="w-6 h-6" />
       </div>
       <div>
-        <h2 className="text-4xl font-semibold text-center text-dark">{stats.title}</h2>
+        <h2 className="text-2xl font-semibold text-dark">{stats.title}</h2>
         <p className="text-tertiary">{stats.description}</p>
       </div>
     </div>
@@ -36,3 +36,4 @@ const SuccessStoryCard = ({ stats }) => {
 };
 
 export default SuccessStoryCard;
+

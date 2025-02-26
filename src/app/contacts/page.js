@@ -68,6 +68,7 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 import ChatBot from "@/components/custom/ChatBot";
 import { Button } from "@/components/ui/button";
+import styles from "../contacts/Contacts.module.css"
 function App() {
   const [openFAQ, setOpenFAQ] = useState(null);
   
@@ -100,88 +101,87 @@ function App() {
   
 
   return (
+    <div className={styles.container}>
+      <div className={styles.pageContent}>
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
+      {/* Hero Section - Responsive height */}
       <div 
-        className="h-[400px] bg-cover bg-center relative"
+        className="h-[250px] sm:h-[400px] bg-cover bg-center relative"
         style={{
           backgroundImage: 'url("https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80")'
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
           <div className="text-center text-white">
-            <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-            <p className="text-lg">We're here to help with your immigration journey</p>
+            <h1 className="text-2xl sm:text-4xl font-bold mb-2 sm:mb-4">Contact Us</h1>
+            <p className="text-base sm:text-lg">We're here to help with your immigration journey</p>
           </div>
         </div>
       </div>
 
-      {/* Contact Form & Info */}
-      <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
-        <div className="bg-white p-8 rounded-lg shadow-md">
-        <h3 className="text-3xl font-bold text-dark mb-4">
-          Get in <span className="text-secondary">touch</span>, ask a <span className="text-secondary">question</span>
-        </h3>
-        <p className="text-3xl text-dark font-bold mb-4">The pleasure is all ours!</p>
+      {/* Contact Form & Info - Stack on mobile */}
+      <div className="max-w-7xl mx-auto px-4 py-6 sm:py-12 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        {/* Contact Form */}
+        <div className="bg-white p-4 sm:p-8 rounded-lg shadow-md">
+          <h3 className="text-2xl sm:text-3xl font-bold text-dark mb-4">
+            Get in <span className="text-secondary">touch</span>
+          </h3>
+          <p className="text-xl sm:text-3xl text-dark font-bold mb-4">The pleasure is all ours!</p>
           <form className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray mb-4">Full Name</label>
-              <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="John Doe" />
+              <label className="block text-sm font-medium text-gray mb-2">Full Name</label>
+              <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="John Doe" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray mb-4">Email</label>
-              <input type="email" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="john@example.com" />
+              <label className="block text-sm font-medium text-gray mb-2">Email</label>
+              <input type="email" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="john@example.com" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray mb-4">Subject</label>
-              <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="How can we help?" />
+              <label className="block text-sm font-medium text-gray mb-2">Subject</label>
+              <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="How can we help?" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray mb-4">Message</label>
-              <textarea className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" rows={4} placeholder="Your message here..."></textarea>
+              <label className="block text-sm font-medium text-gray mb-2">Message</label>
+              <textarea className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" rows={4} placeholder="Your message here..."></textarea>
             </div>
-            <Button type="submit" className="bg-secondary hover:bg-red-500 text-white px-10 py-6 rounded-lg flex items-center gap-2">
-            Send <ArrowRight />
-          </Button>
+            <Button type="submit" className="w-full sm:w-auto bg-secondary hover:bg-red-500 text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2">
+              Send <ArrowRight className="w-4 h-4" />
+            </Button>
           </form>
         </div>
         
         {/* Contact Information */}
-        <div className="bg-white p-8 rounded-lg shadow-md">
-        <h3 className="text-3xl font-bold text-dark mb-4">
-          Contact <span className="text-secondary">Information</span>!
-        </h3>
-          <div className="space-y-4">
-            <div className="flex items-start space-x-4">
-              <MapPin className="w-6 h-6 mt-1" 
-               style={{ color: "#363637" }}/>
+        <div className="bg-white p-4 sm:p-8 rounded-lg shadow-md">
+          <h3 className="text-2xl sm:text-3xl font-bold text-dark mb-4">
+            Contact <span className="text-secondary">Information</span>!
+          </h3>
+          <div className="space-y-6">
+            <div className="flex items-start space-x-3">
+              <MapPin className="w-5 h-5 mt-1" style={{ color: "#363637" }} />
               <div>
                 <h3 className="font-medium text-dark">Address</h3>
-                <p className="text-dark">123 Immigration Street<br />Suite 456<br />New York, NY 10001</p>
+                <p className="text-dark text-sm">123 Immigration Street<br />Suite 456<br />New York, NY 10001</p>
               </div>
             </div>
-            <div className="flex items-start space-x-4">
-              <Phone className="w-6 h-6 mt-1" 
-               style={{ color: "#363637" }}/>
+            <div className="flex items-start space-x-3">
+              <Phone className="w-5 h-5 mt-1" style={{ color: "#363637" }} />
               <div>
                 <h3 className="font-medium text-dark">Phone</h3>
-                <p className="text-dark">+1 (555) 123-4567</p>
+                <p className="text-dark text-sm">+1 (555) 123-4567</p>
               </div>
             </div>
-            <div className="flex items-start space-x-4">
-              <Mail className="w-6 h-6 mt-1 "
-              style={{ color: "#363637" }} />
+            <div className="flex items-start space-x-3">
+              <Mail className="w-5 h-5 mt-1" style={{ color: "#363637" }} />
               <div>
                 <h3 className="font-medium text-dark">Email</h3>
-                <p className="text-dark">info@immigrationservices.com</p>
+                <p className="text-dark text-sm">info@immigrationservices.com</p>
               </div>
             </div>
-            <div className="flex items-start space-x-4">
-              <Clock className="w-6 h-6 mt-1" 
-               style={{ color: "#363637" }}/>
+            <div className="flex items-start space-x-3">
+              <Clock className="w-5 h-5 mt-1" style={{ color: "#363637" }} />
               <div>
                 <h3 className="font-medium text-dark">Business Hours</h3>
-                <p className="text-dark">Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 10:00 AM - 2:00 PM<br />Sunday: Closed</p>
+                <p className="text-dark text-sm">Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 10:00 AM - 2:00 PM<br />Sunday: Closed</p>
               </div>
             </div>
           </div>
@@ -189,27 +189,26 @@ function App() {
       </div>
 
       {/* FAQs Section */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="bg-white p-8 rounded-lg shadow-md">
-        <h3 className="text-3xl font-bold text-dark mb-4">
-          Frequently Asked  <span className="text-secondary">Question</span>!
-        </h3>
-        
-          <div className="space-y-4">
+      <div className="max-w-7xl mx-auto px-4 py-6 sm:py-12">
+        <div className="bg-white p-4 sm:p-8 rounded-lg shadow-md">
+          <h3 className="text-2xl sm:text-3xl font-bold text-dark mb-4">
+            Frequently Asked <span className="text-secondary">Question</span>!
+          </h3>
+          <div className="space-y-2">
             {faqs.map((faq, index) => (
               <div key={index} className="border-b border-gray-200 last:border-b-0">
-                <button className="w-full py-4 flex justify-between items-center text-dark text-left" onClick={() => toggleFAQ(index)}>
-                  <span className="font-medium text-lg">{faq.question}</span>
-                  {openFAQ === index ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+                <button className="w-full py-3 sm:py-4 flex justify-between items-center text-dark text-left" onClick={() => toggleFAQ(index)}>
+                  <span className="font-medium text-base sm:text-lg">{faq.question}</span>
+                  {openFAQ === index ? <ChevronUp className="w-4 h-4 text-gray-500" /> : <ChevronDown className="w-4 h-4 text-gray-500" />}
                 </button>
-                {openFAQ === index && <div className="pb-4 text-dark">{faq.answer}</div>}
+                {openFAQ === index && <div className="pb-3 sm:pb-4 text-sm sm:text-base text-dark">{faq.answer}</div>}
               </div>
             ))}
           </div>
         </div>
       </div>
-          <ChatBot/>
-
+    </div>
+    </div>
     </div>
   );
 }

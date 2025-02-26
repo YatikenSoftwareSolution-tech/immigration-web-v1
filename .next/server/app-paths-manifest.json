@@ -1,15 +1,33 @@
 {
   "/page": "app/page.js",
+<<<<<<< HEAD
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/about/page": "app/about/page.js",
   "/countries/page": "app/countries/page.js",
   "/services/visitorVisa/page": "app/services/visitorVisa/page.js",
   "/services/superVisa/page": "app/services/superVisa/page.js",
+=======
+  "/services/superVisa/page": "app/services/superVisa/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/services/visitorVisa/page": "app/services/visitorVisa/page.js",
+>>>>>>> e676b8673b1885d5fc83482779ede3a467e61d05
   "/services/workPermit/page": "app/services/workPermit/page.js",
   "/services/pnpVisa/page": "app/services/pnpVisa/page.js",
   "/services/prCard/page": "app/services/prCard/page.js",
   "/services/studentVisa/page": "app/services/studentVisa/page.js",
   "/services/tourism/page": "app/services/tourism/page.js",
+<<<<<<< HEAD
   "/services/parents/page": "app/services/parents/page.js",
   "/contacts/page": "app/contacts/page.js"
+=======
+  "/services/coaching/page": "app/services/coaching/page.js",
+  "/services/nominee/page": "app/services/nominee/page.js",
+  "/services/sponsorship/page": "app/services/sponsorship/page.js",
+  "/services/parents/page": "app/services/parents/page.js",
+  "/about/page": "app/about/page.js",
+  "/countries/page": "app/countries/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/contacts/page": "app/contacts/page.js",
+  "/consultation/page": "app/consultation/page.js"
+>>>>>>> e676b8673b1885d5fc83482779ede3a467e61d05
 }

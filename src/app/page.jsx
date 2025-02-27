@@ -117,6 +117,14 @@ const ImmigrationPage = () => {
     );
   }
 
+  if(isConsultationFormOpen){
+    return(
+                <ConsultationForm
+                  isOpen={isConsultationFormOpen}
+                  onClose={() => setIsConsultationFormOpen(false)}
+                />
+    )
+  }
   return (
         <div className={styles.pageContent}>
           <div className="bg-white text-black mt-12">
@@ -346,22 +354,10 @@ const ImmigrationPage = () => {
             </div>
           </section>
           <section className="relative">
-            {" "}
-            {/* Add relative positioning to the parent */}
             <PartnersList />
             <Link href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score.html"></Link>
-            {isConsultationFormOpen && (
-              <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-                {" "}
-                {/* Overlay and centering */}
-                <ConsultationForm
-                  isOpen={isConsultationFormOpen}
-                  onClose={() => setIsConsultationFormOpen(false)}
-                />
-              </div>
-            )}
           </section>
-          <ChatBot />
+          {/* <ChatBot /> */}
         </div>
   );
 };

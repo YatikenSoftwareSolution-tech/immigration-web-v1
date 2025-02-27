@@ -1,11 +1,5 @@
 {
   "/page": "app/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/about/page": "app/about/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/consultation/page": "app/consultation/page.js",
-  "/countries/page": "app/countries/page.js",
-  "/services/superVisa/page": "app/services/superVisa/page.js",
-  "/contacts/page": "app/contacts/page.js",
-  "/services/visitorVisa/page": "app/services/visitorVisa/page.js"
+  "/consultation/page": "app/consultation/page.js"
 }

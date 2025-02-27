@@ -6,7 +6,7 @@ const ProgramCard = ({ program, index }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex flex-col gap-3 p-4 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300 ease-in-out bg-white hover:border-b-4 hover:border-tertiary text-dark h-full">
+    <div className="h-[360px] flex flex-col gap-3 p-4 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300 ease-in-out bg-white hover:border-b-4 hover:border-tertiary text-dark h-full">
       <div className="flex justify-center items-center mb-2">
         <div className="text-xl font-bold rounded-full w-10 h-10 flex items-center justify-center text-white bg-primary">
           {index + 1 || 1}

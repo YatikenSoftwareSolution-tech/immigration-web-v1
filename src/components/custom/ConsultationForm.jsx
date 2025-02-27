@@ -203,7 +203,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         {step === 1 && (
           <>
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-2 md:gap-6 lg:gap-10">
               <h3 className="text-secondary mb-2 text-lg">
                 Purpose of Consultation
               </h3>
@@ -215,8 +215,9 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 </label>
                 <select
                   multiple
+                  size="5"
                   {...register("reasonForImmigration")}
-                  className="bg-gray-400 text-sm border-none w-[50%] px-4 pb-2 border rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-tertiary focus:border-tertiary"
+                  className="bg-gray-400 text-sm border-none w-[50%] px-4 pb-2 border rounded-md text-gray-700 focus:outline-none "
                 >
                   <option value="Permanent Residence">
                     Permanent Residence (PR)
@@ -228,6 +229,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                   </option>
                   <option value="Other">Other</option>
                 </select>
+
                 {errors.reasonForImmigration && (
                   <p className="text-red-500 text-xs mt-1">
                     {errors.reasonForImmigration.message}
@@ -237,10 +239,10 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
 
               {/* Conditional Other Reason */}
               {reasonForImmigration?.includes("Other") && (
-                <div className="flex flex-col w-[30%]">
+                <div className="flex flex-col  ">
                   <label className="m-0 text-sm mb-1">Other Reason</label>
                   <Input
-                    className="border-none h-12"
+                    className="border-none h-12 w-[300px]"
                     {...register("otherReason")}
                     placeholder="Please specify"
                   />
@@ -256,7 +258,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 Personal Details
               </h3>
               {/* Name */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Name</label>
                 <Input
                   className="border-none h-12"
@@ -269,8 +271,9 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                   </p>
                 )}
               </div>
+
               {/* Email */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Email</label>
                 <Input
                   className="border-none h-12"
@@ -284,7 +287,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Mobile */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Mobile</label>
                 <Input
                   className="border-none h-12"
@@ -298,7 +301,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* City */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">City</label>
                 <Input
                   className="border-none h-12"
@@ -312,7 +315,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Country */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Country</label>
                 <Input
                   className="border-none h-12"
@@ -326,7 +329,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Age */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Age</label>
                 <Input
                   className="border-none h-12"
@@ -341,7 +344,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Current Immigration Status */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   Citizenship/Current Immigration Status
                 </label>
@@ -357,7 +360,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Expiry Date */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   The Expiry Date of the Status (YYYY-MM-DD)
                 </label>
@@ -373,7 +376,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Marital Status */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Marital Status</label>
                 <select
                   {...register("maritalStatus")}
@@ -391,7 +394,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Spouse Immigration Status */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   Spouse's Immigration Status (if applicable)
                 </label>
@@ -406,7 +409,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                   </p>
                 )}
               </div>
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Dependents</label>
                 <Input
                   className="border-none h-12"
@@ -420,7 +423,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Previously Applied */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   Have you previously applied for Canadian immigration?
                 </label>
@@ -438,7 +441,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Previously Applied Reason */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   If yes, please provide details
                 </label>
@@ -453,7 +456,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Profile in FEES */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   Have you created your profile in Federal Express Entry System?
                 </label>
@@ -471,7 +474,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* CRS Score */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   If yes what is your current CRS Score?
                 </label>
@@ -488,7 +491,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Profile in PNP */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   Have you created a PNP profile.
                 </label>
@@ -506,7 +509,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* PNP Score */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   If yes, please specify province, stream and your score
                 </label>
@@ -546,9 +549,9 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
         {step === 2 && (
           <>
             <h3 className="text-secondary mb-2 text-lg">Education</h3>
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-2 md:gap-6 lg:gap-10">
               {/* Outside Canada */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   Have you completed any education outside Canada?
                 </label>
@@ -566,7 +569,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Have ECA */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   If yes, have you obtained an Education Credential
                   Assessment(ECA)?
@@ -585,7 +588,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Explain ECA */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   Canadian equivalency according to your ECA
                 </label>
@@ -601,7 +604,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* In Canada */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   Have you completed any education in Canada?
                   <span className="text-secondary ml-1">*</span>
@@ -620,7 +623,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Institute Name */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   If yes, provide qualification details
                 </label>
@@ -636,7 +639,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Program */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Program/Degree</label>
                 <Input
                   className="border-none h-12"
@@ -650,7 +653,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Document */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Date of Completion</label>
                 <Input
                   className="border-none h-12"
@@ -664,7 +667,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Discontinued */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   If you discontinued studies before completion
                 </label>
@@ -702,9 +705,9 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
         {step === 3 && (
           <>
             <h3 className="text-secondary mb-2 text-lg">Employment Details</h3>
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-2 md:gap-6 lg:gap-10">
               {/* Employment Fields */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Occupation</label>
                 <Input
                   className="border-none h-12"
@@ -717,7 +720,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                   </p>
                 )}
               </div>
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Employer Name</label>
                 <Input
                   className="border-none h-12"
@@ -730,7 +733,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                   </p>
                 )}
               </div>
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   Start Date (YYYY-MM-DD)
                 </label>
@@ -745,7 +748,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                   </p>
                 )}
               </div>
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   End Date (YYYY-MM-DD)
                 </label>
@@ -764,7 +767,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 Language Proficiency
               </h3>
               {/* Language Test */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   Have you taken a language proficiency test?
                 </label>
@@ -781,7 +784,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                   </p>
                 )}
               </div>
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   If yes, please provide details
                 </label>
@@ -800,7 +803,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                   </p>
                 )}
               </div>
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Date of Test</label>
                 <Input
                   className="border-none h-12"
@@ -814,7 +817,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                 )}
               </div>
               {/* Language Scores */}
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Listening Score</label>
                 <Input
                   className="border-none h-12"
@@ -828,7 +831,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                   </p>
                 )}
               </div>
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Reading Score</label>
                 <Input
                   className="border-none h-12"
@@ -842,7 +845,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                   </p>
                 )}
               </div>
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Writing Score</label>
                 <Input
                   className="border-none h-12"
@@ -856,7 +859,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                   </p>
                 )}
               </div>
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">Speaking Score</label>
                 <Input
                   className="border-none h-12"
@@ -873,7 +876,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
               <h3 className="text-secondary mb-2 w-full text-lg">
                 Additional Information
               </h3>
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   Have you or any family member been refused a visa or entry in
                   Canada?
@@ -891,7 +894,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                   </p>
                 )}
               </div>
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   If yes, please explain why?
                 </label>
@@ -907,7 +910,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                   </p>
                 )}
               </div>
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   Do you have any criminal conviction or charges?
                 </label>
@@ -924,7 +927,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                   </p>
                 )}
               </div>
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   If yes, please provide details
                 </label>
@@ -940,7 +943,7 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
                   </p>
                 )}
               </div>
-              <div className="flex flex-col w-[30%]">
+              <div className="flex flex-col w-[48%] md:w-[30%] lg:w-[20%]">
                 <label className="m-0 text-sm mb-1">
                   Any additional information or concerns
                 </label>
@@ -986,23 +989,21 @@ const ConsultationForm = ({ isOpen, onClose }) => {
   return (
     <>
       {isOpen && (
-        <div className="mt-16  flex items-end justify-center">
-          <div className="bg-white px-12 py-6 h-full w-[100vw] shadow-lg">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl text-dark font-bold mb-4">
-                Consultation Form
-              </h2>
-              <button
-                className="py-2 px-4 bg-dark/80 text-white rounded-lg"
-                onClick={onClose}
-              >
-                <ArrowLeft className="h-4" />
-              </button>
-            </div>
-            <div className="px-4 py-2">
-              <HorizontalLinearStepper step={step} stepLabel={stepLabel} />
-              <MultiStepForm step={step} setStep={setStep} onClose={onClose} />
-            </div>
+        <div className=" consultaionForm bg-white mt-12 px-12 py-6 h-full w-[100vw] shadow-lg sm:px-4">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-2xl text-dark font-bold mb-4">
+              Consultation Form
+            </h2>
+            <button
+              className="py-2 px-4 bg-dark/80 text-white rounded-lg"
+              onClick={onClose}
+            >
+              <ArrowLeft className="h-4" />
+            </button>
+          </div>
+          <div className="px-4 py-2">
+            <HorizontalLinearStepper step={step} stepLabel={stepLabel} />
+            <MultiStepForm step={step} setStep={setStep} onClose={onClose} />
           </div>
         </div>
       )}

@@ -145,8 +145,8 @@ const ImmigrationPage = () => {
                     Your trusted partner for expert immigration services in
                     Edmonton. We make your dreams of global mobility a reality.
                   </p>
-                  <button onClick={() => router.push("/consultation")} className="bg-secondary hover:bg-red-700 text-white px-8 py-3 rounded-md inline-flex items-center gap-2 w-fit transition-all">
-                    Get Started
+                  <button onClick={() => router.push("/about")} className="bg-secondary hover:bg-red-700 text-white px-8 py-3 rounded-md inline-flex items-center gap-2 w-fit transition-all">
+                    Know About Us
                     <ArrowRight size={20} />
                   </button>
                 </div>
@@ -157,7 +157,7 @@ const ImmigrationPage = () => {
           {/* 3 Steps Section - Responsive */}
           <div className="px-6 mt-6">
               
-              <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center md:items-start gap-8 md:gap-4 px-4">
+              <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center md:items-start gap-8 md:gap-4 sm:gap-0 px-4">
                 {/* step1 */}
                 <div className="relative flex flex-col items-center w-full md:w-1/3 mb-8 md:mb-0">
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold z-10 mb-4">
@@ -230,10 +230,10 @@ const ImmigrationPage = () => {
                 </div>
               </div>
 
-            <h1 className="mt-8 md:mt-12 text-dark mb-[5%] text-lg md:text-xl font-bold text-center px-4">
-              You are just <span className="text-secondary">3 Steps</span> away
-              from your<span className="text-secondary"> Immigration</span>{" "}
-              Journey
+            <h1 className="text-dark mb-[5%]  font-semibold text-center px-4">
+              Follow two steps  to move ahead in 
+              your Immigration Journey <span className="text-secondary"> </span>{" "}
+              : <span className="text-secondary">Fill the form and Book a Consultation with our experts.</span>
             </h1>
           </div>
 

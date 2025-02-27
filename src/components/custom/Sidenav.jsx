@@ -41,7 +41,7 @@ const Sidenav = () => {
         { name: 'Parents & Grandparents PR', link: '/services/parents' }
       ]
     },
-    { name: 'Careers', link: '/countries' },
+    { name: 'Careers', link: '/carrers' },
     { name: 'Contact Us', link: '/contacts' },
     { name: 'Book Consultation', link: '/consultation' }
   ];
@@ -116,16 +116,6 @@ const Sidenav = () => {
                 </div>
               ))}
             </nav>
-
-            {/* Optional: Logout button */}
-            <div className="px-4 py-4">
-              <button
-                onClick={handleLogout}
-                className="w-full text-left px-4 py-2 hover:bg-green-700 hover:text-white transition flex items-center"
-              >
-                <LogOut className="mr-2" /> Logout
-              </button>
-            </div>
           </div>
         </aside>
       )}

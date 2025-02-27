@@ -84,14 +84,6 @@ const AppNavigation = () => {
                   </li>
                   <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                     <NavigationMenuLink
-                      href="/services/studentVisa"
-                      className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
-                     >
-                      Job placement
-                    </NavigationMenuLink>
-                  </li>
-                  <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                    <NavigationMenuLink
                       href="/services/tourism"
                       className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
                       >
@@ -104,14 +96,6 @@ const AppNavigation = () => {
                       className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
                       >
                       Labour market impact assessment for employers
-                    </NavigationMenuLink>
-                  </li>
-                  <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                    <NavigationMenuLink
-                      href="/services/nominee"
-                      className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
-                      >
-                      Alberta provincial nominee program
                     </NavigationMenuLink>
                   </li>
                   <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">

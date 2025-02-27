@@ -202,7 +202,6 @@ const MultiStepForm = ({ setResult, setStatus, step, setStep, onClose }) => {
   const reasonForImmigration = watch("reasonForImmigration");
 
   const onSubmit = async () => {
-    setLoading(true);
     const body = watch();
     console.log(body);
     const now = new Date(Date.now());
@@ -262,8 +261,6 @@ const MultiStepForm = ({ setResult, setStatus, step, setStep, onClose }) => {
       } else setStatus(true);
     } catch (error) {
       console.log(error);
-    } finally {
-      setLoading(false);
     }
   };
 

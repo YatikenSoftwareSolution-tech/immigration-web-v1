@@ -3,10 +3,11 @@
 import React, { useEffect, useState } from "react";
 import { gapi } from "gapi-script";
 import StripeCheckout from "react-stripe-checkout";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import styles from "./Consultation.module.css";
 
-const CLIENT_ID = "744600285710-o88sor3fkikrqmsevadduasuu84q5pa0.apps.googleusercontent.com";
+const CLIENT_ID =
+  "744600285710-o88sor3fkikrqmsevadduasuu84q5pa0.apps.googleusercontent.com";
 const API_KEY = "AIzaSyBAH07eHPiM6I97P3WCKhh3DpkkjK5ws-o";
 const SCOPES = "https://www.googleapis.com/auth/calendar";
 
@@ -15,6 +16,7 @@ const Consultation = () => {
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [slotDuration, setSlotDuration] = useState(10); // Default 10 min
   const [paymentComplete, setPaymentComplete] = useState(false);
+  const [user, setUser] = useState(null); // New state to store the signed-in user
 
   useEffect(() => {
     function start() {
@@ -39,10 +41,18 @@ const Consultation = () => {
     gapi.auth2
       .getAuthInstance()
       .signIn()
-      .then(() => {
+      .then((googleUser) => {
+        // Log user info to verify sign-in was successful
+        console.log("User signed in:", googleUser.getBasicProfile());
+        // Optionally, update the state with the signed-in user's info
+        setUser(googleUser);
+        // Proceed to fetch available slots after sign-in
         fetchAvailableSlots();
       })
-      .catch((error) => console.error("Google Auth Error:", error));
+      .catch((error) => {
+        // Properly catch and log any errors during sign-in
+        console.error("Google Auth Error:", error);
+      });
   };
 
   const fetchAvailableSlots = async () => {
@@ -158,18 +168,18 @@ const Consultation = () => {
             <h1 className="text-lg md:text-xl text-tertiary font-semibold mb-4 md:mb-6 text-center">
               Book a Mentorship Session with our expert counselors
             </h1>
-
-            <button
-              onClick={signIn}
-              className="w-full md:w-auto mb-4 text-sm bg-secondary text-white px-4 md:px-6 py-2 bg-blue-500 rounded-lg shadow text-center"
-            >
-              <span className="text-xl font-bold">G</span> Sign in with Google
-            </button>
-
-            <div className="flex justify-center mb-4 w-full">
+            {!user && (
+              <button
+                onClick={signIn}
+                className="w-full md:w-auto mb-4 text-sm bg-secondary text-white px-4 md:px-6 py-2 bg-blue-500 rounded-lg shadow text-center"
+              >
+                <span className="text-xl font-bold">G</span> Sign in with Google
+              </button>
+            )}
+            <div className="">
               <Tabs
-                className="w-full md:w-auto bg-gray p-2 rounded-lg flex justify-center"
-                defaultValue={slotDuration.toString()}
+                className="w-full md:w-auto bg-gray-200 border p-2 rounded-lg "
+                defaultValue="10MinFreeMeating"
                 onValueChange={(value) => {
                   setSlotDuration(Number(value));
                   // Reset payment status when switching tabs
@@ -177,113 +187,30 @@ const Consultation = () => {
                   fetchAvailableSlots();
                 }}
               >
-                <TabsList className="w-full md:w-auto bg-gray-100 p-1 rounded-lg flex justify-center">
-                  {[10, 30].map((duration) => (
-                    <TabsTrigger
-                      key={duration}
-                      value={duration.toString()}
-                      className={`flex-1 md:flex-none px-3 md:px-6 py-2 rounded-md transition-all duration-200 text-sm md:text-base ${
-                        slotDuration === duration
-                          ? "bg-white text-black shadow-md"
-                          : "bg-gray hover:bg-gray-400"
-                      }`}
-                    >
-                      {duration} Min
-                    </TabsTrigger>
-                  ))}
+                <TabsList className="w-full md:w-auto bg-white-50 px-4 py-2 rounded-lg flex justify-center">
+                  <TabsTrigger
+                    value="10MinFreeMeating"
+                    className="mr-4 data-[state=active]:bg-white data-[state=active]:text-secondary"
+                  >
+                    10 Min Free Meeting
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="30MinMeeting"
+                    className="mr-4 data-[state=active]:bg-white data-[state=active]:text-secondary"
+                  >
+                    30 Min Meeting
+                  </TabsTrigger>
                 </TabsList>
-              </Tabs>
-            </div>
-
-            {/* Slot Duration Selection */}
-            <div className="flex flex-col md:flex-row gap-2 mb-4 w-full justify-center">
-              <button
-                className={`px-4 md:px-8 py-2 md:py-4 text-sm md:text-base font-semibold rounded-lg text-center ${
-                  slotDuration === 10 ? "bg-blue-500 text-white" : "bg-gray-200"
-                }`}
-                onClick={() => {
-                  setSlotDuration(10);
-                  fetchAvailableSlots();
-                }}
-              >
-                10 Min Free Meeting
-              </button>
-              <button
-                className={`px-4 md:px-8 py-2 md:py-4 text-sm md:text-base font-semibold rounded-lg text-center ${
-                  slotDuration === 30 ? "bg-blue-500 text-white" : "bg-gray-200"
-                }`}
-                onClick={() => {
-                  setSlotDuration(30);
-                  // Reset payment status for a new 30-min session
-                  setPaymentComplete(false);
-                  fetchAvailableSlots();
-                }}
-              >
-                30 Min Paid Meeting
-              </button>
-            </div>
-
-            {/* Display for 10 Min Meetings */}
-            {slotDuration === 10 && (
-              <>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 p-2 md:p-4 bg-gray-50 rounded-lg w-full place-items-center">
-                  {slots.map((slot, index) => (
-                    <div
-                      key={index}
-                      className={`p-2 md:p-3 text-center border rounded-lg cursor-pointer transition-all duration-200 relative group text-sm md:text-base w-full ${
-                        selectedSlot === slot
-                          ? "bg-green-500 text-white"
-                          : "bg-white hover:bg-blue-100"
-                      }`}
-                      onClick={() => setSelectedSlot(slot)}
-                    >
-                      {slot.start.toLocaleTimeString([], {
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })}
-                      <span className="hidden md:block absolute left-1/2 transform -translate-x-1/2 mt-2 p-2 bg-black text-white text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
-                        Click to select this slot
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                {selectedSlot && (
-                  <button
-                    onClick={createEvent}
-                    className="w-full md:w-auto mt-4 px-4 md:px-6 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 text-center"
-                  >
-                    Confirm Booking
-                  </button>
-                )}
-              </>
-            )}
-
-            {/* Display for 30 Min Meetings */}
-            {slotDuration === 30 && (
-              <div>
-                {!paymentComplete ? (
-                  <StripeCheckout
-                    token={onToken}
-                    stripeKey="your_publishable_key_here"
-                    amount={3000} // Amount in cents; adjust as needed
-                    name="30 Min Paid Meeting"
-                    description="Pay to schedule your 30 minute meeting"
-                    currency="USD"
-                  >
-                    <button className="w-full md:w-auto mt-4 px-4 md:px-6 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 text-center">
-                      Pay to Schedule 30 Min Meeting
-                    </button>
-                  </StripeCheckout>
-                ) : (
+                <TabsContent value="10MinFreeMeating">
                   <>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 p-2 md:p-4 bg-gray-50 rounded-lg w-full place-items-center">
                       {slots.map((slot, index) => (
                         <div
                           key={index}
-                          className={`p-2 md:p-3 text-center border rounded-lg cursor-pointer transition-all duration-200 relative group text-sm md:text-base w-full ${
+                          className={`p-2 md:p-3 text-center  rounded-lg cursor-pointer transition-all duration-200 relative group text-sm md:text-base w-full ${
                             selectedSlot === slot
                               ? "bg-green-500 text-white"
-                              : "bg-white hover:bg-blue-100"
+                              : "bg-tertiary text-white hover:bg-tertiary hover:text-white"
                           }`}
                           onClick={() => setSelectedSlot(slot)}
                         >
@@ -306,9 +233,151 @@ const Consultation = () => {
                       </button>
                     )}
                   </>
-                )}
-              </div>
-            )}
+                </TabsContent>
+                <TabsContent value="30MinMeeting">
+                  <div>
+                    {!paymentComplete ? (
+                      <StripeCheckout
+                        token={onToken}
+                        stripeKey="your_publishable_key_here"
+                        amount={10000} // Amount in cents: $30.00
+                        name="30 Min Paid Meeting"
+                        description="Pay to schedule your 30 minute meeting"
+                        currency="USD"
+                      >
+                        <div className="w-full mt-6 max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                          <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
+                            Payment Details
+                          </h5>
+                          <div className="flex items-baseline text-gray-900 dark:text-white">
+                            <span className="text-3xl font-semibold">$</span>
+                            <span className="text-5xl font-extrabold tracking-tight">
+                              100
+                            </span>
+                          </div>
+                          <ul role="list" className="space-y-5 my-7">
+                            <li className="flex items-center">
+                              <svg
+                                className="shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                              >
+                                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                              </svg>
+                              <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                                One-on-One consultation
+                              </span>
+                            </li>
+                            <li className="flex">
+                              <svg
+                                className="shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                              >
+                                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                              </svg>
+                              <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                                30+ years of experience
+                              </span>
+                            </li>
+                            <li className="flex">
+                              <svg
+                                className="shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                              >
+                                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                              </svg>
+                              <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                                Integration help
+                              </span>
+                            </li>
+                            <li className="flex justify-between">
+                              <div className="flex justify-between">
+                                <span className="text-gray-600">Pay To:</span>
+                                <span className="text-gray-800 font-semibold">
+                                  Consultant Name
+                                </span>
+                              </div>
+                            </li>
+                            <li className="flex justify-between">
+                              <div className="flex justify-between">
+                                <span className="text-gray-600">Service:</span>
+                                <span className="text-gray-800 font-semibold">
+                                  30 Min Consultation
+                                </span>
+                              </div>
+                            </li>
+                            <li className="flex justify-between">
+                              <div className="flex justify-between">
+                                <span className="text-gray-600">Amount:</span>
+                                <span className="text-gray-800 font-semibold">
+                                  $100.00
+                                </span>
+                              </div>
+                            </li>
+                            <li className="flex justify-between">
+                              <div className="flex justify-between">
+                                <span className="text-gray-600">Currency:</span>
+                                <span className="text-gray-800 font-semibold">
+                                  USD
+                                </span>
+                              </div>
+                            </li>
+                          </ul>
+                          <button
+                            type="button"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center"
+                          >
+                            Pay Now
+                          </button>
+                        </div>
+
+                        
+                      </StripeCheckout>
+                    ) : (
+                      <>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 p-2 md:p-4 bg-gray-50 rounded-lg w-full place-items-center">
+                          {slots.map((slot, index) => (
+                            <div
+                              key={index}
+                              className={`p-2 md:p-3 text-center border rounded-lg cursor-pointer transition-all duration-200 relative group text-sm md:text-base w-full ${
+                                selectedSlot === slot
+                                  ? "bg-green-500 text-white"
+                                  : "bg-white hover:bg-blue-100"
+                              }`}
+                              onClick={() => setSelectedSlot(slot)}
+                            >
+                              {slot.start.toLocaleTimeString([], {
+                                hour: "2-digit",
+                                minute: "2-digit",
+                              })}
+                              <span className="hidden md:block absolute left-1/2 transform -translate-x-1/2 mt-2 p-2 bg-black text-white text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
+                                Click to select this slot
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                        {selectedSlot && (
+                          <button
+                            onClick={createEvent}
+                            className="w-full md:w-auto mt-4 px-4 md:px-6 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 text-center"
+                          >
+                            Confirm Booking
+                          </button>
+                        )}
+                      </>
+                    )}
+                  </div>
+                </TabsContent>
+              </Tabs>
+            </div>
           </div>
         </div>
       </div>

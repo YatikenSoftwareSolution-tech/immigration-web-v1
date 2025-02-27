@@ -6,6 +6,7 @@
 
   @media screen and (width: 360px) and (height: 800px) {
     .container {
+      margin-top: 1%;
       width: 360px;
       height: 800px;
       overflow-y: auto;

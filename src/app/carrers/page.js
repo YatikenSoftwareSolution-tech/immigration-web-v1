@@ -75,27 +75,23 @@ function JobCard({
   );
 }
 
-const page = () => {
+const Carrers = () => {
   return (
     <div className="relative">
-  <section id="careers" className="relative mx-auto w-full py-8 md:py-16">
-  <div className="relative w-full bg-cover bg-center mt-4 mb-4">
-  <Image
-    src={CountriesBanner1}
-    alt="Banner"
-    width={1260} // Original image width (or a close approximation)
-    height={600} // Original image height (or a close approximation)
-    layout="responsive"
-    objectFit="cover" // Fill the container, might crop parts of the image
-    className="rounded-lg"
-    priority
-/>
-</div>
+      <section id="careers" className="">
+        <div className="relative w-full bg-cover bg-center mb-4 ">
+          <Image
+            src={CountriesBanner1}
+            alt="Banner"
+            height={100}
+            width={100}
+            layout="responsive"
+            priority
+          />
+        </div>
 
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-around"> {/* Added container and adjusted margin */}
-          {/* Banner Image Section */}
-
-          <div className="w-full md:w-1/2 mb-4 md:mb-0"> {/* Adjusted margin */}
+        <div className="container mx-auto py-6 px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-around">
+          <div className="w-full md:w-1/2 mb-4 md:mb-0">
             <Image
               src={CountriesBanner2}
               alt="Banner"
@@ -107,25 +103,31 @@ const page = () => {
               priority
             />
           </div>
-
           {/* Text Content Section */}
-          <div className="w-full md:w-1/2 flex flex-col gap-3 md:gap-4 lg:gap-6 md:pl-10"> {/* Adjusted gap */}
+          <div className="w-full md:w-1/2 flex flex-col gap-3 md:gap-4 lg:gap-6 md:pl-10">
+            {" "}
+            {/* Adjusted gap */}
             <p className="text-secondary text-sm md:text-md  lg:text-3xl font-semibold">
               Let's work together
             </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-dark"> {/* Adjusted text size */}
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-dark">
+              {" "}
+              {/* Adjusted text size */}
               We believe in small teams doing big things at
               <span className="text-secondary"> The Immigration Company</span>
             </h2>
-            <p className="text-dark text-sm md:text-base font-semibold mt-2 md:mt-4"> {/* Adjusted text size and margin */}
+            <p className="text-dark text-sm md:text-base font-semibold mt-2 md:mt-4">
+              {" "}
+              {/* Adjusted text size and margin */}
               Join our dynamic and diverse team at The Immigration Company,
               where innovation meets passion. We are committed to making a
               difference in the lives of immigrants and fostering a
               collaborative, growth-driven culture. Explore our open positions
               and become a part of something bigger.
             </p>
-
-            <div className="mt-4 md:mt-8"> {/* Adjusted margin */}
+            <div className="mt-4 md:mt-8">
+              {" "}
+              {/* Adjusted margin */}
               <button
                 href="#jobs"
                 className="bg-secondary text-white px-4 py-2 md:px-6 md:py-3 rounded-lg text-sm md:text-base font-semibold hover:bg-secondary-dark transition duration-300 w-full md:w-auto" /* Adjusted text size and padding */
@@ -135,7 +137,7 @@ const page = () => {
             </div>
           </div>
         </div>
-      </section>  
+      </section>
 
       {/* Culture Section */}
       <section className="bg-blue-50 py-16 px-4">
@@ -279,10 +281,10 @@ const page = () => {
         </div>
       </section>
 
-      <PartnersList />
-      <ChatBot />
+      {/* <PartnersList />
+      <ChatBot /> */}
     </div>
   );
 };
 
-export default page;
+export default Carrers;

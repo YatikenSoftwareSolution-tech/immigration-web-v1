@@ -199,7 +199,6 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
   };
 
   return (
-    <div className="">
       <form onSubmit={handleSubmit(onSubmit)}>
         {step === 1 && (
           <>
@@ -978,7 +977,6 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
           </>
         )}
       </form>
-    </div>
   );
 };
 

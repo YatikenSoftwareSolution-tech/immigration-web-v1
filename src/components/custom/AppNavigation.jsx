@@ -149,7 +149,7 @@ const AppNavigation = () => {
          
           <li className="text-base">
             <Link
-              href="/countries"
+              href="/carrers"
              className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
             >
               Careers

@@ -52,7 +52,7 @@ const AboutUsPage = () => {
       <div className="relative w-full">
         <div>
           {/* Banner Image Container - Responsive height */}
-          <div className="relative min-h-[60vh] md:h-[70vh] w-full">
+          <div className=" mt-2 relative h-[50vh] md:h-[70vh] lg:h[80vh]  md:w-full lg:w-full">
             {/* Background Image - Fixed syntax typo in className */}
             <Image
               src={bannerImage}
@@ -208,6 +208,8 @@ const AboutUsPage = () => {
                     src="https://th.bing.com/th/id/OIP._SA2gmOS6ol21qyHvFjvHwHaFM?w=780&h=547&rs=1&pid=ImgDetMain"
                     alt="Immigration Consulting Team"
                     className="object-cover w-full h-full"
+                    height={180}
+                    width={260}
                   />
                 </div>
 

@@ -1,20 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { motion } from "framer-motion"; // For animations
-import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
-import VT1 from "../../../assets/VT1.svg";
-import VT2 from "../../../assets/VT2.svg";
-import VT3 from "../../../assets/VT3.svg";
-import VT4 from "../../../assets/VT4.svg";
-import VT5 from "../../../assets/VT5.svg";
+import { motion } from "framer-motion"; 
 import Nominee from '../../../assets/Nominee.jpg';
-// import ChatBot from "@/components/custom/ChatBot";
 import styles from "../../../Home.module.css"
+import { useRouter } from "next/navigation";
+
 const AlbertaPNPPage = () => {
-  const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
+  const router = useRouter();
 
   // Streams in AAIP (Alberta Advantage Immigration Program)
   const programStreams = [
@@ -91,7 +85,7 @@ const AlbertaPNPPage = () => {
             >
               Alberta offers one of the easiest paths to Permanent Residency in Canada through its Provincial Nominee Program (PNP). Learn about the eligibility requirements, streams, and how we can help you apply.
             </motion.p>
-            <Button className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
+            <Button onClick={() => router.push("/form")} className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
               Book a Consultation
             </Button>
           </div>

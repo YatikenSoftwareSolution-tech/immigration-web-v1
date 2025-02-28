@@ -6,9 +6,10 @@ import Image from "next/image";
 import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
 import { Plane, FileCheck, Heart, Scale, Home, Wallet, FileText, Fingerprint, Clock, Globe2, Building2, Users, CheckCircle, AlertTriangle, CircleCheck } from 'lucide-react';
 import styles from "../../Home.module.css"
+import { useRouter } from "next/navigation";
 const PermanentCardPage = () => {
   
-
+  const router = useRouter();
   return (
     <div className={styles.container}>
       <div className={styles.pageContent}>
@@ -32,7 +33,7 @@ const PermanentCardPage = () => {
               transition={{ duration: 1.2 }}
             >
 Permanent residents of Canada must carry a valid PR card when traveling outside Canada to return.            </motion.p>
-            <Button className="bg-green-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-green-700">
+            <Button onClick={() => router.push("/form")} className="bg-green-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-green-700">
               Apply Now
             </Button>
           </div>

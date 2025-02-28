@@ -6,14 +6,10 @@ import VT2 from "../assets/VT2.svg";
 import VT3 from "../assets/VT3.svg";
 import VT4 from "../assets/VT4.svg";
 import VT5 from "../assets/VT5.svg";
-
-import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
+import { useState } from "react";
 import ConsultationForm from "@/components/custom/ConsultationForm";
 import ProgramCard from "@/components/custom/ProgramCard";
 import VisaTypeCard from "@/components/custom/VisaTypeCard";
-import ChatBot from "@/components/custom/ChatBot";
-import PartnersList from "@/components/custom/PartnersList";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -68,39 +64,37 @@ const ImmigrationPage = () => {
   ];
 
   const Programs = [
-    
     {
       title: "Parents and Grandparents",
       description:
         "This program streamlines the process for family reunification, helping parents and grandparents join their loved ones abroad with tailored support and guidance.",
-      link: ""
+      link: "",
     },
     {
       title: "Humanitarian and Compassionate Ground",
       description:
         "Designed for individuals facing severe hardships due to environmental, political, or health crises, this program offers urgent support and safe relocation options.",
-      link: ""
+      link: "",
     },
     {
       title: "PR upon Receiving Provincial Nomination",
       description:
         "A fast-track pathway to Permanent Residency for candidates who have been nominated by a provincial government, recognizing your skills and contributions for a stable future.",
-      link: ""
+      link: "",
     },
     {
       title: "Children for Canadian Citizenship",
       description:
         "Focused on ensuring a bright future, this program supports the immigration of children eligible for Canadian citizenship, providing access to quality education and a nurturing environment.",
-      link: ""
+      link: "",
     },
     {
       title: "Sponsoring Your Spouse",
       description:
         "This program assists couples through the spousal sponsorship process, ensuring a smooth transition and family unity as you build your new life together.",
-      link: ""
-    }
+      link: "",
+    },
   ];
-  
 
   function StatCard({ icon: Icon, number, label, accentColor }) {
     return (
@@ -115,7 +109,7 @@ const ImmigrationPage = () => {
             />
           </div>
           <div className="space-y-2">
-            <h3 className="text-5xl font-bold text-gray-900">{number}</h3>
+            <h3 className="text-4xl font-semibold text-gray-900">{number}</h3>
             <p className="text-gray-600 font-medium">{label}</p>
           </div>
         </div>
@@ -132,7 +126,7 @@ const ImmigrationPage = () => {
     );
   }
 
-  if(isSpecialProgramOpen){
+  if (isSpecialProgramOpen) {
     return (
       <HumanitarianForm
         isOpen={isSpecialProgramOpen}
@@ -144,10 +138,12 @@ const ImmigrationPage = () => {
     <div className={styles.pageContent}>
       <div className="bg-white text-black mt-12">
         <div
-          className="min-h-[45vh] md:h-[45vh] bg-cover bg-center relative opacity-75"
+          className="min-h-[45vh] md:h-[45vh]  relative opacity-75"
           style={{
             backgroundImage:
               'url("https://images.unsplash.com/photo-1526495124232-a04e1849168c?auto=format&fit=crop&q=80")',
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70">
@@ -280,8 +276,11 @@ const ImmigrationPage = () => {
             >
               {Programs.map((program, index) => (
                 <SwiperSlide key={index}>
-                  <ProgramCard index={index} setIsSpecialProgramOpen ={setIsSpecialProgramOpen}
-                  program={program} />
+                  <ProgramCard
+                    index={index}
+                    setIsSpecialProgramOpen={setIsSpecialProgramOpen}
+                    program={program}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>

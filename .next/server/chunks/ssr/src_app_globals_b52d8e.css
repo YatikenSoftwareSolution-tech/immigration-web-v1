@@ -901,6 +901,30 @@ img, video {
   height: 100svh;
 }
 
+.h-\[280px\] {
+  height: 280px;
+}
+
+.h-\[350px\] {
+  height: 350px;
+}
+
+.h-\[0px\] {
+  height: 0;
+}
+
+.h-\[480px\] {
+  height: 480px;
+}
+
+.h-\[460px\] {
+  height: 460px;
+}
+
+.h-\[40vh\] {
+  height: 40vh;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -2151,10 +2175,6 @@ img, video {
   padding-top: .25rem;
 }
 
-.pt-20 {
-  padding-top: 5rem;
-}
-
 .pt-3 {
   padding-top: .75rem;
 }
@@ -2353,11 +2373,6 @@ img, video {
 .text-green-800 {
   --tw-text-opacity: 1;
   color: rgb(22 101 52 / var(--tw-text-opacity, 1));
-}
-
-.text-orange-600 {
-  --tw-text-opacity: 1;
-  color: rgb(234 88 12 / var(--tw-text-opacity, 1));
 }
 
 .text-primary {
@@ -2625,7 +2640,6 @@ body {
 }
 
 .countriesBackgroundBanner {
-  background-image: url("/_next/static/media/CountriesBanner1.c4b7b3a8.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2926,11 +2940,6 @@ body {
 .hover\:text-blue-700:hover {
   --tw-text-opacity: 1;
   color: rgb(29 78 216 / var(--tw-text-opacity, 1));
-}
-
-.hover\:text-secondary:hover {
-  --tw-text-opacity: 1;
-  color: rgb(225 35 16 / var(--tw-text-opacity, 1));
 }
 
 .hover\:text-tertiary:hover {
@@ -3480,6 +3489,14 @@ body {
     margin-top: 4rem;
   }
 
+  .sm\:mt-8 {
+    margin-top: 2rem;
+  }
+
+  .sm\:block {
+    display: block;
+  }
+
   .sm\:flex {
     display: flex;
   }
@@ -3785,6 +3802,10 @@ body {
     height: 70vh;
   }
 
+  .md\:h-\[60vh\] {
+    height: 60vh;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -4061,6 +4082,10 @@ body {
 @media (width >= 1024px) {
   .lg\:relative {
     position: relative;
+  }
+
+  .lg\:mt-8 {
+    margin-top: 2rem;
   }
 
   .lg\:hidden {

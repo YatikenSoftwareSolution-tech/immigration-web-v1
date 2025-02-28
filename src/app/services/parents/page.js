@@ -6,8 +6,10 @@ import Image from "next/image";
 import GrandParents from "../../../assets/GrandParents.png";
 // import ChatBot from "@/components/custom/ChatBot";
 import styles from "../../Home.module.css"
+import { useRouter } from "next/navigation";
+
 const ParentsAndGrandparentsPage = () => {
-  const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
+  const router = useRouter();
 
   const pgpEligibility = [
     "At least eighteen years old.",
@@ -67,7 +69,7 @@ const ParentsAndGrandparentsPage = () => {
             </p>
             <Button
               className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700"
-              onClick={() => setIsConsultationFormOpen(true)}
+              onClick={() => router.push("/form")}
             >
               Book a Consultation
             </Button>

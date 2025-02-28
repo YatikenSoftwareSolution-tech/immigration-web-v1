@@ -4,13 +4,14 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion"; // For animations
 import Image from "next/image";
-import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
 import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
 import { MapPin, FileText, CheckCircle, Users, Building2, GraduationCap, Briefcase, Globe2, FileCheck, Scale, Heart, BadgeCheck } from 'lucide-react';
 // import ChatBot from "@/components/custom/ChatBot";
 import styles from "../../Home.module.css"
+import { useRouter } from "next/navigation";
+
 const ProvincialPage = () => {
-  const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
+  const router = useRouter();
 
   const provinces = [
     { name: "Ontario", abbr: "ON" },
@@ -52,7 +53,7 @@ const ProvincialPage = () => {
             >
             Your pathway to permanent residence through Canadian provinces and territories. Each region offers unique opportunities tailored to their economic needs.
             </motion.p>
-            <Button className="bg-red-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-red-700">
+            <Button onClick={() => router.push("/form")} className="bg-red-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-red-700">
               Apply Now
             </Button>
           </div>
@@ -231,7 +232,7 @@ const ProvincialPage = () => {
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold mb-4">Ready to Make Canada Your Home?</h2>
             <p className="mb-6">Start your journey to permanent residence through the Provincial Nominee Program today.</p>
-            <button className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <button onClick={() => router.push("/form")} className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Explore PNP Streams
             </button>
           </div>

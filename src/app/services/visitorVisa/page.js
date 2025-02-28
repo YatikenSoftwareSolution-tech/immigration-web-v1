@@ -1,16 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion"; // For animations
 import Image from "next/image";
-import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
 import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
 import { Plane, FileCheck, Heart, Scale, Home, Wallet, FileText, Fingerprint, Clock, Globe2, Building2, Users } from 'lucide-react';
 import styles from "../../Home.module.css"
+import { useRouter } from "next/navigation";
 const VisitorVisaPage = () => {
   
-
+  const router = useRouter();
   return (
     <div className={styles.container}>
       <div className={styles.pageContent}>
@@ -35,7 +34,7 @@ const VisitorVisaPage = () => {
             >
              Your gateway to exploring Canada's diverse landscapes, cultures, and opportunities. Whether for tourism, business, or family visits, start your journey here.
             </motion.p>
-            <Button className="bg-red-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-red-700">
+            <Button onClick={() => router.push("/form")} className="bg-red-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-red-700">
               Apply Now
             </Button>
           </div>
@@ -158,7 +157,7 @@ const VisitorVisaPage = () => {
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold mb-4">Ready to Start Your Canadian Journey?</h2>
             <p className="mb-6">Begin your visa application process today and take the first step towards experiencing Canada.</p>
-            <button className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <button onClick={() => router.push("/form")} className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Start Application
             </button>
           </div>

@@ -4,12 +4,12 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion"; // For animations
 import Image from "next/image";
-import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
 import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
 import styles from "../../Home.module.css"
+import { useRouter } from "next/navigation";
 // import ChatBot from "@/components/custom/ChatBot";
 const SpousalSponsorshipPage = () => {
-  const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
+  const router = useRouter()
 
   const requirements = [
     "Be a Canadian citizen or permanent resident.",
@@ -88,7 +88,7 @@ const SpousalSponsorshipPage = () => {
             >
               Canada’s Spousal Sponsorship program allows Canadian citizens and permanent residents to bring their spouses and dependent children to Canada.
             </motion.p>
-            <Button className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
+            <Button onClick={() => router.push("/form")} className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
               Apply Now
             </Button>
           </div>

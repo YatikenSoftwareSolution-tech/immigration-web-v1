@@ -111,7 +111,7 @@ const AppNavigation = () => {
                       href="/services/parents"
                       className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
                       >
-                      Parents & grand parents PR application & super visa
+                      Parents & grand parents PR application
                     </NavigationMenuLink>
                   </li>
                 </ul>

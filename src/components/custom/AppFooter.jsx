@@ -28,13 +28,17 @@ const AppFooter = () => {
             </li>
             <li className="flex items-center">
               <FaPhone className="text-yellow-500 mr-3" />
-              <a href="tel:+1234567890" className="hover:text-yellow-500">
-                +1 (234) 567-890
+              <a href="tel:+117809371995" className="hover:text-yellow-500">
+                +11 (7809)371-995
               </a>
             </li>
             <li className="flex items-center">
               <FaMapMarkerAlt className="text-yellow-500 mr-3" />
-              123 Main Street, City, Country
+              9323- 35 Ave Edmonton, AB T6E 5R5 CANADA
+            </li>
+            <li className="flex items-center">
+              <FaMapMarkerAlt className="text-yellow-500 mr-3" />
+              1701 Hollis Street, 800, Halifax, Nova Scotia, B3J 2T9
             </li>
           </ul>
         </div>
@@ -44,35 +48,21 @@ const AppFooter = () => {
           <h3 className="text-lg font-semibold mb-4">Explore Links</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="#about-us" className="hover:text-yellow-500">
+              <a href="/about" className="hover:text-yellow-500">
                 About Us
               </a>
             </li>
             <li>
-              <a href="#travel-tourism" className="hover:text-yellow-500">
-                Travel and Tourism
+              <a href="/carrers" className="hover:text-yellow-500">
+                Carrers
               </a>
             </li>
             <li>
-              <a href="#visa" className="hover:text-yellow-500">
-                Visa
+              <a href="/contact" className="hover:text-yellow-500">
+                About Us
               </a>
             </li>
-            <li>
-              <a href="#blogs" className="hover:text-yellow-500">
-                Blogs
-              </a>
-            </li>
-            <li>
-              <a href="#countries" className="hover:text-yellow-500">
-                Countries
-              </a>
-            </li>
-            <li>
-              <a href="#faq" className="hover:text-yellow-500">
-                FAQ
-              </a>
-            </li>
+           
           </ul>
         </div>
  
@@ -81,28 +71,48 @@ const AppFooter = () => {
           <h3 className="text-lg font-semibold mb-4">Services Offered</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="#consultation" className="hover:text-yellow-500">
-                Visa Consultation
+              <a href="/services/visitorVisa" className="hover:text-yellow-500">
+                Visitor Visa
               </a>
             </li>
             <li>
-              <a href="#work-permit" className="hover:text-yellow-500">
-                Work Permits
+              <a href="/services/superVisa" className="hover:text-yellow-500">
+                Super Visa
               </a>
             </li>
             <li>
-              <a href="#citizenship" className="hover:text-yellow-500">
-                Citizenship Guidance
+              <a href="/services/workPermit" className="hover:text-yellow-500">
+                Work Permit
               </a>
             </li>
             <li>
-              <a href="#family-visa" className="hover:text-yellow-500">
-                Family Visas
+              <a href="/services/pnpVisa" className="hover:text-yellow-500">
+                PNP
               </a>
             </li>
             <li>
-              <a href="#study-abroad" className="hover:text-yellow-500">
-                Study Abroad Assistance
+              <a href="/services/prCard" className="hover:text-yellow-500">
+                PR Card renewal
+              </a>
+            </li>
+            <li>
+              <a href="/services/tourism" className="hover:text-yellow-500">
+                Express Entry
+              </a>
+            </li>
+            <li>
+              <a href="/services/coaching" className="hover:text-yellow-500">
+                LMIAE
+              </a>
+            </li>
+            <li>
+              <a href="/services/sponsorship" className="hover:text-yellow-500">
+                Spousal Sponsorship
+              </a>
+            </li>
+            <li>
+              <a href="/services/parents" className="hover:text-yellow-500">
+                Parents and Grand Parents PR
               </a>
             </li>
           </ul>
@@ -113,7 +123,7 @@ const AppFooter = () => {
           <h3 className="text-lg font-semibold mb-4">Locate Us</h3>
           <iframe
             className="w-full h-40 rounded-md"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96771.84736251846!2d-113.5628202075604!3d53.54612450287061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a022458c17e1bd%3A0x84d2cbfc4c576c35!2sEdmonton%2C%20AB%2C%20Canada!5e0!3m2!1sen!2sus!4v1672520627280!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d76000.24367833059!2d-113.474289!3d53.468324!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f2ab6057191%3A0x71fc53a206488a4b!2s9323%2035%20Ave%20NW%2C%20Edmonton%2C%20AB%20T6E%205R5%2C%20Canada!5e0!3m2!1sen!2sus!4v1740708587593!5m2!1sen!2sus"
             allowFullScreen=""
             loading="lazy"
             title="Google Map"
@@ -130,7 +140,7 @@ const AppFooter = () => {
           </p>
           <div className="flex space-x-4 text-xl mt-4">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/Immicomp"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-yellow-500"
@@ -138,7 +148,7 @@ const AppFooter = () => {
               <FaFacebook />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/Immicomp"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-yellow-500"
@@ -146,7 +156,7 @@ const AppFooter = () => {
               <FaTwitter />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.instagram.com/theimmigrationcompany/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-yellow-500"
@@ -154,7 +164,7 @@ const AppFooter = () => {
               <FaLinkedin />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/theimmigrationcompany/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-yellow-500"

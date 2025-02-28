@@ -1,17 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import VT1 from "../../../assets/VT1.svg";
-import VT2 from "../../../assets/VT2.svg";
-import VT3 from "../../../assets/VT3.svg";
-import VT4 from "../../../assets/VT4.svg";
+import { Button } from "@/components/ui/button";
 import LabourImage from "../../../assets/LabourImage.jpg";
 // import ChatBot from "@/components/custom/ChatBot";
 import styles from "./Coaching.module.css";
+import { useRouter } from "next/navigation";
 const LMIAJobsPage = () => {
-  const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
+  const router = useRouter();
 
   const lmiaCategories = [
     "Skilled Trades",
@@ -64,7 +60,7 @@ const LMIAJobsPage = () => {
             <p className="text-lg text-dark mb-4">
               Learn how a Labour Market Impact Assessment (LMIA) is crucial for employers to hire foreign workers in Canada. We guide you through every step of the LMIA process.
             </p>
-            <Button className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
+            <Button onClick={() => router.push("/form")} className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
               Book a Consultation
             </Button>
           </div>
@@ -162,7 +158,7 @@ const LMIAJobsPage = () => {
         <p className="text-lg mb-8">
           Let The Immigration Company guide you through the LMIA process and help you secure the work permit you need.
         </p>
-        <Button className="bg-white text-blue-600 py-3 px-6 rounded-lg shadow-lg hover:bg-gray-200">
+        <Button onClick={() => router.push("/form")} className="bg-white text-blue-600 py-3 px-6 rounded-lg shadow-lg hover:bg-gray-200">
           Get Started with Your LMIA Application
         </Button>
       </section>

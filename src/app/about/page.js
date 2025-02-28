@@ -1,10 +1,13 @@
+"use client"
 import * as React from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import bannerImage from "../../assets/heroBanner.jpg";
 import photoImage from "../../assets/Photo.jpg";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const AboutUsPage = () => {
+  const router = useRouter();
   const cards = [
     {
       title: "News centre",
@@ -52,7 +55,7 @@ const AboutUsPage = () => {
       <div className="relative w-full">
         <div>
           {/* Banner Image Container - Responsive height */}
-          <div className=" mt-2 relative h-[50vh] md:h-[70vh] lg:h[80vh]  md:w-full lg:w-full">
+          <div className=" mt-2 relative h-[50vh] md:h-[60vh] lg:h[80vh]  md:w-full lg:w-full">
             {/* Background Image - Fixed syntax typo in className */}
             <Image
               src={bannerImage}
@@ -60,12 +63,7 @@ const AboutUsPage = () => {
               className="w-[100vw] h-[100%] object-fill opacity-80"
             />
             
-            {/* Text Container - Responsive positioning and width */}
-            {/* <div className="absolute inset-0 max-w-6xl mx-auto px-4 sm:px-6 flex items-center">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-dark w-full md:w-1/2 text-center md:text-right">
-                About The Immigration Company
-              </h1>
-            </div> */}
+            
           </div>
 
           {/* Commitment Section with Image - Improved padding */}
@@ -320,7 +318,7 @@ const AboutUsPage = () => {
             process smooth and efficient. Contact us today to start your
             immigration journey with a team that cares about your success!
           </p>
-          <button className="mt-4 md:mt-6 bg-white text-[#1a2b4b] px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-sm md:text-base mx-auto">
+          <button onClick={() => router.push("/contacts")} className="mt-4 md:mt-6 bg-white text-[#1a2b4b] px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-sm md:text-base mx-auto">
             Contact Us Today
           </button>
         </div>

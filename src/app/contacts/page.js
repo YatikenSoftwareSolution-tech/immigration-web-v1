@@ -1,67 +1,3 @@
-// "use client"
-// import React from "react";
-// import { FaPhone } from "react-icons/fa";
-// import ContactBanner from "../../assets/ContactBanner.jpg";
-// import Image from "next/image";
-// import { Phone, Mail, MapPin, Send } from "lucide-react";
-// import ContactForm from "@/components/custom/ContactForm";
-// import ChatBot from "@/components/custom/ChatBot";
-// import PartnersList from "@/components/custom/PartnersList";
-
-// const ContactPage = () => {
-//   return (
-//     <div className="">
-//       <section
-//         id="about-landing"
-//         className="w-full flex flex-col justify-center py-12 px-20"
-//       >
-//         <div className="flex justify-between item-center">
-//           <Image src={ContactBanner} alt="Contact us Banner" height={400} />
-//           <div className=" bg-white mt-24">
-//             <h2 className="text-3xl font-semibold text-orange-600 mb-6">
-//               <span className="text-secondary">Feel free to contact!</span>
-//             </h2>
-//             <p className="text-gray-500 mb-6">
-//               Feel free to reach out to us using the contact details below, or
-//               drop us a message using the form. We will get back to you as soon
-//               as possible.
-//             </p>
-//             <div className="space-y-6">
-//               <div className="flex items-center space-x-4">
-//                 <Phone className="text-secondary w-6 h-6 cursor-pointer" />
-//                 <p className="text-gray-500 font-bold text-sm">
-//                 <a href="tel:+1234567890" className="hover:text-secondary">
-//                   +1 234 567 890
-//                   </a>
-//                 </p>
-//               </div>
-//               <div className="flex items-center space-x-4">
-//                 <Mail className="text-secondary w-6 h-6 cursor-pointer" />
-//                 <p className="text-gray-500 font-bold text-sm">
-//                   info@immigrationcompany.ca
-//                 </p>
-//               </div>
-//               <div className="flex items-center space-x-4">
-//                 <MapPin className="text-secondary w-6 h-6 cursor-pointer" />
-//                 <p className="text-gray-500 font-bold text-sm">
-//                   123 xyz, Edmonton Canada.
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-//       <section className="bg-gradient-to-r from-blue-50 to-red-50 w-full pt-20  flex justify-center bg-gray-50">
-//         <ContactForm/>
-//       </section>
-//       {/* <PartnersList /> */}
-//       <ChatBot/>
-//     </div>
-//   );
-// };
-
-// export default ContactPage;
-
 "use client";
 
 import React, { useState } from 'react';
@@ -106,7 +42,7 @@ function App() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section - Responsive height */}
       <div 
-        className="h-[250px] sm:h-[400px] bg-cover bg-center relative"
+        className="h-[250px] sm:h-[400px] bg-cover bg-center mt-10 relative"
         style={{
           backgroundImage: 'url("https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80")'
         }}
@@ -124,7 +60,7 @@ function App() {
         {/* Contact Form */}
         <div className="bg-white p-4 sm:p-8 rounded-lg shadow-md">
           <h3 className="text-2xl sm:text-3xl font-bold text-dark mb-4">
-            Get in <span className="text-secondary">touch</span>
+            Get in <span className="text-secondary">Touch</span>
           </h3>
           <p className="text-xl sm:text-3xl text-dark font-bold mb-4">The pleasure is all ours!</p>
           <form className="space-y-4">
@@ -160,14 +96,14 @@ function App() {
               <MapPin className="w-5 h-5 mt-1" style={{ color: "#363637" }} />
               <div>
                 <h3 className="font-medium text-dark">Address</h3>
-                <p className="text-dark text-sm">123 Immigration Street<br />Suite 456<br />New York, NY 10001</p>
+                <p className="text-dark text-sm">9323- 35 Ave  <br />Edmonton, AB T6E 5R5<br />Canada</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
               <Phone className="w-5 h-5 mt-1" style={{ color: "#363637" }} />
               <div>
                 <h3 className="font-medium text-dark">Phone</h3>
-                <p className="text-dark text-sm">+1 (555) 123-4567</p>
+                <p className="text-dark text-sm">+11 7809-371-995</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">

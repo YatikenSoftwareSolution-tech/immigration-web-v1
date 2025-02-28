@@ -8,9 +8,10 @@ import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
 import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
 import { Clock, Heart, Users, Wallet, FileText, Plane, FileCheck, Scale, Globe2, UserPlus, Stethoscope, Mail } from 'lucide-react';
 import styles from "../../Home.module.css"
+import { useRouter } from "next/navigation";
 // import ChatBot from "@/components/custom/ChatBot";
 const SuperVisaPage = () => {
-  const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <div className={styles.container}>
@@ -36,7 +37,7 @@ const SuperVisaPage = () => {
             >
              Bring your family closer together with extended stays of up to 5 years in Canada. A special visa designed for parents and grandparents of Canadian citizens and permanent residents
             </motion.p>
-            <Button className="bg-green-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-green-700">
+            <Button onClick={() => router.push("/form")} className="bg-green-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-green-700">
               Apply Now
             </Button>
           </div>

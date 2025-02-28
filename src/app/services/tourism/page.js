@@ -10,11 +10,12 @@ import VT3 from "../../../assets/VT3.svg";
 import VT4 from "../../../assets/VT4.svg";
 import VT5 from "../../../assets/VT5.svg";
 import ExpressEntry from '../../../assets/ExpressEntry.jpg';
+import { useRouter } from "next/navigation";
 // import ChatBot from "@/components/custom/ChatBot";
 // import JobPlacement
 
 const ExpressEntryPage = () => {
-  const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
+  const router = useRouter();
 
   const expressEntryCategories = [
     "Canadian Experience Class",
@@ -69,7 +70,7 @@ const ExpressEntryPage = () => {
             <p className="text-lg text-dark mb-4">
               Discover how you can easily immigrate to Canada through the Express Entry system with expert guidance on eligibility, requirements, and the process.
             </p>
-            <Button className="bg-green-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-green-700">
+            <Button onClick={() => router.push("/form")} className="bg-green-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-green-700">
               Book a Consultation
             </Button>
           </div>

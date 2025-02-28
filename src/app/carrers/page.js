@@ -1,10 +1,6 @@
 "use client";
 import Image from "next/image";
-
 import CountriesBanner2 from "../../assets/CountriesBanner2.jpg";
-import ChatBot from "@/components/custom/ChatBot";
-import PartnersList from "@/components/custom/PartnersList";
-import CountriesBanner1 from "../../assets/CountriesBanner1.jpg";
 import {
   Briefcase,
   Clock,
@@ -76,21 +72,24 @@ function JobCard({
 }
 
 const Carrers = () => {
+  const scrollToJobs = () => {
+    const jobsSection = document.getElementById("jobs");
+    if (jobsSection) {
+      jobsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="relative">
       <section id="careers" className="">
-        <div className="relative w-full bg-cover bg-center mb-4 ">
-          <Image
-            src={CountriesBanner1}
-            alt="Banner"
-            height={100}
-            width={100}
-            layout="responsive"
-            priority
-          />
+        <div className="hidden md:block relative w-full bg-cover mb-4">
+          <div
+            className="h-[460px] relative"
+            style={{ backgroundImage: 'url("JobPlacement.jpg")' }}
+          ></div>
         </div>
 
-        <div className="container mx-auto py-6 px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-around">
+        <div className="container mt-8 mx-auto py-6 px-4 md:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-around">
           <div className="w-full md:w-1/2 mb-4 md:mb-0">
             <Image
               src={CountriesBanner2}
@@ -129,7 +128,7 @@ const Carrers = () => {
               {" "}
               {/* Adjusted margin */}
               <button
-                href="#jobs"
+                onClick={scrollToJobs}
                 className="bg-secondary text-white px-4 py-2 md:px-6 md:py-3 rounded-lg text-sm md:text-base font-semibold hover:bg-secondary-dark transition duration-300 w-full md:w-auto" /* Adjusted text size and padding */
               >
                 View Open Positions
@@ -230,7 +229,10 @@ const Carrers = () => {
           </div>
         </div>
       </section>
-      <section className="py-16 px-8 w-full mx-auto bg-gradient-to-r from-pink-50 to-blue-100">
+      <section
+        id="jobs"
+        className="py-16 px-8 w-full mx-auto bg-gradient-to-r from-pink-50 to-blue-100"
+      >
         <h2 className="text-4xl font-semibold leading-tight text-dark text-center mb-8 ">
           Current Job
           <span className="text-secondary">Openings</span>

@@ -8,9 +8,10 @@ import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
 import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
 import { Briefcase, Building2, Globe2, FileText, Fingerprint, Clock, FileCheck, Scale, Heart, Users, BadgeCheck, MapPin } from 'lucide-react';
 import styles from "../../Home.module.css"
-// import ChatBot from "@/components/custom/ChatBot";
+import { useRouter } from "next/navigation";
+
 const WorkPermitPage = () => {
-  const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <div className={styles.container}>
@@ -36,7 +37,7 @@ const WorkPermitPage = () => {
             >
              Your gateway to career opportunities in Canada. Choose between employer-specific and open work permits to begin your professional journey.
             </motion.p>
-            <Button className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
+            <Button onClick={() => router.push("/form")} className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
               Apply Now
             </Button>
           </div>

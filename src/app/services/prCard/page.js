@@ -1,14 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion"; // For animations
 import Image from "next/image";
-import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
 import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
 import { Plane, FileCheck, Heart, Scale, Home, Wallet, FileText, Fingerprint, Clock, Globe2, Building2, Users, CheckCircle, AlertTriangle, CircleCheck } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import styles from "../../../Home.module.css"
+import styles from "../../Home.module.css"
 const PermanentCardPage = () => {
   
 

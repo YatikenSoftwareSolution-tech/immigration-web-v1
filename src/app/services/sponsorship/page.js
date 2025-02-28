@@ -6,7 +6,7 @@ import { motion } from "framer-motion"; // For animations
 import Image from "next/image";
 import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
 import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
-import styles from "../../../Home.module.css"
+import styles from "../../Home.module.css"
 // import ChatBot from "@/components/custom/ChatBot";
 const SpousalSponsorshipPage = () => {
   const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);

@@ -11,6 +11,45 @@ const CLIENT_ID =
 const API_KEY = "AIzaSyBAH07eHPiM6I97P3WCKhh3DpkkjK5ws-o";
 const SCOPES = "https://www.googleapis.com/auth/calendar";
 
+const SlotCard = ({ slot, selected, onSelect }) => {
+  return (
+    <div
+      className={`p-3 border rounded-lg cursor-pointer transition-all duration-200 relative group ${
+        selected ? "bg-green-500 text-white" : "bg-white hover:bg-blue-100"
+      }`}
+      onClick={onSelect}
+    >
+      {/* Display the date in a friendly format */}
+      <div className="text-sm font-medium">
+        {slot.start.toLocaleDateString(undefined, {
+          weekday: "short",
+          month: "short",
+          day: "numeric",
+        })}
+      </div>
+      {/* Display start and end times */}
+      <div className="mt-1">
+        <span className="text-base">
+          {slot.start.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
+        </span>{" "}
+        -{" "}
+        <span className="text-base">
+          {slot.end.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
+        </span>
+      </div>
+      <span className="hidden md:block absolute left-1/2 transform -translate-x-1/2 mt-2 p-2 bg-black text-white text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
+        Click to select this slot
+      </span>
+    </div>
+  );
+};
+
 const Consultation = () => {
   const [slots, setSlots] = useState([]);
   const [selectedSlot, setSelectedSlot] = useState(null);
@@ -42,15 +81,10 @@ const Consultation = () => {
       .getAuthInstance()
       .signIn()
       .then((googleUser) => {
-        // Log user info to verify sign-in was successful
-        console.log("User signed in:", googleUser.getBasicProfile());
-        // Optionally, update the state with the signed-in user's info
         setUser(googleUser);
-        // Proceed to fetch available slots after sign-in
         fetchAvailableSlots();
       })
       .catch((error) => {
-        // Properly catch and log any errors during sign-in
         console.error("Google Auth Error:", error);
       });
   };
@@ -114,27 +148,31 @@ const Consultation = () => {
 
   // Stripe payment handler; in a real-world scenario, send the token to your server for processing.
   const onToken = (token) => {
-    console.log("Payment token received:", token);
-    // Simulate a successful payment
     setPaymentComplete(true);
     alert("Payment successful! You can now schedule your meeting.");
-    // Optionally, re-fetch available slots after payment
     fetchAvailableSlots();
   };
 
   const createEvent = async () => {
     if (!selectedSlot) return alert("Please select a time slot.");
+    const startDate = new Date(selectedSlot.start);
+    const endDate = new Date(selectedSlot.end);
+
+    // Validate the dates
+    if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+      return alert("Invalid date value. Please select a proper time slot.");
+    }
 
     const event = {
       summary: "Consultation Meeting",
       description: "Mentorship session.",
       start: {
-        dateTime: selectedSlot.start.toISOString(),
-        timeZone: "Asia/Kolkata",
+        dateTime: startDate.toISOString(),
+        timeZone: "Canada/Eastern",
       },
       end: {
-        dateTime: selectedSlot.end.toISOString(),
-        timeZone: "Asia/Kolkata",
+        dateTime: endDate.toISOString(),
+        timeZone: "Canada/Eastern",
       },
       attendees: [{ email: "user@example.com" }],
       conferenceData: {
@@ -178,9 +216,9 @@ const Consultation = () => {
           className=" bg-gray-200 rounded-lg "
           defaultValue="10MinFreeMeating"
           onValueChange={(value) => {
-            setSlotDuration(Number(value));
-            // Reset payment status when switching tabs
-            if (Number(value) === 30) setPaymentComplete(false);
+            const duration = Number(value.replace(/\D/g, ""));
+            setSlotDuration(duration);
+            if (duration === 30) setPaymentComplete(false);
             fetchAvailableSlots();
           }}
         >
@@ -200,25 +238,14 @@ const Consultation = () => {
           </TabsList>
           <TabsContent value="10MinFreeMeating">
             <>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 p-2 md:p-4 bg-gray-50 rounded-lg w-full place-items-center">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 p-2 md:p-4 bg-gray-50 rounded-lg w-full">
                 {slots.map((slot, index) => (
-                  <div
+                  <SlotCard
                     key={index}
-                    className={`p-2 md:p-3 text-center  rounded-lg cursor-pointer transition-all duration-200 relative group text-sm md:text-base w-full ${
-                      selectedSlot === slot
-                        ? "bg-green-500 text-white"
-                        : "bg-tertiary text-white hover:bg-tertiary hover:text-white"
-                    }`}
-                    onClick={() => setSelectedSlot(slot)}
-                  >
-                    {slot.start.toLocaleTimeString([], {
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    })}
-                    <span className="hidden md:block absolute left-1/2 transform -translate-x-1/2 mt-2 p-2 bg-black text-white text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
-                      Click to select this slot
-                    </span>
-                  </div>
+                    slot={slot}
+                    selected={selectedSlot === slot}
+                    onSelect={() => setSelectedSlot(slot)}
+                  />
                 ))}
               </div>
               {selectedSlot && (
@@ -242,7 +269,7 @@ const Consultation = () => {
                   description="Pay to schedule your 30 minute meeting"
                   currency="USD"
                 >
-                  <div className="w-full mt-6 max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                  <div className="w-full mt-6 max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                     <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
                       Payment Details
                     </h5>
@@ -305,7 +332,9 @@ const Consultation = () => {
                       </li>
                       <li className="flex justify-between">
                         <div className="flex justify-between">
-                          <span className="text-gray-600">Service:&nbsp;&nbsp;</span>
+                          <span className="text-gray-600">
+                            Service:&nbsp;&nbsp;
+                          </span>
                           <span className="text-gray-800 font-semibold">
                             30 Min Consultation
                           </span>
@@ -313,7 +342,9 @@ const Consultation = () => {
                       </li>
                       <li className="flex justify-between">
                         <div className="flex justify-between">
-                          <span className="text-gray-600">Amount:&nbsp;&nbsp;</span>
+                          <span className="text-gray-600">
+                            Amount:&nbsp;&nbsp;
+                          </span>
                           <span className="text-gray-800 font-semibold">
                             $100.00
                           </span>
@@ -321,9 +352,11 @@ const Consultation = () => {
                       </li>
                       <li className="flex justify-between">
                         <div className="flex justify-between">
-                          <span className="text-gray-600">Currency:&nbsp;&nbsp;</span>
+                          <span className="text-gray-600">
+                            Currency:&nbsp;&nbsp;
+                          </span>
                           <span className="text-gray-800 font-semibold">
-                            USD
+                            CAD
                           </span>
                         </div>
                       </li>
@@ -338,25 +371,14 @@ const Consultation = () => {
                 </StripeCheckout>
               ) : (
                 <>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 p-2 md:p-4 bg-gray-50 rounded-lg w-full place-items-center">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 p-2 md:p-4 bg-gray-50 rounded-lg w-full">
                     {slots.map((slot, index) => (
-                      <div
+                      <SlotCard
                         key={index}
-                        className={`p-2 md:p-3 text-center border rounded-lg cursor-pointer transition-all duration-200 relative group text-sm md:text-base w-full ${
-                          selectedSlot === slot
-                            ? "bg-green-500 text-white"
-                            : "bg-white hover:bg-blue-100"
-                        }`}
-                        onClick={() => setSelectedSlot(slot)}
-                      >
-                        {slot.start.toLocaleTimeString([], {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                        })}
-                        <span className="hidden md:block absolute left-1/2 transform -translate-x-1/2 mt-2 p-2 bg-black text-white text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
-                          Click to select this slot
-                        </span>
-                      </div>
+                        slot={slot}
+                        selected={selectedSlot === slot}
+                        onSelect={() => setSelectedSlot(slot)}
+                      />
                     ))}
                   </div>
                   {selectedSlot && (

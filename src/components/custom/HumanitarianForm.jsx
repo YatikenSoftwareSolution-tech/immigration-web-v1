@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -183,7 +184,7 @@ const detailsSchema = z
     }
   });
 
-const MultiStepForm = ({ setResult, setStatus, step, setStep, onClose }) => {
+const MultiStepForm = ({ setResult, setStatus, step, setStep}) => {
   const {
     register,
     handleSubmit,
@@ -203,65 +204,101 @@ const MultiStepForm = ({ setResult, setStatus, step, setStep, onClose }) => {
 
   const onSubmit = async () => {
     const body = watch();
-    console.log(body);
-    const now = new Date(Date.now());
-    const currentYear = now.getFullYear();
-    const birthYear = currentYear - body.age;
+
     const newBody = {
+      "What is your primary reason for seeking immigration services?": body.reasonForImmigration,
       "Full Name": body.name,
-      "Date of Birth": `15/06/${birthYear}`,
-      Gender: "Male",
-      "Country of Birth": body.nationality,
-      "Current Address ": {
-        "City ": body.city,
-        State: body.state,
-        Country: body.country,
-      },
-      "Phone Number": body.mobile,
       "Email Address": body.email,
+      "Phone Number": body.mobile,
+      "Current Address ": {
+        "City": body.city,
+        'Country': body.country,
+      },
+      "Age": body.age,
+      "Citizenship/Current Immigration Status": body.currentImmigrationStatus,
+      'The Expiry Date of the current Status': body.expiryDateofStatus,
       "Marital Status": body.maritalStatus,
-      "Current Immigration Status": body.currentImmigrationStatus,
-      "Date of Arrival in Canada": body.dateArrival,
-      "Visa/Permit Expiry Date": body.expiryDate,
-      "Applied for Permanent Residence Before":
-        body.appliedBefore + body.appliedBeforeReason,
-      "Removal Order": body.removalOrder,
-      "Previous Visa Refusals": body.refuseVisaReason,
-      "Family in Canada": body.familyMemberCitizen,
-      "Family Details": body.familyMemberCitizenReason,
-      "H&C Considerations": body.whyHC,
-      "Hardship Explanation": body.whyHCReason,
-      "Establishment in Canada": body.aboutEstablishment,
-      "Children in Canada": body.childrenInCanada,
-      "Children Details": body.childrenInCanadaReason,
-      "Medical/Safety Concerns": body.medicalSafetyConcernsReason,
-      "Employer Name": body.employerName,
-      "Job Title": body.jobTitle,
-      "Monthly Income": body.monthlyIncome,
-      "Financial Dependents": body.financialDependents,
-      "Dependents Details": body.financialDependentsReason,
+      "Spouse's Immigration Status (if applicable)": body.spouseImmigrationStatus,
+      "Are people dependent on you": body.dependents,
+      "Have you previously applied for Canadian immigration?":body.previouslyApplied,
+      "If yes, please provide details": body.previouslyAppliedReason,
+      "Have you created your profile in Federal Express Entry System?": body.profileInFEES,
+      "If yes what is your current CRS Score?": body.crsScore,
+      "Have you created a PNP profile.": body.profileInPNP,
+      "If yes, please specify province, stream and your score": body.pnpScore,
+      "Have you completed any education outside Canada?": body.outSide,
+      "If yes, have you obtained an Education Credential Assessment(ECA)?": body.haveECA,
+      "Canadian equivalency according to your ECA": body.explainECA,
+      "Have you completed any education in Canada?": body.inCanada ,
+      "If yes, provide qualification details": body.instituteName , 
+      "Program/Degree": body.program,
+      "Date of Completion": body.doc ,
+      "If you discontinued studies before completion": body.disContinued,
+      "Occupation": body.employment[0].occupation,
+      "Employer Name": body.employment[0].employerName,
+      "Start Date": body.employment[0].startDate,
+      "End Date": body.employment[0].endDate,
+      "Have you taken a language proficiency test?": body.languageTested,
+      "If yes, please provide details": body.whichTest, 
+      "Date of Test": body.dot,
+      "Listening Score": body.listening,
+      "Reading Score": body.reading,
+      "Writing Score": body.writing,
+      "Speaking Score": body.speaking,
+      "Have you or any family member been refused a visa or entry in Canada?": body.refusedVisa,
+      "If yes, please provide details": body.refusedVisaReason,
+      "Have you or any family member been convicted of a criminal offence?": body.criminalConviction,
+      "If yes, please provide details": body.criminalConvictionReason,
+      "Additional Information": body.additionalInformation,
+      "Primary Reason for Requesting H&C Consideration": body.whyHC,
+      "If other, please specify": body.whyHCReason,
+      "Why can you not return to your home country?": body.whyNotHome,
+      "Provide details on your establishment in Canada (e.g., job, education, community ties, volunteer work)": body.aboutEstablishment,
+      "Do you have children in Canada?": body.childrenInCanada,
+      "If yes, please provide details": body.childrenInCanadaReason,
+      "Do you have any medical safety concerns if you return to your home country?": body.medicalSafetyConcerns,
+      "If yes, please provide details": body.medicalSafetyConcernsReason,
     };
-    // router.push('/consultation');
-    try {
-      const response = await fetch(
-        "https://2htjqsz5-8080.inc1.devtunnels.ms/analyze",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          userDetails: [newBody],
-        }
-      );
-      const data = await response.json();
-      console.log(data.response);
-      setResult(data.response);
-      if (data.response.charAt(0) === "N") {
-        setStatus(false);
-      } else setStatus(true);
-    } catch (error) {
-      console.log(error);
-    }
+
+    console.log(newBody)
+
+    router.push('/consultation?filled=true');
+
+    // emailjs
+    //   .send(
+    //     "service_dxtq9y3",       
+    //     "template_0qjwyjw",      
+    //     formData,                
+    //     "r8jAhl7rUvv3TDFkT"        
+    //   )
+    //   .then(
+    //     (response) => {
+    //       alert("Email sent successfully, Our will reach out to you in 24 hours!");
+    //     },
+    //     (error) => {
+    //       alert("Failed to send email. Please try again.");
+    //     }
+    //   );
+    // try {
+    //   const response = await fetch(
+    //     "https://hxm4q9sn-8080.inc1.devtunnels.ms/analyze",
+    //     {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       userDetails: [newBody],
+    //     }
+    //   );
+    //   const data = await response.json();
+    //   console.log(data.response);
+    //   setResult(data.response);
+    //   if (data.response.charAt(0) === "N") {
+    //     setStatus(false);
+    //   } else setStatus(true);
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
 
   return (
@@ -595,7 +632,7 @@ const MultiStepForm = ({ setResult, setStatus, step, setStep, onClose }) => {
                 type="button"
                 disabled
                 className="h-8 w-20 bg-dark/80 rounded-lg text-white"
-                onClick={() => onClose()}
+                onClick={() => router.back()}
               >
                 Back
               </button>
@@ -1150,32 +1187,28 @@ const MultiStepForm = ({ setResult, setStatus, step, setStep, onClose }) => {
     </form>
   );
 };
-const HumanitarianForm = ({ isOpen, onClose }) => {
+const HumanitarianForm = () => {
   const [step, setStep] = useState(1);
   const stepLabel = ["Personal Details", "Education", "Employment", "Why H&C"];
-
+  const router = useRouter();
   return (
-    <>
-          {isOpen && (
-            <div className="z-10 consultaionForm bg-white mt-12 px-12 py-6 h-full w-[100vw] shadow-lg sm:px-4">
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="text-2xl text-dark font-bold mb-4">
-                  Consultation Form
-                </h2>
-                <button
-                  className="py-2 px-4 bg-dark/80 text-white rounded-lg"
-                  onClick={onClose}
-                >
-                  <ArrowLeft className="h-4" />
-                </button>
-              </div>
-              <div className="px-4 py-2">
-                <HorizontalLinearStepper step={step} stepLabel={stepLabel} />
-                <MultiStepForm step={step} setStep={setStep} onClose={onClose} />
-              </div>
-            </div>
-          )}
-        </>
+    <div className="z-10 consultaionForm bg-white mt-12 px-12 py-6 h-full w-[100vw] shadow-lg sm:px-4">
+    <div className="flex justify-between items-center mb-4">
+      <h2 className="text-2xl text-dark font-bold mb-4">
+        Consultation Form for Humanitarian and Compassionate Application
+      </h2>
+      <button
+        className="py-2 px-4 bg-dark/80 text-white rounded-lg"
+        onClick={() => router.back()}
+      >
+        <ArrowLeft className="h-4" />
+      </button>
+    </div>
+    <div className="px-4 py-2">
+      <HorizontalLinearStepper step={step} stepLabel={stepLabel} />
+      <MultiStepForm step={step} setStep={setStep} />
+    </div>
+  </div>
   );
 };
 

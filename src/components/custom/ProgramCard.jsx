@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
 
 const ProgramCard = ({ program, index, setIsSpecialProgramOpen }) => {
-  
+  const router = useRouter();
 
   return (
     <div className="h-[360px] flex flex-col justify-between p-4 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300 ease-in-out bg-white hover:border-b-4 hover:border-tertiary text-dark">
@@ -24,7 +25,7 @@ const ProgramCard = ({ program, index, setIsSpecialProgramOpen }) => {
       </div>
       <div className="mt-auto pt-3">
         <Button
-          onClick={() => setIsSpecialProgramOpen(true)}
+          onClick={() => router.push(program.link)}
           className="bg-tertiary text-white hover:bg-secondary w-full"
         >
           Fill AI Form

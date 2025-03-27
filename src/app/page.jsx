@@ -65,39 +65,21 @@ const ImmigrationPage = () => {
 
   const Programs = [
     {
-      title: "Parents and Grandparents",
-      description:
-        "This program streamlines the process for family reunification, helping parents and grandparents join their loved ones abroad with tailored support and guidance.",
-      link: "",
-    },
-    {
       title: "Humanitarian and Compassionate Ground",
       description:
         "Designed for individuals facing severe hardships due to environmental, political, or health crises, this program offers urgent support and safe relocation options.",
-      link: "",
-    },
-    {
-      title: "PR upon Receiving Provincial Nomination",
-      description:
-        "A fast-track pathway to Permanent Residency for candidates who have been nominated by a provincial government, recognizing your skills and contributions for a stable future.",
-      link: "",
+      link: "/humanitarian-cause",
     },
     {
       title: "Children for Canadian Citizenship",
       description:
         "Focused on ensuring a bright future, this program supports the immigration of children eligible for Canadian citizenship, providing access to quality education and a nurturing environment.",
-      link: "",
-    },
-    {
-      title: "Sponsoring Your Spouse",
-      description:
-        "This program assists couples through the spousal sponsorship process, ensuring a smooth transition and family unity as you build your new life together.",
-      link: "",
+      link: "/children-citizenship",
     },
     {
       title: "Home care workers (caregivers)",
       description: "As a caregiver, you can come to Canada to become a permanent resident or work temporarily.",
-      link: ""
+      link: "/caregivers"
     }
   ];
 
@@ -283,7 +265,6 @@ const ImmigrationPage = () => {
                 <SwiperSlide key={index}>
                   <ProgramCard
                     index={index}
-                    setIsSpecialProgramOpen={setIsSpecialProgramOpen}
                     program={program}
                   />
                 </SwiperSlide>

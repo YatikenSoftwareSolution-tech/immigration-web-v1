@@ -169,7 +169,7 @@ const AppNavigation = () => {
         />
       </div>
     </nav>
-  );
+  );  
 };
 
 export default AppNavigation;

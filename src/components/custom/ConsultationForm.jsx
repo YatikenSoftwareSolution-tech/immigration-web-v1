@@ -195,7 +195,22 @@ const MultiStepForm = ({ step, setStep, onClose }) => {
 
   const onSubmit = (data) => {
     console.log(data);
-    router.push("/consultation");
+    emailjs
+      .send(
+        "service_dxtq9y3",       
+        "template_0qjwyjw",      
+        data,                
+        "r8jAhl7rUvv3TDFkT"        
+      )
+      .then(
+        (response) => {
+          alert("Email sent successfully, Our will reach out to you in 24 hours!");
+        },
+        (error) => {
+          alert("Failed to send email. Please try again.");
+        }
+      );
+    router.push("/consultation?filled=true");
   };
 
   return (

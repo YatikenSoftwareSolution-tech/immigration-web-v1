@@ -23,22 +23,18 @@ const AppFooter = () => {
                 href="mailto:info@immigration.com"
                 className="hover:text-yellow-500"
               >
-                info@immigration.com
+                info@immigrationcompany.ca
               </a>
             </li>
             <li className="flex items-center">
               <FaPhone className="text-yellow-500 mr-3" />
-              <a href="tel:+117809371995" className="hover:text-yellow-500">
-                +11 (7809)371-995
+              <a href="tel:+17809371995" className="hover:text-yellow-500">
+                +1-7809371995
               </a>
             </li>
             <li className="flex items-center">
               <FaMapMarkerAlt className="text-yellow-500 mr-3" />
               9323- 35 Ave Edmonton, AB T6E 5R5 CANADA
-            </li>
-            <li className="flex items-center">
-              <FaMapMarkerAlt className="text-yellow-500 mr-3" />
-              1701 Hollis Street, 800, Halifax, Nova Scotia, B3J 2T9
             </li>
           </ul>
         </div>
@@ -47,6 +43,11 @@ const AppFooter = () => {
         <div className="text-left">
           <h3 className="text-lg font-semibold mb-4">Explore Links</h3>
           <ul className="space-y-2 text-sm">
+          <li>
+              <a href="/" className="hover:text-yellow-500">
+                Home
+              </a>
+            </li>
             <li>
               <a href="/about" className="hover:text-yellow-500">
                 About Us

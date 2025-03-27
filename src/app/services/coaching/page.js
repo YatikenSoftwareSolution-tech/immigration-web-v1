@@ -65,13 +65,13 @@ const LMIAJobsPage = () => {
             </Button>
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0">
-            <Image
+            {/* <Image
               src={LabourImage}
               alt="LMIA Jobs in Canada"
               width={600}
               height={400}
               className="rounded-lg shadow-lg"
-            />
+            /> */}
           </div>
         </div>
       </section>

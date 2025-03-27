@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { gapi } from "gapi-script";
 import StripeCheckout from "react-stripe-checkout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import styles from "./Consultation.module.css";
+import ThankuCard from "@/components/custom/ThankuCard";
 
 const CLIENT_ID =
   "744600285710-o88sor3fkikrqmsevadduasuu84q5pa0.apps.googleusercontent.com";
@@ -204,14 +204,6 @@ const Consultation = () => {
         <h1 className="text-lg md:text-xl text-tertiary font-semibold mb-4 md:mb-6 text-center">
           Book a Mentorship Session with our expert counselors
         </h1>
-        {!user && (
-          <button
-            onClick={signIn}
-            className="mb-4 bg-secondary text-white px-4 md:px-6 py-2 bg-blue-500 rounded-lg shadow text-center"
-          >
-            <span>Sign in with Google</span>
-          </button>
-        )}
         <Tabs
           className=" bg-gray-200 rounded-lg "
           defaultValue="10MinFreeMeating"
@@ -225,55 +217,36 @@ const Consultation = () => {
           <TabsList className="w-full md:w-auto bg-white-50 px-4 py-2 rounded-lg flex justify-center">
             <TabsTrigger
               value="10MinFreeMeating"
-              className="mr-4 data-[state=active]:bg-white data-[state=active]:text-secondary"
+              className="mr-4 text-dark data-[state=active]:bg-white data-[state=active]:text-secondary"
             >
               10 Min Free Meeting
             </TabsTrigger>
             <TabsTrigger
               value="30MinMeeting"
-              className="mr-4 data-[state=active]:bg-white data-[state=active]:text-secondary"
+              className="mr-4 text-dark data-[state=active]:bg-white data-[state=active]:text-secondary"
             >
               30 Min Meeting
             </TabsTrigger>
           </TabsList>
           <TabsContent value="10MinFreeMeating">
-            <>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 p-2 md:p-4 bg-gray-50 rounded-lg w-full">
-                {slots.map((slot, index) => (
-                  <SlotCard
-                    key={index}
-                    slot={slot}
-                    selected={selectedSlot === slot}
-                    onSelect={() => setSelectedSlot(slot)}
-                  />
-                ))}
-              </div>
-              {selectedSlot && (
-                <button
-                  onClick={createEvent}
-                  className="w-full md:w-auto mt-4 px-4 md:px-6 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 text-center"
-                >
-                  Confirm Booking
-                </button>
-              )}
-            </>
+            <ThankuCard />
           </TabsContent>
           <TabsContent value="30MinMeeting">
             <div>
               {!paymentComplete ? (
                 <StripeCheckout
                   token={onToken}
-                  stripeKey="your_publishable_key_here"
-                  amount={10000} // Amount in cents: $30.00
+                  stripeKey="pk_live_51QZNKeKkTaKoNzRwdE4oDwcaarryaOjsaiH7p0OoortqpziMjoIJcU35vRgpjuwjyS9r94it85xG8hHtoCeJPZeF00NH0wLlgg"
+                  amount={10000} // Amount in cents: $100.00
                   name="30 Min Paid Meeting"
                   description="Pay to schedule your 30 minute meeting"
                   currency="USD"
                 >
-                  <div className="w-full mt-6 max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                    <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
+                  <div className="w-full text-dark mt-6 max-w-sm p-4 bg-white border border-dark rounded-lg shadow-lg sm:p-8 ">
+                    <h5 className="mb-4 text-xl font-medium ">
                       Payment Details
                     </h5>
-                    <div className="flex items-baseline text-gray-900 dark:text-white">
+                    <div className="flex items-baseline ">
                       <span className="text-3xl font-semibold">$</span>
                       <span className="text-5xl font-extrabold tracking-tight">
                         100
@@ -318,7 +291,7 @@ const Consultation = () => {
                         >
                           <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                         </svg>
-                        <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                        <span className="text-base font-normal leading-tight ms-3">
                           Integration help
                         </span>
                       </li>
@@ -371,6 +344,14 @@ const Consultation = () => {
                 </StripeCheckout>
               ) : (
                 <>
+                  {!user && (
+                    <button
+                      onClick={signIn}
+                      className="mb-4 bg-secondary text-white px-4 md:px-6 py-2 bg-blue-500 rounded-lg shadow text-center"
+                    >
+                      <span>Sign in with Google</span>
+                    </button>
+                  )}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 p-2 md:p-4 bg-gray-50 rounded-lg w-full">
                     {slots.map((slot, index) => (
                       <SlotCard

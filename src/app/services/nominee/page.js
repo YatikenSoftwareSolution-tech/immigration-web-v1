@@ -90,13 +90,13 @@ const AlbertaPNPPage = () => {
             </Button>
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0">
-            <Image
+            {/* <Image
               src={Nominee}
               alt="Alberta Provincial Nominee Program"
               width={600}
               height={400}
               className="rounded-lg shadow-lg"
-            />
+            /> */}
           </div>
         </div>
       </section>

@@ -93,13 +93,13 @@ const SpousalSponsorshipPage = () => {
             </Button>
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0">
-            <Image
+            {/* <Image
               src={SpouseSponsered}
               alt="Spousal Sponsorship in Canada"
               width={600}
               height={400}
               className="rounded-lg shadow-lg"
-            />
+            /> */}
           </div>
         </div>
       </section>

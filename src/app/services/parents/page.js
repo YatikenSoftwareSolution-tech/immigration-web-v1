@@ -75,13 +75,13 @@ const ParentsAndGrandparentsPage = () => {
             </Button>
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0">
-            <Image
+            {/* <Image
               src={GrandParents}
               alt="Parents and Grandparents Visa"
               width={600}
               height={400}
               className="rounded-lg shadow-lg"
-            />
+            /> */}
           </div>
         </div>
       </section>

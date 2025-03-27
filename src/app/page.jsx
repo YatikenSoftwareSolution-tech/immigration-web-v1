@@ -94,6 +94,11 @@ const ImmigrationPage = () => {
         "This program assists couples through the spousal sponsorship process, ensuring a smooth transition and family unity as you build your new life together.",
       link: "",
     },
+    {
+      title: "Home care workers (caregivers)",
+      description: "As a caregiver, you can come to Canada to become a permanent resident or work temporarily.",
+      link: ""
+    }
   ];
 
   function StatCard({ icon: Icon, number, label, accentColor }) {

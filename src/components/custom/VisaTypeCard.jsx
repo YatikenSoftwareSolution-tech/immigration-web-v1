@@ -13,11 +13,11 @@ const VisaTypeCard = ({ visa }) => {
           className="mb-4" // Reduced margin
         />
       </div>
-      <div className="text-xl font-semibold text-gray-600 text-center mb-2"> {/* Reduced font size, centered text, added margin */}
+      <div className="text-xl font-semibold text-dark text-center "> {/* Reduced font size, centered text, added margin */}
         {visa.title || ""}
       </div>
       <div className="flex-grow"> {/* Important! Allows description to take up available space */}
-        <div className="text-tertiary font-extrabold text-2xl mb-2"> {/* Reduced font size, margin */}
+        <div className="text-tertiary text-center font-extrabold text-2xl mt-4 mb-6"> {/* Reduced font size, margin */}
           ...
         </div>
         <p className="text-base font-medium text-gray"> {/* Reduced font size */}

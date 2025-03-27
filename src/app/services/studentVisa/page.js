@@ -6,9 +6,7 @@ import VT1 from "../../../assets/VT1.svg";
 import VT2 from "../../../assets/VT2.svg";
 import VT3 from "../../../assets/VT3.svg";
 import VT4 from "../../../assets/VT4.svg";
-import styles from "../../../Home.module.css"
 import { useRouter } from "next/navigation";
-// import ChatBot from "@/components/custom/ChatBot";
 
 const JobPlacementServicesPage = () => {
   const router = useRouter();

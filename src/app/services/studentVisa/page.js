@@ -7,6 +7,7 @@ import VT2 from "../../../assets/VT2.svg";
 import VT3 from "../../../assets/VT3.svg";
 import VT4 from "../../../assets/VT4.svg";
 import { useRouter } from "next/navigation";
+import styles from "../../Home.module.css";
 
 const JobPlacementServicesPage = () => {
   const router = useRouter();

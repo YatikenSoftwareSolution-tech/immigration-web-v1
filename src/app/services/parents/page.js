@@ -1,10 +1,6 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import GrandParents from "../../../assets/GrandParents.png";
-// import ChatBot from "@/components/custom/ChatBot";
 import styles from "../../Home.module.css"
 import { useRouter } from "next/navigation";
 

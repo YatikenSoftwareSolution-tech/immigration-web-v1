@@ -1,12 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { MapPin, FileText, CheckCircle, Users, Building2, GraduationCap, Briefcase, Globe2, FileCheck, Scale, Heart, BadgeCheck } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion"; // For animations
-import Image from "next/image";
-import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
-import { MapPin, FileText, CheckCircle, Users, Building2, GraduationCap, Briefcase, Globe2, FileCheck, Scale, Heart, BadgeCheck } from 'lucide-react';
-// import ChatBot from "@/components/custom/ChatBot";
 import styles from "../../Home.module.css"
 import { useRouter } from "next/navigation";
 

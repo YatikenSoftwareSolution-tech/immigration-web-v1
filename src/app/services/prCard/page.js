@@ -158,7 +158,7 @@ Permanent residents of Canada must carry a valid PR card when traveling outside 
           </div>
           <div className="flex items-start space-x-2">
             <AlertTriangle className="h-5 w-5 text-yellow-500 mt-0.5" />
-            <p className="text-dark">It's recommended to apply for renewal at least six months before your current card expires.</p>
+            <p className="text-dark">It&apos;s recommended to apply for renewal at least six months before your current card expires.</p>
           </div>
           <div className="flex items-start space-x-2">
             <Clock className="h-5 w-5 text-blue-500 mt-0.5" />

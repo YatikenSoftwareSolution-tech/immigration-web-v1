@@ -1,10 +1,4 @@
 {
   "/page": "app/page.js",
-  "/about/page": "app/about/page.js",
-  "/contacts/page": "app/contacts/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/humanitarian-cause/page": "app/humanitarian-cause/page.js",
-  "/children-citizenship/page": "app/children-citizenship/page.js",
-  "/consultation/page": "app/consultation/page.js",
-  "/caregivers/page": "app/caregivers/page.js"
+  "/consultation/page": "app/consultation/page.js"
 }

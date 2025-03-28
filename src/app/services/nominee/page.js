@@ -228,7 +228,7 @@ const AlbertaPNPPage = () => {
                 <h3 className="accordion-title">3. Do I need a job offer for the Alberta Provincial Nominee Program?</h3>
                 <p>
                   Job offers are not mandatory for the Alberta Express Entry streams, but they are required for some other
-                  streams. Check the specific requirements for the stream you're interested in.
+                  streams. Check the specific requirements for the stream you&apos;re interested in.
                 </p>
               </motion.div>
 
@@ -238,7 +238,7 @@ const AlbertaPNPPage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.5 }}
               >
-                <h3 className="accordion-title">4. What are the Alberta Provincial Nominee Program's eligibility requirements?</h3>
+                <h3 className="accordion-title">4. What are the Alberta Provincial Nominee Program&apos;s eligibility requirements?</h3>
                 <p>
                   You must either be nominated under a stream or meet the minimum standards for the non-Express Entry
                   streams to apply under the PNP program.

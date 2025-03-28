@@ -1,11 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion"; // For animations
-import Image from "next/image";
-import SuccessStoryCard from "@/components/custom/SuccessStoryCard";
-import SpouseSponsered from "../../../assets/SpouseSponsered.jpg";
+import { motion } from "framer-motion"; 
 import { Briefcase, Building2, Globe2, FileText, Fingerprint, Clock, FileCheck, Scale, Heart, Users, BadgeCheck, MapPin } from 'lucide-react';
 import styles from "../../Home.module.css"
 import { useRouter } from "next/navigation";

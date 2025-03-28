@@ -32,7 +32,7 @@ const VisitorVisaPage = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2 }}
             >
-             Your gateway to exploring Canada's diverse landscapes, cultures, and opportunities. Whether for tourism, business, or family visits, start your journey here.
+             Your gateway to exploring Canada&apos;s diverse landscapes, cultures, and opportunities. Whether for tourism, business, or family visits, start your journey here.
             </motion.p>
             <Button onClick={() => router.push("/form")} className="bg-red-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-red-700">
               Apply Now

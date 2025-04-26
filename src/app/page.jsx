@@ -14,10 +14,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { Users, ArrowRight, Award, BookCheck, Briefcase } from "lucide-react";
+import { Users, ArrowRight, Award, BookCheck, Briefcase, MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useRouter } from "next/navigation";
 import styles from "./Home.module.css";
 import HumanitarianForm from "@/components/custom/HumanitarianForm";
+import Image from "next/image";
 
 const ImmigrationPage = () => {
   const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
@@ -78,31 +79,12 @@ const ImmigrationPage = () => {
     },
     {
       title: "Home care workers (caregivers)",
-      description: "As a caregiver, you can come to Canada to become a permanent resident or work temporarily.",
-      link: "/caregivers"
-    }
+      description:
+        "As a caregiver, you can come to Canada to become a permanent resident or work temporarily.",
+      link: "/caregivers",
+    },
   ];
 
-  function StatCard({ icon: Icon, number, label, accentColor }) {
-    return (
-      <div className="relative group">
-        <div
-          className={`absolute inset-0 ${accentColor} opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300`}
-        />
-        <div className="relative bg-white rounded-2xl p-8 flex flex-col items-start group-hover:translate-y-[-4px] transition-transform duration-300">
-          <div className={`rounded-full p-4 mb-6 bg-opacity-10 ${accentColor}`}>
-            <Icon
-              className={`w-8 h-8 ${accentColor.replace("bg-", "text-")}`}
-            />
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-4xl font-semibold text-gray-900">{number}</h3>
-            <p className="text-gray-600 font-medium">{label}</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   if (isConsultationFormOpen) {
     return (
@@ -122,246 +104,349 @@ const ImmigrationPage = () => {
     );
   }
   return (
-    <div className={styles.pageContent}>
-      <div className="bg-white text-black mt-12">
-        <div
-          className="min-h-[45vh] md:h-[45vh]  relative opacity-75"
-          style={{
-            backgroundImage:
-              'url("https://images.unsplash.com/photo-1526495124232-a04e1849168c?auto=format&fit=crop&q=80")',
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70">
-            <div className="container mx-auto px-4 md:px-14 h-[65%] flex flex-col justify-center">
-              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 text-white mt-20">
-                Immigration <span className="text-secondary">Visa</span>{" "}
+    <div className="bg-gradient-to-b from-white via-gray-50 to-white min-h-screen">
+      <div className="w-full max-w-7xl mx-auto py-20 px-4 md:px-6 space-y-32">
+        {/* Hero Section */}
+        <section className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+          <div className="md:w-1/2 flex flex-col space-y-6 animate-fade-in">
+            
+            <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-gray-900 leading-[1.1]">
+             <span className="text-tertiary"> Immigration <span className="text-secondary">Visa </span> </span>
+              <span className="text-tertiary relative">
                 Consulting
-              </h1>
-              <p className="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl text-white">
-                Your trusted partner for expert immigration services in
-                Edmonton. We make your dreams of global mobility a reality.
-              </p>
+                {/* <div className="absolute -bottom-2 left-0 w-full h-2 bg-secondary/20 rounded-full"></div> */}
+              </span>
+            </h1>
+            <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-2">
+              #1 Immigration Consultancy in Edmonton
+            </div>
+            <p className="text-[clamp(1.1rem,2.5vw,1.5rem)] text-dark leading-relaxed max-w-xl">
+              Your trusted partner for expert immigration services in Edmonton.
+              We make your dreams of global mobility a reality.
+            </p>
+            <div className="flex items-center gap-4 pt-4">
               <button
                 onClick={() => router.push("/about")}
-                className="bg-secondary hover:bg-red-700 text-white px-8 py-3 rounded-md inline-flex items-center gap-2 w-fit transition-all"
+                className="group bg-secondary hover:bg-secondary-dark text-white px-8 py-4 rounded-xl inline-flex items-center gap-3 shadow-lg transition-all duration-300 hover:translate-y-[-2px]"
               >
-                Know About Us
-                <ArrowRight size={20} />
+                <span className="text-lg font-medium">Fill detailed form</span>
+              </button>
+              <button
+                onClick={() => setIsConsultationFormOpen(true)}
+                className="px-8 py-4 rounded-xl inline-flex items-center gap-2 border-2 border-gray-200 hover:border-secondary text-dark hover:text-secondary transition-colors duration-300"
+              >
+                <span className="text-lg font-medium">Fill quick form</span>
               </button>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* 3 Steps Section - Responsive */}
-      <div className="px-6 mt-6">
-        <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center md:items-start gap-8 md:gap-4 sm:gap-0 px-4">
-          {/* step1 */}
-          <div className="relative flex flex-col items-center w-full md:w-1/3 mb-8 md:mb-0">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold z-10 mb-4">
-              1
+          <div className="md:w-1/2 w-full relative">
+            <div className="aspect-[4/3] rounded-2xl shadow-2xl overflow-hidden transform md:rotate-0 transition-transform hover:rotate-2 duration-500 group relative">
+              <div className="absolute inset-0 bg-gradient-to-tr from-secondary/20 to-transparent z-10"></div>
+              <div className="absolute inset-0 bg-black/60 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <h3 className="text-white text-2xl font-bold mb-2">Our Edmonton Office</h3>
+                <p className="text-white/90 mb-4">10019 103 Avenue Northwest<br/>Edmonton, AB T5J 0G9</p>
+                <div className="flex gap-4">
+                  <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-secondary transition-colors">
+                    <span className="text-sm">View on Maps →</span>
+                  </a>
+                  <a href="tel:+1234567890" className="text-white hover:text-secondary transition-colors">
+                    <span className="text-sm">Call Us →</span>
+                  </a>
+                </div>
+              </div>
+              <Image
+                src="/OfficePhoto.jpg"
+                alt="Interior of our Edmonton immigration office"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
+              />
             </div>
-            <div className="bg-white p-6 rounded-lg border border-blue-300 hover:border-red-600 transition-all w-full">
-              <div className="flex flex-col items-center">
-                <h3 className="text-xl font-semibold text-dark mb-2 text-center">
-                  Calculate CRS Score
-                </h3>
-                <p className="text-gray text-center mb-4">
-                  Determine your Comprehensive Ranking System score to
-                  understand your eligibility
-                </p>
-                <Button
-                  className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
-                  onClick={calculateCrs}
-                >
-                  Calculate Now
-                </Button>
+          </div>
+        </section>
+
+        {/* Experience Section */}
+        <section className="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
+          <div className="md:w-1/2 w-full relative">
+            <div className="aspect-[4/3] rounded-2xl shadow-2xl overflow-hidden transform md:-rotate-0 transition-transform hover:rotate-2 duration-500 group relative">
+              <div className="absolute inset-0 bg-gradient-to-bl from-secondary/20 to-transparent z-10"></div>
+              <div className="absolute inset-0 bg-black/60 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <h3 className="text-white text-2xl font-bold mb-2">Raj Kumar</h3>
+                <p className="text-white/90 mb-4">Senior Immigration Consultant<br/>RCIC License #R123456</p>
+                <div className="flex gap-4">
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-secondary transition-colors">
+                    <span className="text-sm">LinkedIn →</span>
+                  </a>
+                  <a href="mailto:raj@example.com" className="text-white hover:text-secondary transition-colors">
+                    <span className="text-sm">Email Me →</span>
+                  </a>
+                </div>
+              </div>
+              <Image
+                src="/Raj.jpg"
+                alt="Our experienced consultant Raj"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          </div>
+          <div className="md:w-1/2 flex flex-col space-y-6">
+            <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-2">
+              Trusted Experience
+            </div>
+            <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-gray-900 leading-tight">
+              <span className="text-tertiary">15 Years of </span>
+              <span className="text-secondary">Excellence</span> in Immigration Services
+            </h2>
+            <p className="text-[clamp(1.1rem,2.5vw,1.5rem)] text-dark leading-relaxed">
+              At the forefront of immigration consulting in Edmonton, our team
+              leverages a decade and a half of hands-on expertise to navigate
+              complex visa pathways and deliver personalized solutions.
+            </p>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
+              <button
+                onClick={() => router.push("/about")}
+                className="group bg-secondary hover:bg-secondary-dark text-white px-8 py-4 rounded-xl inline-flex items-center gap-3 shadow-lg transition-all duration-300 hover:translate-y-[-2px] text-lg font-medium"
+              >
+                Learn More About Us
+              </button>
+              <button
+                onClick={() => window.open("https://calendly.com", "_blank")}
+                className="px-8 py-4 rounded-xl inline-flex items-center gap-2 border-2 border-gray-200 hover:border-secondary text-dark hover:text-secondary transition-colors duration-300 text-lg font-medium"
+              >
+                Schedule a Call
+              </button>
+            </div>
+            <div className="grid grid-cols-2 gap-6 mt-8">
+              <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-gray-100">
+                <h4 className="text-2xl font-bold text-secondary mb-2">2000+</h4>
+                <p className="text-dark">Successful Immigration Cases</p>
+              </div>
+              <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-gray-100">
+                <h4 className="text-2xl font-bold text-secondary mb-2">98%</h4>
+                <p className="text-dark">Success Rate</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section className="flex flex-col items-center gap-12">
+          <div className="text-center space-y-4">
+            <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
+              Our Services
+            </div>
+            <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-gray-900 leading-tight">
+              <span className="text-tertiary">Immigration </span>
+              <span className="text-secondary">Services</span> We Offer
+            </h2>
+            <p className="text-dark text-lg max-w-2xl mx-auto">
+              Comprehensive immigration solutions tailored to your unique needs. Each service is backed by our years of expertise and commitment to excellence.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+            {/* Express Entry Card */}
+            <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-secondary/30 flex flex-col">
+              <div className="bg-secondary/10 rounded-xl p-4 w-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mt-4">Express Entry Program</h3>
+              <p className="text-dark mt-2 flex-grow">Fast-track your immigration process through Canada's Express Entry system. Ideal for skilled workers and professionals.</p>
+              <div className="flex flex-col gap-3 mt-4">
+                <div className="flex items-center gap-2 text-dark">
+                  <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Processing time: 6-8 months</span>
+                </div>
+                <div className="flex items-center gap-2 text-dark">
+                  <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Success rate: 95%</span>
+                </div>
+                <button onClick={() => setIsConsultationFormOpen(true)} className="mt-4 w-full bg-secondary/10 hover:bg-secondary text-secondary hover:text-white py-3 rounded-xl font-medium transition-colors duration-300">
+                  Apply Now
+                </button>
+              </div>
+            </div>
+
+            {/* Family Sponsorship Card */}
+            <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-secondary/30 flex flex-col">
+              <div className="bg-secondary/10 rounded-xl p-4 w-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mt-4">Family Sponsorship</h3>
+              <p className="text-dark mt-2 flex-grow">Reunite with your loved ones in Canada. We help you navigate the family sponsorship process with care and expertise.</p>
+              <div className="flex flex-col gap-3 mt-4">
+                <div className="flex items-center gap-2 text-dark">
+                  <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Spouse, Parents & Children</span>
+                </div>
+                <div className="flex items-center gap-2 text-dark">
+                  <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Full documentation support</span>
+                </div>
+                <button onClick={() => setIsConsultationFormOpen(true)} className="mt-4 w-full bg-secondary/10 hover:bg-secondary text-secondary hover:text-white py-3 rounded-xl font-medium transition-colors duration-300">
+                  Start Process
+                </button>
+              </div>
+            </div>
+
+            {/* Student Visa Card */}
+            <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-secondary/30 flex flex-col">
+              <div className="bg-secondary/10 rounded-xl p-4 w-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                  <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mt-4">Student Visa</h3>
+              <p className="text-dark mt-2 flex-grow">Pursue your educational dreams in Canada. We assist with study permits, school applications, and post-graduation work permits.</p>
+              <div className="flex flex-col gap-3 mt-4">
+                <div className="flex items-center gap-2 text-dark">
+                  <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>School admission support</span>
+                </div>
+                <div className="flex items-center gap-2 text-dark">
+                  <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>SDS & Regular stream</span>
+                </div>
+                <button onClick={() => setIsConsultationFormOpen(true)} className="mt-4 w-full bg-secondary/10 hover:bg-secondary text-secondary hover:text-white py-3 rounded-xl font-medium transition-colors duration-300">
+                  Get Started
+                </button>
               </div>
             </div>
           </div>
 
-          {/* step2 */}
-          <div className="relative flex flex-col items-center w-full md:w-1/3 mb-8 md:mb-0">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold z-10 mb-4">
-              2
+          <button onClick={() => router.push("/services")} className="group bg-white border-2 border-secondary text-secondary hover:bg-secondary hover:text-white px-8 py-4 rounded-xl inline-flex items-center gap-3 transition-all duration-300 text-lg font-medium">
+            View All Services
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </button>
+        </section>
+
+        {/* Contact Section */}
+        <section className="flex flex-col items-center gap-12">
+          <div className="text-center space-y-4">
+            <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
+              Get in Touch
             </div>
-            <div className="bg-white p-6 rounded-lg border border-blue-300 hover:border-red-600 transition-all w-full">
-              <div className="flex flex-col items-center">
-                <h3 className="text-xl font-semibold text-dark mb-2 text-center">
-                  Fill Consultation Form
-                </h3>
-                <p className="text-gray text-center mb-4">
-                  Complete our detailed consultation form to help us understand
-                  your needs
-                </p>
-                <Button
-                  className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
-                  onClick={() => setIsConsultationFormOpen(true)}
-                >
-                  Start Form
-                </Button>
-              </div>
-            </div>
+            <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-gray-900 leading-tight">
+              <span className="text-tertiary">Contact </span>
+              <span className="text-secondary">Us</span> Today
+            </h2>
+            <p className="text-dark text-lg max-w-2xl mx-auto">
+              We're here to help with your immigration journey. Reach out to us for expert guidance and support.
+            </p>
           </div>
 
-          <div className="relative flex flex-col items-center w-full md:w-1/3">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary text-white font-bold z-10 mb-4">
-              3
-            </div>
-            <div className="bg-white p-6 rounded-lg border border-blue-300 hover:border-red-600 transition-all w-full">
-              <div className="flex flex-col items-center">
-                <h3 className="text-xl font-semibold text-dark mb-2 text-center">
-                  Book Consultation
-                </h3>
-                <p className="text-gray text-center mb-4">
-                  Schedule a personalized consultation with our immigration
-                  experts
-                </p>
-                <Button
-                  onClick={() => alert("Please fill the form first")}
-                  className="px-4 py-4 rounded-full text-white bg-tertiary mt-4 shadow-md transition-transform duration-200 hover:scale-105 hover:bg-secondary/90"
-                >
-                  Book Now
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h1 className="text-dark mb-[5%]  font-semibold text-center px-4">
-          Follow two steps to move ahead in your Immigration Journey{" "}
-          <span className="text-secondary"> </span> :{" "}
-          <span className="text-secondary">
-            Fill the form and Book a Consultation with our experts.
-          </span>
-        </h1>
-      </div>
-
-      {/* Programs Section */}
-      <section
-        id="p3program"
-        className=" min-h-[650px] bg-gradient-to-r from-blue-50 to-red-50 w-full py-8 md:py-12"
-      >
-        <div className="w-full  px-4 md:px-8 max-w-7xl mx-auto">
-          <h1 className="mt-6 text-dark mb-6 md:mb-10 text-3xl md:text-4xl lg:text-5xl font-bold text-center">
-            Our <span className="text-secondary">Special</span> Programs
-          </h1>
-
-          <div className="w-full mt-[5rem]">
-            <Swiper
-              spaceBetween={16}
-              slidesPerView={1}
-              breakpoints={{
-                640: { slidesPerView: 2, spaceBetween: 20 },
-                1024: { slidesPerView: 3, spaceBetween: 24 },
-              }}
-              navigation={true}
-              modules={[Navigation]}
-              className="custom-swiper px-4 py-4 h-[400px] relative" // Increased height and added a custom class
-            >
-              {Programs.map((program, index) => (
-                <SwiperSlide key={index}>
-                  <ProgramCard
-                    index={index}
-                    program={program}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            {/* Contact Form */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+              <form className="space-y-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">Full Name</label>
+                  <input 
+                    type="text"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors duration-200"
+                    placeholder="John Doe"
                   />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
-      </section>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">Email</label>
+                  <input 
+                    type="email"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors duration-200"
+                    placeholder="john@example.com"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">Message</label>
+                  <textarea 
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors duration-200"
+                    rows="4"
+                    placeholder="How can we help you?"
+                  ></textarea>
+                </div>
+                <button 
+                  type="submit"
+                  className="w-full bg-secondary hover:bg-secondary-dark text-white py-4 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] flex items-center justify-center gap-2"
+                >
+                  Send Message
+                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </button>
+              </form>
+            </div>
 
-      {/* Visa Types Section */}
-      <section
-        id="p3program"
-        className="bg-gradient-to-r from-red-50 to-blue-50 w-full"
-      >
-        <div className="flex flex-col w-full px-4 md:px-[5%] py-8 md:py-[4%]">
-          <h1 className="text-dark mb-8 md:mb-[5%] text-3xl md:text-4xl lg:text-5xl font-bold text-center">
-            Visa Types and <span className="text-secondary">Eligibility</span>
-          </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
-            {visaTypes.map((item, index) => (
-              <div key={index} className="w-full">
-                {" "}
-                {/* w-full is important for mobile */}
-                <VisaTypeCard visa={item} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            {/* Contact Information */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h3>
+              <div className="space-y-8">
+                <div className="flex items-start gap-4 group">
+                  <div className="bg-secondary/10 rounded-xl p-3">
+                    <MapPin className="w-6 h-6 text-secondary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Visit Us</h4>
+                    <p className="text-gray-600">9323- 35 Ave<br />Edmonton, AB T6E 5R5<br />Canada</p>
+                  </div>
+                </div>
 
-      {/* Stats Section */}
-      <section id="p3program" className="w-full">
-        <div className="relative min-h-screen overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15"
-            style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1569974498991-d3c12a504f95?q=80&w=2070')",
-            }}
-          />
-          <div className="relative bg-gradient-to-b from-gray-50/90 to-white/95 py-10 px-4">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-12 md:mb-20 max-w-3xl mx-auto">
-                <h2 className="text-blue-600 font-semibold text-lg mb-4">
-                  DISCOVERING OUR BIGGEST SUCCESSES
-                </h2>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6 leading-tight">
-                  The Stories Behind Our Great{" "}
-                  <span className="text-secondary mt-2"> Achievements</span>
-                </h1>
-              </div>
+                <div className="flex items-start gap-4 group">
+                  <div className="bg-secondary/10 rounded-xl p-3">
+                    <Phone className="w-6 h-6 text-secondary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Call Us</h4>
+                    <p className="text-gray-600">+11 7809-371-995</p>
+                  </div>
+                </div>
 
-              {/* Stats Cards - Responsive Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-dark">
-                <StatCard
-                  icon={Award}
-                  number="20+"
-                  label="Visa Categories"
-                  accentColor="bg-rose-500"
-                />
-                <StatCard
-                  icon={Users}
-                  number="30K+"
-                  label="Visa Process"
-                  accentColor="bg-blue-500"
-                />
-                <StatCard
-                  icon={BookCheck}
-                  number="40K+"
-                  label="Successful Projects"
-                  accentColor="bg-emerald-500"
-                />
-                <StatCard
-                  icon={Briefcase}
-                  number="180K"
-                  label="Pro Consultants"
-                  accentColor="bg-amber-500"
-                />
+                <div className="flex items-start gap-4 group">
+                  <div className="bg-secondary/10 rounded-xl p-3">
+                    <Mail className="w-6 h-6 text-secondary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Email Us</h4>
+                    <p className="text-gray-600">info@immigrationservices.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 group">
+                  <div className="bg-secondary/10 rounded-xl p-3">
+                    <Clock className="w-6 h-6 text-secondary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Business Hours</h4>
+                    <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 10:00 AM - 2:00 PM<br />Sunday: Closed</p>
+                  </div>
+                </div>
               </div>
 
-              <div className="mt-12 md:mt-20 text-center max-w-3xl mx-auto px-4">
-                <p className="text-lg md:text-xl text-dark italic">
-                  "Every number represents a dream fulfilled, a family reunited,
-                  and a new chapter begun. Our success is measured not just in
-                  statistics, but in the countless lives we've helped
-                  transform."
-                </p>
+              <div className="mt-8 p-6 bg-gradient-to-br from-secondary/10 to-transparent rounded-xl">
+                <h4 className="font-semibold text-gray-900 mb-2">Quick Response Promise</h4>
+                <p className="text-gray-600">We aim to respond to all inquiries within 24 hours during business days. Your immigration journey is our priority.</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      {/* <section className="relative">
-        <PartnersList />
-        <Link href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score.html"></Link>
-      </section> */}
-      {/* <ChatBot /> */}
+        </section>
+      </div>
     </div>
   );
 };

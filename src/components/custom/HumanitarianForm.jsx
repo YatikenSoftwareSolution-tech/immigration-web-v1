@@ -279,26 +279,26 @@ const MultiStepForm = ({ setResult, setStatus, step, setStep}) => {
     //       alert("Failed to send email. Please try again.");
     //     }
     //   );
-    // try {
-    //   const response = await fetch(
-    //     "https://hxm4q9sn-8080.inc1.devtunnels.ms/analyze",
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       userDetails: [newBody],
-    //     }
-    //   );
-    //   const data = await response.json();
-    //   console.log(data.response);
-    //   setResult(data.response);
-    //   if (data.response.charAt(0) === "N") {
-    //     setStatus(false);
-    //   } else setStatus(true);
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+      const response = await fetch(
+        "https://hxm4q9sn-8080.inc1.devtunnels.ms/analyze",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          user_details: [newBody],
+        }
+      );
+      const data = await response.json();
+      console.log(data.response);
+      setResult(data.response);
+      if (data.response.charAt(0) === "N") {
+        setStatus(false);
+      } else setStatus(true);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

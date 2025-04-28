@@ -131,14 +131,14 @@ const AppNavigation = () => {
             </Link>
           </li>
          
-          <li className="text-base">
+          {/* <li className="text-base">
             <Link
               href="/carrers"
              className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
             >
               Careers
             </Link>
-          </li>
+          </li> */}
           <li className="text-base">
             <Link
               href="/contacts"
@@ -153,7 +153,7 @@ const AppNavigation = () => {
 
       <div className="hidden md:flex items-center">
         <Link
-          href="/consultation"
+          href="/book-consultation"
           className="text-white bg-tertiary py-2 px-6 rounded-lg text-lg shadow-md transition duration-200 hover:bg-tertiary/90"
         >
           Book Consultation

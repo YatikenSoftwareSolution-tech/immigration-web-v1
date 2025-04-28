@@ -41,7 +41,7 @@ const Sidenav = () => {
         { name: 'Parents & Grandparents PR', link: '/services/parents' }
       ]
     },
-    { name: 'Careers', link: '/carrers' },
+    // { name: 'Careers', link: '/carrers' },
     { name: 'Contact Us', link: '/contacts' },
     { name: 'Book Consultation', link: '/consultation' }
   ];
@@ -101,6 +101,17 @@ const Sidenav = () => {
                         </div>
                       )}
                     </>
+                  ) : item.name === 'Book Consultation' ? (
+                    <button
+                      onClick={() => {
+                        setActiveSection(item.name);
+                        toggleSidenav();
+                        router.push(item.link);
+                      }}
+                      className="w-full text-white bg-tertiary py-2 px-6 rounded-lg text-lg shadow-md transition duration-200 hover:bg-tertiary/90 mt-4"
+                    >
+                      {item.name}
+                    </button>
                   ) : (
                     <button
                       onClick={() => {

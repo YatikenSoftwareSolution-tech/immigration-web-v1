@@ -1,142 +1,78 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import VT1 from "../assets/VT1.svg";
-import VT2 from "../assets/VT2.svg";
-import VT3 from "../assets/VT3.svg";
-import VT4 from "../assets/VT4.svg";
-import VT5 from "../assets/VT5.svg";
-import { useState } from "react";
-import ConsultationForm from "@/components/custom/ConsultationForm";
-import ProgramCard from "@/components/custom/ProgramCard";
-import VisaTypeCard from "@/components/custom/VisaTypeCard";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
-import { Users, ArrowRight, Award, BookCheck, Briefcase, MapPin, Phone, Mail, Clock } from "lucide-react";
-import { useRouter } from "next/navigation";
-import styles from "./Home.module.css";
-import HumanitarianForm from "@/components/custom/HumanitarianForm";
+"use client"
+import { ArrowRight, MapPin, Phone, Mail, Clock } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const ImmigrationPage = () => {
-  const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
-  const [isSpecialProgramOpen, setIsSpecialProgramOpen] = useState(false);
   const router = useRouter();
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    message: ''
+  });
 
-  const calculateCrs = () => {
-    router.push(
-      "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score.html#calculator"
-    );
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
-  const visaTypes = [
-    {
-      icon: VT1,
-      title: "Tourist Visa",
-      description:
-        "Visit new places to discover with a Tourist Visa. We deliver your documents ...",
-    },
-    {
-      icon: VT2,
-      title: "Commercial Visa",
-      description:
-        "Developing your trade, setting up new sales channels Your visa is ready...",
-    },
-    {
-      icon: VT3,
-      title: "Student Visa",
-      description:
-        "Embarking on a journey of higher education in a foreign country opens doors to...",
-    },
-    {
-      icon: VT4,
-      title: "Residence Visa",
-      description:
-        "Expert Guidance for a Seamless Immigration Journey Expert Guidance...",
-    },
-    {
-      icon: VT5,
-      title: "Work Visa",
-      description:
-        "Get your Visa now for new business and earning opportunities. We deliver your...",
-    },
-  ];
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Add your form submission logic here
+      console.log('Form submitted:', formData);
+      // Reset form after submission
+      setFormData({
+        fullName: '',
+        email: '',
+        message: ''
+      });
+      alert('Message sent successfully! We will get back to you soon.');
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Failed to send message. Please try again.');
+    }
+  };
 
-  const Programs = [
-    {
-      title: "Humanitarian and Compassionate Ground",
-      description:
-        "Designed for individuals facing severe hardships due to environmental, political, or health crises, this program offers urgent support and safe relocation options.",
-      link: "/humanitarian-cause",
-    },
-    {
-      title: "Children for Canadian Citizenship",
-      description:
-        "Focused on ensuring a bright future, this program supports the immigration of children eligible for Canadian citizenship, providing access to quality education and a nurturing environment.",
-      link: "/children-citizenship",
-    },
-    {
-      title: "Home care workers (caregivers)",
-      description:
-        "As a caregiver, you can come to Canada to become a permanent resident or work temporarily.",
-      link: "/caregivers",
-    },
-  ];
-
-
-  if (isConsultationFormOpen) {
-    return (
-      <ConsultationForm
-        isOpen={isConsultationFormOpen}
-        onClose={() => setIsConsultationFormOpen(false)}
-      />
-    );
-  }
-
-  if (isSpecialProgramOpen) {
-    return (
-      <HumanitarianForm
-        isOpen={isSpecialProgramOpen}
-        onClose={() => setIsSpecialProgramOpen(false)}
-      />
-    );
-  }
   return (
     <div className="bg-gradient-to-b from-white via-gray-50 to-white min-h-screen">
-      <div className="w-full max-w-7xl mx-auto py-20 px-4 md:px-6 space-y-32">
+      <div className="flex flex-col gap-16 w-full mx-auto py-16 px-5 md:px-24 ">
         {/* Hero Section */}
-        <section className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <section className="flex flex-col md:h-[80vh] md:flex-row items-center gap-14  ">
           <div className="md:w-1/2 flex flex-col space-y-6 animate-fade-in">
-            
-            <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-gray-900 leading-[1.1]">
-             <span className="text-tertiary"> Immigration <span className="text-secondary">Visa </span> </span>
+
+            <h1 className="text-[clamp(2.5rem,6vw,4rem)] font-bold text-gray-900 leading-[1.1]">
+              <span className="text-tertiary"> Immigration <span className="text-secondary">Visa </span> </span>
               <span className="text-tertiary relative">
                 Consulting
                 {/* <div className="absolute -bottom-2 left-0 w-full h-2 bg-secondary/20 rounded-full"></div> */}
               </span>
             </h1>
-            <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-2">
-              #1 Immigration Consultancy in Edmonton
+            <div className="md:w-[50%] inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-2">
+              # 1 Immigration Consultancy in Edmonton
             </div>
-            <p className="text-[clamp(1.1rem,2.5vw,1.5rem)] text-dark leading-relaxed max-w-xl">
-              Your trusted partner for expert immigration services in Edmonton.
-              We make your dreams of global mobility a reality.
+            <p className="text-[clamp(1rem,2vw,1.1rem)] text-dark leading-relaxed max-w-xl">
+              Since 2010, Immigration Company has been dedicated to providing ethical and personalized immigration consulting services. <br /> Whether you're looking to visit, study, work, or settle permanently in Canada, our experienced team is here to guide you every step of the way.<br /> We understand that each client's journey is unique, and we're committed to offering solutions tailored to your individual needs.
             </p>
             <div className="flex items-center gap-4 pt-4">
               <button
                 onClick={() => router.push("/about")}
-                className="group bg-secondary hover:bg-secondary-dark text-white px-8 py-4 rounded-xl inline-flex items-center gap-3 shadow-lg transition-all duration-300 hover:translate-y-[-2px]"
+                className="group bg-secondary hover:bg-secondary-dark text-white px-6 py-4 rounded-xl inline-flex items-center gap-3 shadow-lg transition-all duration-300 hover:translate-y-[-2px]"
               >
                 <span className="text-lg font-medium">Fill detailed form</span>
               </button>
-              <button
-                onClick={() => setIsConsultationFormOpen(true)}
-                className="px-8 py-4 rounded-xl inline-flex items-center gap-2 border-2 border-gray-200 hover:border-secondary text-dark hover:text-secondary transition-colors duration-300"
-              >
-                <span className="text-lg font-medium">Fill quick form</span>
-              </button>
+              <Link href='/quick-consultation'>
+                <button
+                  className="px-6 py-4 rounded-xl inline-flex items-center gap-2 border-2 border-gray-200 hover:border-secondary text-dark hover:text-secondary transition-colors duration-300"
+                >
+                  <span className="text-lg font-medium">Fill quick form</span>
+                </button>
+              </Link>
             </div>
           </div>
           <div className="md:w-1/2 w-full relative">
@@ -144,7 +80,7 @@ const ImmigrationPage = () => {
               <div className="absolute inset-0 bg-gradient-to-tr from-secondary/20 to-transparent z-10"></div>
               <div className="absolute inset-0 bg-black/60 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <h3 className="text-white text-2xl font-bold mb-2">Our Edmonton Office</h3>
-                <p className="text-white/90 mb-4">10019 103 Avenue Northwest<br/>Edmonton, AB T5J 0G9</p>
+                <p className="text-white/90 mb-4">10019 103 Avenue Northwest<br />Edmonton, AB T5J 0G9</p>
                 <div className="flex gap-4">
                   <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-secondary transition-colors">
                     <span className="text-sm">View on Maps →</span>
@@ -165,13 +101,13 @@ const ImmigrationPage = () => {
         </section>
 
         {/* Experience Section */}
-        <section className="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
+        <section className="flex flex-col-reverse md:h-[80vh] md:flex-row items-center gap-12 md:gap-16">
           <div className="md:w-1/2 w-full relative">
             <div className="aspect-[4/3] rounded-2xl shadow-2xl overflow-hidden transform md:-rotate-0 transition-transform hover:rotate-2 duration-500 group relative">
               <div className="absolute inset-0 bg-gradient-to-bl from-secondary/20 to-transparent z-10"></div>
               <div className="absolute inset-0 bg-black/60 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <h3 className="text-white text-2xl font-bold mb-2">Raj Kumar</h3>
-                <p className="text-white/90 mb-4">Senior Immigration Consultant<br/>RCIC License #R123456</p>
+                <p className="text-white/90 mb-4">Senior Immigration Consultant<br />RCIC License #R123456</p>
                 <div className="flex gap-4">
                   <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-secondary transition-colors">
                     <span className="text-sm">LinkedIn →</span>
@@ -189,15 +125,16 @@ const ImmigrationPage = () => {
               />
             </div>
           </div>
-          <div className="md:w-1/2 flex flex-col space-y-6">
+          <div className="md:w-1/2 flex flex-col">
+
+            <h2 className="text-[clamp(2rem,5vw,3rem)] font-bold text-dark leading-tight md:mb-4">
+              <span className="text-tertiary"> </span>15 Years of
+              <span className="text-tertiary"> Excellence</span> in Immigration Services
+            </h2>
             <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-2">
               Trusted Experience
             </div>
-            <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-gray-900 leading-tight">
-              <span className="text-tertiary">15 Years of </span>
-              <span className="text-secondary">Excellence</span> in Immigration Services
-            </h2>
-            <p className="text-[clamp(1.1rem,2.5vw,1.5rem)] text-dark leading-relaxed">
+            <p className="text-[clamp(1.1rem,2.5vw,1rem)] text-dark leading-relaxed">
               At the forefront of immigration consulting in Edmonton, our team
               leverages a decade and a half of hands-on expertise to navigate
               complex visa pathways and deliver personalized solutions.
@@ -230,15 +167,16 @@ const ImmigrationPage = () => {
         </section>
 
         {/* Services Section */}
-        <section className="flex flex-col items-center gap-12">
+        <section className="flex flex-col  md:h-min-[80vh] items-center gap-12">
           <div className="text-center space-y-4">
+
+            <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark leading-tight">
+              <span className="text-dark">Immigration </span>
+              <span className="text-tertiary">Services</span> We Offer
+            </h2>
             <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
               Our Services
             </div>
-            <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-gray-900 leading-tight">
-              <span className="text-tertiary">Immigration </span>
-              <span className="text-secondary">Services</span> We Offer
-            </h2>
             <p className="text-dark text-lg max-w-2xl mx-auto">
               Comprehensive immigration solutions tailored to your unique needs. Each service is backed by our years of expertise and commitment to excellence.
             </p>
@@ -331,25 +269,19 @@ const ImmigrationPage = () => {
               </div>
             </div>
           </div>
-
-          <button onClick={() => router.push("/services")} className="group bg-white border-2 border-secondary text-secondary hover:bg-secondary hover:text-white px-8 py-4 rounded-xl inline-flex items-center gap-3 transition-all duration-300 text-lg font-medium">
-            View All Services
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </button>
         </section>
 
         {/* Contact Section */}
-        <section className="flex flex-col items-center gap-12">
+        <section className="flex flex-col md:h-min-[80vh] text-dark items-center gap-8">
           <div className="text-center space-y-4">
+
+            <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark leading-tight">
+              <span className="text-dark">Contact </span>
+              <span className="text-tertiary">Us</span> Today
+            </h2>
             <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
               Get in Touch
             </div>
-            <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-gray-900 leading-tight">
-              <span className="text-tertiary">Contact </span>
-              <span className="text-secondary">Us</span> Today
-            </h2>
             <p className="text-dark text-lg max-w-2xl mx-auto">
               We're here to help with your immigration journey. Reach out to us for expert guidance and support.
             </p>
@@ -357,34 +289,49 @@ const ImmigrationPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
             {/* Contact Form */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">Full Name</label>
-                  <input 
+                  <label htmlFor="fullName" className="text-sm font-medium text-gray-700">Full Name</label>
+                  <input
+                    id="fullName"
+                    name="fullName"
                     type="text"
+                    value={formData.fullName}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors duration-200"
                     placeholder="John Doe"
+                    required
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">Email</label>
-                  <input 
+                  <label htmlFor="email" className="text-sm font-medium text-gray-700">Email</label>
+                  <input
+                    id="email"
+                    name="email"
                     type="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors duration-200"
                     placeholder="john@example.com"
+                    required
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">Message</label>
-                  <textarea 
+                  <label htmlFor="message" className="text-sm font-medium text-gray-700">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors duration-200"
                     rows="4"
                     placeholder="How can we help you?"
+                    required
                   ></textarea>
                 </div>
-                <button 
+                <button
                   type="submit"
                   className="w-full bg-secondary hover:bg-secondary-dark text-white py-4 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] flex items-center justify-center gap-2"
                 >
@@ -395,7 +342,7 @@ const ImmigrationPage = () => {
             </div>
 
             {/* Contact Information */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 ">
               <h3 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h3>
               <div className="space-y-8">
                 <div className="flex items-start gap-4 group">
@@ -437,11 +384,6 @@ const ImmigrationPage = () => {
                     <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 10:00 AM - 2:00 PM<br />Sunday: Closed</p>
                   </div>
                 </div>
-              </div>
-
-              <div className="mt-8 p-6 bg-gradient-to-br from-secondary/10 to-transparent rounded-xl">
-                <h4 className="font-semibold text-gray-900 mb-2">Quick Response Promise</h4>
-                <p className="text-gray-600">We aim to respond to all inquiries within 24 hours during business days. Your immigration journey is our priority.</p>
               </div>
             </div>
           </div>

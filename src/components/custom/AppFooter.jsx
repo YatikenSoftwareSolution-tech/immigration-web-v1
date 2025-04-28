@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import {
   FaEnvelope,
@@ -19,22 +20,25 @@ const AppFooter = () => {
           <ul className="space-y-3 text-sm">
             <li className="flex items-center">
               <FaEnvelope className="text-yellow-500 mr-3" />
-              <a
+              <Link
                 href="mailto:info@immigration.com"
                 className="hover:text-yellow-500"
               >
                 info@immigrationcompany.ca
-              </a>
+              </Link>
             </li>
             <li className="flex items-center">
               <FaPhone className="text-yellow-500 mr-3" />
-              <a href="tel:+17809371995" className="hover:text-yellow-500">
+              <Link href="tel:+17809371995" className="hover:text-yellow-500">
                 +1-7809371995
-              </a>
+              </Link>
             </li>
             <li className="flex items-center">
               <FaMapMarkerAlt className="text-yellow-500 mr-3" />
               9323- 35 Ave Edmonton, AB T6E 5R5 CANADA
+            </li>
+            <li className="flex flex-col">
+              <strong>Consulting Hours:</strong> Monday to Friday, 11:00 AM – 3:00 PM
             </li>
           </ul>
         </div>
@@ -44,24 +48,24 @@ const AppFooter = () => {
           <h3 className="text-lg font-semibold mb-4">Explore Links</h3>
           <ul className="space-y-2 text-sm">
           <li>
-              <a href="/" className="hover:text-yellow-500">
+              <Link href="/" className="hover:text-yellow-500">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about" className="hover:text-yellow-500">
+              <Link href="/about" className="hover:text-yellow-500">
                 About Us
-              </a>
+              </Link>
             </li>
-            <li>
-              <a href="/carrers" className="hover:text-yellow-500">
+            {/* <li>
+              <Link href="/carrers" className="hover:text-yellow-500">
                 Carrers
-              </a>
-            </li>
+              </Link>
+            </li> */}
             <li>
-              <a href="/contact" className="hover:text-yellow-500">
-                About Us
-              </a>
+              <Link href="/contact" className="hover:text-yellow-500">
+                Contact Us
+              </Link>
             </li>
            
           </ul>
@@ -72,49 +76,49 @@ const AppFooter = () => {
           <h3 className="text-lg font-semibold mb-4">Services Offered</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="/services/visitorVisa" className="hover:text-yellow-500">
+              <Link href="/services/visitorVisa" className="hover:text-yellow-500">
                 Visitor Visa
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services/superVisa" className="hover:text-yellow-500">
+              <Link href="/services/superVisa" className="hover:text-yellow-500">
                 Super Visa
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services/workPermit" className="hover:text-yellow-500">
+              <Link href="/services/workPermit" className="hover:text-yellow-500">
                 Work Permit
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services/pnpVisa" className="hover:text-yellow-500">
+              <Link href="/services/pnpVisa" className="hover:text-yellow-500">
                 PNP
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services/prCard" className="hover:text-yellow-500">
+              <Link href="/services/prCard" className="hover:text-yellow-500">
                 PR Card renewal
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services/tourism" className="hover:text-yellow-500">
+              <Link href="/services/tourism" className="hover:text-yellow-500">
                 Express Entry
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services/coaching" className="hover:text-yellow-500">
+              <Link href="/services/coaching" className="hover:text-yellow-500">
                 LMIAE
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services/sponsorship" className="hover:text-yellow-500">
+              <Link href="/services/sponsorship" className="hover:text-yellow-500">
                 Spousal Sponsorship
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services/parents" className="hover:text-yellow-500">
+              <Link href="/services/parents" className="hover:text-yellow-500">
                 Parents and Grand Parents PR
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -133,45 +137,44 @@ const AppFooter = () => {
       </div>
  
       {/* Footer Bottom */}
-      <div className="mt-10 text-center border-t border-gray-700 pt-4 text-sm">
+      <div className="mt-6 text-center border-t border-gray-700 pt-4 text-sm">
         <div className="flex flex-col items-center">
           <p>
-            © {new Date().getFullYear()} Immigration Website. All rights
-            reserved.
+            © {new Date().getFullYear()} Immigration Company is a licensed immigration consulting firm committed to providing honest and professional services to all our clients.
           </p>
           <div className="flex space-x-4 text-xl mt-4">
-            <a
+            <Link
               href="https://www.facebook.com/Immicomp"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-yellow-500"
             >
               <FaFacebook />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://x.com/Immicomp"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-yellow-500"
             >
               <FaTwitter />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.instagram.com/theimmigrationcompany/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-yellow-500"
             >
               <FaLinkedin />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.instagram.com/theimmigrationcompany/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-yellow-500"
             >
               <FaInstagram />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

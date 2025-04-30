@@ -161,7 +161,7 @@ function App() {
                   <Phone className="w-5 h-5 mt-1" style={{ color: "#363637" }} />
                   <div>
                     <h3 className="font-medium text-dark">Phone</h3>
-                    <p className="text-dark text-sm">+11 7809-371-995</p>
+                    <p className="text-dark text-sm">+1 7809-371-995</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
@@ -175,7 +175,7 @@ function App() {
                   <Clock className="w-5 h-5 mt-1" style={{ color: "#363637" }} />
                   <div>
                     <h3 className="font-medium text-dark">Business Hours</h3>
-                    <p className="text-dark text-sm">Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 10:00 AM - 2:00 PM<br />Sunday: Closed</p>
+                    <p className="text-dark text-sm">Monday - Friday: 11:00 AM - 3:00 PM<br />Saturday: Closed<br />Sunday: Closed</p>
                   </div>
                 </div>
               </div>

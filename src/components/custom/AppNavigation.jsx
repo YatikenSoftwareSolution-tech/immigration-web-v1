@@ -46,18 +46,9 @@ const AppNavigation = () => {
                       href="/services/visitorVisa"
                       className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
                     >
-                      Visitor visa
+                      Visit visa service
                     </NavigationMenuLink>
                   </li>
-                  <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                    <NavigationMenuLink
-                      href="/services/superVisa"
-                      className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
-                    >
-                      Super visa
-                    </NavigationMenuLink>
-                  </li>
-                  
                   <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                     <NavigationMenuLink
                       href="/services/workPermit"
@@ -66,12 +57,21 @@ const AppNavigation = () => {
                       Work Permit
                     </NavigationMenuLink>
                   </li>
+                  
                   <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                     <NavigationMenuLink
-                      href="/services/pnpVisa"
+                      href="/services/studentVisa"
                       className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
                     >
-                    PNP
+                      Study Permit
+                    </NavigationMenuLink>
+                  </li>
+                  <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                    <NavigationMenuLink
+                      href="/services/immigrate"
+                      className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
+                    >
+                    Immigrate
                     </NavigationMenuLink>
                   </li>
                   <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
@@ -79,39 +79,23 @@ const AppNavigation = () => {
                       href="/services/prCard"
                       className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
                     >
-                     PR Card Renewal
+                     PR Card 
                     </NavigationMenuLink>
                   </li>
                   <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                     <NavigationMenuLink
-                      href="/services/tourism"
+                      href="/services/citizenship"
                       className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
                       >
-                      Express Entry
+                      Citizenship
                     </NavigationMenuLink>
                   </li>
                   <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                     <NavigationMenuLink
-                      href="/services/coaching"
+                      href="/services/lmai"
                       className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
                       >
-                      Labour market impact assessment for employers
-                    </NavigationMenuLink>
-                  </li>
-                  <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                    <NavigationMenuLink
-                      href="/services/sponsorship"
-                      className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
-                      >
-                      Spousal Sponsorship
-                    </NavigationMenuLink>
-                  </li>
-                  <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                    <NavigationMenuLink
-                      href="/services/parents"
-                      className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
-                      >
-                      Parents & grand parents PR application
+                      LMAI (for employers)
                     </NavigationMenuLink>
                   </li>
                 </ul>
@@ -131,14 +115,6 @@ const AppNavigation = () => {
             </Link>
           </li>
          
-          {/* <li className="text-base">
-            <Link
-              href="/carrers"
-             className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
-            >
-              Careers
-            </Link>
-          </li> */}
           <li className="text-base">
             <Link
               href="/contacts"

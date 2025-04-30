@@ -265,64 +265,9 @@ const AboutUsPage = () => {
               </div>
             </div>
           </div>
-          
-          {/* Quick Links Section - Responsive grid */}
-          <div className="relative w-full py-12 md:py-16">
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `url(https://www.telegraph.co.uk/content/dam/Travel/2019/May/solo-travel-iStock-904084674.jpg?imwidth=1400)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-            />
-
-            <div className="max-w-2xl mx-auto px-4 sm:px-6 relative z-10">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-dark text-center">
-                Quick Links
-              </h2>
-
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-px border border-white/10 divide-white/10">
-                {cards.map((card, index) => (
-                  <Card
-                    key={index}
-                    className="group relative aspect-square rounded-none border-0 shadow-none bg-white/70 hover:bg-[#1a2b4b]/95 transition-colors duration-300"
-                  >
-                    <CardHeader className="relative h-full flex items-start p-2 sm:p-3">
-                      <CardTitle className="text-sm sm:text-base text-dark-opacity text-dark duration-300 group-hover:opacity-0 text-center font-semibold">
-                        {card.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <p className="text-white text-xs px-2 sm:px-3 text-center">
-                        {card.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
-      {/* Commitment Section - Responsive height and padding */}
-      <div className="w-full min-h-[30vh] md:h-[40vh] mx-auto bg-[#1a2b4b] text-white p-4 sm:p-6 md:p-8">
-        <div className="max-w-3xl mx-auto text-center h-full flex flex-col justify-center">
-          <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">Our Commitment</h3>
-          <p className="leading-relaxed text-sm md:text-base">
-            Whether you're an individual seeking a fresh start, a family
-            looking to reunite, or an employer navigating the complexities of
-            hiring foreign talent, Immigration Company is here to make the
-            process smooth and efficient. Contact us today to start your
-            immigration journey with a team that cares about your success!
-          </p>
-          <button onClick={() => router.push("/contacts")} className="mt-4 md:mt-6 bg-white text-[#1a2b4b] px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-sm md:text-base mx-auto">
-            Contact Us Today
-          </button>
-        </div>
-      </div>
     </div>
   );
 };

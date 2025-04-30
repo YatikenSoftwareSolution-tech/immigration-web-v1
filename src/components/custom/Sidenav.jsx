@@ -14,11 +14,6 @@ const Sidenav = () => {
   const router = useRouter();
   const [openSubmenu, setOpenSubmenu] = useState(null);
 
-  const handleLogout = () => {
-    Cookies.remove('token');
-    router.push('/auth/login');
-  };
-
   const handleSubmenuToggle = (name) => {
     setOpenSubmenu(openSubmenu === name ? null : name);
   };
@@ -28,22 +23,19 @@ const Sidenav = () => {
     { 
       name: 'Services', 
       subItems: [
-        { name: 'Visitor Visa', link: '/services/visitorVisa' },
-        { name: 'Super Visa', link: '/services/superVisa' },
+        { name: 'Visit visa service', link: '/services/visitorVisa' },
         { name: 'Work Permit', link: '/services/workPermit' },
-        { name: 'PNP', link: '/services/pnpVisa' },
-        { name: 'PR Card Renewal', link: '/services/prCard' },
-        { name: 'Job Placement', link: '/services/studentVisa' },
+        { name: 'Study Permit', link: '/services/studentVisa' },
+        { name: 'Immigrate', link: '/services/immigrate' },
+        { name: 'PR Card ', link: '/services/prCard' },
+        { name: 'Citizenship', link: '/services/citizenship' },
         { name: 'Express Entry', link: '/services/tourism' },
-        { name: 'Labour Market Impact Assessment', link: '/services/coaching' },
-        { name: 'Alberta PNP', link: '/services/nominee' },
-        { name: 'Spousal Sponsorship', link: '/services/sponsorship' },
-        { name: 'Parents & Grandparents PR', link: '/services/parents' }
+        { name: 'LMAI (for employers)', link: '/services/lmai' },
       ]
     },
     // { name: 'Careers', link: '/carrers' },
     { name: 'Contact Us', link: '/contacts' },
-    { name: 'Book Consultation', link: '/consultation' }
+    { name: 'Book Consultation', link: '/book-consultation' }
   ];
 
   return (
@@ -93,7 +85,7 @@ const Sidenav = () => {
                                 toggleSidenav();
                                 router.push(subItem.link);
                               }}
-                              className="block w-full text-left px-4 py-2 hover:bg-green-700 hover:text-white transition"
+                              className="block w-full text-left px-4 py-2 hover:bg-secondary hover:text-white transition rounded-lg"
                             >
                               {subItem.name}
                             </button>
@@ -119,7 +111,7 @@ const Sidenav = () => {
                         toggleSidenav();
                         router.push(item.link);
                       }}
-                      className="w-full text-left px-4 py-2 hover:bg-green-700 hover:text-white transition"
+                      className="w-full text-left px-4 py-2 hover:bg-secondary hover:text-white transition"
                     >
                       {item.name}
                     </button>

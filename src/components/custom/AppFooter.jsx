@@ -57,11 +57,6 @@ const AppFooter = () => {
                 About Us
               </Link>
             </li>
-            {/* <li>
-              <Link href="/carrers" className="hover:text-yellow-500">
-                Carrers
-              </Link>
-            </li> */}
             <li>
               <Link href="/contact" className="hover:text-yellow-500">
                 Contact Us

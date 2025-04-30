@@ -56,7 +56,7 @@ const ImmigrationPage = () => {
                 {/* <div className="absolute -bottom-2 left-0 w-full h-2 bg-secondary/20 rounded-full"></div> */}
               </span>
             </h1>
-            <div className="md:w-[60%] inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-2">
+            <div className="md:w-[70%] inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-2">
               # Trusted Canadian Immigration Consultants Since 2010
             </div>
             <p className="text-[clamp(1rem,2vw,1.1rem)] text-dark leading-relaxed max-w-xl">

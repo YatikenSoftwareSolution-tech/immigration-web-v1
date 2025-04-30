@@ -4021,6 +4021,18 @@ body {
     width: 31%;
   }
 
+  .md\:w-\[65\%\] {
+    width: 65%;
+  }
+
+  .md\:w-\[\%\] {
+    width: % ;
+  }
+
+  .md\:w-\[70\%\] {
+    width: 70%;
+  }
+
   .md\:max-w-\[420px\] {
     max-width: 420px;
   }

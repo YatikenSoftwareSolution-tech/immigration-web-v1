@@ -30,7 +30,7 @@ const AppFooter = () => {
             <li className="flex items-center">
               <FaPhone className="text-yellow-500 mr-3" />
               <Link href="tel:+17809371995" className="hover:text-yellow-500">
-                +1-7809371995
+                +1 780 937 1995
               </Link>
             </li>
             <li className="flex items-center">

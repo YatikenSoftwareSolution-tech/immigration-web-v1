@@ -403,7 +403,7 @@ const ImmigrationPage = () => {
                     <h4 className="font-semibold text-gray-900 mb-1">
                       Call Us
                     </h4>
-                    <p className="text-gray-600">+1 7809-371-995</p>
+                    <p className="text-gray-600">+1 780 937 1995</p>
                   </div>
                 </div>
 
@@ -416,7 +416,7 @@ const ImmigrationPage = () => {
                       Email Us
                     </h4>
                     <p className="text-gray-600">
-                      info@immigrationservices.ca
+                      info@immigrationcompany.ca
                     </p>
                   </div>
                 </div>

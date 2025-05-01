@@ -162,14 +162,14 @@ function App() {
                   <Phone className="w-5 h-5 mt-1" style={{ color: "#363637" }} />
                   <div>
                     <h3 className="font-medium text-dark">Phone</h3>
-                    <p className="text-dark text-sm">+1 7809-371-995</p>
+                    <p className="text-dark text-sm">+1 780 937 1995</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Mail className="w-5 h-5 mt-1" style={{ color: "#363637" }} />
                   <div>
                     <h3 className="font-medium text-dark">Email</h3>
-                    <p className="text-dark text-sm">info@immigrationservices.ca</p>
+                    <p className="text-dark text-sm">info@immigrationcompany.ca</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">

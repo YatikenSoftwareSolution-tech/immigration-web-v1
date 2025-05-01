@@ -9,7 +9,7 @@ import {
   FaLinkedin,
   FaInstagram,
 } from "react-icons/fa";
- 
+
 const AppFooter = () => {
   return (
     <footer>
@@ -38,22 +38,23 @@ const AppFooter = () => {
               9323- 35 Ave Edmonton, AB T6E 5R5 CANADA
             </li>
             <li className="flex ">
-              <strong>Consulting Hours:</strong> Monday to Friday, 11:00 AM – 3:00 PM <br/>
-              </li>
-              <li className="flex ">
+              <strong>Consulting Hours:</strong> Monday to Friday, 11:00 AM –
+              3:00 PM <br />
+            </li>
+            <li className="flex ">
               <strong>Saturday: &nbsp;</strong> Closed
-              </li>
-              <li className="flex ">
+            </li>
+            <li className="flex ">
               <strong>Sunday: &nbsp;</strong> Closed
             </li>
           </ul>
         </div>
- 
+
         {/* Column 2: Explore */}
         <div className="text-left">
           <h3 className="text-lg font-semibold mb-4">Explore Links</h3>
           <ul className="space-y-2 text-sm">
-          <li>
+            <li>
               <Link href="/" className="hover:text-yellow-500">
                 Home
               </Link>
@@ -68,32 +69,43 @@ const AppFooter = () => {
                 Contact Us
               </Link>
             </li>
-           
           </ul>
         </div>
- 
+
         {/* Column 3: Services Offered */}
         <div className="text-left">
           <h3 className="text-lg font-semibold mb-4">Services Offered</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/services/visitorVisa" className="hover:text-yellow-500">
-              Visit visa service
+              <Link
+                href="/services/visitorVisa"
+                className="hover:text-yellow-500"
+              >
+                Visit visa service
               </Link>
             </li>
             <li>
-              <Link href="/services/workPermit" className="hover:text-yellow-500">
-              Work Permit
+              <Link
+                href="/services/workPermit"
+                className="hover:text-yellow-500"
+              >
+                Work Permit
               </Link>
             </li>
             <li>
-              <Link href="/services/studentVisa" className="hover:text-yellow-500">
-              Study Permit
+              <Link
+                href="/services/studentVisa"
+                className="hover:text-yellow-500"
+              >
+                Study Permit
               </Link>
             </li>
             <li>
-              <Link href="/services/immigrate" className="hover:text-yellow-500">
-              Immigrate
+              <Link
+                href="/services/immigrate"
+                className="hover:text-yellow-500"
+              >
+                Immigrate
               </Link>
             </li>
             <li>
@@ -102,36 +114,41 @@ const AppFooter = () => {
               </Link>
             </li>
             <li>
-              <Link href="/services/citizenship" className="hover:text-yellow-500">
-              Citizenship
+              <Link
+                href="/services/citizenship"
+                className="hover:text-yellow-500"
+              >
+                Citizenship
               </Link>
             </li>
             <li>
               <Link href="/services/coaching" className="hover:text-yellow-500">
-              LMAI (for employers)
+                LMIA (for employers)
               </Link>
             </li>
           </ul>
         </div>
- 
+
         {/* Column 4: Location */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Locate Us</h3>
           <iframe
             className="w-full h-40 rounded-md"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d76000.24367833059!2d-113.474289!3d53.468324!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f2ab6057191%3A0x71fc53a206488a4b!2s9323%2035%20Ave%20NW%2C%20Edmonton%2C%20AB%20T6E%205R5%2C%20Canada!5e0!3m2!1sen!2sus!4v1740708587593!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9500.030867466052!2d-113.49274323365341!3d53.46832217852867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f2acbcc47f7%3A0xcb6de5ad29e98eb3!2sThe%20Immigration%20Company!5e0!3m2!1sen!2sus!4v1746089621819!5m2!1sen!2sus"
             allowFullScreen=""
             loading="lazy"
             title="Google Map"
           ></iframe>
         </div>
       </div>
- 
+
       {/* Footer Bottom */}
       <div className="mt-6 text-center border-t border-gray-700 pt-4 text-sm">
         <div className="flex flex-col items-center">
           <p>
-            © {new Date().getFullYear()} Immigration Company is a licensed immigration consulting firm committed to providing honest and professional services to all our clients.
+            © {new Date().getFullYear()} Immigration Company is a licensed
+            immigration consulting firm committed to providing honest and
+            professional services to all our clients.
           </p>
           <div className="flex space-x-4 text-xl mt-4">
             <Link
@@ -172,5 +189,5 @@ const AppFooter = () => {
     </footer>
   );
 };
- 
+
 export default AppFooter;

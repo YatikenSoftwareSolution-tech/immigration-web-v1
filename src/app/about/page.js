@@ -155,29 +155,29 @@ const AboutUsPage = () => {
                 <div className="space-y-3 md:space-y-4">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-[#1a2b4b] rounded-full"></div>
-                    <span className="text-sm md:text-base">Canada PR</span>
+                    <span className="text-sm md:text-base">Visit Visa Service</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-[#1a2b4b] rounded-full"></div>
-                    <span className="text-sm md:text-base">Express Entry</span>
+                    <span className="text-sm md:text-base">Work Permit</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-[#1a2b4b] rounded-full"></div>
-                    <span className="text-sm md:text-base">Citizenship</span>
+                    <span className="text-sm md:text-base">Study Permit</span>
                   </div>
                 </div>
                 <div className="space-y-3 md:space-y-4">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-[#1a2b4b] rounded-full"></div>
-                    <span className="text-sm md:text-base">Job Placement</span>
+                    <span className="text-sm md:text-base">Immigrate </span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-[#1a2b4b] rounded-full"></div>
-                    <span className="text-sm md:text-base">Work Permit Visa</span>
+                    <span className="text-sm md:text-base">PR Card</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-[#1a2b4b] rounded-full"></div>
-                    <span className="text-sm md:text-base">PNP & Super Visa</span>
+                    <span className="text-sm md:text-base">LMIA</span>
                   </div>
                 </div>
               </div>

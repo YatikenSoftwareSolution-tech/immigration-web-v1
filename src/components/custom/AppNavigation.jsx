@@ -95,7 +95,7 @@ const AppNavigation = () => {
                       href="/services/lmai"
                       className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
                       >
-                      LMAI (for employers)
+                      LMIA (for employers)
                     </NavigationMenuLink>
                   </li>
                 </ul>

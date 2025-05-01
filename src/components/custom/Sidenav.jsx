@@ -30,7 +30,7 @@ const Sidenav = () => {
         { name: 'PR Card ', link: '/services/prCard' },
         { name: 'Citizenship', link: '/services/citizenship' },
         { name: 'Express Entry', link: '/services/tourism' },
-        { name: 'LMAI (for employers)', link: '/services/lmai' },
+        { name: 'LMIA (for employers)', link: '/services/lmai' },
       ]
     },
     // { name: 'Careers', link: '/carrers' },

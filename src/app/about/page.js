@@ -126,7 +126,7 @@ const AboutUsPage = () => {
               </h3>
               <p className="leading-relaxed text-dark text-sm md:text-base">
                 At The Immigration Company, we simplify the difficult and
-                time-consuming process of immigration to Canada. With over 13
+                time-consuming process of immigration to Canada. With over 15
                 years of recognition as the top immigration consultant in
                 Edmonton, we've successfully processed hundreds of candidate
                 profiles.
@@ -155,11 +155,11 @@ const AboutUsPage = () => {
                 <div className="space-y-3 md:space-y-4">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-[#1a2b4b] rounded-full"></div>
-                    <span className="text-sm md:text-base">Visit Visa Service</span>
+                    <span className="text-sm md:text-base">Work Permit</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-[#1a2b4b] rounded-full"></div>
-                    <span className="text-sm md:text-base">Work Permit</span>
+                    <span className="text-sm md:text-base">Visit Visa Service</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-[#1a2b4b] rounded-full"></div>

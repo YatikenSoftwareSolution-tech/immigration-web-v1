@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import HorizontalLinearStepper from "@/components/ui/horizontalStepper";
+import emailjs from '@emailjs/browser';
 
 
 export const detailsSchema = z
@@ -169,6 +170,8 @@ function TwoStepForm({step, setStep}) {
       resolver: zodResolver(detailsSchema),
       mode: "onBlur",
     });
+
+    const router = useRouter();
   
     const onNext = async () => {
       const valid = await trigger(
@@ -204,14 +207,13 @@ function TwoStepForm({step, setStep}) {
       console.log(data);
       emailjs
       .send(
-        "service_t8ubgrq",       
-        "template_0qjwyjw",      
+        "service_zuuknl9",       
+        "template_vlzmj6f",      
         data,                
-        "r8jAhl7rUvv3TDFkT"        
+        "Ndv9C5G6QF6K7aPqG"        
       )
       .then(
         (response) => {
-          alert("Email sent successfully, Our will reach out to you in 24 hours!");
           router.push("/thank-you");
         },
         (error) => {

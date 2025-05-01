@@ -168,7 +168,7 @@ function App() {
                   <Mail className="w-5 h-5 mt-1" style={{ color: "#363637" }} />
                   <div>
                     <h3 className="font-medium text-dark">Email</h3>
-                    <p className="text-dark text-sm">info@immigrationservices.com</p>
+                    <p className="text-dark text-sm">info@immigrationservices.ca</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">

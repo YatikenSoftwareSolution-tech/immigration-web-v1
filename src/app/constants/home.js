@@ -9,7 +9,7 @@ export const Services = [
           "PGWP"
         ],
         link: "/services/workPermit",
-        redirect: ""
+        redirect: "/consultation-form"
       },
     {
       title: "Visit Visa Service",
@@ -22,7 +22,7 @@ export const Services = [
         "Visitor Extension"
       ],
       link: "/services/visitorVisa",
-      redirect: ""
+      redirect: "/consultation-form"
     },
     
     {
@@ -32,7 +32,7 @@ export const Services = [
         "Renewals"
       ],
       link: "/services/studentVisa",
-      redirect: ""
+      redirect: "/consultation-form"
     },
     {
       title: "Immigrate",
@@ -43,7 +43,7 @@ export const Services = [
         "Family Sponsorship"
       ],
       link: "/services/immigrate",
-      redirect: ""
+      redirect: "/consultation-form"
     },
     {
       title: "PR Card",
@@ -52,7 +52,7 @@ export const Services = [
         "Renewals"
       ],
       link: "/services/prCard",
-      redirect: ""
+      redirect: "/consultation-form"
     },
     {
       title: "Citizenship",
@@ -61,7 +61,7 @@ export const Services = [
         "Application"
       ],
       link: "/services/citizenship",
-      redirect: ""
+      redirect: "/consultation-form"
     },
     {
       title: "LMIA (for Employers)",
@@ -71,7 +71,7 @@ export const Services = [
         "Compliance"
       ],
       link: "/services/lmai",
-      redirect: ""
+      redirect: "/consultation-form"
     },
   ];
   

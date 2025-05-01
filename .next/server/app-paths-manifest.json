@@ -1,10 +1,9 @@
 {
-  "/page": "app/page.js",
   "/consultation-form/page": "app/consultation-form/page.js",
-  "/home/page": "app/home/page.js",
-  "/about/page": "app/about/page.js",
+  "/thank-you/page": "app/thank-you/page.js",
+  "/page": "app/page.js",
   "/services/visitorVisa/page": "app/services/visitorVisa/page.js",
+  "/about/page": "app/about/page.js",
   "/contacts/page": "app/contacts/page.js",
-  "/services/workPermit/page": "app/services/workPermit/page.js",
   "/book-consultation/page": "app/book-consultation/page.js"
 }

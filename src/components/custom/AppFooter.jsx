@@ -37,8 +37,14 @@ const AppFooter = () => {
               <FaMapMarkerAlt className="text-yellow-500 mr-3" />
               9323- 35 Ave Edmonton, AB T6E 5R5 CANADA
             </li>
-            <li className="flex flex-col">
-              <strong>Consulting Hours:</strong> Monday to Friday, 11:00 AM – 3:00 PM
+            <li className="flex ">
+              <strong>Consulting Hours:</strong> Monday to Friday, 11:00 AM – 3:00 PM <br/>
+              </li>
+              <li className="flex ">
+              <strong>Saturday: &nbsp;</strong> Closed
+              </li>
+              <li className="flex ">
+              <strong>Sunday: &nbsp;</strong> Closed
             </li>
           </ul>
         </div>
@@ -72,22 +78,22 @@ const AppFooter = () => {
           <ul className="space-y-2 text-sm">
             <li>
               <Link href="/services/visitorVisa" className="hover:text-yellow-500">
-                Visitor Visa
-              </Link>
-            </li>
-            <li>
-              <Link href="/services/superVisa" className="hover:text-yellow-500">
-                Super Visa
+              Visit visa service
               </Link>
             </li>
             <li>
               <Link href="/services/workPermit" className="hover:text-yellow-500">
-                Work Permit
+              Work Permit
               </Link>
             </li>
             <li>
-              <Link href="/services/pnpVisa" className="hover:text-yellow-500">
-                PNP
+              <Link href="/services/studentVisa" className="hover:text-yellow-500">
+              Study Permit
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/immigrate" className="hover:text-yellow-500">
+              Immigrate
               </Link>
             </li>
             <li>
@@ -96,23 +102,13 @@ const AppFooter = () => {
               </Link>
             </li>
             <li>
-              <Link href="/services/tourism" className="hover:text-yellow-500">
-                Express Entry
+              <Link href="/services/citizenship" className="hover:text-yellow-500">
+              Citizenship
               </Link>
             </li>
             <li>
               <Link href="/services/coaching" className="hover:text-yellow-500">
-                LMIAE
-              </Link>
-            </li>
-            <li>
-              <Link href="/services/sponsorship" className="hover:text-yellow-500">
-                Spousal Sponsorship
-              </Link>
-            </li>
-            <li>
-              <Link href="/services/parents" className="hover:text-yellow-500">
-                Parents and Grand Parents PR
+              LMAI (for employers)
               </Link>
             </li>
           </ul>

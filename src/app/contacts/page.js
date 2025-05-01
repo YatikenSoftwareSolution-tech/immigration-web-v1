@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import styles from "../contacts/Contacts.module.css"
+import emailjs from '@emailjs/browser';
 
 function App() {
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -51,10 +52,10 @@ function App() {
     console.log(formData);
     emailjs
       .send(
-        "service_dxtq9y3",       
-        "template_0qjwyjw",      
+        "service_zuuknl9",       
+        "template_cs4uhfj",      
         formData,                
-        "r8jAhl7rUvv3TDFkT"        
+        "Ndv9C5G6QF6K7aPqG"        
       )
       .then(
         (response) => {

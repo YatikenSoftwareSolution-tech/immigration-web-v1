@@ -98,7 +98,7 @@ const ImmigrationPage = () => {
                 </p>
                 <div className="flex gap-4">
                   <a
-                    href="https://maps.app.goo.gl/DwSrM4GZsqVxh8yNA"
+                    href="https://maps.app.goo.gl/QDFCSxSjgNebK7mG7"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-secondary transition-colors"

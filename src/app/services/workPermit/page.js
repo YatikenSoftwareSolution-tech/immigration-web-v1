@@ -33,7 +33,7 @@ const WorkPermitPage = () => {
             >
              Your gateway to career opportunities in Canada. Choose between employer-specific and open work permits to begin your professional journey.
             </motion.p>
-            <Button onClick={() => router.push("/form")} className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
+            <Button onClick={() => router.push("/consultation-form")} className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
               Apply Now
             </Button>
           </div>

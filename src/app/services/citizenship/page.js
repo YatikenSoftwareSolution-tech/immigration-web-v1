@@ -82,7 +82,7 @@ const AlbertaPNPPage = () => {
             >
               Alberta offers one of the easiest paths to Permanent Residency in Canada through its Provincial Nominee Program (PNP). Learn about the eligibility requirements, streams, and how we can help you apply.
             </motion.p>
-            <Button onClick={() => router.push("/form")} className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
+            <Button onClick={() => router.push("/consultation-form")} className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
               Book a Consultation
             </Button>
           </div>

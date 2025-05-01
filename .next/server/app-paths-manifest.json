@@ -5,5 +5,11 @@
   "/services/visitorVisa/page": "app/services/visitorVisa/page.js",
   "/about/page": "app/about/page.js",
   "/contacts/page": "app/contacts/page.js",
-  "/book-consultation/page": "app/book-consultation/page.js"
+  "/book-consultation/page": "app/book-consultation/page.js",
+  "/services/workPermit/page": "app/services/workPermit/page.js",
+  "/services/lmai/page": "app/services/lmai/page.js",
+  "/services/studentVisa/page": "app/services/studentVisa/page.js",
+  "/services/citizenship/page": "app/services/citizenship/page.js",
+  "/services/prCard/page": "app/services/prCard/page.js",
+  "/services/immigrate/page": "app/services/immigrate/page.js"
 }

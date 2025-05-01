@@ -49,7 +49,7 @@ const ProvincialPage = () => {
             >
             Your pathway to permanent residence through Canadian provinces and territories. Each region offers unique opportunities tailored to their economic needs.
             </motion.p>
-            <Button onClick={() => router.push("/form")} className="bg-red-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-red-700">
+            <Button onClick={() => router.push("/consultation-form")} className="bg-red-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-red-700">
               Apply Now
             </Button>
           </div>
@@ -228,7 +228,7 @@ const ProvincialPage = () => {
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold mb-4">Ready to Make Canada Your Home?</h2>
             <p className="mb-6">Start your journey to permanent residence through the Provincial Nominee Program today.</p>
-            <button onClick={() => router.push("/form")} className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <button onClick={() => router.push("/consultation-form")} className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Explore PNP Streams
             </button>
           </div>

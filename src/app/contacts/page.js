@@ -176,7 +176,7 @@ function App() {
                   <Clock className="w-5 h-5 mt-1" style={{ color: "#363637" }} />
                   <div>
                     <h3 className="font-medium text-dark">Business Hours</h3>
-                    <p className="text-dark text-sm">Monday - Friday: 11:00 AM - 3:00 PM<br />Saturday: Closed<br />Sunday: Closed</p>
+                    <p className="text-dark text-sm">Monday - Friday: 11:00 AM - 3:00 PM MDT<br />Saturday: Closed<br />Sunday: Closed</p>
                   </div>
                 </div>
               </div>

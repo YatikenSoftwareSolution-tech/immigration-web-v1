@@ -47,7 +47,7 @@ const JobPlacementServicesPage = () => {
             <p className="text-lg text-dark mb-4">
               With our proven expertise, we help you land high-paying jobs in Canada and advance your career.
             </p>
-            <Button onClick={() => router.push("/form")} className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
+            <Button onClick={() => router.push("/consultation-form")} className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
               Get Started
             </Button>
           </div>
@@ -116,7 +116,7 @@ const JobPlacementServicesPage = () => {
           <p className="text-lg text-dark mb-6">
             Get in touch with The Immigration Company today and let us help you achieve your career aspirations in Canada.
           </p>
-          <Button onClick={() => router.push("/form")} className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
+          <Button onClick={() => router.push("/consultation-form")} className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
             Contact Us
           </Button>
         </div>

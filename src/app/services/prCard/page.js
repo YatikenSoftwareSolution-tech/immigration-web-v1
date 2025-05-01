@@ -33,7 +33,7 @@ const PermanentCardPage = () => {
               transition={{ duration: 1.2 }}
             >
 Permanent residents of Canada must carry a valid PR card when traveling outside Canada to return.            </motion.p>
-            <Button onClick={() => router.push("/form")} className="bg-green-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-green-700">
+            <Button onClick={() => router.push("/consultation-form")} className="bg-green-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-green-700">
               Apply Now
             </Button>
           </div>

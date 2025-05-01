@@ -9,7 +9,7 @@ export const Services = [
           "PGWP"
         ],
         link: "/services/workPermit",
-        redirect: "/consultation-form"
+        redirect: "/work-permit-form"
       },
     {
       title: "Visit Visa Service",

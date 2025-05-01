@@ -102,7 +102,7 @@ const AppNavigation = () => {
                     </li>
                     <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                       <NavigationMenuLink
-                        href="/services/lmai"
+                        href="/services/lmia"
                         className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
                       >
                         LMIA (for employers)

@@ -31,11 +31,7 @@ export const detailsSchema = z
       .optional(),
 
     // ——— Education ———
-    highestEducation: z
-      .string()
-      .min(2, { message: "Enter your highest education" })
-      .max(100, { message: "Education must be at most 100 characters" })
-      .trim(),
+    highestEducation: z.enum(["Primary ", "Secondary ", "High School", "Higher Secondary", "Associate Degree", "Bachelors Degree", "Masters Degree", "PhD Degree"]),
     languageAssessed: z.enum(["yes", "no"]),
 
     // ——— Work Experience #1 ———
@@ -291,13 +287,17 @@ function TwoStepForm({step, setStep}) {
   
             <div className="w-[46%] md:w-[31%]">
               <label className="block text-sm font-medium text-gray-700">Highest Education</label>
-              <input
-                type="text"
+              <select
                 {...register("highestEducation")}
-                className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-              {errors.highestEducation && (
-                <p className="mt-1 text-sm text-red-600">{errors.highestEducation.message}</p>
+                className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              >
+                {
+                  ["Primary", "Secondary", "High School", "Higher Secondary", "Associate Degree", "Bachelors Degree", "Masters Degree", "PhD Degree"].map((degree) => <option key={degree} value={degree}>{degree}</option>)
+                }
+                
+              </select>
+              {errors.maritalStatus && (
+                <p className="mt-1 text-sm text-red-600">{errors.maritalStatus.message}</p>
               )}
             </div>
   

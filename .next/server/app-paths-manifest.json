@@ -1,15 +1,9 @@
 {
-  "/consultation-form/page": "app/consultation-form/page.js",
+  "/work-permit-form/page": "app/work-permit-form/page.js",
   "/thank-you/page": "app/thank-you/page.js",
   "/page": "app/page.js",
-  "/services/visitorVisa/page": "app/services/visitorVisa/page.js",
-  "/about/page": "app/about/page.js",
-  "/contacts/page": "app/contacts/page.js",
-  "/book-consultation/page": "app/book-consultation/page.js",
+  "/consultation-form/page": "app/consultation-form/page.js",
   "/services/workPermit/page": "app/services/workPermit/page.js",
-  "/services/lmai/page": "app/services/lmai/page.js",
-  "/services/studentVisa/page": "app/services/studentVisa/page.js",
-  "/services/citizenship/page": "app/services/citizenship/page.js",
-  "/services/prCard/page": "app/services/prCard/page.js",
-  "/services/immigrate/page": "app/services/immigrate/page.js"
+  "/book-consultation/page": "app/book-consultation/page.js",
+  "/about/page": "app/about/page.js"
 }

@@ -68,7 +68,7 @@ const AppFooter = () => {
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="hover:text-yellow-500">
+              <Link href="/contacts" className="hover:text-yellow-500">
                 Contact Us
               </Link>
             </li>
@@ -125,7 +125,7 @@ const AppFooter = () => {
               </Link>
             </li>
             <li>
-              <Link href="/services/coaching" className="hover:text-yellow-500">
+              <Link href="/services/lmia" className="hover:text-yellow-500">
                 LMIA (for employers)
               </Link>
             </li>
@@ -171,7 +171,7 @@ const AppFooter = () => {
               <FaTwitter />
             </Link>
             <Link
-              href="https://www.instagram.com/theimmigrationcompany/"
+              href="https://www.linkedin.com/in/raj-bhinder-4442b37a/?originalSubdomain=ca"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-yellow-500"

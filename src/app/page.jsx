@@ -57,7 +57,7 @@ const ImmigrationPage = () => {
               </span>
             </h1>
             <div className="md:w-[70%] inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-2">
-              # Trusted Canadian Immigration Consultants Since 2010
+            # Righteous Immigration Advices Since 2010
             </div>
             <p className="text-[clamp(1rem,2vw,1.1rem)] text-dark leading-relaxed max-w-xl">
               Since 2010, Immigration Company has been dedicated to providing
@@ -167,7 +167,8 @@ const ImmigrationPage = () => {
               Services
             </h2>
             <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-2">
-              Righteous Immigration Advices Since 2010
+            # Trusted Canadian Immigration Consultants Since 2010
+              
             </div>
             <p className="text-[clamp(1.1rem,2.5vw,1rem)] text-dark leading-relaxed">
               Based in Edmonton, Alberta, Rajender Bhinder brings over 15 years
@@ -415,7 +416,7 @@ const ImmigrationPage = () => {
                       Email Us
                     </h4>
                     <p className="text-gray-600">
-                      info@immigrationservices.com
+                      info@immigrationservices.ca
                     </p>
                   </div>
                 </div>
@@ -429,9 +430,9 @@ const ImmigrationPage = () => {
                       Business Hours
                     </h4>
                     <p className="text-gray-600">
-                      Monday - Friday: 9:00 AM - 6:00 PM
+                      Monday - Friday: 11:00 AM - 3:00 PM
                       <br />
-                      Saturday: 10:00 AM - 2:00 PM
+                      Saturday: Closed
                       <br />
                       Sunday: Closed
                     </p>

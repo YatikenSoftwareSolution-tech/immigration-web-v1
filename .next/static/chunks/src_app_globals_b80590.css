@@ -732,6 +732,14 @@ img, video {
   margin-top: auto;
 }
 
+.ml-2 {
+  margin-left: .5rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }

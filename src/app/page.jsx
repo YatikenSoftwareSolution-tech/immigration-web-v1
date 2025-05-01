@@ -92,9 +92,9 @@ const ImmigrationPage = () => {
                   Our Edmonton Office
                 </h3>
                 <p className="text-white/90 mb-4">
-                  10019 103 Avenue Northwest
+                  9323- 35 Ave Edmonton, AB T6E 5R5
                   <br />
-                  Edmonton, AB T5J 0G9
+                  Canada
                 </p>
                 <div className="flex gap-4">
                   <a

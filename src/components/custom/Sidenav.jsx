@@ -20,19 +20,19 @@ const Sidenav = () => {
 
   const navItems = [
     { name: 'About Us', link: '/about' },
-    { 
-      name: 'Services', 
-      subItems: [
-        { name: 'Visit visa service', link: '/services/visitorVisa' },
-        { name: 'Work Permit', link: '/services/workPermit' },
-        { name: 'Study Permit', link: '/services/studentVisa' },
-        { name: 'Immigrate', link: '/services/immigrate' },
-        { name: 'PR Card ', link: '/services/prCard' },
-        { name: 'Citizenship', link: '/services/citizenship' },
-        { name: 'Express Entry', link: '/services/tourism' },
-        { name: 'LMIA (for employers)', link: '/services/lmia' },
-      ]
-    },
+    // { 
+    //   name: 'Services', 
+    //   subItems: [
+    //     { name: 'Visit visa service', link: '/services/visitorVisa' },
+    //     { name: 'Work Permit', link: '/services/workPermit' },
+    //     { name: 'Study Permit', link: '/services/studentVisa' },
+    //     { name: 'Immigrate', link: '/services/immigrate' },
+    //     { name: 'PR Card ', link: '/services/prCard' },
+    //     { name: 'Citizenship', link: '/services/citizenship' },
+    //     { name: 'Express Entry', link: '/services/tourism' },
+    //     { name: 'LMIA (for employers)', link: '/services/lmia' },
+    //   ]
+    // },
     // { name: 'Careers', link: '/carrers' },
     { name: 'Contact Us', link: '/contacts' },
     { name: 'Book Consultation', link: '/book-consultation' }

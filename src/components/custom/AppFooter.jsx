@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import {
@@ -12,49 +13,54 @@ import {
 
 const AppFooter = () => {
   return (
-    <footer>
-      <div className="py-[5%] container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div className="relative h-[700px] py-8 bg-[url('/OfficePhoto.jpg')] bg-cover flex flex-col items-center gap-16 text-white">
+      {/* dark overlay */}
+      <div className="absolute mt-[16%] inset-0 h-2/3  bg-black opacity-75" />
+
+      {/* content */}
+      <div className="relative mt-[15%] container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Column 1: Contact Us */}
-        <div className="text-left ">
+        <div className="text-left text-white">
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
           <ul className="space-y-3 text-sm">
             <li className="flex items-center">
               <FaEnvelope className="text-yellow-500 mr-3" />
-              <Link
-                href="mailto:info@immigration.com"
-                className="hover:text-yellow-500"
-              >
-                info@immigrationcompany.ca
-              </Link>
+              info@immigrationcompany.ca
             </li>
             <li className="flex items-center">
               <FaPhone className="text-yellow-500 mr-3" />
-              <Link href="tel:+17809371995" className="hover:text-yellow-500">
-                +1 780 937 1995
-              </Link>
+              +1 780 937 1995
             </li>
             <li className="flex items-center">
-              <FaMapMarkerAlt className="text-yellow-500 mr-3" />
-              9323- 35 Ave Edmonton, AB T6E 5R5 CANADA
+              <Link
+                href={"https://maps.app.goo.gl/jwPKUGCnEmo6Cc5f6"}
+                className="flex items-center"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaMapMarkerAlt className="text-yellow-500 mr-3" />
+                9323‑35 Ave Edmonton, AB T6E 5R5 CANADA
+              </Link>
             </li>
-            <li className="flex ">
-              <strong className="ml-6">Consulting: &nbsp;</strong> Monday to Friday
+            <li className="flex">
+              <strong className="ml-6">Consulting:&nbsp;</strong>Monday to
+              Friday
             </li>
-            <li className="flex ">
-              <strong className="ml-6">Hours: &nbsp;</strong> 11:00 AM –
-              3:00 PM MDT
+            <li className="flex">
+              <strong className="ml-6">Hours:&nbsp;</strong>11:00 AM – 3:00 PM
+              MDT
             </li>
-            <li className="flex ">
-              <strong className="ml-6">Saturday: &nbsp;</strong> Closed
+            <li className="flex">
+              <strong className="ml-6">Saturday:&nbsp;</strong>Closed
             </li>
-            <li className="flex ">
-              <strong className="ml-6">Sunday: &nbsp;</strong> Closed
+            <li className="flex">
+              <strong className="ml-6">Sunday:&nbsp;</strong>Closed
             </li>
           </ul>
         </div>
 
         {/* Column 2: Explore */}
-        <div className="text-left">
+        <div className="text-left text-white ">
           <h3 className="text-lg font-semibold mb-4">Explore Links</h3>
           <ul className="space-y-2 text-sm">
             <li>
@@ -76,7 +82,7 @@ const AppFooter = () => {
         </div>
 
         {/* Column 3: Services Offered */}
-        <div className="text-left">
+        <div className="text-left text-white">
           <h3 className="text-lg font-semibold mb-4">Services Offered</h3>
           <ul className="space-y-2 text-sm">
             <li>
@@ -84,7 +90,7 @@ const AppFooter = () => {
                 href="/services/visitorVisa"
                 className="hover:text-yellow-500"
               >
-                Visit visa service
+                Visit Visa Service
               </Link>
             </li>
             <li>
@@ -113,7 +119,7 @@ const AppFooter = () => {
             </li>
             <li>
               <Link href="/services/prCard" className="hover:text-yellow-500">
-                PR Card renewal
+                PR Card Renewal
               </Link>
             </li>
             <li>
@@ -131,22 +137,26 @@ const AppFooter = () => {
             </li>
           </ul>
         </div>
-
-        {/* Column 4: Location */}
-        <div>
-          <h3 className="text-lg font-semibold mb-4">Locate Us</h3>
-          <iframe
-            className="w-full h-40 rounded-md"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9500.030867466052!2d-113.49274323365341!3d53.46832217852867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f2acbcc47f7%3A0xcb6de5ad29e98eb3!2sThe%20Immigration%20Company!5e0!3m2!1sen!2sus!4v1746089621819!5m2!1sen!2sus"
-            allowFullScreen=""
-            loading="lazy"
-            title="Google Map"
-          ></iframe>
+        <div className="relative group overflow-hidden h-[250px] w-[200px]">
+          <Image
+            src="/Raj.jpg"
+            alt="Rajendra Bhindar"
+            height={200}
+            width={200}
+            className="bg-center rounded-full"
+          />
+          <div className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-full">
+            <p className="text-white text-lg font-semibold">Rajendra Bhindar</p>
+            <p className="text-white text-center text-sm px-4 mt-1">
+              President &amp; Regulated Canadian Immigration Consultant (RCIC)
+            </p>
+            
+          </div>
         </div>
       </div>
 
       {/* Footer Bottom */}
-      <div className="mt-6 text-center border-t border-gray-700 pt-4 text-sm">
+      <div className="relative mt-6 text-center border-t border-gray-700 pt-4 text-sm text-white z-50">
         <div className="flex flex-col items-center">
           <p>
             © {new Date().getFullYear()} Immigration Company is a licensed
@@ -189,7 +199,7 @@ const AppFooter = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </div>
   );
 };
 

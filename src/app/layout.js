@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
           <main className="flex-grow bg-white">{children}</main>
 
           {/* Footer */}
-          <footer className="bg-dark text-white p-4 text-center">
+          <footer >
             <AppFooter />
           </footer>
         </AppProvider>

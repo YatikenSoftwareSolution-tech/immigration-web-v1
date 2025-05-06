@@ -43,7 +43,7 @@ const AppNavigation = () => {
               About us
             </Link>
           </li>
-          <NavigationMenu>
+          {/* <NavigationMenu>
             <NavigationMenuList className="flex gap-4 justify-center item-center">
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300">
@@ -112,7 +112,7 @@ const AppNavigation = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
             </NavigationMenuList>
-          </NavigationMenu>
+          </NavigationMenu> */}
 
           <li className="text-base">
             <Link

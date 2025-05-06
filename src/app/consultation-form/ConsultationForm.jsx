@@ -20,8 +20,7 @@ export const detailsSchema = z
     email: z.string().email({ message: "Invalid email address" }).trim(),
     mobile: z
       .string()
-      .min(10, { message: "Mobile must be at least 10 characters" })
-      .max(15, { message: "Mobile must be at most 15 characters" })
+      .length(10, { message: "Mobile number must be 10 digits" })
       .trim(),
     maritalStatus: z.enum(["Single", "Married", "Divorced", "Widowed"]),
     children: z
@@ -31,7 +30,7 @@ export const detailsSchema = z
       .optional(),
 
     // ——— Education ———
-    highestEducation: z.enum(["Primary ", "Secondary ", "High School", "Higher Secondary", "Associate Degree", "Bachelors Degree", "Masters Degree", "PhD Degree"]),
+    highestEducation: z.enum(["Primary", "Secondary", "High School", "Higher Secondary", "Associate Degree", "Bachelors Degree", "Masters Degree", "PhD Degree"]),
     languageAssessed: z.enum(["yes", "no"]),
 
     // ——— Work Experience #1 ———
@@ -161,61 +160,71 @@ function TwoStepForm({step, setStep}) {
       register,
       handleSubmit,
       trigger,
+      watch,
       formState: { errors },
     } = useForm({
       resolver: zodResolver(detailsSchema),
       mode: "onBlur",
+      defaultValues: {
+        // Add default values to prevent undefined errors
+        maritalStatus: "Single",
+        languageAssessed: "no",
+        highestEducation: "Primary"
+      }
     });
 
     const router = useRouter();
   
     const onNext = async () => {
-      const valid = await trigger(
-        step === 1
-          ? [
-              "name",
-              "email",
-              "mobile",
-              "maritalStatus",
-              "children",
-              "highestEducation",
-              "languageAssessed",
-            ]
-          : [
-              "currentImmigrationStatus",
-              "lastDateInCanada",
-              "refusedVisa",
-              "refusedVisaDetails",
-              "primaryReason",
-              "otherReason",
-              "medicalCondition",
-              "criminalConviction",
-              "documents.passportCopy",
-              "documents.proofOfStatus",
-            ]
-      );
-      if (valid) setStep((s) => s + 1);
+      if (step === 1) {
+        try {
+          // Validate only first step fields
+          const result = await trigger([
+            "name",
+            "email", 
+            "mobile",
+            "maritalStatus",
+            "children",
+            "highestEducation",
+            "languageAssessed"
+          ], { shouldFocus: true });
+
+          console.log("Validation errors:", errors);
+          console.log("Validation result:", result);
+
+          if (result) {
+            setStep(2);
+          }
+        } catch (error) {
+          console.error("Validation error:", error);
+        }
+      }
+    };
+
+    const onBack = () => {
+      if (step > 1) {
+        setStep(step - 1);
+      }
     };
   
-    const onBack = () => setStep((s) => s - 1);
-  
-    const onSubmit = (data) => {
-      console.log(data);
-      emailjs
-      .send(
-        "service_zuuknl9",       
-        "template_vlzmj6f",      
-        data,                
-        "Ndv9C5G6QF6K7aPqG"        
-      )
-      .then(
-        (response) => {
-          router.push("/thank-you");
-        },
-        (error) => {
-          alert("Failed to send email. Please try again.");
-        }
-      );
+    const onSubmit = async (data) => {
+      // Only handle submit on final step
+      if (step !== 2) {
+        return;
+      }
+      
+      try {
+        await emailjs.send(
+          "service_zuuknl9",       
+          "template_vlzmj6f",      
+          data,                
+          "Ndv9C5G6QF6K7aPqG"        
+        );
+        router.push("/payment");
+      } catch (error) {
+        alert("Failed to send email. Please try again.");
+        console.error("Email error:", error);
+      }
     };
   
     return (
@@ -521,21 +530,28 @@ function TwoStepForm({step, setStep}) {
       </form>
     );
   }
-const ConsultationForm = () => {
-  const [step, setStep] = useState(1);
-  const stepLabel = ["Personal Details", "Immigration Details"];
-
-  return (
-    <div className="bg-white mt-16 px-6 ">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl text-dark font-bold mb-4">Consultation Form</h2>
+  const ConsultationForm = () => {
+    const [step, setStep] = useState(1);
+    const stepLabel = ["Personal Details", "Immigration Details"];
+  
+    console.log("Current step:", step); // Debug log
+  
+    const handleStepChange = (newStep) => {
+      console.log("Changing step to:", newStep); // Debug log
+      setStep(newStep);
+    };
+  
+    return (
+      <div className="bg-white mt-16 px-6 ">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-2xl text-dark font-bold mb-4">Consultation Form</h2>
+        </div>
+        <div className="py-2">
+          <HorizontalLinearStepper step={step} stepLabel={stepLabel} />
+          <TwoStepForm step={step} setStep={handleStepChange}/>
+        </div>
       </div>
-      <div className=" py-2">
-        <HorizontalLinearStepper step={step} stepLabel={stepLabel} />
-        <TwoStepForm step={step} setStep={setStep}/>
-      </div>
-    </div>
-  );
-};
+    );
+  };
 
 export default ConsultationForm;

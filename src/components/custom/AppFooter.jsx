@@ -13,12 +13,12 @@ import {
 
 const AppFooter = () => {
   return (
-    <div className="relative h-[700px] py-8 bg-[url('/OfficePhoto.jpg')] bg-cover flex flex-col items-center gap-16 text-white">
+    <div className="relative h-[880px] py-8 bg-[url('/OfficePhoto.jpg')] bg-cover flex flex-col items-center gap-16 text-white">
       {/* dark overlay */}
-      <div className="absolute mt-[16%] inset-0 h-2/3  bg-black opacity-75" />
+      <div className="absolute mt-[calc(19%+18px)] inset-0 h-2/3  bg-black opacity-65" />
 
       {/* content */}
-      <div className="relative mt-[15%] container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="relative mt-[18%] container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Column 1: Contact Us */}
         <div className="text-left text-white">
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>

@@ -12,13 +12,14 @@ import {
 } from "react-icons/fa";
 
 const AppFooter = () => {
+  // bg-[url('/OfficePhoto.jpg')]
   return (
-    <div className="relative h-[880px] py-8 bg-[url('/OfficePhoto.jpg')] bg-cover flex flex-col items-center gap-16 text-white">
+    <div className="relative h-[560px] py-8  bg-cover bg-black flex flex-col items-center gap-16 text-white">
       {/* dark overlay */}
-      <div className="absolute mt-[calc(19%+18px)] inset-0 h-2/3  bg-black opacity-65" />
+      <div className="absolute inset-0   bg-dark opacity-100" />
 
       {/* content */}
-      <div className="relative mt-[18%] container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="relative mt-[4%] container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Column 1: Contact Us */}
         <div className="text-left text-white">
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
@@ -43,24 +44,23 @@ const AppFooter = () => {
               </Link>
             </li>
             <li className="flex">
-              <strong className="ml-6">Consulting:&nbsp;</strong>Monday to
-              Friday
+              <strong className="ml-6 mr-2">Consulting:</strong>Monday to Friday
             </li>
             <li className="flex">
-              <strong className="ml-6">Hours:&nbsp;</strong>11:00 AM – 3:00 PM
-              MDT
+              <strong className="ml-6 mr-[33px]">Hours:&nbsp;</strong>11:00 AM –
+              3:00 PM MDT
             </li>
             <li className="flex">
-              <strong className="ml-6">Saturday:&nbsp;</strong>Closed
+              <strong className="ml-6 mr-[16px]">Saturday:&nbsp;</strong>Closed
             </li>
             <li className="flex">
-              <strong className="ml-6">Sunday:&nbsp;</strong>Closed
+              <strong className="ml-6 mr-[25px]">Sunday:&nbsp;</strong>Closed
             </li>
           </ul>
         </div>
 
         {/* Column 2: Explore */}
-        <div className="text-left text-white ">
+        <div className="text-left text-white  ml-14 ">
           <h3 className="text-lg font-semibold mb-4">Explore Links</h3>
           <ul className="space-y-2 text-sm">
             <li>
@@ -137,26 +137,37 @@ const AppFooter = () => {
             </li>
           </ul>
         </div>
-        <div className="relative group overflow-hidden h-[250px] w-[200px]">
+        <div className="relative group overflow-hidden">
           <Image
             src="/Raj.jpg"
             alt="Rajendra Bhindar"
-            height={200}
-            width={200}
-            className="bg-center rounded-full"
+            height={180}
+            width={180}
+            className="bg-center rounded-full z-0 ml-[16%]"
           />
-          <div className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-full">
+          {/* <div className="absolute  w-[200] bottom-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-full">
             <p className="text-white text-lg font-semibold">Rajendra Bhindar</p>
             <p className="text-white text-center text-sm px-4 mt-1">
               President &amp; Regulated Canadian Immigration Consultant (RCIC)
             </p>
             
+          </div> */}
+          <div className=" absolute mt-[-16px] z-50  bg-white rounded-lg">
+            <div className="flex flex-col items-center justify-center  bg-white rounded-lg shadow-lg">
+              <p className="text-black font-semibold">Rajender Singh Bhinder</p>
+              <p className="text-dark text-center text-xs font-semibold px-4 my-1 ">
+              RCIC | Director, The Immigration Company
+              </p>
+              <p className="text-dark text-center text-xs font-semibold px-4">
+              Over 15 years of trusted immigration advice and global recruitment experience.
+              </p>
+            </div> 
           </div>
         </div>
       </div>
 
       {/* Footer Bottom */}
-      <div className="relative mt-6 text-center border-t border-gray-700 pt-4 text-sm text-white z-50">
+      <div className="relative mt-6 text-center border-t border-gray-700 pt-2 text-sm text-white z-50">
         <div className="flex flex-col items-center">
           <p>
             © {new Date().getFullYear()} Immigration Company is a licensed

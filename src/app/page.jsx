@@ -4,7 +4,7 @@ import { Services } from "./constants/home";
 const ImmigrationPage = () => {
   return (
     <div className="bg-gradient-to-b from-white via-gray-50 to-white min-h-screen">
-      <div className="flex flex-col w-full mx-auto md:py-8 px-5 md:px-24 ">
+      <div className="flex flex-col w-full mx-auto md:py-8 px-5 md:px-0 ">
         {/* Hero Section */}
         <section className="px-4 py-7 mx-auto max-w-7xl min-h-screen">
           {/* Hero */}
@@ -68,8 +68,11 @@ const ImmigrationPage = () => {
             </div>
           </div>
         </section>
+        <section className="bg-contain bg-center bg-no-repeat mb-4 h-[180px] bg-[url('/OfficePhotoStripped.jpg')]">
+
+        </section>
         {/* Services Section */}
-        <section className="flex flex-col  md:h-min-[80vh] items-center gap-12">
+        <section className="flex px-16 flex-col mt-12 md:h-min-[80vh] items-center gap-12">
           <div className="text-center space-y-4">
             <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark leading-tight">
               Our

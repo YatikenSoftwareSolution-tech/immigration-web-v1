@@ -517,6 +517,10 @@ img, video {
   top: 100%;
 }
 
+.z-0 {
+  z-index: 0;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -585,6 +589,11 @@ img, video {
   margin-bottom: 2rem;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .-ml-4 {
   margin-left: -1rem;
 }
@@ -649,6 +658,10 @@ img, video {
   margin-left: 1.5rem;
 }
 
+.ml-\[16\%\] {
+  margin-left: 16%;
+}
+
 .ml-auto {
   margin-left: auto;
 }
@@ -667,6 +680,18 @@ img, video {
 
 .mr-4 {
   margin-right: 1rem;
+}
+
+.mr-\[16px\] {
+  margin-right: 16px;
+}
+
+.mr-\[25px\] {
+  margin-right: 25px;
+}
+
+.mr-\[33px\] {
+  margin-right: 33px;
 }
 
 .mt-1 {
@@ -713,16 +738,40 @@ img, video {
   margin-top: 2rem;
 }
 
-.mt-\[18\%\] {
-  margin-top: 18%;
+.mt-\[-16px\] {
+  margin-top: -16px;
 }
 
-.mt-\[calc\(19\%\+18px\)\] {
-  margin-top: calc(19% + 18px);
+.mt-\[1\%\] {
+  margin-top: 1%;
+}
+
+.mt-\[2\%\] {
+  margin-top: 2%;
 }
 
 .mt-auto {
   margin-top: auto;
+}
+
+.mt-\[4\%\] {
+  margin-top: 4%;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.ml-12 {
+  margin-left: 3rem;
+}
+
+.ml-14 {
+  margin-left: 3.5rem;
 }
 
 .box-border {
@@ -798,10 +847,6 @@ img, video {
   height: .625rem;
 }
 
-.h-2\/3 {
-  height: 66.6667%;
-}
-
 .h-20 {
   height: 5rem;
 }
@@ -858,12 +903,16 @@ img, video {
   height: 50vh;
 }
 
+.h-\[520px\] {
+  height: 520px;
+}
+
 .h-\[70\%\] {
   height: 70%;
 }
 
-.h-\[880px\] {
-  height: 880px;
+.h-\[96\%\] {
+  height: 96%;
 }
 
 .h-\[var\(--radix-navigation-menu-viewport-height\)\] {
@@ -892,6 +941,34 @@ img, video {
 
 .h-svh {
   height: 100svh;
+}
+
+.h-1 {
+  height: .25rem;
+}
+
+.h-\[\] {
+  height: ;
+}
+
+.h-\[10\%\] {
+  height: 10%;
+}
+
+.h-\[400px\] {
+  height: 400px;
+}
+
+.h-\[200px\] {
+  height: 200px;
+}
+
+.h-\[180px\] {
+  height: 180px;
+}
+
+.h-\[560px\] {
+  height: 560px;
 }
 
 .max-h-96 {
@@ -1034,7 +1111,7 @@ img, video {
   width: 1px;
 }
 
-.w-\[200px\] {
+.w-\[200\] {
   width: 200px;
 }
 
@@ -1742,6 +1819,10 @@ img, video {
   background-image: url("/OfficePhoto.jpg");
 }
 
+.bg-\[url\(\'\/OfficePhotoStripped\.jpg\'\)\] {
+  background-image: url("/OfficePhotoStripped.jpg");
+}
+
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -1784,8 +1865,16 @@ img, video {
   background-size: cover;
 }
 
+.bg-contain {
+  background-size: contain;
+}
+
 .bg-center {
   background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .fill-current {
@@ -1947,6 +2036,11 @@ img, video {
   padding-bottom: 2rem;
 }
 
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
 .pb-2 {
   padding-bottom: .5rem;
 }
@@ -2009,6 +2103,10 @@ img, video {
 
 .pt-1 {
   padding-top: .25rem;
+}
+
+.pt-2 {
+  padding-top: .5rem;
 }
 
 .pt-3 {
@@ -2233,16 +2331,16 @@ img, video {
   opacity: 0;
 }
 
+.opacity-100 {
+  opacity: 1;
+}
+
 .opacity-50 {
   opacity: .5;
 }
 
 .opacity-60 {
   opacity: .6;
-}
-
-.opacity-65 {
-  opacity: .65;
 }
 
 .opacity-70 {
@@ -3591,6 +3689,11 @@ body {
   .md\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .md\:px-0 {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .md\:pl-10 {

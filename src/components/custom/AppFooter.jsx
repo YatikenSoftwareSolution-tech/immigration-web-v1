@@ -87,7 +87,7 @@ const AppFooter = () => {
           <ul className="space-y-2 text-sm">
             <li>
               <Link
-                href="/services/visitorVisa"
+                href="/"
                 className="hover:text-yellow-500"
               >
                 Visit Visa Service
@@ -95,7 +95,7 @@ const AppFooter = () => {
             </li>
             <li>
               <Link
-                href="/services/workPermit"
+                href="/"
                 className="hover:text-yellow-500"
               >
                 Work Permit
@@ -103,7 +103,7 @@ const AppFooter = () => {
             </li>
             <li>
               <Link
-                href="/services/studentVisa"
+                href="/"
                 className="hover:text-yellow-500"
               >
                 Study Permit
@@ -111,7 +111,7 @@ const AppFooter = () => {
             </li>
             <li>
               <Link
-                href="/services/immigrate"
+                href="/"
                 className="hover:text-yellow-500"
               >
                 Immigrate
@@ -124,14 +124,14 @@ const AppFooter = () => {
             </li>
             <li>
               <Link
-                href="/services/citizenship"
+                href="/"
                 className="hover:text-yellow-500"
               >
                 Citizenship
               </Link>
             </li>
             <li>
-              <Link href="/services/lmia" className="hover:text-yellow-500">
+              <Link href="/" className="hover:text-yellow-500">
                 LMIA (for employers)
               </Link>
             </li>

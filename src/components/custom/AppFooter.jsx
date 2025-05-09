@@ -118,7 +118,7 @@ const AppFooter = () => {
               </Link>
             </li>
             <li>
-              <Link href="/services/prCard" className="hover:text-yellow-500">
+              <Link href="/" className="hover:text-yellow-500">
                 PR Card Renewal
               </Link>
             </li>

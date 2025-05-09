@@ -20,7 +20,8 @@ export const detailsSchema = z
     email: z.string().email({ message: "Invalid email address" }).trim(),
     mobile: z
       .string()
-      .length(10, { message: "Mobile number must be 10 digits" })
+      .min(10, { message: "Mobile number must be 10 digits" })
+      .max(15, { message: "Mobile number must be less than 15 digits" })
       .trim(),
     maritalStatus: z.enum(["Single", "Married", "Divorced", "Widowed"]),
     children: z
@@ -208,10 +209,7 @@ function TwoStepForm({step, setStep}) {
     };
   
     const onSubmit = async (data) => {
-      // Only handle submit on final step
-      if (step !== 2) {
-        return;
-      }
+      
       
       try {
         await emailjs.send(
@@ -534,7 +532,6 @@ function TwoStepForm({step, setStep}) {
     const [step, setStep] = useState(1);
     const stepLabel = ["Personal Details", "Immigration Details"];
   
-    console.log("Current step:", step); // Debug log
   
     const handleStepChange = (newStep) => {
       console.log("Changing step to:", newStep); // Debug log

@@ -21,6 +21,7 @@ const Payment = () => {
           <div className="flex ml-2 items-baseline space-x-1">
             <span className="text-4xl font-medium">$</span>
             <span className="text-6xl font-extrabold">100</span>
+            <span className="text-xl font-extrabold">+tax</span>
           </div>
           <ul className="space-y-4 ml-2 my-8">
             <li className="flex items-center">
@@ -56,7 +57,7 @@ const Payment = () => {
             <li className="flex justify-between">
               <div className="flex">
                 <span className="text-gray-600">Amount:&nbsp;&nbsp;</span>
-                <span className="text-gray-800 font-semibold">$100.00</span>
+                <span className="text-gray-800 font-semibold">$105.00</span>
               </div>
             </li>
             <li className="flex justify-between">

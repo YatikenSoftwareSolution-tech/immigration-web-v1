@@ -774,6 +774,86 @@ img, video {
   margin-left: 3.5rem;
 }
 
+.mt-\[2\] {
+  margin-top: 2px;
+}
+
+.ml-\[5\%\] {
+  margin-left: 5%;
+}
+
+.ml-\[6\%\] {
+  margin-left: 6%;
+}
+
+.ml-\[12\%\] {
+  margin-left: 12%;
+}
+
+.ml-\[13\%\] {
+  margin-left: 13%;
+}
+
+.ml-\[15\%\] {
+  margin-left: 15%;
+}
+
+.mt-\[-2\%\] {
+  margin-top: -2%;
+}
+
+.mt-\[-4\%\] {
+  margin-top: -4%;
+}
+
+.mt-\[-8\%\] {
+  margin-top: -8%;
+}
+
+.mt-\[-10\%\] {
+  margin-top: -10%;
+}
+
+.mt-\[12\%\] {
+  margin-top: 12%;
+}
+
+.mt-\[13\%\] {
+  margin-top: 13%;
+}
+
+.mr-5 {
+  margin-right: 1.25rem;
+}
+
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
+.mr-\[24px\] {
+  margin-right: 24px;
+}
+
+.mr-\[26px\] {
+  margin-right: 26px;
+}
+
+.mr-10 {
+  margin-right: 2.5rem;
+}
+
+.mt-\[\] {
+  margin-top: ;
+}
+
+.mt-\[14\%\] {
+  margin-top: 14%;
+}
+
+.mt-\[-1\%\] {
+  margin-top: -1%;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -971,6 +1051,30 @@ img, video {
   height: 560px;
 }
 
+.h-\[580px\] {
+  height: 580px;
+}
+
+.h-\[0px\] {
+  height: 0;
+}
+
+.h-\[650px\] {
+  height: 650px;
+}
+
+.h-\[700px\] {
+  height: 700px;
+}
+
+.h-\[4\%\] {
+  height: 4%;
+}
+
+.h-\[750px\] {
+  height: 750px;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -1157,6 +1261,22 @@ img, video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[50\] {
+  width: 50px;
+}
+
+.w-\[80\%\] {
+  width: 80%;
+}
+
+.w-\[60\%\] {
+  width: 60%;
+}
+
+.w-\[70\%\] {
+  width: 70%;
 }
 
 .min-w-0 {
@@ -1581,6 +1701,22 @@ img, video {
   border-radius: .75rem;
 }
 
+.rounded-\[\] {
+  border-radius: ;
+}
+
+.rounded-\[80\%\] {
+  border-radius: 80%;
+}
+
+.rounded-\[10\%\] {
+  border-radius: 10%;
+}
+
+.rounded-\[20\%\] {
+  border-radius: 20%;
+}
+
 .rounded-b-full {
   border-bottom-right-radius: 9999px;
   border-bottom-left-radius: 9999px;
@@ -1594,6 +1730,21 @@ img, video {
 .rounded-t-\[10px\] {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.rounded-t-lg {
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+}
+
+.rounded-b-lg {
+  border-bottom-right-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+}
+
+.rounded-t-\[10\%\] {
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
 }
 
 .rounded-tl-sm {
@@ -2321,6 +2472,11 @@ img, video {
 .text-yellow-500 {
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity, 1));
+}
+
+.text-red-700 {
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity, 1));
 }
 
 .underline-offset-4 {

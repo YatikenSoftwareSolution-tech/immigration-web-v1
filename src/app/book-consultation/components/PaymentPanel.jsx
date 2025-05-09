@@ -10,6 +10,7 @@ const PaymentPanel = ({ paymentComplete, children }) => {
       <div className="flex items-baseline">
         <span className="text-3xl font-semibold">$</span>
         <span className="text-5xl font-extrabold tracking-tight">100</span>
+        <span className="text-xl font-bold tracking-tight">+tax</span>
       </div>
       <ul role="list" className="space-y-5 my-7">
         <li className="flex items-center">
@@ -45,7 +46,7 @@ const PaymentPanel = ({ paymentComplete, children }) => {
         <li className="flex justify-between">
           <div className="flex">
             <span className="text-gray-600">Amount:&nbsp;&nbsp;</span>
-            <span className="text-gray-800 font-semibold">$100.00</span>
+            <span className="text-gray-800 font-semibold">$105.00</span>
           </div>
         </li>
         <li className="flex justify-between">

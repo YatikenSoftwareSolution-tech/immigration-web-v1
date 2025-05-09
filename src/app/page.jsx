@@ -68,9 +68,9 @@ const ImmigrationPage = () => {
             </div>
           </div>
         </section>
-        <section className="bg-contain bg-center bg-no-repeat mb-4 h-[180px] bg-[url('/OfficePhotoStripped.jpg')]">
+        {/* <section className="bg-contain bg-center bg-no-repeat mb-4 h-[180px] bg-[url('/OfficePhotoStripped.jpg')]">
 
-        </section>
+        </section> */}
         {/* Services Section */}
         <section className="flex px-16 flex-col mt-12 md:h-min-[80vh] items-center gap-12">
           <div className="text-center space-y-4">

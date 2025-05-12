@@ -14,12 +14,12 @@ import {
 const AppFooter = () => {
   // bg-[url('/OfficePhoto.jpg')]
   return (
-    <div className="relative h-[750px] bg-[url('/OfficePhoto.jpg')] py-8  bg-cover flex flex-col items-center gap-16 text-white">
+    <div className="relative h-full bg-[url('/OfficePhoto.jpg')] py-8  bg-cover flex flex-col items-center gap-16 text-white">
       {/* dark overlay */}
       <div className="absolute inset-0 bg-dark opacity-70" />
 
       {/* content */}
-      <div className="relative mt-[13%] container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="relative mt-[13%] container flex flex-col md:flex-row justify-between item-center px-8 md:px-0 gap-8">
         {/* Column 1: Contact Us */}
         <div className="text-left text-white">
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
@@ -60,7 +60,7 @@ const AppFooter = () => {
         </div>
 
         {/* Column 2: Explore */}
-        <div className="text-left text-white  ml-14 ">
+        <div className="text-left text-white ">
           <h3 className="text-lg font-semibold mb-4">Explore Links</h3>
           <ul className="space-y-2 text-sm">
             <li>
@@ -137,7 +137,8 @@ const AppFooter = () => {
             </li>
           </ul>
         </div>
-        <div className="mt-[-1%] relative group overflow-hidden">
+
+        <div className="relative group overflow-hidden flex flex-col items-center ">
           <Image
             src="/Raj.jpg"
             alt="Rajendra Bhindar"
@@ -152,8 +153,8 @@ const AppFooter = () => {
             </p>
             
           </div> */}
-          <div className=" rounded-b-lg  ">
-            <div className="flex flex-col mr-10 items-center justify-center  rounded-lg shadow-lg">
+          <div className=" rounded-b-lg w-[260px] ">
+            <div className="flex flex-col items-center rounded-lg shadow-lg">
               <p className="text-white font-bold">Rajender Singh Bhinder</p>
               <p className="text-white text-center text-xs font-semibold  my-1 ">
               RCIC | Director, <br/> The Immigration Company

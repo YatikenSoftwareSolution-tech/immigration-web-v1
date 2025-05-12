@@ -4,9 +4,9 @@ import { Services } from "./constants/home";
 const ImmigrationPage = () => {
   return (
     <div className="bg-gradient-to-b from-white via-gray-50 to-white min-h-screen">
-      <div className="flex flex-col w-full mx-auto md:py-8 px-5 md:px-0 ">
+      <div className="flex flex-col w-full mx-auto py-8 px-5 md:px-0 ">
         {/* Hero Section */}
-        <section className="px-4 py-7 mx-auto max-w-7xl min-h-screen">
+        <section className="flex flex-col justify-between px-4 py-8 mx-auto max-w-7xl min-h-screen">
           {/* Hero */}
           <div className="text-center mb-12">
             <h1 className="text-[clamp(2rem,5vw,3rem)] font-bold text-tertiary">
@@ -72,7 +72,7 @@ const ImmigrationPage = () => {
 
         </section> */}
         {/* Services Section */}
-        <section className="flex px-16 flex-col mt-12 md:h-min-[80vh] items-center gap-12">
+        <section className="flex flex-col mt-12 md:px-16 lg:px-24 md:h-min-[80vh] items-center gap-12">
           <div className="text-center space-y-4">
             <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark leading-tight">
               Our

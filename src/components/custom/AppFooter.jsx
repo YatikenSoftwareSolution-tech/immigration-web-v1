@@ -43,18 +43,20 @@ const AppFooter = () => {
                 9323‑35 Ave Edmonton, AB T6E 5R5 CANADA
               </Link>
             </li>
-            <li className="flex">
-              <strong className="ml-6 mr-2">Consulting:</strong>Monday to Friday
-            </li>
-            <li className="flex">
-              <strong className="ml-6 mr-[35.5px]">Hours:&nbsp;</strong>11:00 AM&nbsp;–&nbsp;3:00 PM MDT
-            </li>
-            <li className="flex">
-              <strong className="ml-6 mr-[16.5px]">Saturday:&nbsp;</strong>Closed
-            </li>
-            <li className="flex">
-              <strong className="ml-6 mr-[27px]">Sunday:&nbsp;</strong>Closed
-            </li>
+            <div className="flex gap-4 mt-4">
+              <div className="flex flex-col">
+                <strong className="ml-6 ">Consulting:</strong>
+                <strong className="ml-6 ">Hours:&nbsp;</strong>
+                <strong className="ml-6 ">Saturday:&nbsp;</strong>
+                <strong className="ml-6 ">Sunday:&nbsp;</strong>
+              </div>
+              <div className="flex flex-col">
+                <p>Monday to Friday</p>
+                <p>11:00 AM&nbsp;–&nbsp;3:00 PM MDT</p>
+                <p>Closed</p>
+                <p>Closed</p>
+              </div>
+            </div>
           </ul>
         </div>
 

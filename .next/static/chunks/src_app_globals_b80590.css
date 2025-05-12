@@ -705,16 +705,16 @@ img, video {
   margin-right: 1rem;
 }
 
-.mr-\[16px\] {
-  margin-right: 16px;
+.mr-\[16\.5px\] {
+  margin-right: 16.5px;
 }
 
 .mr-\[27px\] {
   margin-right: 27px;
 }
 
-.mr-\[35px\] {
-  margin-right: 35px;
+.mr-\[35\.5px\] {
+  margin-right: 35.5px;
 }
 
 .mt-1 {
@@ -767,34 +767,6 @@ img, video {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mr-\[34\.5px\] {
-  margin-right: 34.5px;
-}
-
-.mr-\[33\.5px\] {
-  margin-right: 33.5px;
-}
-
-.mr-\[36px\] {
-  margin-right: 36px;
-}
-
-.mr-\[35\.5px\] {
-  margin-right: 35.5px;
-}
-
-.mr-\[17px\] {
-  margin-right: 17px;
-}
-
-.mr-\[1px\] {
-  margin-right: 1px;
-}
-
-.mr-\[16\.5px\] {
-  margin-right: 16.5px;
 }
 
 .box-border {

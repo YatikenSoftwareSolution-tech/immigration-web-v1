@@ -437,38 +437,18 @@ function App() {
                   />
                   <div>
                     <h3 className="font-medium text-dark">Business Hours</h3>
-                    <div className="flex flex-col">
-                      <div className="flex">
-                        <span className="text-dark text-sm font-semibold">
-                          Consulting:
-                        </span>
-                        <span className="text-dark text-sm ml-[11px]">
-                          Monday - Friday
-                        </span>
+                    <div className="flex gap-4 mt-4 text-dark">
+                      <div className="flex flex-col">
+                        <strong className="">Consulting:</strong>
+                        <strong className="">Hours:&nbsp;</strong>
+                        <strong className="">Saturday:&nbsp;</strong>
+                        <strong className="">Sunday:&nbsp;</strong>
                       </div>
-                      <div className="flex ">
-                        <span className="text-dark text-sm font-semibold">
-                          Hours:
-                        </span>
-                        <span className="text-dark text-sm ml-[41px]">
-                          11:00 AM - 3:00 PM MDT
-                        </span>
-                      </div>
-                      <div className="flex ">
-                        <span className="text-dark text-sm font-semibold">
-                          Saturday:
-                        </span>
-                        <span className="text-dark text-sm ml-[23.5px]">
-                          Closed
-                        </span>
-                      </div>
-                      <div className="flex">
-                        <span className="text-dark text-sm font-semibold">
-                          Sunday:
-                        </span>
-                        <span className="text-dark text-sm ml-[32.5px]">
-                          Closed
-                        </span>
+                      <div className="flex flex-col">
+                        <p>Monday to Friday</p>
+                        <p>11:00 AM&nbsp;–&nbsp;3:00 PM MDT</p>
+                        <p>Closed</p>
+                        <p>Closed</p>
                       </div>
                     </div>
                   </div>
@@ -476,43 +456,41 @@ function App() {
               </div>
             </div>
           </div>
-
         </section>
         <div className="w-full mx-auto px-4 md:px-16">
-            <div className="bg-white p-4 sm:p-8 rounded-lg shadow-md">
-              <h3 className="text-2xl sm:text-3xl font-bold text-dark mb-4">
-                Frequently Asked{" "}
-                <span className="text-secondary">Question</span>!
-              </h3>
-              <div className="space-y-2">
-                {faqs.map((faq, index) => (
-                  <div
-                    key={index}
-                    className="border-b border-gray-200 last:border-b-0"
+          <div className="bg-white p-4 sm:p-8 rounded-lg shadow-md">
+            <h3 className="text-2xl sm:text-3xl font-bold text-dark mb-4">
+              Frequently Asked <span className="text-secondary">Question</span>!
+            </h3>
+            <div className="space-y-2">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="border-b border-gray-200 last:border-b-0"
+                >
+                  <button
+                    className="w-full py-3 sm:py-4 flex justify-between items-center text-dark text-left"
+                    onClick={() => toggleFAQ(index)}
                   >
-                    <button
-                      className="w-full py-3 sm:py-4 flex justify-between items-center text-dark text-left"
-                      onClick={() => toggleFAQ(index)}
-                    >
-                      <span className="font-medium text-base sm:text-lg">
-                        {faq.question}
-                      </span>
-                      {openFAQ === index ? (
-                        <ChevronUp className="w-4 h-4 text-gray-500" />
-                      ) : (
-                        <ChevronDown className="w-4 h-4 text-gray-500" />
-                      )}
-                    </button>
-                    {openFAQ === index && (
-                      <div className="pb-3 sm:pb-4 text-sm sm:text-base text-dark">
-                        {faq.answer}
-                      </div>
+                    <span className="font-medium text-base sm:text-lg">
+                      {faq.question}
+                    </span>
+                    {openFAQ === index ? (
+                      <ChevronUp className="w-4 h-4 text-gray-500" />
+                    ) : (
+                      <ChevronDown className="w-4 h-4 text-gray-500" />
                     )}
-                  </div>
-                ))}
-              </div>
+                  </button>
+                  {openFAQ === index && (
+                    <div className="pb-3 sm:pb-4 text-sm sm:text-base text-dark">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
+        </div>
       </div>
     </div>
   );

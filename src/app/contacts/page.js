@@ -458,7 +458,7 @@ function App() {
                         <span className="text-dark text-sm font-semibold">
                           Saturday:
                         </span>
-                        <span className="text-dark text-sm ml-[24px]">
+                        <span className="text-dark text-sm ml-[23px]">
                           Closed
                         </span>
                       </div>
@@ -466,7 +466,7 @@ function App() {
                         <span className="text-dark text-sm font-semibold">
                           Sunday:
                         </span>
-                        <span className="text-dark text-sm ml-[33px]">
+                        <span className="text-dark text-sm ml-[32px]">
                           Closed
                         </span>
                       </div>

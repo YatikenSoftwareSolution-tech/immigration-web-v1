@@ -47,10 +47,10 @@ const AppFooter = () => {
               <strong className="ml-6 mr-2">Consulting:</strong>Monday to Friday
             </li>
             <li className="flex">
-              <strong className="ml-6 mr-[35px]">Hours:&nbsp;</strong>11:00 AM&nbsp;–&nbsp;3:00 PM MDT
+              <strong className="ml-6 mr-[35.5px]">Hours:&nbsp;</strong>11:00 AM&nbsp;–&nbsp;3:00 PM MDT
             </li>
             <li className="flex">
-              <strong className="ml-6 mr-[16px]">Saturday:&nbsp;</strong>Closed
+              <strong className="ml-6 mr-[16.5px]">Saturday:&nbsp;</strong>Closed
             </li>
             <li className="flex">
               <strong className="ml-6 mr-[27px]">Sunday:&nbsp;</strong>Closed

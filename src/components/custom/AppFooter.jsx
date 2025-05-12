@@ -43,17 +43,19 @@ const AppFooter = () => {
                 9323‑35 Ave Edmonton, AB T6E 5R5 CANADA
               </Link>
             </li>
-            <div className="flex gap-4 mt-4">
-              <div className="flex flex-col">
-                <strong className="ml-6 ">Consulting:</strong>
-                <strong className="ml-6 ">Hours:&nbsp;</strong>
-                <strong className="ml-6 ">Saturday:&nbsp;</strong>
-                <strong className="ml-6 ">Sunday:&nbsp;</strong>
-              </div>
-              <div className="flex flex-col">
+            <div>
+              <h3 className="font-medium text-white">Business Hours</h3>
+              <div className="grid grid-cols-[max-content,1fr] gap-x-6 gap-y-1 mt-4 ">
+                <strong>Consulting:</strong>
                 <p>Monday to Friday</p>
-                <p>11:00 AM&nbsp;–&nbsp;3:00 PM MDT</p>
+
+                <strong>Hours:</strong>
+                <p>11:00 AM – 3:00 PM MDT</p>
+
+                <strong>Saturday:</strong>
                 <p>Closed</p>
+
+                <strong>Sunday:</strong>
                 <p>Closed</p>
               </div>
             </div>
@@ -87,34 +89,22 @@ const AppFooter = () => {
           <h3 className="text-lg font-semibold mb-4">Services Offered</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link
-                href="/"
-                className="hover:text-yellow-500"
-              >
+              <Link href="/" className="hover:text-yellow-500">
                 Visit Visa Service
               </Link>
             </li>
             <li>
-              <Link
-                href="/"
-                className="hover:text-yellow-500"
-              >
+              <Link href="/" className="hover:text-yellow-500">
                 Work Permit
               </Link>
             </li>
             <li>
-              <Link
-                href="/"
-                className="hover:text-yellow-500"
-              >
+              <Link href="/" className="hover:text-yellow-500">
                 Study Permit
               </Link>
             </li>
             <li>
-              <Link
-                href="/"
-                className="hover:text-yellow-500"
-              >
+              <Link href="/" className="hover:text-yellow-500">
                 Immigrate
               </Link>
             </li>
@@ -124,10 +114,7 @@ const AppFooter = () => {
               </Link>
             </li>
             <li>
-              <Link
-                href="/"
-                className="hover:text-yellow-500"
-              >
+              <Link href="/" className="hover:text-yellow-500">
                 Citizenship
               </Link>
             </li>
@@ -158,12 +145,13 @@ const AppFooter = () => {
             <div className="flex flex-col items-center rounded-lg shadow-lg">
               <p className="text-white font-bold">Rajender Singh Bhinder</p>
               <p className="text-white text-center text-xs font-semibold  my-1 ">
-              RCIC | Director, <br/> The Immigration Company
+                RCIC | Director, <br /> The Immigration Company
               </p>
               <p className="text-white text-center text-xs font-semibold mb-1">
-              Over 15 years of trusted immigration advice and global recruitment experience.
+                Over 15 years of trusted immigration advice and global
+                recruitment experience.
               </p>
-            </div> 
+            </div>
           </div>
         </div>
       </div>

@@ -437,19 +437,18 @@ function App() {
                   />
                   <div>
                     <h3 className="font-medium text-dark">Business Hours</h3>
-                    <div className="flex gap-4 mt-4 text-dark">
-                      <div className="flex flex-col">
-                        <strong className="">Consulting:</strong>
-                        <strong className="">Hours:&nbsp;</strong>
-                        <strong className="">Saturday:&nbsp;</strong>
-                        <strong className="">Sunday:&nbsp;</strong>
-                      </div>
-                      <div className="flex flex-col">
-                        <p>Monday to Friday</p>
-                        <p>11:00 AM&nbsp;–&nbsp;3:00 PM MDT</p>
-                        <p>Closed</p>
-                        <p>Closed</p>
-                      </div>
+                    <div className="grid grid-cols-[max-content,1fr] gap-x-6 gap-y-1 mt-4 text-dark">
+                      <strong>Consulting:</strong>
+                      <p>Monday to Friday</p>
+
+                      <strong>Hours:</strong>
+                      <p>11:00 AM – 3:00 PM MDT</p>
+
+                      <strong>Saturday:</strong>
+                      <p>Closed</p>
+
+                      <strong>Sunday:</strong>
+                      <p>Closed</p>
                     </div>
                   </div>
                 </div>

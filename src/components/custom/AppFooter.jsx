@@ -12,16 +12,15 @@ import {
 } from "react-icons/fa";
 
 const AppFooter = () => {
-  // bg-[url('/OfficePhoto.jpg')]
   return (
-    <div className="relative h-full bg-[url('/OfficePhoto.jpg')] py-8  bg-cover flex flex-col items-center gap-16 text-white">
+    <footer className="relative bg-center md:bg-top bg-[url('/OfficePhoto2.jpg')] md:bg-[url('/OfficePhoto.jpg')] h-[1200px] md:h-auto min-h-[600px] lg:min-h-[800px] bg-cover bg-no-repeat flex flex-col justify-between items-center text-white">
       {/* dark overlay */}
       <div className="absolute inset-0 bg-dark opacity-75" />
 
-      {/* content */}
-      <div className="relative mt-[13%] container flex flex-col md:flex-row justify-between item-center px-8 md:px-0 gap-8">
+      {/* main content */}
+      <div className="relative top-[160px] md:top-[220px] container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 px-4">
         {/* Column 1: Contact Us */}
-        <div className="text-left text-white">
+        <div className="text-left">
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
           <ul className="space-y-3 text-sm">
             <li className="flex items-center">
@@ -34,36 +33,33 @@ const AppFooter = () => {
             </li>
             <li className="flex items-center">
               <Link
-                href={"https://maps.app.goo.gl/jwPKUGCnEmo6Cc5f6"}
-                className="flex items-center"
+                href="https://maps.app.goo.gl/jwPKUGCnEmo6Cc5f6"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex items-center"
               >
                 <FaMapMarkerAlt className="text-yellow-500 mr-3" />
-                9323‑35 Ave Edmonton, AB T6E 5R5 CANADA
+                9323-35 Ave Edmonton, AB T6E 5R5 CANADA
               </Link>
             </li>
-            <div>
-              <h3 className="font-medium text-white">Business Hours</h3>
-              <div className="grid grid-cols-[max-content,1fr] gap-x-6 gap-y-1 mt-4 ">
-                <strong>Consulting:</strong>
-                <p>Monday to Friday</p>
-
-                <strong>Hours:</strong>
-                <p>11:00 AM – 3:00 PM MDT</p>
-
-                <strong>Saturday:</strong>
-                <p>Closed</p>
-
-                <strong>Sunday:</strong>
-                <p>Closed</p>
-              </div>
-            </div>
           </ul>
+          <div className="mt-6">
+            <h4 className="font-medium text-white mb-2">Business Hours</h4>
+            <div className="grid grid-cols-[max-content,1fr] gap-x-6 gap-y-1 text-sm">
+              <strong>Consulting:</strong>
+              <p>Monday to Friday</p>
+              <strong>Hours:</strong>
+              <p>11:00 AM – 3:00 PM MDT</p>
+              <strong>Saturday:</strong>
+              <p>Closed</p>
+              <strong>Sunday:</strong>
+              <p>Closed</p>
+            </div>
+          </div>
         </div>
 
         {/* Column 2: Explore */}
-        <div className="text-left text-white ">
+        <div className="text-left">
           <h3 className="text-lg font-semibold mb-4">Explore Links</h3>
           <ul className="space-y-2 text-sm">
             <li>
@@ -85,86 +81,60 @@ const AppFooter = () => {
         </div>
 
         {/* Column 3: Services Offered */}
-        <div className="text-left text-white">
+        <div className="text-left">
           <h3 className="text-lg font-semibold mb-4">Services Offered</h3>
           <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/" className="hover:text-yellow-500">
-                Visit Visa Service
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="hover:text-yellow-500">
-                Work Permit
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="hover:text-yellow-500">
-                Study Permit
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="hover:text-yellow-500">
-                Immigrate
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="hover:text-yellow-500">
-                PR Card Renewal
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="hover:text-yellow-500">
-                Citizenship
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="hover:text-yellow-500">
-                LMIA (for employers)
-              </Link>
-            </li>
+            {[
+              "Visit Visa Service",
+              "Work Permit",
+              "Study Permit",
+              "Immigrate",
+              "PR Card Renewal",
+              "Citizenship",
+              "LMIA (for employers)",
+            ].map((service) => (
+              <li key={service}>
+                <Link href="/" className="hover:text-yellow-500">
+                  {service}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div className="relative group overflow-hidden flex flex-col items-center ">
-          <Image
-            src="/Raj.jpg"
-            alt="Rajendra Bhindar"
-            height={180}
-            width={240}
-            className="bg-center rounded-full z-0 "
-          />
-          {/* <div className="absolute  w-[200] bottom-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-full">
-            <p className="text-white text-lg font-semibold">Rajendra Bhindar</p>
-            <p className="text-white text-center text-sm px-4 mt-1">
-              President &amp; Regulated Canadian Immigration Consultant (RCIC)
+        {/* Column 4: Director Info */}
+        <div className="flex flex-col items-center px-2">
+          <div className="group relative overflow-hidden">
+            <Image
+              src="/Raj.jpg"
+              alt="Rajendra Bhindar"
+              width={240}
+              height={240}
+              className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-cover rounded-full"
+            />
+          </div>
+          <div className="text-center px-2">
+            <p className="text-white font-bold">Rajender Singh Bhinder</p>
+            <p className="text-white text-xs font-semibold my-1">
+              RCIC | Director, <br /> The Immigration Company
             </p>
-            
-          </div> */}
-          <div className=" rounded-b-lg w-[260px] ">
-            <div className="flex flex-col items-center rounded-lg shadow-lg">
-              <p className="text-white font-bold">Rajender Singh Bhinder</p>
-              <p className="text-white text-center text-xs font-semibold  my-1 ">
-                RCIC | Director, <br /> The Immigration Company
-              </p>
-              <p className="text-white text-center text-xs font-semibold mb-1">
-                Over 15 years of trusted immigration advice and global
-                recruitment experience.
-              </p>
-            </div>
+            <p className="text-white text-xs font-semibold mb-1">
+              Over 15 years of trusted immigration advice and global
+              recruitment experience.
+            </p>
           </div>
         </div>
       </div>
 
       {/* Footer Bottom */}
-      <div className="relative mt-6 text-center border-t border-gray-700 pt-2 text-sm text-white z-50">
-        <div className="flex flex-col items-center">
-          <p>
+      <div className="border-t border-white py-3 text-xs md:text-sm text-white w-full">
+        <div className="container mx-auto flex flex-col gap-2 justify-between items-center space-y-2 md:space-y-0 px-4 sm:px-8">
+          <p className="text-center md:text-left text-white">
             © {new Date().getFullYear()} Immigration Company is a licensed
             immigration consulting firm committed to providing honest and
             professional services to all our clients.
           </p>
-          <div className="flex space-x-4 text-xl mt-4">
+          <div className="flex space-x-4 text-xl">
             <Link
               href="https://www.facebook.com/Immicomp"
               target="_blank"
@@ -200,7 +170,7 @@ const AppFooter = () => {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

@@ -16,7 +16,7 @@ const AppFooter = () => {
   return (
     <div className="relative h-full bg-[url('/OfficePhoto.jpg')] py-8  bg-cover flex flex-col items-center gap-16 text-white">
       {/* dark overlay */}
-      <div className="absolute inset-0 bg-dark opacity-70" />
+      <div className="absolute inset-0 bg-dark opacity-100" />
 
       {/* content */}
       <div className="relative mt-[13%] container flex flex-col md:flex-row justify-between item-center px-8 md:px-0 gap-8">
@@ -50,10 +50,10 @@ const AppFooter = () => {
               <strong className="ml-6 mr-[35px]">Hours:&nbsp;</strong>11:00 AM&nbsp;–&nbsp;3:00 PM MDT
             </li>
             <li className="flex">
-              <strong className="ml-6 mr-[18px]">Saturday:&nbsp;</strong>Closed
+              <strong className="ml-6 mr-[16px]">Saturday:&nbsp;</strong>Closed
             </li>
             <li className="flex">
-              <strong className="ml-6 mr-[28px]">Sunday:&nbsp;</strong>Closed
+              <strong className="ml-6 mr-[27px]">Sunday:&nbsp;</strong>Closed
             </li>
           </ul>
         </div>

@@ -442,7 +442,7 @@ function App() {
                         <span className="text-dark text-sm font-semibold">
                           Consulting:
                         </span>
-                        <span className="text-dark text-sm ml-[10px]">
+                        <span className="text-dark text-sm ml-[11px]">
                           Monday - Friday
                         </span>
                       </div>
@@ -450,7 +450,7 @@ function App() {
                         <span className="text-dark text-sm font-semibold">
                           Hours:
                         </span>
-                        <span className="text-dark text-sm ml-[40px]">
+                        <span className="text-dark text-sm ml-[41px]">
                           11:00 AM - 3:00 PM MDT
                         </span>
                       </div>
@@ -458,7 +458,7 @@ function App() {
                         <span className="text-dark text-sm font-semibold">
                           Saturday:
                         </span>
-                        <span className="text-dark text-sm ml-[23px]">
+                        <span className="text-dark text-sm ml-[23.5px]">
                           Closed
                         </span>
                       </div>
@@ -466,7 +466,7 @@ function App() {
                         <span className="text-dark text-sm font-semibold">
                           Sunday:
                         </span>
-                        <span className="text-dark text-sm ml-[32px]">
+                        <span className="text-dark text-sm ml-[32.5px]">
                           Closed
                         </span>
                       </div>

@@ -3571,6 +3571,10 @@ body {
     margin-top: 2rem;
   }
 
+  .md\:mt-0 {
+    margin-top: 0;
+  }
+
   .md\:block {
     display: block;
   }

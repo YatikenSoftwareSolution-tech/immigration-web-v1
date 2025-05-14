@@ -10,11 +10,11 @@ const ImmigrationPage = () => {
           {/* Hero */}
           <div className="text-center mb-12">
             <h1 className="text-[clamp(2rem,5vw,3rem)] font-bold text-tertiary">
-              Welcome to <span className="text-secondary">Immigration</span>{" "}
+              Welcome to The <span className="text-secondary">Immigration</span>{" "}
               <span className="text-tertiary">Company</span>
             </h1>
             <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
-              # Righteous Immigration Advices Since 2010
+              # Righteous Immigration Advice Since 2010
             </div>
             <p className="mt-6 text-base md:text-lg text-dark max-w-4xl mx-auto leading-relaxed">
               Since 2010, Immigration Company has been dedicated to providing

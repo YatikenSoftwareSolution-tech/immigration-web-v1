@@ -326,7 +326,7 @@ function App() {
                 Get in <span className="text-secondary">Touch</span>
               </h3>
               <p className="text-xl sm:text-3xl text-dark font-bold mb-4">
-                The pleasure is all ours!
+                Pleasure serving you!
               </p>
               <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>

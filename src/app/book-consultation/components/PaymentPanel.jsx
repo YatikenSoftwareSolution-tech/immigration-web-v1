@@ -9,7 +9,7 @@ const PaymentPanel = ({ paymentComplete, children }) => {
       <h5 className="mb-4 text-xl font-medium">Payment Details</h5>
       <div className="flex items-baseline">
         <span className="text-3xl font-semibold">$</span>
-        <span className="text-5xl font-extrabold tracking-tight">100</span>
+        <span className="text-5xl font-extrabold tracking-tight">50</span>
         <span className="text-xl font-bold tracking-tight">+tax</span>
       </div>
       <ul role="list" className="space-y-5 my-7">
@@ -39,14 +39,14 @@ const PaymentPanel = ({ paymentComplete, children }) => {
           <div className="flex">
             <span className="text-gray-600">Service:&nbsp;&nbsp;</span>
             <span className="text-gray-800 font-semibold">
-              60 Min Consultation
+              30 Min Consultation
             </span>
           </div>
         </li>
         <li className="flex justify-between">
           <div className="flex">
             <span className="text-gray-600">Amount:&nbsp;&nbsp;</span>
-            <span className="text-gray-800 font-semibold">$105.00</span>
+            <span className="text-gray-800 font-semibold">$52.50</span>
           </div>
         </li>
         <li className="flex justify-between">

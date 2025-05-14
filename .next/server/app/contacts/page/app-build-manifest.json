@@ -1,13 +1,14 @@
 {
   "pages": {
     "/contacts/page": [
-      "static/chunks/node_modules_b8b5b2._.js",
-      "static/chunks/src_fbce8d._.js",
+      "static/chunks/node_modules_11c4a0._.js",
+      "static/chunks/src_3750aa._.js",
       "static/chunks/src_app_globals_b80590.css",
       "static/chunks/src_app_layout_61af54.js",
-      "static/chunks/_629c55._.js",
+      "static/chunks/node_modules_cbb191._.js",
+      "static/chunks/src_a1d27e._.js",
       "static/chunks/src_app_contacts_Contacts_module_9262c0.css",
-      "static/chunks/src_app_contacts_page_159a31.js",
+      "static/chunks/src_app_contacts_page_40c43b.js",
       "static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc._.js",
       "static/chunks/node_modules_next_dist_compiled_107ce8._.js",
       "static/chunks/node_modules_next_dist_client_523921._.js",

@@ -127,7 +127,7 @@ const AppFooter = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="border-t border-white py-3 text-xs md:text-sm text-white w-full">
+      <div className="relative border-t z-100 border-white py-3 text-xs md:text-sm text-white w-full">
         <div className="container mx-auto flex flex-col gap-2 justify-between items-center space-y-2 md:space-y-0 px-4 sm:px-8">
           <p className="text-center md:text-left text-white">
             © {new Date().getFullYear()} Immigration Company is a licensed

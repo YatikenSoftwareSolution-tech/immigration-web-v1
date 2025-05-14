@@ -11,7 +11,7 @@ const AboutUsPage = () => {
               <span className="text-tertiary">Company</span>
             </h1>
             <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
-              # We provide 15+ years of immigration expertise.
+              # We have been providing immigration services for over 15 years.
             </div>
             <p className="mt-10 text-base md:text-lg text-dark max-w-4xl mx-auto leading-relaxed">
               Welcome to Immigration Company, your trusted partner in navigating
@@ -24,12 +24,10 @@ const AboutUsPage = () => {
             </p>
 
             <p className="mt-6 text-base md:text-lg text-dark max-w-4xl mx-auto leading-relaxed">
-              Our firm is led by Rajender Bhinder. Who is a 30+ years of proud
-              Edmontonin, a highly experienced immigration professional with
-              over 15 years of expertise in representing clients across various
-              immigration pathways. His extensive knowledge and dedication have
-              helped countless individuals and businesses achieve their
-              immigration goals.
+              Our company is headed by Rajender Singh Bhinder, a dedicated
+              Edmontonian for over 30 years. He is a seasoned immigration expert
+              with more than 15 years of experience in assisting clients through
+              different immigration routes.
             </p>
           </div>
         </section>
@@ -41,7 +39,7 @@ const AboutUsPage = () => {
               Us?
             </h2>
             <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
-              # 1 Immigration Consulting Firm in Edmonton
+              # Reliable and Established Immigration Services in Edmonton Since 2010
             </div>
             <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-12 p-4 sm:p-6 mb-4">
               {/* Card 1: Immigration Simplified */}
@@ -116,7 +114,7 @@ const AboutUsPage = () => {
                   Leadership Excellence
                 </h3>
                 <p className="leading-relaxed text-dark text-sm md:text-base">
-                  President Raj Bhinder, an Honors Immigration Practitioner
+                  President Rajender Bhinder, an Honors Immigration Practitioner
                   Program graduate from Seneca College in Ontario and a member
                   of CAPIC and CICC, provides personalized guidance on all
                   aspects of immigration.

@@ -5,14 +5,6 @@ import { MenuIcon } from "lucide-react";
 import { useAppContext } from "../../contexts/AppContext";
 import ImmigrationCompanyLogo from "../../assets/ImmigrationCompanyLogo.png";
 import Image from "next/image";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 
 const AppNavigation = () => {
   const { toggleSidenav } = useAppContext();
@@ -38,7 +30,7 @@ const AppNavigation = () => {
           <li className="text-base">
             <Link
               href="/about"
-              className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
+              className="text-lg text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
             >
               About us
             </Link>
@@ -117,7 +109,7 @@ const AppNavigation = () => {
           <li className="text-base">
             <Link
               href="/contacts"
-              className="text-base text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
+              className="text-lg text-dark font-semibold cursor-pointer hover:text-tertiary transition duration-300"
             >
               Contact us
             </Link>
@@ -125,14 +117,7 @@ const AppNavigation = () => {
         </ul>
       </div>
 
-      <div className="hidden md:flex items-center">
-        <Link
-          href="/book-consultation"
-          className="text-white bg-tertiary py-2 px-6 rounded-lg text-lg shadow-md transition duration-200 hover:bg-tertiary/90"
-        >
-          Book Consultation
-        </Link>
-      </div>
+      
 
       {/* Menu Icon for Mobile screens */}
       <div className="block md:hidden">

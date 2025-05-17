@@ -9,6 +9,7 @@ import {
   FaTwitter,
   FaLinkedin,
   FaInstagram,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 const AppFooter = () => {
@@ -119,8 +120,8 @@ const AppFooter = () => {
               RCIC | Director, <br /> The Immigration Company
             </p>
             <p className="text-white text-xs font-semibold mb-1">
-              Over 15 years of trusted immigration advice and global
-              recruitment experience.
+              Over 15 years of trusted immigration advice and global recruitment
+              experience.
             </p>
           </div>
         </div>
@@ -166,6 +167,14 @@ const AppFooter = () => {
               className="hover:text-yellow-500"
             >
               <FaInstagram />
+            </Link>
+            <Link
+              href="https://api.whatsapp.com/send?phone=7809371995"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-yellow-500"
+            >
+              <FaWhatsapp />
             </Link>
           </div>
         </div>

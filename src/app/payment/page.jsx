@@ -84,7 +84,7 @@ const Payment = ({searchParams}) => {
             />
             <label htmlFor="terms" className="ml-2 text-gray-700 text-sm">
               I accept the{" "}
-              <Link href={`/terms?${termsQuery}`} target="_blank" className="underline">
+              <Link href={`/terms?${termsQuery}`} target="_blank" className="underline text-blue-600">
                 terms and conditions
               </Link>
             </label>

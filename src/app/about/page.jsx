@@ -2,7 +2,7 @@ import * as React from "react";
 
 const AboutUsPage = () => {
   return (
-    <div className="bg-gradient-to-b from-white via-gray-50 to-white min-h-screen">
+    <div className="mt-8 md:mt-0 bg-gradient-to-b from-white via-gray-50 to-white min-h-screen">
       <div className="flex flex-col w-full mx-auto md:py-8 px-5 md:px-24 ">
         <section className="px-4 py-7 mx-auto max-w-7xl">
           <div className="text-center mb-12">

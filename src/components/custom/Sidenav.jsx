@@ -20,22 +20,7 @@ const Sidenav = () => {
 
   const navItems = [
     { name: 'About Us', link: '/about' },
-    // { 
-    //   name: 'Services', 
-    //   subItems: [
-    //     { name: 'Visit visa service', link: '/services/visitorVisa' },
-    //     { name: 'Work Permit', link: '/services/workPermit' },
-    //     { name: 'Study Permit', link: '/services/studentVisa' },
-    //     { name: 'Immigrate', link: '/services/immigrate' },
-    //     { name: 'PR Card ', link: '/services/prCard' },
-    //     { name: 'Citizenship', link: '/services/citizenship' },
-    //     { name: 'Express Entry', link: '/services/tourism' },
-    //     { name: 'LMIA (for employers)', link: '/services/lmia' },
-    //   ]
-    // },
-    // { name: 'Careers', link: '/carrers' },
-    { name: 'Contact Us', link: '/contacts' },
-    { name: 'Book Consultation', link: '/book-consultation' }
+    { name: 'Contact Us', link: '/contacts' }
   ];
 
   return (
@@ -93,18 +78,7 @@ const Sidenav = () => {
                         </div>
                       )}
                     </>
-                  ) : item.name === 'Book Consultation' ? (
-                    <button
-                      onClick={() => {
-                        setActiveSection(item.name);
-                        toggleSidenav();
-                        router.push(item.link);
-                      }}
-                      className="w-full text-white bg-tertiary py-2 px-6 rounded-lg text-lg shadow-md transition duration-200 hover:bg-tertiary/90 mt-4"
-                    >
-                      {item.name}
-                    </button>
-                  ) : (
+                  )  : (
                     <button
                       onClick={() => {
                         setActiveSection(item.name);

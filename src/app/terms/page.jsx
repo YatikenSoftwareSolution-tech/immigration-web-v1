@@ -3,13 +3,10 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const TermsAndConditions = ({
-  name = "Phienis Ferb",
-  address = "9323-35 Ave NW Edmonton, AB T6E5R5 Canada ",
-  phone = "1234567890",
-  email = "phenisF@gmail.com",
-}) => {
+const TermsAndConditions = ({searchParams}) => {
   const docRef = useRef(null);
+
+  const { email, name, mobile } = searchParams;
 
   const handleDownload = () => {
   if (!docRef.current) return;
@@ -85,11 +82,11 @@ const TermsAndConditions = ({
               <p>
                 Name: <strong className="ml-1">{name}</strong>
               </p>
-              <p>
+              {/* {address &&<p>
                 Address: <strong className="ml-1">{address}</strong>
-              </p>
+              </p>} */}
               <p>
-                Phone:<strong className="ml-1">{phone}</strong>{" "}
+                Phone:<strong className="ml-1">{mobile}</strong>{" "}
               </p>
               <p>
                 Email: <strong className="ml-1">{email}</strong>
@@ -114,7 +111,7 @@ const TermsAndConditions = ({
                 </strong>
               </p>
               <p>
-                Telephone number:<strong className="ml-1">780-937-1995 </strong>{" "}
+                Phone:<strong className="ml-1">780-937-1995 </strong>{" "}
               </p>
               <p>
                 Email address:

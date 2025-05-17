@@ -212,13 +212,19 @@ function TwoStepForm({step, setStep}) {
       
       
       try {
-        await emailjs.send(
-          "service_zuuknl9",       
-          "template_vlzmj6f",      
-          data,                
-          "Ndv9C5G6QF6K7aPqG"        
-        );
-        router.push("/payment");
+        // await emailjs.send(
+        //   "service_zuuknl9",       
+        //   "template_vlzmj6f",      
+        //   data,                
+        //   "Ndv9C5G6QF6K7aPqG"        
+        // );
+        const qs = new URLSearchParams({
+         email: data.email,
+         name: data.name,
+         mobile: data.mobile,
+         address: data.address,
+       }).toString();
+       router.push(`/payment?${qs}`);
       } catch (error) {
         alert("Failed to send email. Please try again.");
         console.error("Email error:", error);

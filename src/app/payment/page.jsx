@@ -4,8 +4,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Payment = () => {
+const Payment = ({searchParams}) => {
+  const { email, name, mobile, address } = searchParams;
   const [accepted, setAccepted] = useState(false);
+
+  const termsQuery = new URLSearchParams({ name, email, mobile }).toString();
 
   return (
     <div className="mt-6 px-4 sm:px-10 py-8 sm:py-16 flex justify-center items-center bg-gradient-to-r from-blue-50 to-pink-50">
@@ -81,7 +84,7 @@ const Payment = () => {
             />
             <label htmlFor="terms" className="ml-2 text-gray-700 text-sm">
               I accept the{" "}
-              <Link href="/terms" target="_blank" className="underline">
+              <Link href={`/terms?${termsQuery}`} target="_blank" className="underline">
                 terms and conditions
               </Link>
             </label>

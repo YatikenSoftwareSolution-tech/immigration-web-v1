@@ -50,7 +50,7 @@ const AppFooter = () => {
               <strong>Consulting:</strong>
               <p>Monday to Friday</p>
               <strong>Hours:</strong>
-              <p>11:00 AM – 3:00 PM MDT</p>
+              <p>08:30 AM – 4:00 PM MDT</p>
               <strong>Saturday:</strong>
               <p>Closed</p>
               <strong>Sunday:</strong>

@@ -240,7 +240,7 @@ function App() {
                           Hours:
                         </span>
                         <span className="text-dark text-sm ml-[40px]">
-                          11:00 AM - 3:00 PM MDT
+                          08:30 AM - 4:00 PM MDT
                         </span>
                       </div>
                       <div className="flex ">

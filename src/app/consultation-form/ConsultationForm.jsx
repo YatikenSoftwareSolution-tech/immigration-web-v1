@@ -212,12 +212,12 @@ function TwoStepForm({step, setStep}) {
       
       
       try {
-        await emailjs.send(
-          "service_zuuknl9",       
-          "template_vlzmj6f",      
-          data,                
-          "Ndv9C5G6QF6K7aPqG"        
-        );
+        // await emailjs.send(
+        //   "service_zuuknl9",       
+        //   "template_vlzmj6f",      
+        //   data,                
+        //   "Ndv9C5G6QF6K7aPqG"        
+        // );
         const qs = new URLSearchParams({
          email: data.email,
          name: data.name,

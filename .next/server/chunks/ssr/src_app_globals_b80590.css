@@ -757,6 +757,14 @@ img, video {
   margin-top: auto;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
+.mt-40 {
+  margin-top: 10rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -928,6 +936,14 @@ img, video {
 
 .h-svh {
   height: 100svh;
+}
+
+.h-\[350px\] {
+  height: 350px;
+}
+
+.h-\[450px\] {
+  height: 450px;
 }
 
 .max-h-96 {
@@ -2085,6 +2101,10 @@ img, video {
 
 .pt-2 {
   padding-top: .5rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
 }
 
 .text-left {
@@ -3562,6 +3582,10 @@ body {
 
   .md\:mt-8 {
     margin-top: 2rem;
+  }
+
+  .md\:mt-12 {
+    margin-top: 3rem;
   }
 
   .md\:block {

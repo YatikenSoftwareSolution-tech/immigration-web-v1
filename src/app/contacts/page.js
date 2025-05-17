@@ -89,7 +89,7 @@ function App() {
         <div className="min-h-screen bg-gray-50">
           {/* Hero Section - Responsive height */}
           <div
-            className="h-[250px] sm:h-[400px] bg-cover bg-center mt-10 relative"
+            className="h-[250px] sm:h-[400px] bg-cover bg-center mt-14 md:mt-12 relative"
             style={{
               backgroundImage: 'url("/OfficePhoto.jpg")',
               backgroundPosition: "center",

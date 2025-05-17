@@ -169,7 +169,7 @@ const AppFooter = () => {
               <FaInstagram />
             </Link>
             <Link
-              href="https://api.whatsapp.com/send?phone=7809371995"
+              href="https://api.whatsapp.com/send?phone=18254748759"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-yellow-500"

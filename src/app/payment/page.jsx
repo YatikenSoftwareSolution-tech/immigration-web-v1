@@ -1,10 +1,12 @@
 "use client";
 
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const Payment = () => {
+  const [accepted, setAccepted] = useState(false);
+
   return (
     <div className="mt-6 px-4 sm:px-10 py-8 sm:py-16 flex justify-center items-center bg-gradient-to-r from-blue-50 to-pink-50">
       <div className="max-w-3xl w-full bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
@@ -20,7 +22,7 @@ const Payment = () => {
           </h3>
           <div className="flex ml-2 items-baseline space-x-1">
             <span className="text-4xl font-medium">$</span>
-            <span className="text-6xl font-extrabold">100</span>
+            <span className="text-6xl font-extrabold">50</span>
             <span className="text-xl font-extrabold">+tax</span>
           </div>
           <ul className="space-y-4 ml-2 my-8">
@@ -50,14 +52,14 @@ const Payment = () => {
               <div className="flex">
                 <span className="text-gray-600">Service:&nbsp;&nbsp;</span>
                 <span className="text-gray-800 font-semibold">
-                  60 Min Consultation
+                  30 Min Consultation
                 </span>
               </div>
             </li>
             <li className="flex justify-between">
               <div className="flex">
                 <span className="text-gray-600">Amount:&nbsp;&nbsp;</span>
-                <span className="text-gray-800 font-semibold">$105.00</span>
+                <span className="text-gray-800 font-semibold">$52.50</span>
               </div>
             </li>
             <li className="flex justify-between">
@@ -67,13 +69,33 @@ const Payment = () => {
               </div>
             </li>
           </ul>
+
+          {/* Terms & Conditions */}
+          <div className="flex items-center ml-2 mb-6">
+            <input
+              id="terms"
+              type="checkbox"
+              checked={accepted}
+              onChange={() => setAccepted(!accepted)}
+              className="h-4 w-4 text-secondary focus:ring-secondary border-gray-300 rounded"
+            />
+            <label htmlFor="terms" className="ml-2 text-gray-700 text-sm">
+              I accept the{" "}
+              <Link href="/terms" target="_blank" className="underline">
+                terms and conditions
+              </Link>
+            </label>
+          </div>
+
           <Link
             href="https://buy.stripe.com/00g7vjgm2ctV33W7ss"
             target="_blank"
-            className="inline-block mt-6 w-full md:w-auto"
+            className={`inline-block mt-6 w-full md:w-auto transition-opacity ${
+              !accepted ? "pointer-events-none opacity-50" : ""
+            }`}
           >
             <span className="block w-full md:inline-block text-center px-8 py-4 font-medium rounded-lg shadow-lg bg-secondary/90 hover:bg-secondary text-white transition-transform transform hover:-translate-y-1">
-              Pay Now &amp; Schedule  
+              Pay Now &amp; Schedule
             </span>
           </Link>
         </div>

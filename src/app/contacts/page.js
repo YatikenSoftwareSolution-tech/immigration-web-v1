@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import styles from "../contacts/Contacts.module.css";
 import emailjs from "@emailjs/browser";
 import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
 
 function App() {
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -218,6 +219,23 @@ function App() {
                       info@immigrationcompany.ca
                     </p>
                   </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <FaWhatsapp
+                    className="w-5 h-5 mt-1"
+                    style={{ color: "#363637" }}
+                  />
+                  <Link
+                    href="https://api.whatsapp.com/send?phone=18254748759"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-yellow-500 "
+                  >
+                    <h3 className="font-medium text-dark">WatsApp</h3>
+                    <p className="text-dark text-sm">
+                      +1 825 474 8759
+                    </p>
+                  </Link>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Clock

@@ -91,7 +91,7 @@ const Payment = ({searchParams}) => {
           </div>
 
           <Link
-            href="https://buy.stripe.com/00g7vjgm2ctV33W7ss"
+            href="https://calendar.app.google/9cjg5iYzzeHDD27d7"
             target="_blank"
             className={`inline-block mt-6 w-full md:w-auto transition-opacity ${
               !accepted ? "pointer-events-none opacity-50" : ""

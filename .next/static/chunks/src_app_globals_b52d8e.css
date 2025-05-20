@@ -2295,6 +2295,10 @@ img, video {
   text-underline-offset: 4px;
 }
 
+.accent-blue-600 {
+  accent-color: #2563eb;
+}
+
 .opacity-0 {
   opacity: 0;
 }

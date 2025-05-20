@@ -23,7 +23,7 @@ export const detailsSchema = z
       .min(10, { message: "Mobile number must be 10 digits" })
       .max(15, { message: "Mobile number must be less than 15 digits" })
       .trim(),
-    maritalStatus: z.enum(["Single", "Married", "Divorced", "Widowed"]),
+    maritalStatus: z.enum(["","Single", "Married", "Divorced", "Widowed"]),
     children: z
       .number()
       .int({ message: "Children must be an integer" })
@@ -31,7 +31,7 @@ export const detailsSchema = z
       .optional(),
 
     // ——— Education ———
-    highestEducation: z.enum(["Primary", "Secondary", "High School", "Higher Secondary", "Associate Degree", "Bachelors Degree", "Masters Degree", "PhD Degree"]),
+    highestEducation: z.enum(["","Primary", "Secondary", "High School", "Higher Secondary", "Associate Degree", "Bachelors Degree", "Masters Degree", "PhD Degree"]),
     languageAssessed: z.enum(["yes", "no"]),
 
     // ——— Work Experience #1 ———
@@ -75,7 +75,7 @@ export const detailsSchema = z
       .optional(),
 
     // ——— Immigration & Consultation ———
-    currentImmigrationStatus: z.enum(["visitor", "worker", "student", "none"]),
+    currentImmigrationStatus: z.enum(["","visitor", "worker", "student", "none"]),
     lastDateInCanada: z
       .string()
       .regex(/^\d{4}-\d{2}-\d{2}$/, { message: "Date must be YYYY-MM-DD" })
@@ -85,6 +85,7 @@ export const detailsSchema = z
       .string()
       .optional(),
     primaryReason: z.enum([
+      "",
       "work permit",
       "visa extension",
       "study permit extension",
@@ -168,9 +169,9 @@ function TwoStepForm({step, setStep}) {
       mode: "onBlur",
       defaultValues: {
         // Add default values to prevent undefined errors
-        maritalStatus: "Single",
+        maritalStatus: "",
         languageAssessed: "no",
-        highestEducation: "Primary"
+        highestEducation: ""
       }
     });
 
@@ -276,6 +277,7 @@ function TwoStepForm({step, setStep}) {
                 {...register("maritalStatus")}
                 className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
+                <option value="">Select</option>
                 <option value="Single">Single</option>
                 <option value="Married">Married</option>
                 <option value="Divorced">Divorced</option>
@@ -305,7 +307,7 @@ function TwoStepForm({step, setStep}) {
                 className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
                 {
-                  ["Primary", "Secondary", "High School", "Higher Secondary", "Associate Degree", "Bachelors Degree", "Masters Degree", "PhD Degree"].map((degree) => <option key={degree} value={degree}>{degree}</option>)
+                  ["","Primary", "Secondary", "High School", "Higher Secondary", "Associate Degree", "Bachelors Degree", "Masters Degree", "PhD Degree"].map((degree) => <option key={degree} value={degree}>{degree}</option>)
                 }
                 
               </select>
@@ -350,6 +352,7 @@ function TwoStepForm({step, setStep}) {
                 {...register("currentImmigrationStatus")}
                 className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
+                <option value="">Select</option>
                 <option value="visitor">Visitor</option>
                 <option value="worker">Worker</option>
                 <option value="student">Student</option>
@@ -378,8 +381,8 @@ function TwoStepForm({step, setStep}) {
                 {...register("refusedVisa")}
                 className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
-                <option value="yes">Yes</option>
                 <option value="no">No</option>
+                <option value="yes">Yes</option>
               </select>
               {errors.refusedVisa && (
                 <p className="mt-1 text-sm text-red-600">{errors.refusedVisa.message}</p>
@@ -403,6 +406,7 @@ function TwoStepForm({step, setStep}) {
                 {...register("primaryReason")}
                 className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
+                <option value="">Select</option>
                 <option value="work permit">Work Permit</option>
                 <option value="visa extension">Visa Extension</option>
                 <option value="study permit extension">Study Permit Extension</option>
@@ -431,8 +435,8 @@ function TwoStepForm({step, setStep}) {
                 {...register("medicalCondition")}
                 className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
-                <option value="yes">Yes</option>
                 <option value="no">No</option>
+                <option value="yes">Yes</option>
               </select>
               {errors.medicalCondition && (
                 <p className="mt-1 text-sm text-red-600">{errors.medicalCondition.message}</p>
@@ -445,8 +449,8 @@ function TwoStepForm({step, setStep}) {
                 {...register("criminalConviction")}
                 className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
+                <option va lue="no">No</option>
                 <option value="yes">Yes</option>
-                <option value="no">No</option>
               </select>
               {errors.criminalConviction && (
                 <p className="mt-1 text-sm text-red-600">{errors.criminalConviction.message}</p>

@@ -202,7 +202,19 @@ const TermsAndConditions = ({searchParams}) => {
             </p>
             <div className="grid grid-cols-2 gap-8 my-6">
               <div>
-                <div className="h-16"></div>
+                <div className="h-16">
+                  <div className="flex items-center h-full">
+                    <input
+                      type="checkbox"
+                      id="client-agree"
+                      className="w-7 h-7 accent-blue-600 border-2 border-gray-400 rounded mr-4"
+                      style={{ minWidth: 28, minHeight: 28 }}
+                    />
+                    <label htmlFor="client-agree" className="text-base font-medium select-none">
+                      I {name} Agree and Sign
+                    </label>
+                  </div>
+                </div>
                 <div className="border-t-2 border-gray-400 pt-2">
                   <p className="text-xs ">Signature of Client  </p>
                   <div className="text-xs my-3">Name: {name}</div>

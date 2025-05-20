@@ -232,9 +232,7 @@ function App() {
                     className="hover:text-yellow-500 "
                   >
                     <h3 className="font-medium text-dark">WatsApp</h3>
-                    <p className="text-dark text-sm">
-                      +1 825 474 8759
-                    </p>
+                    <p className="text-dark text-sm">+1 825 474 8759</p>
                   </Link>
                 </div>
                 <div className="flex items-start space-x-3">
@@ -244,39 +242,15 @@ function App() {
                   />
                   <div>
                     <h3 className="font-medium text-dark">Business Hours</h3>
-                    <div className="flex flex-col">
-                      <div className="flex">
-                        <span className="text-dark text-sm font-semibold">
-                          Consulting:
-                        </span>
-                        <span className="text-dark text-sm ml-[10px]">
-                          Monday - Friday
-                        </span>
-                      </div>
-                      <div className="flex ">
-                        <span className="text-dark text-sm font-semibold">
-                          Hours:
-                        </span>
-                        <span className="text-dark text-sm ml-[40px]">
-                          08:30 AM - 4:00 PM MDT
-                        </span>
-                      </div>
-                      <div className="flex ">
-                        <span className="text-dark text-sm font-semibold">
-                          Saturday:
-                        </span>
-                        <span className="text-dark text-sm ml-[24px]">
-                          Closed
-                        </span>
-                      </div>
-                      <div className="flex">
-                        <span className="text-dark text-sm font-semibold">
-                          Sunday:
-                        </span>
-                        <span className="text-dark text-sm ml-[33px]">
-                          Closed
-                        </span>
-                      </div>
+                    <div className="grid grid-cols-[max-content,1fr] gap-x-6 gap-y-1 text-sm text-dark">
+                      <strong>Consulting:</strong>
+                      <p>Monday to Friday</p>
+                      <strong>Hours:</strong>
+                      <p>08:30 AM – 4:00 PM MDT</p>
+                      <strong>Saturday:</strong>
+                      <p>Closed</p>
+                      <strong>Sunday:</strong>
+                      <p>Closed</p>
                     </div>
                   </div>
                 </div>

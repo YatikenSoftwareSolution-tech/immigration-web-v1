@@ -169,6 +169,7 @@ function TwoStepForm({step, setStep}) {
       mode: "onBlur",
       defaultValues: {
         // Add default values to prevent undefined errors
+        children:0,
         maritalStatus: "",
         languageAssessed: "no",
         highestEducation: ""

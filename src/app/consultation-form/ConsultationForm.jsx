@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
 import HorizontalLinearStepper from "@/components/ui/horizontalStepper";
+import { Input } from "@/components/ui/input";
+import { ArrowLeft } from "lucide-react";
 import emailjs from '@emailjs/browser';
 
 
@@ -32,7 +32,7 @@ export const detailsSchema = z
 
     // ——— Education ———
     highestEducation: z.enum(["","Primary", "Secondary", "High School", "Higher Secondary", "Associate Degree", "Bachelors Degree", "Masters Degree", "PhD Degree"]),
-    languageAssessed: z.enum(["yes", "no"]),
+    languageAssessed: z.enum(["", "yes", "no"]),
 
     // ——— Work Experience #1 ———
     position1: z
@@ -80,7 +80,7 @@ export const detailsSchema = z
       .string()
       .regex(/^\d{4}-\d{2}-\d{2}$/, { message: "Date must be YYYY-MM-DD" })
       .optional(),
-    refusedVisa: z.enum(["yes", "no"]),
+    refusedVisa: z.enum(["", "yes", "no"]),
     refusedVisaDetails: z
       .string()
       .optional(),
@@ -95,8 +95,8 @@ export const detailsSchema = z
     otherReason: z
       .string()
       .optional(),
-    medicalCondition: z.enum(["yes", "no"]),
-    criminalConviction: z.enum(["yes", "no"]),
+    medicalCondition: z.enum(["", "yes", "no"]),
+    criminalConviction: z.enum(["", "yes", "no"]),
 
     // ——— Document Uploads ———
     documents: z.object({
@@ -169,10 +169,13 @@ function TwoStepForm({step, setStep}) {
       mode: "onBlur",
       defaultValues: {
         // Add default values to prevent undefined errors
+        refusedVisa: "",
         children:0,
         maritalStatus: "",
-        languageAssessed: "no",
-        highestEducation: ""
+        languageAssessed: "",
+        highestEducation: "",
+        medicalCondition:"",
+        criminalConviction:""
       }
     });
 
@@ -278,7 +281,7 @@ function TwoStepForm({step, setStep}) {
                 {...register("maritalStatus")}
                 className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
-                <option value="">Select</option>
+                <option value=""></option>
                 <option value="Single">Single</option>
                 <option value="Married">Married</option>
                 <option value="Divorced">Divorced</option>
@@ -312,8 +315,8 @@ function TwoStepForm({step, setStep}) {
                 }
                 
               </select>
-              {errors.maritalStatus && (
-                <p className="mt-1 text-sm text-red-600">{errors.maritalStatus.message}</p>
+              {errors.highestEducation && (
+                <p className="mt-1 text-sm text-red-600">{errors.highestEducation.message}</p>
               )}
             </div>
   
@@ -450,7 +453,7 @@ function TwoStepForm({step, setStep}) {
                 {...register("criminalConviction")}
                 className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
-                <option va lue="no">No</option>
+                <option value="no">No</option>
                 <option value="yes">Yes</option>
               </select>
               {errors.criminalConviction && (

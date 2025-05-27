@@ -6,8 +6,7 @@ import { useRouter } from "next/navigation";
 import HorizontalLinearStepper from "@/components/ui/horizontalStepper";
 import { Input } from "@/components/ui/input";
 import { ArrowLeft } from "lucide-react";
-import emailjs from '@emailjs/browser';
-
+import emailjs from "@emailjs/browser";
 
 export const detailsSchema = z
   .object({
@@ -23,7 +22,7 @@ export const detailsSchema = z
       .min(10, { message: "Mobile number must be 10 digits" })
       .max(15, { message: "Mobile number must be less than 15 digits" })
       .trim(),
-    maritalStatus: z.enum(["","Single", "Married", "Divorced", "Widowed"]),
+    maritalStatus: z.enum(["", "Single", "Married", "Divorced", "Widowed"]),
     children: z
       .number()
       .int({ message: "Children must be an integer" })
@@ -31,14 +30,21 @@ export const detailsSchema = z
       .optional(),
 
     // ——— Education ———
-    highestEducation: z.enum(["","Primary", "Secondary", "High School", "Higher Secondary", "Associate Degree", "Bachelors Degree", "Masters Degree", "PhD Degree"]),
+    highestEducation: z.enum([
+      "",
+      "Primary",
+      "Secondary",
+      "High School",
+      "Higher Secondary",
+      "Associate Degree",
+      "Bachelors Degree",
+      "Masters Degree",
+      "PhD Degree",
+    ]),
     languageAssessed: z.enum(["", "yes", "no"]),
 
     // ——— Work Experience #1 ———
-    position1: z
-      .string()
-      .min(2, { message: "Position required" })
-      .optional(),
+    position1: z.string().min(2, { message: "Position required" }).optional(),
     companyName1: z
       .string()
       .min(2, { message: "Company name required" })
@@ -55,10 +61,7 @@ export const detailsSchema = z
       .optional(),
 
     // ——— Work Experience #2 ———
-    position2: z
-      .string()
-      .min(2, { message: "Position required" })
-      .optional(),
+    position2: z.string().min(2, { message: "Position required" }).optional(),
     companyName2: z
       .string()
       .min(2, { message: "Company name required" })
@@ -75,15 +78,19 @@ export const detailsSchema = z
       .optional(),
 
     // ——— Immigration & Consultation ———
-    currentImmigrationStatus: z.enum(["","visitor", "worker", "student", "none"]),
+    currentImmigrationStatus: z.enum([
+      "",
+      "visitor",
+      "worker",
+      "student",
+      "none",
+    ]),
     lastDateInCanada: z
       .string()
       .regex(/^\d{4}-\d{2}-\d{2}$/, { message: "Date must be YYYY-MM-DD" })
       .optional(),
     refusedVisa: z.enum(["", "yes", "no"]),
-    refusedVisaDetails: z
-      .string()
-      .optional(),
+    refusedVisaDetails: z.string().optional(),
     primaryReason: z.enum([
       "",
       "work permit",
@@ -92,27 +99,17 @@ export const detailsSchema = z
       "pr application",
       "others",
     ]),
-    otherReason: z
-      .string()
-      .optional(),
+    otherReason: z.string().optional(),
     medicalCondition: z.enum(["", "yes", "no"]),
     criminalConviction: z.enum(["", "yes", "no"]),
 
     // ——— Document Uploads ———
     documents: z.object({
-      passportCopy: z
-        .any(),
-      proofOfStatus: z
-        .any(),
-      languageAssessment: z
-        .any()
-        .optional(),
-      educationCredentialAssessment: z
-        .any()
-        .optional(),
-      educationRecords: z
-        .any()
-        .optional(),
+      passportCopy: z.any(),
+      proofOfStatus: z.any(),
+      languageAssessment: z.any().optional(),
+      educationCredentialAssessment: z.any().optional(),
+      educationRecords: z.any().optional(),
     }),
   })
   // ——— Cross-field Validations ———
@@ -157,412 +154,516 @@ export const detailsSchema = z
     }
   );
 
-function TwoStepForm({step, setStep}) {
-    const {
-      register,
-      handleSubmit,
-      trigger,
-      watch,
-      formState: { errors },
-    } = useForm({
-      resolver: zodResolver(detailsSchema),
-      mode: "onBlur",
-      defaultValues: {
-        // Add default values to prevent undefined errors
-        refusedVisa: "",
-        children:0,
-        maritalStatus: "",
-        languageAssessed: "",
-        highestEducation: "",
-        medicalCondition:"",
-        criminalConviction:""
-      }
-    });
+function TwoStepForm({ step, setStep }) {
+  const {
+    register,
+    handleSubmit,
+    trigger,
+    watch,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(detailsSchema),
+    mode: "onBlur",
+    defaultValues: {
+      // Add default values to prevent undefined errors
+      refusedVisa: "",
+      children: 0,
+      maritalStatus: "",
+      languageAssessed: "",
+      highestEducation: "",
+      medicalCondition: "",
+      criminalConviction: "",
+    },
+  });
 
-    const router = useRouter();
-  
-    const onNext = async () => {
-      if (step === 1) {
-        try {
-          // Validate only first step fields
-          const result = await trigger([
+  const router = useRouter();
+
+  const onNext = async () => {
+    if (step === 1) {
+      try {
+        // Validate only first step fields
+        const result = await trigger(
+          [
             "name",
-            "email", 
+            "email",
             "mobile",
             "maritalStatus",
             "children",
             "highestEducation",
-            "languageAssessed"
-          ], { shouldFocus: true });
+            "languageAssessed",
+          ],
+          { shouldFocus: true }
+        );
 
-          console.log("Validation errors:", errors);
-          console.log("Validation result:", result);
+        console.log("Validation errors:", errors);
+        console.log("Validation result:", result);
 
-          if (result) {
-            setStep(2);
-          }
-        } catch (error) {
-          console.error("Validation error:", error);
+        if (result) {
+          setStep(2);
         }
-      }
-    };
-
-    const onBack = () => {
-      if (step > 1) {
-        setStep(step - 1);
-      }
-    };
-  
-    const onSubmit = async (data) => {
-      
-      
-      try {
-        // await emailjs.send(
-        //   "service_zuuknl9",       
-        //   "template_vlzmj6f",      
-        //   data,                
-        //   "Ndv9C5G6QF6K7aPqG"        
-        // );
-        const qs = new URLSearchParams({
-         email: data.email,
-         name: data.name,
-         mobile: data.mobile,
-         address: data.address,
-       }).toString();
-       router.push(`/payment?${qs}`);
       } catch (error) {
-        alert("Failed to send email. Please try again.");
-        console.error("Email error:", error);
+        console.error("Validation error:", error);
       }
-    };
-  
-    return (
-        <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="p-2 md:p-6 bg-white rounded-2xl text-dark"
-      >
-        {step === 1 && (
-          <fieldset className="flex flex-wrap justify-between gap-4 md:gap-6 lg:gap-10">
-            <h2 className="text-2xl w-full font-semibold text-gray-800">Personal & Education</h2>
-  
+    }
+  };
+
+  const onBack = () => {
+    if (step > 1) {
+      setStep(step - 1);
+    }
+  };
+
+  const onSubmit = async (data) => {
+    try {
+      // await emailjs.send(
+      //   "service_zuuknl9",
+      //   "template_vlzmj6f",
+      //   data,
+      //   "Ndv9C5G6QF6K7aPqG"
+      // );
+      const qs = new URLSearchParams({
+        data,
+      }).toString();
+      router.push(`/payment?${qs}`);
+    } catch (error) {
+      alert("Failed to send email. Please try again.");
+      console.error("Email error:", error);
+    }
+  };
+
+  return (
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="p-2 md:p-6 bg-white rounded-2xl text-dark"
+    >
+      {step === 1 && (
+        <fieldset className="flex flex-wrap justify-between gap-4 md:gap-6 lg:gap-10">
+          <h2 className="text-2xl w-full font-semibold text-gray-800">
+            Personal & Education
+          </h2>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              Name
+            </label>
+            <input
+              type="text"
+              {...register("name")}
+              className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+            {errors.name && (
+              <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+            )}
+          </div>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              Email
+            </label>
+            <input
+              type="email"
+              {...register("email")}
+              className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+            {errors.email && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.email.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              Mobile
+            </label>
+            <input
+              type="tel"
+              {...register("mobile")}
+              className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+            {errors.mobile && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.mobile.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              Marital Status
+            </label>
+            <select
+              {...register("maritalStatus")}
+              className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              <option value=""></option>
+              <option value="Single">Single</option>
+              <option value="Married">Married</option>
+              <option value="Divorced">Divorced</option>
+              <option value="Widowed">Widowed</option>
+            </select>
+            {errors.maritalStatus && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.maritalStatus.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              Number of children
+            </label>
+            <input
+              type="number"
+              {...register("children", { valueAsNumber: true })}
+              className="mt-1 block w-24 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+            {errors.children && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.children.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              Highest Education
+            </label>
+            <select
+              {...register("highestEducation")}
+              className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              {[
+                "",
+                "Primary",
+                "Secondary",
+                "High School",
+                "Higher Secondary",
+                "Associate Degree",
+                "Bachelors Degree",
+                "Masters Degree",
+                "PhD Degree",
+              ].map((degree) => (
+                <option key={degree} value={degree}>
+                  {degree}
+                </option>
+              ))}
+            </select>
+            {errors.highestEducation && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.highestEducation.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              Have you taken any language Assessment?
+            </label>
+            <select
+              {...register("languageAssessed")}
+              className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+            {errors.languageAssessed && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.languageAssessed.message}
+              </p>
+            )}
+          </div>
+
+          <div className="flex justify-end mt-4 w-full">
+            <button
+              type="button"
+              onClick={onNext}
+              className="px-4 py-2 bg-tertiary text-white rounded-lg hover:bg-tertiary/90 transition"
+            >
+              Next
+            </button>
+          </div>
+        </fieldset>
+      )}
+
+      {step === 2 && (
+        <fieldset className="flex flex-wrap  gap-4 md:gap-6 lg:gap-10">
+          <h2 className="w-full text-2xl font-semibold text-gray-800">
+            Immigration & Documents
+          </h2>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              Current Immigration Status
+            </label>
+            <select
+              {...register("currentImmigrationStatus")}
+              className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              <option value="">Select</option>
+              <option value="visitor">Visitor</option>
+              <option value="worker">Worker</option>
+              <option value="student">Student</option>
+              <option value="none">None</option>
+            </select>
+            {errors.currentImmigrationStatus && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.currentImmigrationStatus.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              Date of last entry in Canada
+            </label>
+            <input
+              type="date"
+              {...register("lastDateInCanada")}
+              className="mt-1 block border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+            {errors.lastDateInCanada && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.lastDateInCanada.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              Have you ever been refused a Visa?
+            </label>
+            <select
+              {...register("refusedVisa")}
+              className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+            {errors.refusedVisa && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.refusedVisa.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              If yes, provide details
+            </label>
+            <textarea
+              {...register("refusedVisaDetails")}
+              className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+            {errors.refusedVisaDetails && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.refusedVisaDetails.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              What is your primary reason for seeking consultation?
+            </label>
+            <select
+              {...register("primaryReason")}
+              className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              <option value="">Select</option>
+              <option value="work permit">Work Permit</option>
+              <option value="visa extension">Visa Extension</option>
+              <option value="study permit extension">
+                Study Permit Extension
+              </option>
+              <option value="pr application">PR Application</option>
+              <option value="others">Others</option>
+            </select>
+            {errors.primaryReason && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.primaryReason.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              If other, provide reason
+            </label>
+            <input
+              type="text"
+              {...register("otherReason")}
+              className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+            {errors.otherReason && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.otherReason.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              Medical Condition?
+            </label>
+            <select
+              {...register("medicalCondition")}
+              className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+            {errors.medicalCondition && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.medicalCondition.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              Criminal Conviction?
+            </label>
+            <select
+              {...register("criminalConviction")}
+              className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+            {errors.criminalConviction && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.criminalConviction.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-full flex gap-10">
             <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Name</label>
-              <input
-                type="text"
-                {...register("name")}
-                className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-              {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Email</label>
-              <input
-                type="email"
-                {...register("email")}
-                className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-              {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Mobile</label>
-              <input
-                type="tel"
-                {...register("mobile")}
-                className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-              {errors.mobile && <p className="mt-1 text-sm text-red-600">{errors.mobile.message}</p>}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Marital Status</label>
-              <select
-                {...register("maritalStatus")}
-                className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              >
-                <option value=""></option>
-                <option value="Single">Single</option>
-                <option value="Married">Married</option>
-                <option value="Divorced">Divorced</option>
-                <option value="Widowed">Widowed</option>
-              </select>
-              {errors.maritalStatus && (
-                <p className="mt-1 text-sm text-red-600">{errors.maritalStatus.message}</p>
-              )}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Number of children</label>
-              <input
-                type="number"
-                {...register("children", { valueAsNumber: true })}
-                className="mt-1 block w-24 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-              {errors.children && (
-                <p className="mt-1 text-sm text-red-600">{errors.children.message}</p>
-              )}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Highest Education</label>
-              <select
-                {...register("highestEducation")}
-                className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              >
-                {
-                  ["","Primary", "Secondary", "High School", "Higher Secondary", "Associate Degree", "Bachelors Degree", "Masters Degree", "PhD Degree"].map((degree) => <option key={degree} value={degree}>{degree}</option>)
-                }
-                
-              </select>
-              {errors.highestEducation && (
-                <p className="mt-1 text-sm text-red-600">{errors.highestEducation.message}</p>
-              )}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Have you taken any language Assessment?</label>
-              <select
-                {...register("languageAssessed")}
-                className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              >
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-              {errors.languageAssessed && (
-                <p className="mt-1 text-sm text-red-600">{errors.languageAssessed.message}</p>
-              )}
-            </div>
-  
-            <div className="flex justify-end mt-4 w-full">
-              <button
-                type="button"
-                onClick={onNext}
-                className="px-4 py-2 bg-tertiary text-white rounded-lg hover:bg-tertiary/90 transition"
-              >
-                Next
-              </button>
-            </div>
-          </fieldset>
-        )}
-  
-        {step === 2 && (
-          <fieldset className="flex flex-wrap justify-between gap-4 md:gap-6 lg:gap-10">
-            <h2 className="w-full text-2xl font-semibold text-gray-800">Immigration & Documents</h2>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Current Immigration Status</label>
-              <select
-                {...register("currentImmigrationStatus")}
-                className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              >
-                <option value="">Select</option>
-                <option value="visitor">Visitor</option>
-                <option value="worker">Worker</option>
-                <option value="student">Student</option>
-                <option value="none">None</option>
-              </select>
-              {errors.currentImmigrationStatus && (
-                <p className="mt-1 text-sm text-red-600">{errors.currentImmigrationStatus.message}</p>
-              )}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Date of last entry in Canada</label>
-              <input
-                type="date"
-                {...register("lastDateInCanada")}
-                className="mt-1 block border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-              {errors.lastDateInCanada && (
-                <p className="mt-1 text-sm text-red-600">{errors.lastDateInCanada.message}</p>
-              )}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Have you ever been refused a Visa?</label>
-              <select
-                {...register("refusedVisa")}
-                className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              >
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
-              </select>
-              {errors.refusedVisa && (
-                <p className="mt-1 text-sm text-red-600">{errors.refusedVisa.message}</p>
-              )}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">If yes, provide details</label>
-              <textarea
-                {...register("refusedVisaDetails")}
-                className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-              {errors.refusedVisaDetails && (
-                <p className="mt-1 text-sm text-red-600">{errors.refusedVisaDetails.message}</p>
-              )}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">What is your primary reason for seeking consultation?</label>
-              <select
-                {...register("primaryReason")}
-                className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              >
-                <option value="">Select</option>
-                <option value="work permit">Work Permit</option>
-                <option value="visa extension">Visa Extension</option>
-                <option value="study permit extension">Study Permit Extension</option>
-                <option value="pr application">PR Application</option>
-                <option value="others">Others</option>
-              </select>
-              {errors.primaryReason && (
-                <p className="mt-1 text-sm text-red-600">{errors.primaryReason.message}</p>
-              )}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">If other, provide reason</label>
-              <input
-                type="text"
-                {...register("otherReason")}
-                className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-              {errors.otherReason && (
-                <p className="mt-1 text-sm text-red-600">{errors.otherReason.message}</p>
-              )}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Medical Condition?</label>
-              <select
-                {...register("medicalCondition")}
-                className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              >
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
-              </select>
-              {errors.medicalCondition && (
-                <p className="mt-1 text-sm text-red-600">{errors.medicalCondition.message}</p>
-              )}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Criminal Conviction?</label>
-              <select
-                {...register("criminalConviction")}
-                className="mt-1 block w-full border border-gray-300 rounded-lg p-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              >
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
-              </select>
-              {errors.criminalConviction && (
-                <p className="mt-1 text-sm text-red-600">{errors.criminalConviction.message}</p>
-              )}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Passport Copy</label>
+              <label className="block text-sm font-medium text-gray-700">
+                Passport Copy (optional)
+              </label>
               <input
                 type="file"
                 {...register("documents.passportCopy")}
                 className="mt-1 block w-full text-gray-700"
               />
               {errors.documents?.passportCopy && (
-                <p className="mt-1 text-sm text-red-600">{errors.documents.passportCopy.message}</p>
+                <p className="mt-1 text-sm text-red-600">
+                  {errors.documents.passportCopy.message}
+                </p>
               )}
             </div>
-  
+
             <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Proof of Status</label>
+              <label className="block text-sm font-medium text-gray-700">
+                Proof of Status (optional)
+              </label>
               <input
                 type="file"
                 {...register("documents.proofOfStatus")}
                 className="mt-1 block w-full text-gray-700"
               />
               {errors.documents?.proofOfStatus && (
-                <p className="mt-1 text-sm text-red-600">{errors.documents.proofOfStatus.message}</p>
+                <p className="mt-1 text-sm text-red-600">
+                  {errors.documents.proofOfStatus.message}
+                </p>
               )}
             </div>
-            <h2 className="w-full text-xl font-semibold text-gray-800">If applying for work permit or permanent residency</h2>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Language Assessment (optional)</label>
-              <input
-                type="file"
-                {...register("documents.languageAssessment")}
-                className="mt-1 block w-full text-gray-700"
-              />
-              {errors.documents?.languageAssessment && (
-                <p className="mt-1 text-sm text-red-600">{errors.documents.languageAssessment.message}</p>
-              )}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">ECA (optional)</label>
-              <input
-                type="file"
-                {...register("documents.educationCredentialAssessment")}
-                className="mt-1 block w-full text-gray-700"
-              />
-              {errors.documents?.educationCredentialAssessment && (
-                <p className="mt-1 text-sm text-red-600">{errors.documents.educationCredentialAssessment.message}</p>
-              )}
-            </div>
-  
-            <div className="w-[46%] md:w-[31%]">
-              <label className="block text-sm font-medium text-gray-700">Education Records (optional)</label>
-              <input
-                type="file"
-                {...register("documents.educationRecords")}
-                className="mt-1 block w-full text-gray-700"
-              />
-              {errors.documents?.educationRecords && (
-                <p className="mt-1 text-sm text-red-600">{errors.documents.educationRecords.message}</p>
-              )}
-            </div>
-  
-            <div className="w-full flex justify-between mt-6">
-              <button
-                type="button"
-                onClick={onBack}
-                className="px-4 py-2 bg-dark text-white rounded-lg hover:bg-gray-300 transition"
-              >
-                Back
-              </button>
-              <button
-                type="submit"
-                className="px-4 py-2 bg-tertiary text-white rounded-lg hover:bg-tertiary/90 transition"
-              >
-                Submit
-              </button>
-            </div>
-          </fieldset>
-        )}
-      </form>
-    );
-  }
-  const ConsultationForm = () => {
-    const [step, setStep] = useState(1);
-    const stepLabel = ["Personal Details", "Immigration Details"];
-  
-  
-    const handleStepChange = (newStep) => {
-      console.log("Changing step to:", newStep); // Debug log
-      setStep(newStep);
-    };
-  
-    return (
-      <div className="bg-white mt-16 px-6 ">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl text-dark font-bold mb-4">Consultation Form</h2>
-        </div>
-        <div className="py-2">
-          <HorizontalLinearStepper step={step} stepLabel={stepLabel} />
-          <TwoStepForm step={step} setStep={handleStepChange}/>
-        </div>
-      </div>
-    );
+          </div>
+
+          <h2 className="w-full text-xl font-semibold text-gray-800">
+            If applying for work permit or permanent residency
+          </h2>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              Language Assessment (optional)
+            </label>
+            <input
+              type="file"
+              {...register("documents.languageAssessment")}
+              className="mt-1 block w-full text-gray-700"
+            />
+            {errors.documents?.languageAssessment && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.documents.languageAssessment.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              ECA (optional)
+            </label>
+            <input
+              type="file"
+              {...register("documents.educationCredentialAssessment")}
+              className="mt-1 block w-full text-gray-700"
+            />
+            {errors.documents?.educationCredentialAssessment && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.documents.educationCredentialAssessment.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-[46%] md:w-[31%]">
+            <label className="block text-sm font-medium text-gray-700">
+              Education Records (optional)
+            </label>
+            <input
+              type="file"
+              {...register("documents.educationRecords")}
+              className="mt-1 block w-full text-gray-700"
+            />
+            {errors.documents?.educationRecords && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.documents.educationRecords.message}
+              </p>
+            )}
+          </div>
+
+          <div className="w-full flex justify-between mt-6">
+            <button
+              type="button"
+              onClick={onBack}
+              className="px-4 py-2 bg-dark text-white rounded-lg hover:bg-gray-300 transition"
+            >
+              Back
+            </button>
+            <button
+              type="submit"
+              className="px-4 py-2 bg-tertiary text-white rounded-lg hover:bg-tertiary/90 transition"
+            >
+              Submit
+            </button>
+          </div>
+        </fieldset>
+      )}
+    </form>
+  );
+}
+const ConsultationForm = () => {
+  const [step, setStep] = useState(1);
+  const stepLabel = ["Personal Details", "Immigration Details"];
+
+  const handleStepChange = (newStep) => {
+    console.log("Changing step to:", newStep); // Debug log
+    setStep(newStep);
   };
+
+  return (
+    <div className="bg-white mt-16 px-6 ">
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-2xl text-dark font-bold mb-4">Consultation Form</h2>
+      </div>
+      <div className="py-2">
+        <HorizontalLinearStepper step={step} stepLabel={stepLabel} />
+        <TwoStepForm step={step} setStep={handleStepChange} />
+      </div>
+    </div>
+  );
+};
 
 export default ConsultationForm;

@@ -3614,6 +3614,10 @@ body {
     width: auto;
   }
 
+  .md\:w-\[41\%\] {
+    width: 41%;
+  }
+
   .md\:max-w-\[420px\] {
     max-width: 420px;
   }

@@ -1,4 +1,16 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/caregivers/page": "app/caregivers/page.js",
+  "/about/page": "app/about/page.js",
+  "/consultation-form/page": "app/consultation-form/page.js",
+  "/book-consultation/page": "app/book-consultation/page.js",
+  "/children-citizenship/page": "app/children-citizenship/page.js",
+  "/form/page": "app/form/page.js",
+  "/humanitarian-cause/page": "app/humanitarian-cause/page.js",
+  "/contacts/page": "app/contacts/page.js",
+  "/carrers/page": "app/carrers/page.js",
   "/page": "app/page.js",
-  "/consultation-form/page": "app/consultation-form/page.js"
+  "/payment/page": "app/payment/page.js",
+  "/terms/page": "app/terms/page.js",
+  "/work-permit-form/page": "app/work-permit-form/page.js"
 }

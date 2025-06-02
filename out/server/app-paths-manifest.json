@@ -1,0 +1,8 @@
+{
+  "/page": "app/page.js",
+  "/consultation-form/page": "app/consultation-form/page.js",
+  "/api/upload/route": "app/api/upload/route.js",
+  "/payment/page": "app/payment/page.js",
+  "/candidate/[id]/page": "app/candidate/[id]/page.js",
+  "/api/data/[id]/route": "app/api/data/[id]/route.js"
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "mbeva4dhatn725",
+    "name": "Shafira Ellison",
+    "email": "rufiv@mailinator.com",
+    "mobile": "+1 439822-7195",
+    "children": "6",
+    "maritalStatus": "Divorced",
+    "highestEducation": "Masters Degree",
+    "currentImmigrationStatus": "visitor",
+    "lastDateInCanada": "2004-10-25",
+    "primaryReason": "visa extension",
+    "otherReason": "Obcaecati vitae aut ",
+    "criminalConviction": "no",
+    "refusedVisa": "no",
+    "refusedVisaDetails": "Reprehenderit numqu",
+    "languageAssessed": "yes",
+    "medicalCondition": "yes",
+    "documents": {
+      "educationCredentialAssessment": null,
+      "educationRecords": null,
+      "languageAssessment": null,
+      "passportCopy": null,
+      "proofOfStatus": null
+    },
+    "createdAt": "2025-06-02T09:08:02.597Z"
+  },
+  {
+    "id": "mbewgql0ulb4wx",
+    "name": "Seth Lindsey",
+    "email": "nujod@mailinator.com",
+    "mobile": "+1 363574-3851",
+    "children": "92",
+    "maritalStatus": "Divorced",
+    "highestEducation": "Higher Secondary",
+    "currentImmigrationStatus": "visitor",
+    "lastDateInCanada": "2004-03-23",
+    "primaryReason": "work permit",
+    "otherReason": "Autem ab fuga Amet",
+    "criminalConviction": "no",
+    "refusedVisa": "no",
+    "refusedVisaDetails": "Maiores dolor repell",
+    "languageAssessed": "yes",
+    "medicalCondition": "no",
+    "documents": {
+      "educationCredentialAssessment": null,
+      "educationRecords": null,
+      "languageAssessment": null,
+      "passportCopy": null,
+      "proofOfStatus": null
+    },
+    "createdAt": "2025-06-02T09:41:10.932Z"
+  }
+]

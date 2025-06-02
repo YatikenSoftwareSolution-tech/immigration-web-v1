@@ -215,19 +215,60 @@ function TwoStepForm({ step, setStep }) {
 
   const onSubmit = async (data) => {
     try {
-      // await emailjs.send(
-      //   "service_zuuknl9",
-      //   "template_vlzmj6f",
-      //   data,
-      //   "Ndv9C5G6QF6K7aPqG"
-      // );
-      const qs = new URLSearchParams({
-        data,
-      }).toString();
-      router.push(`/payment?${qs}`);
+      // 1) Create a FormData() and append every text‐value
+      const formData = new FormData();
+
+      // Append all the simple text fields one by one:
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      formData.append("mobile", data.mobile);
+      formData.append("children", data.children);
+      formData.append("maritalStatus", data.maritalStatus);
+      formData.append("highestEducation", data.highestEducation);
+      formData.append("currentImmigrationStatus", data.currentImmigrationStatus);
+      formData.append("lastDateInCanada", data.lastDateInCanada);
+      formData.append("primaryReason", data.primaryReason);
+      formData.append("otherReason", data.otherReason);
+      formData.append("criminalConviction", data.criminalConviction);
+      formData.append("refusedVisa", data.refusedVisa);
+      formData.append("refusedVisaDetails", data.refusedVisaDetails);
+      formData.append("languageAssessed", data.languageAssessed);
+      formData.append("medicalCondition", data.medicalCondition);
+
+      if (data.educationCredentialAssessment?.length > 0) {
+        formData.append(
+          "educationCredentialAssessment",
+          data.educationCredentialAssessment[0]
+        );
+      }
+      if (data.educationRecords?.length > 0) {
+        formData.append("educationRecords", data.educationRecords[0]);
+      }
+      if (data.languageAssessment?.length > 0) {
+        formData.append("languageAssessment", data.languageAssessment[0]);
+      }
+      if (data.passportCopy?.length > 0) {
+        formData.append("passportCopy", data.passportCopy[0]);
+      }
+      if (data.proofOfStatus?.length > 0) {
+        formData.append("proofOfStatus", data.proofOfStatus[0]);
+      }
+
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || "Upload failed");
+      }
+      const { id } = await res.json();
+
+      router.push(`/payment?recordId=${id}`);
     } catch (error) {
-      alert("Failed to send email. Please try again.");
-      console.error("Email error:", error);
+      console.error("Upload error:", error);
+      alert("Failed to submit form. Please try again.");
     }
   };
 

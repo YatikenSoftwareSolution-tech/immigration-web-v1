@@ -91,7 +91,7 @@ const Payment = ({searchParams}) => {
           </div>
 
           <Link
-            href={`https://calendar.app.google/9cjg5iYzzeHDD27d7?Link=http://localhost:3000/candidate/${recordId}`}
+            href={`https://calendar.app.google/9cjg5iYzzeHDD27d7?Link=https://immigration-web-v1-gyha.vercel.app/candidate/${recordId}`}
             target="_blank"
             className={`inline-block mt-6 w-full md:w-auto transition-opacity ${
               !accepted ? "pointer-events-none opacity-50" : ""

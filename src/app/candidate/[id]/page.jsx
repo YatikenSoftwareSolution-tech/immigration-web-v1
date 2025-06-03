@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 
 export default function ShowPage({ params }) {
+  const BaseUrl = process.env.API_URL;
   const { id } = params;
   const [record, setRecord] = useState(null);
   const [error, setError] = useState(null);
@@ -10,7 +11,7 @@ export default function ShowPage({ params }) {
   useEffect(() => {
     if (!id) return;
 
-    fetch(`/api/data/${id}`)
+    fetch(`${BaseUrl}/api/data/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error(`Fetch failed (${res.status})`);
         return res.json();

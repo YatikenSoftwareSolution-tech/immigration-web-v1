@@ -155,6 +155,7 @@ export const detailsSchema = z
   );
 
 function TwoStepForm({ step, setStep }) {
+  const BaseUrl = process.env.API_URL;
   const {
     register,
     handleSubmit,
@@ -254,7 +255,7 @@ function TwoStepForm({ step, setStep }) {
         formData.append("proofOfStatus", data.proofOfStatus[0]);
       }
 
-      const res = await fetch("/api/upload", {
+      const res = await fetch(`${BaseUrl}/api/upload`, {
         method: "POST",
         body: formData,
       });

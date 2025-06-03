@@ -155,7 +155,6 @@ export const detailsSchema = z
   );
 
 function TwoStepForm({ step, setStep }) {
-  const BaseUrl = process.env.API_URL;
   const {
     register,
     handleSubmit,
@@ -226,7 +225,10 @@ function TwoStepForm({ step, setStep }) {
       formData.append("children", data.children);
       formData.append("maritalStatus", data.maritalStatus);
       formData.append("highestEducation", data.highestEducation);
-      formData.append("currentImmigrationStatus", data.currentImmigrationStatus);
+      formData.append(
+        "currentImmigrationStatus",
+        data.currentImmigrationStatus
+      );
       formData.append("lastDateInCanada", data.lastDateInCanada);
       formData.append("primaryReason", data.primaryReason);
       formData.append("otherReason", data.otherReason);
@@ -255,18 +257,13 @@ function TwoStepForm({ step, setStep }) {
         formData.append("proofOfStatus", data.proofOfStatus[0]);
       }
 
-      const res = await fetch(`${BaseUrl}/api/upload`, {
+      const res = await fetch(`https://immigration-ca-run-service-829497711371.asia-south1.run.app/api/upload`, {
         method: "POST",
         body: formData,
       });
-
-      if (!res.ok) {
-        const err = await res.json();
-        throw new Error(err.error || "Upload failed");
-      }
-      const { id } = await res.json();
-
-      router.push(`/payment?recordId=${id}`);
+      const response = await res.json();
+      
+      router.push(`/payment?recordId=${response.id}&email=${data.email}&name=${data.name}&mobile=${data.mobile}`);
     } catch (error) {
       console.error("Upload error:", error);
       alert("Failed to submit form. Please try again.");

@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react';
-import Payment from './Payment';
+import Candidate from './Candidate';
 
 const TermsPage = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <Payment/>
+      <Candidate/>
     </Suspense>
   );
 };

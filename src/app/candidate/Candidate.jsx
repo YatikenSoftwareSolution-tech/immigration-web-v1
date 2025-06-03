@@ -1,17 +1,18 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useSearchParams } from "next/navigation";
 
-export default function ShowPage({ params }) {
-  const BaseUrl = process.env.API_URL;
-  const { id } = params;
+export default function ShowPage() {
+    const searchParams = useSearchParams();
+    const id = searchParams.get("id"); 
   const [record, setRecord] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!id) return;
 
-    fetch(`${BaseUrl}/api/data/${id}`)
+    fetch(`https://immigration-ca-run-service-829497711371.asia-south1.run.app/api/data/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error(`Fetch failed (${res.status})`);
         return res.json();
@@ -29,7 +30,7 @@ export default function ShowPage({ params }) {
       <h1>Record {record.id}</h1>
       <p>
         <strong>Text:</strong> <br />
-        {record.text}
+        {record.name}
       </p>
       <p>
         <strong>File:</strong>{' '}
